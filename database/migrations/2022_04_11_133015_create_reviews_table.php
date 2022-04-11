@@ -15,6 +15,13 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('content');
+            $table->integer('rating');
+            $table->date('date');
+            $table->string('name');
+            $table->string('lastname');
+            $table->foreignId('apartment_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ class CreateViewsTable extends Migration
     {
         Schema::create('views', function (Blueprint $table) {
             $table->id();
+            $table->ipAddress('ip');
+            $table->date('date');
+            $table->foreignId('apartment_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

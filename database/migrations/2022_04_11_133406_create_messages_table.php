@@ -15,6 +15,13 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->string('object');
+            $table->text('content');
+            $table->string('email');
+            $table->dateTime('date');
+            $table->string('name');
+            $table->string('lastname');
+            $table->foreignId('apartment_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
