@@ -41,18 +41,6 @@ return [
     "lat"=>45.79662464,
     "lon"=>8.89459826,
     ],
-    [ //https://www.airbnb.it/rooms/32285772?check_in=2022-04-30&check_out=2022-05-19&federated_search_id=2aab2c5e-eb39-4805-8310-1dfaadb42261&source_impression_id=p3_1649681810_iDENinY2TKI%2FJzOl
-    "name"=>"Loft con giardino in zona Appia Antica 1",
-    "description"=>"Il nostro loft è situato all'interno di una villa immersa nel verde, a ridosso del parco dell'Appia Antica, ed è l'ideale per un soggiorno nella Capitale all'insegna del relax e della tranquillità. L'appartamento dispone di un ingresso indipendente con affaccio sul giardino interno e si compone di soggiorno, cucina, bagno e un letto matrimoniale. I padroni di casa saranno a vostra disposizione per accogliervi e rendere il vostro soggiorno il più confortevole possibile.",
-    "rooms"=> 3,
-    "beds"=> 2,
-    "bathrooms"=> 1,
-    "square_meters"=> 60,
-    "address"=>"Via Luigi Tosti, 00179 Roma RM",
-    "visible"=> true,
-    "lat"=> 41.87456520,
-    "lon"=>12.51881277,
-    ],
     [ //https://www.airbnb.it/rooms/51448589?federated_search_id=491d9402-6c3a-4994-8f92-ca68e8ba171a&source_impression_id=p3_1649681969_ETnRVakaPc0%2Bj%2BEV
     "name"=>"Cozy apartment with terrace in Milan",
     "description"=>"Cozy apartment with a beautiful terrace in a central location and in a quiet setting, just a few meters from the M5 GERUSALEMME (purple line) underground station. The neighborhood is very nice and well stocked with all kinds of shops and supermarkets, in particular very good restaurants. In the immediate surroundings of the Sempione park and the Chinatown neighbor.",
