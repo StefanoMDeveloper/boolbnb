@@ -15,6 +15,8 @@ class CreateApartmentSponsorshipTable extends Migration
     {
         Schema::create('apartment_sponsorship', function (Blueprint $table) {
             $table->id();
+            $table->date('start_date');
+            $table->date('end_date');
             $table->foreignId('apartment_id')->constrained()->onDelete("cascade");
             $table->foreignId('sponsorship_id')->constrained()->onDelete("cascade");
             $table->timestamps();
