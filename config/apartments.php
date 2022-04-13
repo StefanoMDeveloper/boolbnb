@@ -79,6 +79,18 @@ return [
     "lat"=>45.43569289,
     "lon"=>12.34216204,
     ],
+    [ //https://www.airbnb.it/rooms/32285772?check_in=2022-04-30&check_out=2022-05-19&federated_search_id=2aab2c5e-eb39-4805-8310-1dfaadb42261&source_impression_id=p3_1649681810_iDENinY2TKI%2FJzOl
+    "name"=>"Loft con giardino in zona Appia Antica",
+    "description"=>"Il nostro loft è situato all'interno di una villa immersa nel verde, a ridosso del parco dell'Appia Antica, ed è l'ideale per un soggiorno nella Capitale all'insegna del relax e della tranquillità. L'appartamento dispone di un ingresso indipendente con affaccio sul giardino interno e si compone di soggiorno, cucina, bagno e un letto matrimoniale. I padroni di casa saranno a vostra disposizione per accogliervi e rendere il vostro soggiorno il più confortevole possibile.",
+    "rooms"=>3,
+    "beds"=>2,
+    "bathrooms"=>1,
+    "square_meters"=>40,
+    "address"=>"Via Appia Antica 15, Roma RO",
+    "visible"=>true,
+    "lat"=>41.81255703, 
+    "lon"=>12.56465406
+    ],
     [ //https://www.airbnb.it/rooms/597476197966578255?federated_search_id=65e3efbf-64d0-4acf-b706-5cdec9ea2e5f&source_impression_id=p3_1649681727_YPOpNeCXdfmlW6tW
     "name"=>"NUOVO E STUPENDO LOFT",
     "description"=>"Meraviglioso e nuovo appartamento in mansarda arredato in maniera funzionale e dotato di tutto il necessario. Situato in una posizione perfetta a Riccione per chi vuole stare vicinissimo al mare. Potrete scendere e raggiungere a piedi per raggiungere la spiaggia in un minuto. L’appartamento, dotato anche di aria condizionata gratuita, può ospitare fino a 4 persone. In 4 minuti di macchina sarete nel famoso e rinomato Viale Ceccarini, proprio nel centro di Riccione. Non fartelo sfuggire!",
