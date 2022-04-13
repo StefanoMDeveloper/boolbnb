@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function(){
+        Route::get('/', 'HomeController@index')
+        ->name('home');
+        Route::resource('apartments','ApartmentController');
+        Route::delete('messages/{message}','MessageController@destroy')->name('messages.destroy');
+    });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get("{any?}", function() {
+    return view("welcome");
+})->where("any",".*");
