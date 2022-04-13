@@ -13,7 +13,7 @@ class ReviewSeeder extends Seeder
      */
     public function run()
     {
-        $reviews = config('review');
+        $reviews = config('reviews');
         foreach($reviews as $review){
             $newReview = new Review();
             $newReview->title = $review['title'];

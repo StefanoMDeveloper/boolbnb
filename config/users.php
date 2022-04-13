@@ -7,7 +7,7 @@ return [
         "name"=>"Antony",
         "lastname"=>"Morgante",
         "birth_date"=>null,
-        "phone"=>null
+        "phone"=>"1"
     ],
     [
         "email"=>"b@a.it",
@@ -15,7 +15,7 @@ return [
         "name"=>"Stefano",
         "lastname"=>"Martignoni",
         "birth_date"=>null,
-        "phone"=>null
+        "phone"=>"2"
     ],
     [
         "email"=>"c@a.it",
@@ -23,7 +23,7 @@ return [
         "name"=>"Ghadeer",
         "lastname"=>"Shamshoum",
         "birth_date"=>null,
-        "phone"=>null
+        "phone"=>"3"
     ],
     [
         "email"=>"d@a.it",
@@ -31,7 +31,7 @@ return [
         "name"=>"Gianluca",
         "lastname"=>"Benedetti",
         "birth_date"=>null,
-        "phone"=>null
+        "phone"=>"4"
     ],
     [
         "email"=>"e@a.it",
@@ -39,6 +39,6 @@ return [
         "name"=>"Fabio",
         "lastname"=>"Losa",
         "birth_date"=>null,
-        "phone"=>null
+        "phone"=>"5"
     ],
 ];
