@@ -48,7 +48,7 @@ class ApartmentController extends Controller
     {
         $images = Image::all();
         $services = Service::all();
-        return view('admin.apartements.create',compact('images','services'));
+        return view('admin.apartments.create',compact('images','services'));
     }
 
     /**
