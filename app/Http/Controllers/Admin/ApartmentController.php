@@ -158,6 +158,6 @@ class ApartmentController extends Controller
     {
         $apartment->delete();
 
-        return redirect()->route('admin.apartment.index')->with(["message"=>"Il tuo appartamento è stato eliminato!"]);
+        return redirect()->route('admin.apartments.index')->with(["message"=>"Il tuo appartamento è stato eliminato!"]);
     }
 }

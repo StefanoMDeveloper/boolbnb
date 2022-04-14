@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 @section('content')
 <h1 class="text-center">update:{{$apartment->name}}</h1>
 <form action="{{route("admin.apartments.update", $apartment->id)}}" method="POST">
@@ -19,7 +19,7 @@
   <div class="form-group col-md-12">
     <label for="rooms">Numero di stanze</label>
     <input type="number" id="rooms" name="rooms"
-            min="10" max="100"
+            min="1" max="99"
             value="{{old("rooms")??$apartment->rooms}}"
             class="form-control @error('rooms') is-invalid @enderror">
 
@@ -32,7 +32,8 @@
   <div class="form-group col-md-12">
     <label for="beds">Numero di letti</label>
     <input type="number" id="beds" name="beds"
-            min="10" max="100"
+            min="1" max="999"
+            value="{{old("beds")??$apartment->beds}}"
             class="form-control @error('beds') is-invalid @enderror">
 
     @error('beds')
@@ -44,7 +45,8 @@
   <div class="form-group col-md-12">
     <label for="bathrooms">Numero di bagni</label>
     <input type="number" id="bathrooms" name="bathrooms"
-            min="10" max="100"
+            min="1" max="99"
+            value="{{old("bathrooms")??$apartment->bathrooms}}"
             class="form-control @error('bathrooms') is-invalid @enderror">
 
     @error('bathrooms')
@@ -57,6 +59,7 @@
     <label for="bathrooms">Metri quadrati</label>
     <input type="number" id="square_meters" name="square_meters"
             min="10" max="100"
+            value="{{old("square_meters")??$apartment->square_meters}}"
             class="form-control @error('square_meters') is-invalid @enderror">
 
     @error('square_meters')
@@ -73,21 +76,21 @@
     @enderror
   </div>
 
-  <!-- sevices -->
+  <!-- services -->
   <div class="from-group">
     <label>Servizi</label>
-    @foreach ($sevices as $sevice)
+    @foreach ($services as $service)
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="{{$sevice->slug}}"
-        name="sevices[]" value="{{$sevice->id}}"
+        <input type="checkbox" class="form-check-input" id="{{$service->slug}}"
+        name="services[]" value="{{$service->id}}"
         @if($errors->any())       
-          {{ in_array($sevice->id, old('sevices', [])) ? "checked" : ""}}
+          {{ in_array($service->id, old('services', [])) ? "checked" : ""}}
         @else
-          {{ $apartment->sevices->contains($sevice) ? "checked" : ""}}
+          {{ $apartment->services->contains($service) ? "checked" : ""}}
         @endif
         >
-        <label class="form-check-label" for="{{$sevice->slug}}">
-          {{$sevice->name}}
+        <label class="form-check-label" for="{{$service->slug}}">
+          {{$service->name}}
         </label>  
       </div>
     @endforeach
