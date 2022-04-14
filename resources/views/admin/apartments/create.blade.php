@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="text-center">Inserire un nuovo appartamento </h1>
-<form action="{{route("admin.apartments.store")}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('admin.apartments.store')}}" method="POST" enctype="multipart/form-data">
   @csrf
 
   <!-- title -->
@@ -41,12 +41,12 @@
 
    <!-- Bagni -->
    <div class="form-group col-md-12">
-      <label for="bathroms">Bagni</label>
-      <input type="number" id="bathroms" name="bathroms"
+      <label for="bathrooms">Bagni</label>
+      <input type="number" id="bathrooms" name="bathrooms"
               min="1" max="99"
-              class="form-control @error('bathroms') is-invalid @enderror">
+              class="form-control @error('bathrooms') is-invalid @enderror">
 
-      @error('bathroms')
+      @error('bathrooms')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
   </div>
@@ -78,7 +78,7 @@
       <label>Servizi</label>
       @foreach ($services as $service)
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="services[]" id="{{$service->id}}"
+          <input class="form-check-input" type="checkbox" name="services[]" id="{{$service->slug}}"
           value="{{$service->id}}"
           {{old("services") && in_array($service->id, old('services')) ? "checked" : ""}}
           >

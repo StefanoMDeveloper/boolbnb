@@ -14,16 +14,15 @@ class ApartmentController extends Controller
 {
     protected $validation = [
         'name'=>'required|string|max:20',
-        'description'=>'required|string',
-        'rooms'=>'required|integer|max:2',
-        'beds'=>'required|integer|max:2',
-        'bathrooms'=>'required|integer|max:2',
-        'square_meters'=>'required|integer|max:3',
+        'description'=>'string',
+        'rooms'=>'required|integer|min:1|max:99',
+        'beds'=>'required|integer|min:1|max:99',
+        'bathrooms'=>'required|integer|min:1|max:99',
+        'square_meters'=>'required|integer|min:1|max:999',
         'address'=>'required|string|max:80',
-        'visible'=>'required|boolean',
-        'user_id'=>'required',
+        'visible'=>'boolean',
         'image'=>'exists:images,id',
-        'services'=>'exists:services,id '
+        'services'=>'exists:services,id'
     ];
 
 
@@ -64,7 +63,10 @@ class ApartmentController extends Controller
         // fetch user id
         $user_id = $request->user()->id;
         $form_data['user_id'] = $user_id;
-
+        $form_data['visible'] = true;
+        $form_data['lat']=0;
+        $form_data['lon']=0;
+        $form_data['description']="a";
         //validation
         $request->validate($this->validation);
 
@@ -80,6 +82,7 @@ class ApartmentController extends Controller
         $form_data['slug'] = $slugName;
 
         $apartment->fill($form_data);
+
 
         $apartment->save();
 

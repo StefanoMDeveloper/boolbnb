@@ -32,7 +32,7 @@
   <div class="form-group col-md-12">
     <label for="beds">Numero di letti</label>
     <input type="number" id="beds" name="beds"
-            min="1" max="999"
+            min="1" max="99"
             value="{{old("beds")??$apartment->beds}}"
             class="form-control @error('beds') is-invalid @enderror">
 
@@ -58,7 +58,7 @@
   <div class="form-group col-md-12">
     <label for="bathrooms">Metri quadrati</label>
     <input type="number" id="square_meters" name="square_meters"
-            min="10" max="100"
+            min="1" max="999"
             value="{{old("square_meters")??$apartment->square_meters}}"
             class="form-control @error('square_meters') is-invalid @enderror">
 
