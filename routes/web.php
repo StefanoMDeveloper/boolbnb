@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::middleware('auth')
     ->group(function(){
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('/apartments','ApartmentController');
-        Route::delete('messages/{message}','MessageController@destroy')->name('messages.destroy');
+        // Route::delete('messages/{message}','MessageController@destroy')->name('messages.destroy');
     });
 
 Route::get("{any?}", function() {
