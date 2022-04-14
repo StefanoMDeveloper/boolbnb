@@ -14,13 +14,12 @@ class ApartmentController extends Controller
 {
     protected $validation = [
         'name'=>'required|string|max:20',
-        'description'=>'string',
+        'description'=>'required|string',
         'rooms'=>'required|integer|min:1|max:99',
         'beds'=>'required|integer|min:1|max:99',
         'bathrooms'=>'required|integer|min:1|max:99',
         'square_meters'=>'required|integer|min:1|max:999',
         'address'=>'required|string|max:80',
-        'visible'=>'boolean',
         'image'=>'exists:images,id',
         'services'=>'exists:services,id'
     ];
@@ -63,9 +62,13 @@ class ApartmentController extends Controller
         // fetch user id
         $user_id = $request->user()->id;
         $form_data['user_id'] = $user_id;
-        $form_data['visible'] = true;
         $form_data['lat']=0;
         $form_data['lon']=0;
+        if (isset ($request -> visible)) {
+            $form_data['visible']=true;
+        }else {
+            $form_data['visible']=false;
+        };
         $form_data['description']="a";
         //validation
         $request->validate($this->validation);
@@ -130,6 +133,12 @@ class ApartmentController extends Controller
         //fetch user id
         $user_id = $request->user()->id;
         $request['user_id'] = $user_id;
+
+        if (isset ($request -> visible)) {
+            $form_data['visible']=true;
+        }else {
+            $form_data['visible']=false;
+        };
 
         //validation
         $request->validate($this->validation);
