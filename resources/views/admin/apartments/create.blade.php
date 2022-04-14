@@ -2,14 +2,23 @@
 
 @section('content')
 <h1 class="text-center">Inserire un nuovo appartamento </h1>
-<form action="{{route("admin.apartments.store")}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('admin.apartments.store')}}" method="POST" enctype="multipart/form-data">
   @csrf
 
-  <!-- title -->
+  <!-- name -->
   <div class="form-group col-md-12">
-    <label for="title">Titolo</label>
-    <input type="text" class="form-control @error('title') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")}}">
+    <label for="name">Nome</label>
+    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")}}">
     @error('name')
+      <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+  </div>
+
+  <!-- description -->
+  <div class="form-group col-md-12">
+    <label for="description">Descrizione</label>
+    <input type="textarea" class="form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="aggiungi descrizione dell'appartamento" value="{{old("description")}}">
+    @error('description')
       <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>
@@ -41,12 +50,12 @@
 
    <!-- Bagni -->
    <div class="form-group col-md-12">
-      <label for="bathroms">Bagni</label>
-      <input type="number" id="bathroms" name="bathroms"
+      <label for="bathrooms">Bagni</label>
+      <input type="number" id="bathrooms" name="bathrooms"
               min="1" max="99"
-              class="form-control @error('bathroms') is-invalid @enderror">
+              class="form-control @error('bathrooms') is-invalid @enderror">
 
-      @error('bathroms')
+      @error('bathrooms')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
   </div>
@@ -72,13 +81,28 @@
     @enderror
   </div>
 
+  {{-- visible --}}
+  <div class="form-check">
+    <label class="form-check-label" for="visible">
+      Visibile
+    </label>
+    <input class="form-check-input" type="checkbox" name="visible" id="visible"
+    value="visible"
+    {{old("visible") ? "checked" : ""}}
+    >  
+  </div>
+
+
+
+  {{-- image --}}
+
 
   <!-- services -->
   <div class="form-group">
       <label>Servizi</label>
       @foreach ($services as $service)
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="services[]" id="{{$service->id}}"
+          <input class="form-check-input" type="checkbox" name="services[]" id="{{$service->slug}}"
           value="{{$service->id}}"
           {{old("services") && in_array($service->id, old('services')) ? "checked" : ""}}
           >

@@ -5,12 +5,21 @@
   @csrf
   @method('PUT')
 
-  <!-- title -->
+  <!-- name -->
   <div class="form-group col-md-12">
-    <label for="title">Titolo</label>
-    <input type="text" class="form-control @error('title') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")??$apartment->name}}">
+    <label for="name">Name</label>
+    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")??$apartment->name}}">
     
     @error('name')
+      <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+  </div>
+
+   <!-- description -->
+   <div class="form-group col-md-12">
+    <label for="description">Descrizione</label>
+    <input type="textarea" class="form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="aggiungi descrizione dell'appartamento" value="{{old("description")}}">
+    @error('description')
       <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>
@@ -32,7 +41,7 @@
   <div class="form-group col-md-12">
     <label for="beds">Numero di letti</label>
     <input type="number" id="beds" name="beds"
-            min="1" max="999"
+            min="1" max="99"
             value="{{old("beds")??$apartment->beds}}"
             class="form-control @error('beds') is-invalid @enderror">
 
@@ -58,7 +67,7 @@
   <div class="form-group col-md-12">
     <label for="bathrooms">Metri quadrati</label>
     <input type="number" id="square_meters" name="square_meters"
-            min="10" max="100"
+            min="1" max="999"
             value="{{old("square_meters")??$apartment->square_meters}}"
             class="form-control @error('square_meters') is-invalid @enderror">
 
@@ -75,6 +84,19 @@
       <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>
+
+    {{-- visible --}}
+    <div class="form-check">
+      <label class="form-check-label" for="visible">
+        Visibile
+      </label>
+      <input class="form-check-input" type="checkbox" name="visible" id="visible"
+      value="visible"
+      {{old("visible") ? "checked" : ""}}
+      >  
+    </div>
+
+    {{-- image --}}
 
   <!-- services -->
   <div class="from-group">
