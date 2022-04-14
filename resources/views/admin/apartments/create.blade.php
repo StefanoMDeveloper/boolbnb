@@ -1,0 +1,96 @@
+@extends('layouts.app')
+
+@section('content')
+<h1 class="text-center">Inserire un nuovo appartamento </h1>
+<form action="{{route("admin.apartments.store")}}" method="POST" enctype="multipart/form-data">
+  @csrf
+
+  <!-- title -->
+  <div class="form-group col-md-12">
+    <label for="title">Titolo</label>
+    <input type="text" class="form-control @error('title') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")}}">
+    @error('name')
+      <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+  </div>
+
+   <!-- number of rooms -->
+   <div class="form-group col-md-12">
+    <label for="rooms">Numero di stanze</label>
+    <input type="number" id="rooms" name="rooms"
+            min="1" max="99"
+            value="{{old("rooms")}}"
+            class="form-control @error('rooms') is-invalid @enderror">
+
+    @error('rooms')
+    <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+  </div>
+
+   <!-- Letti -->
+  <div class="form-group col-md-12">
+      <label for="beds">Letti</label>
+      <input type="number" id="beds" name="beds"
+              min="1" max="99"
+              class="form-control @error('beds') is-invalid @enderror">
+
+      @error('beds')
+      <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+  </div>
+
+   <!-- Bagni -->
+   <div class="form-group col-md-12">
+      <label for="bathroms">Bagni</label>
+      <input type="number" id="bathroms" name="bathroms"
+              min="1" max="99"
+              class="form-control @error('bathroms') is-invalid @enderror">
+
+      @error('bathroms')
+      <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+  </div>
+
+   <!-- metri quadrati -->
+  <div class="form-group col-md-12">
+      <label for="bathrooms">Metri quadrati</label>
+      <input type="number" id="square_meters" name="square_meters"
+              min="1" max="999"
+              class="form-control @error('square_meters') is-invalid @enderror">
+
+      @error('square_meters')
+      <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+  </div>
+
+  <!-- address -->
+  <div class="form-group col-md-12">
+    <label for="address">Indirizzo completo</label>
+    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" placeholder="aggiungi l'indirizzo completo" >
+    @error('address')
+      <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+  </div>
+
+
+  <!-- services -->
+  <div class="form-group">
+      <label>Servizi</label>
+      @foreach ($services as $service)
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="services[]" id="{{$service->id}}"
+          value="{{$service->id}}"
+          {{old("services") && in_array($service->id, old('services')) ? "checked" : ""}}
+          >
+          <label class="form-check-label" for="{{$service->id}}">
+            {{$service->name}}
+          </label>  
+        </div>
+      @endforeach
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+
+@endsection 

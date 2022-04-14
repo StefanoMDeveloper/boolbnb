@@ -48,9 +48,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        $images = Image::all();
         $services = Service::all();
-        return view('admin.apartments.create',compact('images','services'));
+        return view('admin.apartments.create',compact('services'));
     }
 
     /**
@@ -161,6 +160,6 @@ class ApartmentController extends Controller
     {
         $apartment->delete();
 
-        return redirect()->route('admin.apartment.index')->with(["message"=>"Il tuo appartamento è stato eliminato!"]);
+        return redirect()->route('admin.apartments.index')->with(["message"=>"Il tuo appartamento è stato eliminato!"]);
     }
 }
