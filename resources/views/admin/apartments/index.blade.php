@@ -27,15 +27,18 @@
                         <th scope="row">{{ $apartment->id }}</td>
                         <td>{{ $apartment->name }}</td>
                         @foreach ($images as $image)
-                            @if ($image->main_image)
-                            <td>{{ $image->url }}</td>
+                            @if ($image->main_image && $image->apartment_id == $apartment->id)
+                            <td class="w-100">
+                                <img src="{{$image->url}}" class="w-100">
+                            </td>
+                                
                             @endif
                         @endforeach
-                                {{ $host->name }} {{ $host->lastname }}
-                            @endforeach
                         <td>
-                            @foreach ($apartment->user_id as $host)
-                                {{ $host->name }} {{ $host->lastname }}
+                            @foreach ($users as $host)
+                                @if ($host->id == $apartment->user_id)
+                                    {{ $host->name }} {{ $host->lastname }}
+                                @endif                             
                             @endforeach
                         </td>
                         <td>{{ $apartment->slug }}</td>

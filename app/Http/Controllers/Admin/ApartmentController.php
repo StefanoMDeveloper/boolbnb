@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Apartment;
 use App\Image;
 use App\Service;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -36,7 +37,8 @@ class ApartmentController extends Controller
         $apartments=Apartment::all();
         $images=Image::all();
         $services=Service::all();
-        return view('admin.apartments.index',compact('apartments','services','images'));
+        $users=User::all();
+        return view('admin.apartments.index',compact('apartments','services','images','users'));
     }
 
     /**
