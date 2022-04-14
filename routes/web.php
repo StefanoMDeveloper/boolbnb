@@ -20,9 +20,8 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function(){
-        Route::get('/', 'HomeController@index')
-        ->name('home');
-        Route::resource('apartments','ApartmentController');
+        Route::get('/', 'HomeController@index')->name('home');
+        Route::resource('/apartments','ApartmentController');
         Route::delete('messages/{message}','MessageController@destroy')->name('messages.destroy');
     });
 

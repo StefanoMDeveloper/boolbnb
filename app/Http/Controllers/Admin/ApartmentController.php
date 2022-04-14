@@ -7,6 +7,7 @@ use App\Image;
 use App\Service;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ApartmentController extends Controller
 {
@@ -45,7 +46,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        $images = Images::all();
+        $images = Image::all();
         $services = Service::all();
         return view('admin.apartements.create',compact('images','services'));
     }
@@ -69,13 +70,13 @@ class ApartmentController extends Controller
         $apartment = new Apartment();   
 
         //slug
-        $slugTitle= Str::slug($form_data['name']);
+        $slugName= Str::slug($form_data['name']);
         $count = 2;
-        while(Apartment::where('slug',$slugTitle)->first()){
-            $slugTitle=Str::slug($form_data['name'])."-".$count;
+        while(Apartment::where('slug',$slugName)->first()){
+            $slugName=Str::slug($form_data['name'])."-".$count;
             $count++;
         }
-        $form_data['slug'] = $slugTitle;
+        $form_data['slug'] = $slugName;
 
         $apartment->fill($form_data);
 
@@ -134,12 +135,12 @@ class ApartmentController extends Controller
         //slug 
         if(!($form_data['name'] == $apartment->name)){
             $count = 2;
-            $slugTitle= Str::slug($form_data['name']);
+            $slugName= Str::slug($form_data['name']);
             while(Apartment::where('slug',$slugName)->first()){
                 $slugName=Str::slug($form_data['name'])."-".$count;
                 $count++;
             }
-            $form_data['slug'] = $slugTitle;
+            $form_data['slug'] = $slugName;
         }
 
         $apartment->update($form_data);
