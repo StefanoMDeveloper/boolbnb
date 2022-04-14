@@ -21,5 +21,21 @@ class SponsorshipSeeder extends Seeder
 
             $new_sponsorship->save();
         }
+
+        $apartments_sponsorships = config('apartments_sponsorships');
+        foreach($apartments_sponsorships as $apartments_sponsorship){
+            foreach(App\Sponsorship::all() as $sponsorship) {
+
+                foreach(App\Apartment::all() as $apartment) {
+    
+                    if ($apartment['id']==$apartments_sponsorship['apartment_id'] && $sponsorship['id']==$apartments_sponsorship['sponsorship_id']) {
+                        // return var_dump($apartments_sponsorship);
+                            $sponsorship->apartments()->attach($apartment->id, array("start_date"=>$apartments_sponsorship["start_date"], "end_date"=>$apartments_sponsorship["end_date"]));
+                    }
+                }
+                $sponsorship->save();
+            }
+        }
     }
 }
+
