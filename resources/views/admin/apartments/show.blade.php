@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
     <h1>{{ $apartment->name }}</h1>
@@ -14,16 +14,15 @@
         <li>{{ $apartment->lon }}</li>
     </ul>
 
-    @foreach ($image as $apartmentImage)
-        @if ($apartmentImage->main_image==1)
+    @foreach ($images as $apartmentImage)
+        @if ($apartmentImage->apartment_id==$apartment->id)
             <img src="{{ $apartmentImage->url }}" alt="">
         @endif
     @endforeach
 
     <ul>
-        @foreach ($service as $apartmentService)
-            <li>{{ $apartmentService->name }}</li>
-            <li>{{ $apartmentService->slug }}</li>
+        @foreach ($apartment->services as $service)
+            <li>{{ $service->name }}</li>
         @endforeach
     </ul>
 
