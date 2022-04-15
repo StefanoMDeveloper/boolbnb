@@ -18,7 +18,7 @@
    <!-- description -->
    <div class="form-group col-md-12">
     <label for="description">Descrizione</label>
-    <input type="textarea" class="form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="aggiungi descrizione dell'appartamento" value="{{old("description")}}">
+    <textarea name="description" id="description" class="form-control" cols="30" rows="10">{{ old ('description') ?? $apartment->description}}</textarea>
     @error('description')
       <div class="alert alert-danger">{{ $message }}</div>
     @enderror
