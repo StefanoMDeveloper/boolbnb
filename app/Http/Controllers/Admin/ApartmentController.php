@@ -19,11 +19,7 @@ class ApartmentController extends Controller
         'bathrooms'=>'required|integer|min:1|max:99',
         'square_meters'=>'required|integer|min:1|max:999',
         'address'=>'required|string|max:80',
-<<<<<<< HEAD
         'images'=>'exists:images,id',
-=======
-        'image'=>'exists:images,id',
->>>>>>> 5baaa197598e5740d999b9bbc5dcfb0e63af3d36
         'services'=>'exists:services,id'
     ];
 
@@ -63,14 +59,11 @@ class ApartmentController extends Controller
         // fetch user id
         $user_id = $request->user()->id;
         $form_data['user_id'] = $user_id;
-<<<<<<< HEAD
         if (isset ($request -> visible)) {
             $form_data['visible']=true;
         }else {
             $form_data['visible']=false;
         };
-=======
->>>>>>> 5baaa197598e5740d999b9bbc5dcfb0e63af3d36
         $form_data['lat']=0;
         $form_data['lon']=0;
         if (isset ($request -> visible)) {
