@@ -45,4 +45,6 @@
     <a href="{{route('admin.apartments.index')}}">
         <button type="button" class="btn btn-primary">INDEX</button>
     </a>
+    <a href="{{route('admin.apartments.index')}}">Torna indietro</a>
+
 @endsection
