@@ -5,10 +5,10 @@
     <ul>
         <li>{{ $apartment->slug }}</li>
         <li>{{ $apartment->description }}</li>
-        <li>{{ $apartment->rooms }}</li>
-        <li>{{ $apartment->beds }}</li>
-        <li>{{ $apartment->bathrooms }}</li>
-        <li>{{ $apartment->square_meters }}</li>
+        <li>Stanze totali: {{ $apartment->rooms }}</li>
+        <li>Camere da letto: {{ $apartment->beds }}</li>
+        <li>Bagni: {{ $apartment->bathrooms }}</li>
+        <li>Metri quadrati: {{ $apartment->square_meters }}</li>
         <li>{{ $apartment->address }}</li>
         <li>{{ $apartment->lat }}</li>
         <li>{{ $apartment->lon }}</li>
