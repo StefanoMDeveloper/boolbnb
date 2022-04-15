@@ -55,9 +55,7 @@ return [
     ],
     [ //https://www.airbnb.it/rooms/40364407?federated_search_id=27a0c1a3-b11d-461f-8cb1-165ff65fa38f&source_impression_id=p3_1649682074_pn9jNBl0qylBzTvs
     "name"=>"LINIZIO APPARTAMENT",
-    "description"=>"L’ alloggio è ubicato a 5 minuti dalla stazione di Porta Nuova , a 10 minuti da Piazza Vittorio, ad 1 minuto dal parco del Valentino.
-    Dotato di Tv, Wi-Fi,cucina attrezzata, ampio bagno con doccia e lavatrice , di un comodo divano letto.
-    Molto ben servito dai mezzi di trasporto, ed ottima vicinanza ai locali, negozi, punti di ristoro, del centro città.",
+    "description"=>"L’ alloggio è ubicato a 5 minuti dalla stazione di Porta Nuova , a 10 minuti da Piazza Vittorio, ad 1 minuto dal parco del Valentino. Dotato di Tv, Wi-Fi,cucina attrezzata, ampio bagno con doccia e lavatrice , di un comodo divano letto. Molto ben servito dai mezzi di trasporto, ed ottima vicinanza ai locali, negozi, punti di ristoro, del centro città.",
     "rooms"=>3,
     "beds"=>1,
     "bathrooms"=>1,
@@ -130,9 +128,7 @@ return [
     ],
     [ //https://www.airbnb.it/rooms/18485112?federated_search_id=0a47a531-ba22-4e2e-8ab0-a83648baddf9&source_impression_id=p3_1649682698_K1uWevE3mdYH3qi%2B
     "name"=>"Lollotà Castello WiFi con soppalco (IUN P1849)",
-    "description"=>"Appartamento con soppalco restaurato nel 2017, al secondo piano di un palazzo storico di proprietà della famiglia, di fronte alla Cattedrale di S.Maria e all'antico Palazzo di Città.
-    Il palazzo si trova nel cuore del centro storico di Cagliari, il quartiere medievale di Castello. Affaccia sua una piccola piazza dove si trova un ottimo bar per le colazioni e per gli aperitivi. Nello stesso palazzo una bottega di prodotti locali biologici.
-    Riceve il sole durante tutta la mattina.",
+    "description"=>"Appartamento con soppalco restaurato nel 2017, al secondo piano di un palazzo storico di proprietà della famiglia, di fronte alla Cattedrale di S.Maria e all'antico Palazzo di Città. Il palazzo si trova nel cuore del centro storico di Cagliari, il quartiere medievale di Castello. Affaccia sua una piccola piazza dove si trova un ottimo bar per le colazioni e per gli aperitivi. Nello stesso palazzo una bottega di prodotti locali biologici. Riceve il sole durante tutta la mattina.",
     "rooms"=>1,
     "beds"=>1,
     "bathrooms"=>1,
@@ -144,8 +140,7 @@ return [
     ],
     [ //https://www.airbnb.it/rooms/18224948?federated_search_id=76d7b654-68a1-422b-a25c-48695333bd9f&source_impression_id=p3_1649682824_dFH3nHlCm5xyKkLw
     "name"=>"Dépendance Cascata delle Marmore",
-    "description"=>"La struttura situata in un bellissimo paesino medievale e costruita sul fianco della collina, si affaccia sulla vallata e offre una vista unica sulla Valnerina e sulla Cascata delle Marmore in lontananza. L'abitazione, ricavata in un angolo intimo e riservato del giardino, è separata dalla struttura principale ed è dotata di divano letto matrimoniale, terrazzo e bagno privato.
-    La piscina con vista, il giardino e il cucinino sono ad uso esclusivo degli ospiti",
+    "description"=>"La struttura situata in un bellissimo paesino medievale e costruita sul fianco della collina, si affaccia sulla vallata e offre una vista unica sulla Valnerina e sulla Cascata delle Marmore in lontananza. L'abitazione, ricavata in un angolo intimo e riservato del giardino, è separata dalla struttura principale ed è dotata di divano letto matrimoniale, terrazzo e bagno privato. La piscina con vista, il giardino e il cucinino sono ad uso esclusivo degli ospiti",
     "rooms"=>2,
     "beds"=>1,
     "bathrooms"=>1,
@@ -157,9 +152,7 @@ return [
     ],
     [ //https://www.airbnb.it/rooms/19588901?federated_search_id=e984fae1-5329-4a03-8146-4b6699762bce&source_impression_id=p3_1649682935_YFKHcCv8GICpbtWX
     "name"=>"Suite Felisia",
-    "description"=>"La Suite Felisia è un autentica casa in trullo ideale per una coppia.
-                    Questo Trullo è stato appena restaurato usando esclusivamente materiali naturali e di pregio.
-                    La casa è dotata di camera da letto, bagno, sala giorno, cucina completa e giardino attrezzato totalmente privato.",
+    "description"=>"La Suite Felisia è un autentica casa in trullo ideale per una coppia. Questo Trullo è stato appena restaurato usando esclusivamente materiali naturali e di pregio. La casa è dotata di camera da letto, bagno, sala giorno, cucina completa e giardino attrezzato totalmente privato.",
     "rooms"=> 3,
     "beds"=> 1,
     "bathrooms"=> 1,
@@ -183,8 +176,7 @@ return [
     ],
     [ //https://www.airbnb.it/rooms/22545970?federated_search_id=62d8819c-6577-4ef6-9292-42c22b22d69f&source_impression_id=p3_1649683084_NIiJT05kD6JGZFuG
     "name"=>"La Montanina for 6 persons.",
-    "description"=>"Nota: se le date desiderate sono disponibili, potete procedere direttamente con la prenotazione al miglior prezzo. Il prezzo finale è già scontato. Ulteriori informazioni riguardo l'annuncio sono disponibili nella descrizione della casa.
-    Apt. di 4 locali 90 m2, al pianterreno. Luminoso, in parte restaurato nel 2022, arredamento funzionale e confortevole: soggiorno/sala da pranzo con stufa svedese, angolo pranzo e TV (schermo piatto), DVD. Uscita sul giardino. 1 camera con 1 letto e 1 letto ribaltabile",
+    "description"=>"Nota: se le date desiderate sono disponibili, potete procedere direttamente con la prenotazione al miglior prezzo. Il prezzo finale è già scontato. Ulteriori informazioni riguardo l'annuncio sono disponibili nella descrizione della casa. Apt. di 4 locali 90 m2, al pianterreno. Luminoso, in parte restaurato nel 2022, arredamento funzionale e confortevole: soggiorno/sala da pranzo con stufa svedese, angolo pranzo e TV (schermo piatto), DVD. Uscita sul giardino. 1 camera con 1 letto e 1 letto ribaltabile",
     "rooms"=>7,
     "beds"=>5,
     "bathrooms"=>2,
