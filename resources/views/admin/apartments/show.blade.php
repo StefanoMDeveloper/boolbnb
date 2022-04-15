@@ -28,7 +28,7 @@
     <h3>Messaggi</h3>
     @forelse ($apartment->messages as $message)
         <p><strong>{{ $message->object }}</strong></p>
-        <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date}} < email:{{$message->email}} > </p>
+        <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date}} < email: {{$message->email}} > </p>
         <p>{{ $message->content }}</p>
     @empty
         Non si sono messaggi!
