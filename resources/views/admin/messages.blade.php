@@ -21,9 +21,9 @@
                     
                     @foreach ($apartments as $apartment)                        
                         @foreach ($apartment->messages as $message)
-                            <h4>{{ $apartment->name }}</h4>
+                        <a href="{{ route('admin.apartments.show', $apartment->id) }}"><h4>{{ $apartment->name }}</h4></a>
                             <p><strong>{{ $message->object }}</strong></p>
-                            <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date}} < email:{{$message->email}} > </p>
+                            <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date}} < email: {{$message->email}} > </p>
                             <p>{{ $message->content }}</p>
                             
                         @endforeach
