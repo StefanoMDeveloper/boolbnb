@@ -90,7 +90,7 @@
       <label class="form-check-label" for="visible">
         Visibile
       </label>
-      <input class="form-check-input" type="checkbox" name="visible" id="visible"
+      <input class="form-check-input ml-2" type="checkbox" name="visible" id="visible"
       value="visible"
       {{old("visible") ? "checked" : ""}}
       >  
