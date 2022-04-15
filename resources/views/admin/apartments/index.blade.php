@@ -49,13 +49,13 @@
                         <td>{{ $apartment->address }}</td>
                         <td>
                             <a href="{{ route('admin.apartments.show', $apartment->id) }}"><button type="button"
-                                    class="btn btn-primary">vedi</button></a>
+                                    class="btn btn-primary my-1">Mostra</button></a>
                             <a href="{{ route('admin.apartments.edit', $apartment->id) }}"><button type="button"
-                                    class="btn btn-warning">edit</button></a>
+                                    class="btn btn-warning my-1">Modifica</button></a>
                             <form action="{{ route('admin.apartments.destroy', $apartment->id) }}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit" class="btn btn-danger">delete</button>
+                                <button onclick="return confirm('Sicuro di voler cancellare questo post?');" type="submit" class="btn btn-danger my-1">Cancella</button>
                             </form>
                         </td>
                     </tr>
