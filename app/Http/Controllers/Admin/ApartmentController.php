@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
 use App\Service;
+use App\Image;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -19,7 +20,7 @@ class ApartmentController extends Controller
         'bathrooms'=>'required|integer|min:1|max:99',
         'square_meters'=>'required|integer|min:1|max:999',
         'address'=>'required|string|max:80',
-        'images'=>'exists:images,id',
+        'images.*'=>'nullable|image|mimes:jpg,jpeg,png,bmp',
         'services'=>'exists:services,id'
     ];
 
@@ -84,6 +85,22 @@ class ApartmentController extends Controller
 
 
         $apartment->save();
+
+        //images
+        $count = 1;
+        foreach($form_data['images'] as $image){
+            $new_image = new Image();
+            $img_path = Storage::put('uploads', $image);
+            $form_data['image'] = $img_path;
+            $new_image->url = $img_path;
+            if($count=1){
+                $new_image->main_image = true;
+            }
+            else{
+                $new_image->main_image;
+            }
+            
+        }
 
         //pivot
         $apartment->services()->sync(isset($form_data['services']) ? $form_data['services'] : [] );
