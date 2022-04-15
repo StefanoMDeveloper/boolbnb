@@ -127,7 +127,7 @@ return [
     ],
     [
         "apartment_id"=>8,
-        "service_id"=>9
+        "service_id"=>4
     ],
     [
         "apartment_id"=>9,
