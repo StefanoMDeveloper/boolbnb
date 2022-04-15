@@ -25,6 +25,9 @@
                         <a href="{{route('admin.home')}}">Vedi il tuo profilo</a>                                  
                     </div>
                     <div>
+                        <a href="{{route('admin.messages')}}">Visualizza i messaggi ricevuti</a>                                  
+                    </div>
+                    <div>
                         <a href="{{ url('/') }}">Torna alla Home</a>                                        
                     </div>
                 </div>
