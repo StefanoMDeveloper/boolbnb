@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
@@ -85,21 +86,24 @@ class ApartmentController extends Controller
 
 
         $apartment->save();
-
+        
         //images
-        $count = 1;
-        foreach($form_data['images'] as $image){
-            $new_image = new Image();
-            $img_path = Storage::put('uploads', $image);
-            $form_data['image'] = $img_path;
-            $new_image->url = $img_path;
-            if($count=1){
-                $new_image->main_image = true;
+        $imgcount = 1;
+        if(isset($form_data['images'])) { 
+            foreach($form_data['images'] as $image){
+                $new_image = new Image();
+                $img_path = Storage::put('uploads', $image);
+                $new_image->url = $img_path;
+                if($imgcount==1){
+                    $new_image->main_image = true;
+                }
+                else{
+                    $new_image->main_image = false;
+                }
+                $imgcount++;
+                $new_image->apartment()->associate($apartment);
+                $new_image->save();
             }
-            else{
-                $new_image->main_image;
-            }
-            
         }
 
         //pivot

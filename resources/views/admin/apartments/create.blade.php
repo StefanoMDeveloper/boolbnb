@@ -97,7 +97,7 @@
   {{-- image --}}
   <div class="form-group">
     <label for="files">Inserisci delle immagini relative all'appartamento (la prima sarà considerata la sua immagine principale):</label>
-    <input class="form-control" type="file" id="images" name="images" multiple><br><br>
+    <input class="form-control" type="file" id="images" name="images[]" multiple><br><br>
   </div>
 
 
