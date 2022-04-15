@@ -113,7 +113,7 @@
       @endforeach
   </div>
 
-  <button type="submit" class="btn btn-primary">Add</button>
+  <button type="submit" class="btn btn-primary">Aggiungi appartamento</button>
   <a href="{{route('admin.apartments.index')}}">Annulla</a>
 
 </form>
