@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h1 class="text-center">update:{{$apartment->name}}</h1>
-<form action="{{route("admin.apartments.update", $apartment->id)}}" method="POST">
+<form action="{{route("admin.apartments.update", $apartment->id)}}" method="POST" enctype="multipart/form-data">
   @csrf
   @method('PUT')
 
@@ -95,11 +95,14 @@
       {{old("visible") ?? "checked"}}
       >  
     </div>
+    <div class="form-group">
+      <label for="files">Inserisci delle altre immagini relative all'appartamento:</label>
+      <input class="form-control" type="file" id="images" name="images[]" multiple><br><br>
+    </div>
 
-    {{-- image --}}
 
   <!-- services -->
-  <div class="from-group">
+  <div class="form-group">
     <label>Servizi</label>
     @foreach ($services as $service)
       <div class="form-check">
@@ -129,4 +132,19 @@
       <button type="button" class="btn btn-secondary">Annulla</button>
     </a>
   </form>
+
+    {{-- image --}}
+    @forelse($apartment->images as $image)
+      <div>
+        <img src="{{asset( 'storage/'.$image->url )}}" alt="">
+        <label for="main_image">Vuoi che questa sia l'immagine principale del tuo appartamento?</label>
+        <form class="d-block" action="{{ route('admin.images.destroy', $image->id) }}" method="POST">
+          @csrf
+          @method("DELETE")
+          <button onclick="return confirm('Sicuro di voler cancellare questa immagine?');" type="submit" class="btn btn-danger my-1">Cancella</button>
+        </form>
+      </div>
+    @empty
+      Al momento non ci sono immagini.
+    @endforelse
 @endsection

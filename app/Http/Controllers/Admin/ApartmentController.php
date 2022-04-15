@@ -21,7 +21,7 @@ class ApartmentController extends Controller
         'bathrooms'=>'required|integer|min:1|max:99',
         'square_meters'=>'required|integer|min:1|max:999',
         'address'=>'required|string|max:80',
-        'images.*'=>'nullable|image|mimes:jpg,jpeg,png,bmp',
+        // 'images.*'=>'nullable|image|mimes:jpg,jpeg,png,bmp',
         'services'=>'exists:services,id'
     ];
 
@@ -86,7 +86,7 @@ class ApartmentController extends Controller
 
 
         $apartment->save();
-        
+
         //images
         $imgcount = 1;
         if(isset($form_data['images'])) { 
@@ -146,10 +146,6 @@ class ApartmentController extends Controller
     {
         $form_data=$request->all();
         
-        //fetch user id
-        $user_id = $request->user()->id;
-        $request['user_id'] = $user_id;
-
         if (isset ($request -> visible)) {
             $form_data['visible']=true;
         }else {
@@ -171,6 +167,19 @@ class ApartmentController extends Controller
         }
 
         $apartment->update($form_data);
+
+        //images
+        if(isset($form_data['images'])) { 
+            foreach($form_data['images'] as $image){
+                $new_image = new Image();
+                $img_path = Storage::put('uploads', $image);
+                $new_image->url = $img_path;
+                $new_image->main_image = false;
+                $new_image->apartment()->associate($apartment);
+                $new_image->save();
+            }
+        }
+
         $apartment->services()->sync(isset($form_data['services']) ? $form_data['services'] : [] );
 
         return redirect()->route('admin.apartments.show',compact('apartment'));

@@ -23,6 +23,7 @@ Route::middleware('auth')
     ->group(function(){
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('/apartments','ApartmentController');
+        Route::delete('images/{image}','ImageController@destroy')->name('images.destroy');
         // Route::delete('messages/{message}','MessageController@destroy')->name('messages.destroy');
         Route::get('/messages','MessageController@index')->name('messages');
     });
