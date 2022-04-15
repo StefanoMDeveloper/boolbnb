@@ -66,12 +66,6 @@ class ApartmentController extends Controller
         };
         $form_data['lat']=0;
         $form_data['lon']=0;
-        if (isset ($request -> visible)) {
-            $form_data['visible']=true;
-        }else {
-            $form_data['visible']=false;
-        };
-        $form_data['description']="a";
         //validation
         $request->validate($this->validation);
 
@@ -129,6 +123,8 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+        $form_data=$request->all();
+        
         //fetch user id
         $user_id = $request->user()->id;
         $request['user_id'] = $user_id;
@@ -142,8 +138,6 @@ class ApartmentController extends Controller
         //validation
         $request->validate($this->validation);
 
-        $form_data=$request->all();
-        
         //slug 
         if(!($form_data['name'] == $apartment->name)){
             $count = 2;

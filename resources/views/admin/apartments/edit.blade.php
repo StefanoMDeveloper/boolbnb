@@ -92,7 +92,7 @@
       </label>
       <input class="form-check-input" type="checkbox" name="visible" id="visible"
       value="visible"
-      {{old("visible") ? "checked" : ""}}
+      {{old("visible") ?? "checked"}}
       >  
     </div>
 
