@@ -29,7 +29,6 @@ class SponsorshipSeeder extends Seeder
                 foreach(App\Apartment::all() as $apartment) {
     
                     if ($apartment['id']==$apartments_sponsorship['apartment_id'] && $sponsorship['id']==$apartments_sponsorship['sponsorship_id']) {
-                        // return var_dump($apartments_sponsorship);
                             $sponsorship->apartments()->attach($apartment->id, array("start_date"=>$apartments_sponsorship["start_date"], "end_date"=>$apartments_sponsorship["end_date"]));
                     }
                 }
