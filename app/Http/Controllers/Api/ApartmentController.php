@@ -46,9 +46,10 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $apartment = Apartment::where("slug", $slug)->with(["images", "sponsorships", "services", "views"])->first();
+        return response()->json($apartment);
     }
 
     /**
