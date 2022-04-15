@@ -368,7 +368,7 @@ return [
 	],
 	[
 		"apartment_id" => 15,
-		"url" => "ttps://a0.muscache.com/im/pictures/prohost-api/Hosting-22545970/original/4c3c3bfb-ff9c-43b2-93f9-de08b6712765.jpeg?im_w=720",
+		"url" => "https://a0.muscache.com/im/pictures/prohost-api/Hosting-22545970/original/4c3c3bfb-ff9c-43b2-93f9-de08b6712765.jpeg?im_w=720",
 		"main_image" => false
 	],
 	[
