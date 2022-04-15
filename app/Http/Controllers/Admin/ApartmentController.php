@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
-use App\Image;
 use App\Service;
-use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class ApartmentController extends Controller
 {
@@ -20,8 +19,7 @@ class ApartmentController extends Controller
         'bathrooms'=>'required|integer|min:1|max:99',
         'square_meters'=>'required|integer|min:1|max:999',
         'address'=>'required|string|max:80',
-        'visible'=>'boolean',
-        'image'=>'exists:images,id',
+        'images'=>'exists:images,id',
         'services'=>'exists:services,id'
     ];
 
@@ -33,11 +31,9 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartments=Apartment::all();
-        $images=Image::all();
-        $services=Service::all();
-        $users=User::all();
-        return view('admin.apartments.index',compact('apartments','services','images','users'));
+        $user_id= Auth::user()->id;
+        $apartments=Apartment::all()->where('user_id',$user_id);
+        return view('admin.apartments.index',compact('apartments'));
     }
 
     /**
@@ -63,7 +59,11 @@ class ApartmentController extends Controller
         // fetch user id
         $user_id = $request->user()->id;
         $form_data['user_id'] = $user_id;
-        $form_data['visible'] = true;
+        if (isset ($request -> visible)) {
+            $form_data['visible']=true;
+        }else {
+            $form_data['visible']=false;
+        };
         $form_data['lat']=0;
         $form_data['lon']=0;
         $form_data['description']="a";
@@ -100,9 +100,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        $images = Image::all();
-        $services = Service::all();
-        return view('admin.apartments.show',compact('apartment','images','services'));
+        return view('admin.apartments.show',compact('apartment'));
     }
 
     /**
@@ -113,9 +111,8 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        $images = Image::all();
         $services = Service::all();
-        return view('admin.apartments.edit',compact('apartment','images','services'));
+        return view('admin.apartments.edit',compact('apartment','services'));
     }
 
     /**
@@ -130,6 +127,12 @@ class ApartmentController extends Controller
         //fetch user id
         $user_id = $request->user()->id;
         $request['user_id'] = $user_id;
+
+        if (isset ($request -> visible)) {
+            $form_data['visible']=true;
+        }else {
+            $form_data['visible']=false;
+        };
 
         //validation
         $request->validate($this->validation);

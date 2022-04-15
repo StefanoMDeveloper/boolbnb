@@ -22,24 +22,23 @@
         </thead>
         <tbody>
             @foreach ($apartments as $apartment)
-                @if ($apartment->visible)
+                @if ($apartment->visible && Auth::user()->id == $apartment->user_id)
                     <tr>
                         <th scope="row">{{ $apartment->id }}</td>
                         <td>{{ $apartment->name }}</td>
-                        @foreach ($images as $image)
-                            @if ($image->main_image && $image->apartment_id == $apartment->id)
+                        @forelse ($apartment->images as $image)
+                            @if ($image->main_image)
                             <td class="w-100">
                                 <img src="{{$image->url}}" class="w-100">
                             </td>
-                                
                             @endif
-                        @endforeach
+                        @empty
+                            <td class="w-100">
+                                -
+                            </td>
+                        @endforelse
                         <td>
-                            @foreach ($users as $host)
-                                @if ($host->id == $apartment->user_id)
-                                    {{ $host->name }} {{ $host->lastname }}
-                                @endif                             
-                            @endforeach
+                            {{Auth::user()->name}}{{Auth::user()->lastname}}                          
                         </td>
                         <td>{{ $apartment->slug }}</td>
                         <td>{{ $apartment->rooms }}</td>

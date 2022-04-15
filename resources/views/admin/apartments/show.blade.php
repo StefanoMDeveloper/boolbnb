@@ -14,10 +14,8 @@
         <li>{{ $apartment->lon }}</li>
     </ul>
 
-    @foreach ($images as $apartmentImage)
-        @if ($apartmentImage->apartment_id==$apartment->id)
-            <img src="{{ $apartmentImage->url }}" alt="">
-        @endif
+    @foreach ($apartment->images as $image)
+        <img src="{{$image->url}}" alt="">
     @endforeach
 
     <h3>Servizi</h3>
@@ -36,7 +34,7 @@
         Non si sono messaggi!
     @endforelse
 
-    <h3>Visualizzioni</h3>
+    <h3>Visualizzazioni</h3>
     @forelse ($apartment->views as $view)
         <p>{{$view->ip}} il {{$view->date}}</p>
     @empty

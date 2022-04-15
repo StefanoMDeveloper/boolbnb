@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    Benvenuto, {{Auth::user()->name}}.
+                    <div>
+                        <a href="{{route('admin.apartments.index')}}">Visualizza i tuoi appartamenti</a>
+                    </div>
                 </div>
             </div>
         </div>
