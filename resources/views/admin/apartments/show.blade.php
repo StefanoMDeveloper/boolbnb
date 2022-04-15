@@ -43,8 +43,11 @@
 
 
     <a href="{{route('admin.apartments.index')}}">
-        <button type="button" class="btn btn-primary">INDEX</button>
+        <button type="button" class="btn btn-primary">Torna indietro</button>
     </a>
-    <a href="{{route('admin.apartments.index')}}">Torna indietro</a>
-
+    <form action="{{ route('admin.apartments.destroy', $apartment->id) }}" method="POST">
+        @csrf
+        @method("DELETE")
+        <button onclick="return confirm('Sicuro di voler cancellare questo post?');" type="submit" class="btn btn-danger my-1">Cancella</button>
+    </form>
 @endsection
