@@ -1,0 +1,27 @@
+.createContainer{
+    background-color: rgb(239, 235, 235);
+    padding: 10px 0;
+    border-radius: 5px;
+    .icon{
+        height: 16px;
+        svg{
+            height: 100%;
+        }
+    }
+    
+    .addApatmentBtn{
+        background-color: #FF385C;
+        transition:linear 1s;
+        border: none;
+        &:hover{
+            background-color: hwb(349 17% 45%);
+        }
+    }
+    .cancelBtn{
+        transition:linear 1s;
+        border: none;
+        &:hover{
+            background-color: rgb(79, 77, 77);
+        }
+    }
+}
