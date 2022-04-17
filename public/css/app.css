@@ -14049,3 +14049,36 @@ a.logo {
   background-color: rgb(79, 77, 77);
 }
 
+.editContainer {
+  background-color: rgb(239, 235, 235);
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.editContainer .icon {
+  height: 16px;
+}
+
+.editContainer .icon svg {
+  height: 100%;
+}
+
+.editContainer .saveBtn {
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+}
+
+.editContainer .saveBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+.editContainer .cancelBtn {
+  transition: linear 1s;
+  border: none;
+}
+
+.editContainer .cancelBtn:hover {
+  background-color: rgb(79, 77, 77);
+}
+
