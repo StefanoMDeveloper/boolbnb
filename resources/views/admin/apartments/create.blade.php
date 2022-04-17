@@ -15,7 +15,7 @@
           <path d="M336 0C362.5 0 384 21.49 384 48V464C384 490.5 362.5 512 336 512H240V432C240 405.5 218.5 384 192 384C165.5 384 144 405.5 144 432V512H48C21.49 512 0 490.5 0 464V48C0 21.49 21.49 0 48 0H336zM64 272C64 280.8 71.16 288 80 288H112C120.8 288 128 280.8 128 272V240C128 231.2 120.8 224 112 224H80C71.16 224 64 231.2 64 240V272zM176 224C167.2 224 160 231.2 160 240V272C160 280.8 167.2 288 176 288H208C216.8 288 224 280.8 224 272V240C224 231.2 216.8 224 208 224H176zM256 272C256 280.8 263.2 288 272 288H304C312.8 288 320 280.8 320 272V240C320 231.2 312.8 224 304 224H272C263.2 224 256 231.2 256 240V272zM80 96C71.16 96 64 103.2 64 112V144C64 152.8 71.16 160 80 160H112C120.8 160 128 152.8 128 144V112C128 103.2 120.8 96 112 96H80zM160 144C160 152.8 167.2 160 176 160H208C216.8 160 224 152.8 224 144V112C224 103.2 216.8 96 208 96H176C167.2 96 160 103.2 160 112V144zM272 96C263.2 96 256 103.2 256 112V144C256 152.8 263.2 160 272 160H304C312.8 160 320 152.8 320 144V112C320 103.2 312.8 96 304 96H272z"/></svg>
         </div>
     </label>
-      <input type="text" class="form-control col-10 @error('name') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")}}">
+      <input type="text" class="form-control col-8 @error('name') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")}}">
       @error('name')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
@@ -30,7 +30,7 @@
             <path d="M160 448h-32V224c0-17.69-14.33-32-32-32L32 192c-17.67 0-32 14.31-32 32s14.33 31.1 32 31.1h32v192H32c-17.67 0-32 14.31-32 32s14.33 32 32 32h128c17.67 0 32-14.31 32-32S177.7 448 160 448zM96 128c26.51 0 48-21.49 48-48S122.5 32.01 96 32.01s-48 21.49-48 48S69.49 128 96 128z"/></svg>
         </div>
       </label>
-      <textarea class="col-10 form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="aggiungi descrizione dell'appartamento" value="{{old("description")}}"></textarea>
+      <textarea class="col-8 form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="aggiungi descrizione dell'appartamento" value="{{old("description")}}"></textarea>
       @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
@@ -118,7 +118,7 @@
             <path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
         </div>
       </label>
-      <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" placeholder="aggiungi l'indirizzo completo" >
+      <input type="text" class="form-control col-8 @error('address') is-invalid @enderror" id="address" name="address" placeholder="aggiungi l'indirizzo completo" >
       @error('address')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
@@ -171,9 +171,6 @@
       <button type="button" class="btn btn-secondary cancelBtn">Annulla</button>
     </a>
   </div>
-
-
 </form>
-
 
 @endsection 
