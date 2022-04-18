@@ -8,6 +8,15 @@
             height: 100%;
         }
     }
+
+    .imgContainer{
+        width: 300px;
+        height: 250px;
+        overflow: hidden;
+        img{
+            height: 100%;
+        }
+    }
     
     .saveBtn{
         background-color: #FF385C;
