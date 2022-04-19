@@ -14161,21 +14161,23 @@ a.logo {
 
 .showContainer {
   background-color: rgb(239, 235, 235);
-  padding: 10px;
+  padding: 30px;
   border-radius: 5px;
 }
 
 .showContainer ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .showContainer ul li {
-  margin: 15px 0;
-  padding: 5px 0;
+  margin: 5px 0;
+  padding: 15px 0;
 }
 
 .showContainer .borderline {
   border-bottom: 1px solid rgb(193, 192, 192);
+  margin-bottom: 10px;
 }
 
 .showContainer .infoContainer {
@@ -14192,15 +14194,23 @@ a.logo {
   font-size: 15px;
 }
 
-.showContainer .imageContainer {
-  height: 300px;
-  width: 300px;
-  overflow: hidden;
-  display: inline;
+.showContainer .imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.showContainer .imageContainer img {
+.showContainer .imagesContainer .imageContainer {
+  height: 150px;
+  width: 196px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.showContainer .imagesContainer .imageContainer img {
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .showContainer .backBtn {

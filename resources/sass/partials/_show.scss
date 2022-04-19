@@ -1,17 +1,19 @@
 .showContainer{
     background-color: rgb(239, 235, 235);
-    padding: 10px;
+    padding: 30px;
     border-radius: 5px;
     ul{
         list-style: none;
+        padding-left: 0;
         li{
-            margin: 15px 0;
-            padding: 5px 0;
+            margin: 5px 0;
+            padding: 15px 0;
         }
     }
     
     .borderline{
         border-bottom: 1px solid rgb(193, 192, 192); 
+        margin-bottom: 10px;
     }
     .infoContainer{
         height: 150px;
@@ -26,13 +28,19 @@
         }   
     }
 
-    .imageContainer{
-        height: 300px;
-        width: 300px;
-        overflow: hidden;
-        display: inline;
-        img{
-            height: 100%;
+    .imagesContainer{
+        display: flex;
+        flex-wrap: wrap;
+        .imageContainer{
+            height: 150px;
+            width: 196px;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 20px;  
+            img{
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 
