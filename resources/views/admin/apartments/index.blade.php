@@ -21,16 +21,15 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Main Image</th>
-                <th scope="col">Host Name</th>
-                <th scope="col">Slug</th>
-                <th scope="col">Rooms</th>
-                <th scope="col">Beds</th>
-                <th scope="col">Bathrooms</th>
-                <th scope="col">Square meters</th>
-                <th scope="col">Address</th>
-                <th scope="col">Buttons</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Immagine Principale</th>
+                <th scope="col">Nome dell'Host</th>
+                <th scope="col">Numero stanze</th>
+                <th scope="col">Numero di letti</th>
+                <th scope="col">Numero di bagni</th>
+                <th scope="col">Metri Quadrati</th>
+                <th scope="col">Indirizzo Completo</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -53,7 +52,6 @@
                         <td>
                             {{Auth::user()->name}}{{Auth::user()->lastname}}                          
                         </td>
-                        <td>{{ $apartment->slug }}</td>
                         <td>{{ $apartment->rooms }}</td>
                         <td>{{ $apartment->beds }}</td>
                         <td>{{ $apartment->bathrooms }}</td>
