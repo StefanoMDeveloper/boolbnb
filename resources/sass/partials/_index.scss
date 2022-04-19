@@ -16,3 +16,43 @@
         background-color: #39858a;
     }
 }
+
+.apartmentscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    .card{
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+        padding: 20px;
+        border-radius: 20px;
+        h3{
+            height: 100px;
+            padding-top: 10px;
+        }
+        .imgContainer{
+            height: 245px;
+            border-radius: 5px;
+            overflow: hidden;
+            img{
+                height: 100%;
+            }
+        }
+        h6{
+            margin: 10px;
+        }
+        .showbtn,
+        .editbtn,
+        .cancelbtn{
+            width: 200px;
+            background-color: #39858a;
+            transition:linear 1s;
+            border: none;
+            &:hover{
+            background-color: #1c4144;
+    
+        }
+        }
+    }
+}
+
