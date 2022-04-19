@@ -70,7 +70,7 @@ class ApartmentController extends Controller
         //geocoding 
         $address = $form_data['address'];
         $address = urlencode($address);
-        $url = "https://api.tomtom.com/search/2/geocode/{$address}.json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&storeResult=limit=20&countrySet=IT&language=it-IT";
+        $url = "https://api.tomtom.com/search/2/geocode/{$address}.json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT";
         $response_json = file_get_contents($url);
         $response = json_decode($response_json, true);
         $form_data['lat']=$response['results'][0]['position']['lat'];
