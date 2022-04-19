@@ -1970,6 +1970,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -2623,8 +2624,18 @@ var render = function () {
       _c(
         "li",
         [
-          _c("router-link", { attrs: { to: { name: "Dashboard" } } }, [
-            _vm._v("Dashboard"),
+          _c("router-link", { attrs: { to: { name: "ApartmentsList" } } }, [
+            _vm._v("ApartmentsList"),
+          ]),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [
+          _c("router-link", { attrs: { to: { name: "SingleApartment" } } }, [
+            _vm._v("SingleApartment"),
           ]),
         ],
         1
