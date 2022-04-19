@@ -128,6 +128,5 @@
             </a>
         </div>
     </ul>
-
 </div>
 @endsection
