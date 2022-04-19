@@ -1,26 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-    <h1>{{ $apartment->name }}</h1>
-    <ul>
-        <li>{{ $apartment->slug }}</li>
-        <li>{{ $apartment->description }}</li>
-        <li>Stanze totali: {{ $apartment->rooms }}</li>
-        <li>Camere da letto: {{ $apartment->beds }}</li>
-        <li>Bagni: {{ $apartment->bathrooms }}</li>
-        <li>Metri quadrati: {{ $apartment->square_meters }}</li>
-        <li>{{ $apartment->address }}</li>
-        <li>{{ $apartment->lat }}</li>
-        <li>{{ $apartment->lon }}</li>
-    </ul>
-
-    @foreach ($apartment->images as $image)
-        <img src="{{asset( 'storage/'.$image->url )}}" alt="">
-    @endforeach
-=======
 <div class="container showContainer">
->>>>>>> 8ff390c3dae81e99e5520c24d51c7953d4cad571
 
     <h1 class="text-center my-5">{{ $apartment->name }}</h1>
     <ul>

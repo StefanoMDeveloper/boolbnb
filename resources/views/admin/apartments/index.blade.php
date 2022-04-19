@@ -35,7 +35,7 @@
         </thead>
         <tbody>
             @foreach ($apartments as $apartment)
-                @if ($apartment->visible && Auth::user()->id == $apartment->user_id)
+                @if (Auth::user()->id == $apartment->user_id)
                     <tr>
                         <th scope="row">{{ $apartment->id }}</td>
                         <td>{{ $apartment->name }}</td>
