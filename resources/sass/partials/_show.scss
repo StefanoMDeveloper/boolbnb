@@ -19,15 +19,24 @@
         border: 2px solid rgb(226, 221, 221);
         border-radius: 5px;
         padding: 20px;
+        background-color: white;
         .infoText{
             padding: 10px 0;
             font-size: 15px; 
+        }   
+    }
+
+    .imageContainer{
+        height: 300px;
+        width: 300px;
+        overflow: hidden;
+        display: inline;
+        img{
+            height: 100%;
         }
-        
     }
 
     
-
     .backBtn{
         background-color: #FF385C;
         transition:linear 1s;
@@ -45,3 +54,5 @@
         }
     } 
 }
+
+
