@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (\Session::has('message'))
+    <div>
+        {!! \Session::get('message') !!}
+    </div>
+@endif
 <div class="container">
     <a href="{{route('admin.home')}}">
         <button type="button" class="btn backBtn m-1 text-white">
@@ -22,7 +28,7 @@
             <div class="card">
                 @if (Auth::user()->id == $apartment->user_id)
                     <tr>
-                        <th scope="row">{{ $apartment->id }}</td>
+                        <th scope="row"></td>
                         <td><h3>{{ $apartment->name }}</h3></td>
                         @forelse ($apartment->images as $image)
                             @if ($image->main_image)
