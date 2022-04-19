@@ -19144,14 +19144,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _pages_DashboardUtenteRegistrato__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/DashboardUtenteRegistrato */ "./resources/js/pages/DashboardUtenteRegistrato.vue");
-/* harmony import */ var _pages_Homepage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Homepage */ "./resources/js/pages/Homepage.vue");
-/* harmony import */ var _pages_PaginaDettaglioAppartamentoPubblica__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PaginaDettaglioAppartamentoPubblica */ "./resources/js/pages/PaginaDettaglioAppartamentoPubblica.vue");
-/* harmony import */ var _pages_PaginaDiRicercaAvanzata__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/PaginaDiRicercaAvanzata */ "./resources/js/pages/PaginaDiRicercaAvanzata.vue");
-/* harmony import */ var _pages_PaginaListaAppartamenti__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/PaginaListaAppartamenti */ "./resources/js/pages/PaginaListaAppartamenti.vue");
-/* harmony import */ var _pages_PaginaListaMessaggiSingoloAppartamento__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/PaginaListaMessaggiSingoloAppartamento */ "./resources/js/pages/PaginaListaMessaggiSingoloAppartamento.vue");
-/* harmony import */ var _pages_PaginaSponsorizzazione__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/PaginaSponsorizzazione */ "./resources/js/pages/PaginaSponsorizzazione.vue");
-/* harmony import */ var _pages_PaginaStatisticheSingoloAppartamento__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/PaginaStatisticheSingoloAppartamento */ "./resources/js/pages/PaginaStatisticheSingoloAppartamento.vue");
+/* harmony import */ var _pages_DashboardUtenteRegistrato_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/DashboardUtenteRegistrato.vue */ "./resources/js/pages/DashboardUtenteRegistrato.vue");
+/* harmony import */ var _pages_Homepage_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Homepage.vue */ "./resources/js/pages/Homepage.vue");
+/* harmony import */ var _pages_PaginaDettaglioAppartamentoPubblica_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PaginaDettaglioAppartamentoPubblica.vue */ "./resources/js/pages/PaginaDettaglioAppartamentoPubblica.vue");
+/* harmony import */ var _pages_PaginaDiRicercaAvanzata_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/PaginaDiRicercaAvanzata.vue */ "./resources/js/pages/PaginaDiRicercaAvanzata.vue");
+/* harmony import */ var _pages_PaginaListaAppartamenti_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/PaginaListaAppartamenti.vue */ "./resources/js/pages/PaginaListaAppartamenti.vue");
+/* harmony import */ var _pages_PaginaListaMessaggiSingoloAppartamento_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/PaginaListaMessaggiSingoloAppartamento.vue */ "./resources/js/pages/PaginaListaMessaggiSingoloAppartamento.vue");
+/* harmony import */ var _pages_PaginaSponsorizzazione_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/PaginaSponsorizzazione.vue */ "./resources/js/pages/PaginaSponsorizzazione.vue");
+/* harmony import */ var _pages_PaginaStatisticheSingoloAppartamento_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/PaginaStatisticheSingoloAppartamento.vue */ "./resources/js/pages/PaginaStatisticheSingoloAppartamento.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -19168,35 +19168,35 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: "/DashboardUtenteRegistrato",
     name: "DashboardUtenteRegistrato",
-    component: _pages_DashboardUtenteRegistrato__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _pages_DashboardUtenteRegistrato_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
     path: "/",
     name: "Homepage",
-    component: _pages_Homepage__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _pages_Homepage_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: "/PaginaDettaglioAppartamentoPubblica",
     name: "PaginaDettaglioAppartamentoPubblica",
-    component: _pages_PaginaDettaglioAppartamentoPubblica__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _pages_PaginaDettaglioAppartamentoPubblica_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     path: "/PaginaDiRicercaAvanzata",
     name: "PaginaDiRicercaAvanzata",
-    component: _pages_PaginaDiRicercaAvanzata__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _pages_PaginaDiRicercaAvanzata_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     path: "/PaginaListaAppartamenti",
     name: "PaginaListaAppartamenti",
-    component: _pages_PaginaListaAppartamenti__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _pages_PaginaListaAppartamenti_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: "/PaginaListaMessaggiSingoloAppartamento",
     name: "PaginaListaMessaggiSingoloAppartamento",
-    component: _pages_PaginaListaMessaggiSingoloAppartamento__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _pages_PaginaListaMessaggiSingoloAppartamento_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     path: "/PaginaSponsorizzazione",
     name: "PaginaSponsorizzazione",
-    component: _pages_PaginaSponsorizzazione__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _pages_PaginaSponsorizzazione_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
     path: "/PaginaStatisticheSingoloAppartamento",
     name: "PaginaStatisticheSingoloAppartamento",
-    component: _pages_PaginaStatisticheSingoloAppartamento__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _pages_PaginaStatisticheSingoloAppartamento_vue__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
     path: '*',
     name: "page-404",

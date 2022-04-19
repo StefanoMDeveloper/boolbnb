@@ -3,14 +3,14 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import DashboardUtenteRegistrato from "./pages/DashboardUtenteRegistrato";
-import Homepage from "./pages/Homepage";
-import PaginaDettaglioAppartamentoPubblica from "./pages/PaginaDettaglioAppartamentoPubblica";
-import PaginaDiRicercaAvanzata from "./pages/PaginaDiRicercaAvanzata";
-import PaginaListaAppartamenti from "./pages/PaginaListaAppartamenti";
-import PaginaListaMessaggiSingoloAppartamento from "./pages/PaginaListaMessaggiSingoloAppartamento";
-import PaginaSponsorizzazione from "./pages/PaginaSponsorizzazione";
-import PaginaStatisticheSingoloAppartamento from "./pages/PaginaStatisticheSingoloAppartamento";
+import DashboardUtenteRegistrato from "./pages/DashboardUtenteRegistrato.vue";
+import Homepage from "./pages/Homepage.vue";
+import PaginaDettaglioAppartamentoPubblica from "./pages/PaginaDettaglioAppartamentoPubblica.vue";
+import PaginaDiRicercaAvanzata from "./pages/PaginaDiRicercaAvanzata.vue";
+import PaginaListaAppartamenti from "./pages/PaginaListaAppartamenti.vue";
+import PaginaListaMessaggiSingoloAppartamento from "./pages/PaginaListaMessaggiSingoloAppartamento.vue";
+import PaginaSponsorizzazione from "./pages/PaginaSponsorizzazione.vue";
+import PaginaStatisticheSingoloAppartamento from "./pages/PaginaStatisticheSingoloAppartamento.vue";
 
 const router = new VueRouter({
     mode: "history",
