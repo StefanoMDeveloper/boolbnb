@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 import Homepage from "./pages/Homepage.vue";
 import SingleApartment from "./pages/SingleApartment.vue";
-import ApartmentsList from "./pages/ApartmentsList.vue";
+import ApartmentList from "./pages/ApartmentList.vue";
 import PageNotFound from "./pages/PageNotFound.vue";
 
 const router = new VueRouter({
@@ -23,8 +23,8 @@ const router = new VueRouter({
         },
         {
             path: "/appartamenti",
-            name: "ApartmentsList",
-            component: ApartmentsList
+            name: "ApartmentList",
+            component: ApartmentList
         },
         {
             path: '#',
