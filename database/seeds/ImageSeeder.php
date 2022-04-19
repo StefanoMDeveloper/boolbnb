@@ -16,7 +16,7 @@ class ImageSeeder extends Seeder
         $images = config('apartments_images');
         foreach ($images as $image){
             $new_image = new Image();
-            $new_image->url = Storage::put();
+            $new_image->url = $image['url'];
             $new_image->main_image = $image['main_image'];
             $new_image->apartment_id = $image['apartment_id'];
             $new_image->save();

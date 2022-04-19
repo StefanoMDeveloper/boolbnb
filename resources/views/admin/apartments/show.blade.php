@@ -15,7 +15,7 @@
     </ul>
 
     @foreach ($apartment->images as $image)
-        <img src="{{$image->url}}" alt="">
+        <img src="{{asset( 'storage/'.$image->url )}}" alt="">
     @endforeach
 
     <h3>Servizi</h3>

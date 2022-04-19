@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Api')->name('api.')->group(function () {
     Route::get("/apartments", "ApartmentController@index")->name('apartments');
     Route::get("/apartments/{slug}", "ApartmentController@show")->name('apartments.show');
+    Route::get("/users/{id}", "UserController@show")->name('users.show');
 });

@@ -30,7 +30,7 @@
                         @forelse ($apartment->images as $image)
                             @if ($image->main_image)
                             <td class="w-100">
-                                <img src="{{$image->url}}" class="w-100">
+                                <img class="w-100" src="{{asset( 'storage/'.$image->url )}}" alt="">
                             </td>
                             @endif
                         @empty
