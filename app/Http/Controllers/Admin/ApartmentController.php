@@ -133,7 +133,7 @@ class ApartmentController extends Controller
         if($user_id == $apartment->user_id){
             return view('admin.apartments.show',compact('apartment'));
         }
-        return redirect()->route("admin.apartments.index")->with(["message"=>"Non possiedi i permessi necessari per visualizzare l'appartamento!"]);;
+        return view('admin.404');
     }
 
     /**
@@ -149,7 +149,7 @@ class ApartmentController extends Controller
             $services = Service::all();
             return view('admin.apartments.edit',compact('apartment','services'));
         }
-        return redirect()->route("admin.apartments.index")->with(["message"=>"Non possiedi i permessi necessari per modificare l'appartamento!"]);;
+        return view('admin.404');
     }
 
     /**
