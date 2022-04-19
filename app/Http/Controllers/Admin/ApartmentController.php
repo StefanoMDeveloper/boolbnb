@@ -66,8 +66,17 @@ class ApartmentController extends Controller
         }else {
             $form_data['visible']=false;
         };
-        $form_data['lat']=0;
-        $form_data['lon']=0;
+
+        //geocoding 
+        $address = $form_data['address'];
+        $address = urlencode($address);
+        $url = "https://api.tomtom.com/search/2/geocode/{$address}.json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT";
+        $response_json = file_get_contents($url);
+        $response = json_decode($response_json, true);
+        $form_data['lat']=$response['results'][0]['position']['lat'];
+        $form_data['lon']=$response['results'][0]['position']['lon'];
+
+        
         //validation
         $request->validate($this->validation);
 
@@ -120,7 +129,11 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('admin.apartments.show',compact('apartment'));
+        $user_id= Auth::user()->id;
+        if($user_id == $apartment->user_id){
+            return view('admin.apartments.show',compact('apartment'));
+        }
+        return redirect()->route("admin.apartments.index")->with(["message"=>"Non possiedi i permessi necessari per visualizzare l'appartamento!"]);;
     }
 
     /**
@@ -131,8 +144,12 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        $services = Service::all();
-        return view('admin.apartments.edit',compact('apartment','services'));
+        $user_id= Auth::user()->id;
+        if($user_id == $apartment->user_id){
+            $services = Service::all();
+            return view('admin.apartments.edit',compact('apartment','services'));
+        }
+        return redirect()->route("admin.apartments.index")->with(["message"=>"Non possiedi i permessi necessari per modificare l'appartamento!"]);;
     }
 
     /**

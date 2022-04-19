@@ -5,7 +5,6 @@
 
     <h1 class="text-center my-5">{{ $apartment->name }}</h1>
     <ul>
-        <li class="borderline">{{ $apartment->slug }}</li>
         <li class="borderline">{{ $apartment->description }}</li>
         <div class="d-flex borderline">
             <li class="list-unstyled mr-3">
@@ -45,19 +44,19 @@
                 </div> 
             </li>
         </div>
-        <li>
+        <li class="borderline my-5">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 384 512">
             <path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
             {{ $apartment->address }}
         </li>
-        <li>{{ $apartment->lat }}</li>
-        <li class="borderline">{{ $apartment->lon }}</li>
         
-        @foreach ($apartment->images as $image)
-            <div class="imageContainer">
-                <img class="w-75 ap-image" src="{{asset( 'storage/'.$image->url )}}" alt="">
-            </div>
-        @endforeach
+        <div class="imagesContainer borderline">
+            @foreach ($apartment->images as $image)
+                <div class="imageContainer">
+                    <img src="{{asset( 'storage/'.$image->url )}}" alt="">
+                </div>
+            @endforeach
+        </div>
         
     
         <h3>
@@ -103,17 +102,33 @@
                     Torna indietro
                 </button>
             </a>
-            <form  action="{{ route('admin.apartments.destroy', $apartment->id) }}" method="POST">
-                @csrf
-                @method("DELETE")
-                <button onclick="return confirm('Sicuro di voler cancellare questo post?');" type="submit" class="btn cancelBtn ml-3 text-white">
+            <a>
+                <button data-toggle="modal" data-target="#modal-delete" type="button" class="btn cancelBtn ml-1 text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 320 512">
                     <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
-                    Cancella
+                    Elimina
                 </button>
-            </form>
+                <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="modal-delete2" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                Sicuro di voler cancellare questo post?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Annulla</button>
+                                <form  action="{{ route('admin.apartments.destroy', $apartment->id) }}" method="POST">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button  type="submit" class="btn btn-danger ml-1 text-white" >
+                                        Cancella
+                                    </button>                                            
+                                </div>
+                            </form>
+                        </div>
+                    </div>     
+                </div> 
+            </a>
         </div>
     </ul>
-
 </div>
 @endsection
