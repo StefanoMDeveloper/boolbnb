@@ -1,0 +1,18 @@
+
+    
+.addBtn{
+    background-color: #39858a;
+    transition:linear 1s;
+    border: none;
+    &:hover{
+        background-color: #1c4144;
+    }
+}
+.backBtn{
+    background-color: #1c4144;
+    transition:linear 1s;
+    border: none;
+    &:hover{
+        background-color: #39858a;
+    }
+}

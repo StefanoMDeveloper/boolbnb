@@ -14016,3 +14016,151 @@ a.logo {
   width: 30px;
 }
 
+.addBtn {
+  background-color: #39858a;
+  transition: linear 1s;
+  border: none;
+}
+
+.addBtn:hover {
+  background-color: #1c4144;
+}
+
+.backBtn {
+  background-color: #1c4144;
+  transition: linear 1s;
+  border: none;
+}
+
+.backBtn:hover {
+  background-color: #39858a;
+}
+
+.createContainer {
+  background-color: rgb(239, 235, 235);
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.createContainer .icon {
+  height: 16px;
+}
+
+.createContainer .icon svg {
+  height: 100%;
+}
+
+.createContainer .addApatmentBtn {
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+}
+
+.createContainer .addApatmentBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+.createContainer .cancelBtn {
+  transition: linear 1s;
+  border: none;
+}
+
+.createContainer .cancelBtn:hover {
+  background-color: rgb(79, 77, 77);
+}
+
+.editContainer {
+  background-color: rgb(239, 235, 235);
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.editContainer .icon {
+  height: 16px;
+}
+
+.editContainer .icon svg {
+  height: 100%;
+}
+
+.editContainer .imgContainer {
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.editContainer .imgContainer img {
+  height: 100%;
+}
+
+.editContainer .saveBtn {
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+}
+
+.editContainer .saveBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+.editContainer .cancelBtn {
+  transition: linear 1s;
+  border: none;
+}
+
+.editContainer .cancelBtn:hover {
+  background-color: rgb(79, 77, 77);
+}
+
+.showContainer {
+  background-color: rgb(239, 235, 235);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.showContainer ul {
+  list-style: none;
+}
+
+.showContainer ul li {
+  margin: 15px 0;
+  padding: 5px 0;
+}
+
+.showContainer .borderline {
+  border-bottom: 1px solid rgb(193, 192, 192);
+}
+
+.showContainer .infoContainer {
+  height: 150px;
+  width: 200px;
+  border: 2px solid rgb(226, 221, 221);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.showContainer .infoContainer .infoText {
+  padding: 10px 0;
+  font-size: 15px;
+}
+
+.showContainer .backBtn {
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+}
+
+.showContainer .backBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+.showContainer .cancelBtn {
+  background-color: rgb(122, 119, 119);
+  transition: linear 1s;
+  border: none;
+}
+
+.showContainer .cancelBtn:hover {
+  background-color: rgb(79, 77, 77);
+}
+

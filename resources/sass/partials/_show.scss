@@ -1,0 +1,47 @@
+.showContainer{
+    background-color: rgb(239, 235, 235);
+    padding: 10px;
+    border-radius: 5px;
+    ul{
+        list-style: none;
+        li{
+            margin: 15px 0;
+            padding: 5px 0;
+        }
+    }
+    
+    .borderline{
+        border-bottom: 1px solid rgb(193, 192, 192); 
+    }
+    .infoContainer{
+        height: 150px;
+        width: 200px;
+        border: 2px solid rgb(226, 221, 221);
+        border-radius: 5px;
+        padding: 20px;
+        .infoText{
+            padding: 10px 0;
+            font-size: 15px; 
+        }
+        
+    }
+
+    
+
+    .backBtn{
+        background-color: #FF385C;
+        transition:linear 1s;
+        border: none;
+        &:hover{
+            background-color: hwb(349 17% 45%);
+        }
+    }
+    .cancelBtn{
+        background-color: rgb(122, 119, 119);
+        transition:linear 1s;
+        border: none;
+        &:hover{
+            background-color: rgb(79, 77, 77);
+        }
+    } 
+}
