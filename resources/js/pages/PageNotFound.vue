@@ -1,10 +1,10 @@
 <template>
-    <div>Pagina di Ricerca Avanzata</div>
+    <div>Error 404</div>
 </template>
 
 <script>
 export default {
-    name: "PaginaDiRicercaAvanzata",
+    name: "PageNotFound"
 };
 </script>
 
