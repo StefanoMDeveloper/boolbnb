@@ -1,10 +1,10 @@
 <template>
-    <div>Pagina Lista Appartamenti</div>
+    <div>Error 404</div>
 </template>
 
 <script>
 export default {
-    name: "PaginaListaAppartamenti",
+    name: "PageNotFound"
 };
 </script>
 

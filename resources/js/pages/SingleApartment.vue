@@ -1,10 +1,10 @@
 <template>
-    <div>Pagina di Ricerca Avanzata</div>
+    <div>Pagina Dettaglio Appartamento Pubblica</div>
 </template>
 
 <script>
 export default {
-    name: "PaginaDiRicercaAvanzata",
+    name: "SingleApartment",
 };
 </script>
 

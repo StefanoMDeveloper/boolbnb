@@ -1,10 +1,10 @@
 <template>
-    <div>Pagina Sponsorizzazione</div>
+    <div>Pagina Lista Appartamenti</div>
 </template>
 
 <script>
 export default {
-    name: "PaginaSponsorizzazione",
+    name: "ApartmentList",
 };
 </script>
 
