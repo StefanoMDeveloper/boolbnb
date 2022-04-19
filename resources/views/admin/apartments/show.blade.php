@@ -55,7 +55,7 @@
         
         @foreach ($apartment->images as $image)
             <div class="imageContainer">
-                <img src="{{$image->url}}" alt="">
+                <img class="w-75" src="{{asset( 'storage/'.$image->url )}}" alt="">
             </div>
         @endforeach
         
