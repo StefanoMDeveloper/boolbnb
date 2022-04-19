@@ -7,8 +7,6 @@
             <a href="{{route('admin.home')}}">Torna alla tua Dashboard</a>
             <div class="card">
                 <div class="card-header">{{ __('Messaggi') }}</div>
-
-                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
