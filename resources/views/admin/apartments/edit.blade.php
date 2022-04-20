@@ -53,7 +53,7 @@
               class="form-control col-1 @error('rooms') is-invalid @enderror">
   
       @error('rooms')
-      <div class="invalid-feedback">{{ $message }}</div>
+      <div class="invalid-feedback">Il numero di stanze è obbligatorio.</div>
       @enderror
     </div>
   
@@ -72,7 +72,7 @@
               class="form-control col-1 @error('beds') is-invalid @enderror">
   
       @error('beds')
-      <div class="invalid-feedback">{{ $message }}</div>
+      <div class="invalid-feedback">Il numero di letti è obbligatorio.</div>
       @enderror
     </div>
   
@@ -91,7 +91,7 @@
               class="form-control col-1 @error('bathrooms') is-invalid @enderror">
   
       @error('bathrooms')
-      <div class="invalid-feedback">{{ $message }}</div>
+      <div class="invalid-feedback">Il numero di bagni è obbligatorio.</div>
       @enderror
     </div>
   
@@ -110,7 +110,7 @@
               class="form-control col-1 @error('square_meters') is-invalid @enderror">
   
       @error('square_meters')
-      <div class="invalid-feedback">{{ $message }}</div>
+      <div class="invalid-feedback">Il numero di metri quadrati è obbligatorio.</div>
       @enderror
     </div>
   
