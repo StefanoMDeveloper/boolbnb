@@ -7720,10 +7720,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-//
-=======
->>>>>>> new-feature
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -7793,7 +7789,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -9274,13 +9269,8 @@ var render = function () {
                   [
                     _c(
                       "router-link",
-<<<<<<< HEAD
-                      { attrs: { to: { name: "Dashboard" } } },
-                      [_vm._v("Dashboard")]
-=======
-                      { attrs: { to: { name: "ApartmentsList" } } },
-                      [_vm._v("ApartmentsList")]
->>>>>>> new-feature
+                      { attrs: { to: { name: "ApartmentList" } } },
+                      [_vm._v("ApartmentList")]
                     ),
                   ],
                   1
@@ -9291,13 +9281,8 @@ var render = function () {
                   [
                     _c(
                       "router-link",
-<<<<<<< HEAD
-                      { attrs: { to: { name: "ApartmentList" } } },
-                      [_vm._v("appartamenti")]
-=======
                       { attrs: { to: { name: "SingleApartment" } } },
                       [_vm._v("SingleApartment")]
->>>>>>> new-feature
                     ),
                   ],
                   1
@@ -9339,10 +9324,6 @@ var render = function () {
         _vm._v(" "),
         _vm._m(1),
       ]),
-<<<<<<< HEAD
-      _vm._v("\n>>>>>>> f1de097643f0439e0674eb14fbe9e2fc93278c19\n    "),
-=======
->>>>>>> new-feature
     ]
   )
 }
@@ -9428,29 +9409,6 @@ var render = function () {
         _c("div", [_vm._v("ciao")]),
         _vm._v(" "),
         _vm._l(_vm.apartments, function (apartment) {
-<<<<<<< HEAD
-          return _c(
-            "div",
-            { key: apartment.id, staticClass: "card" },
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: {
-                      name: "SingleApartment",
-                      params: { slug: apartment.slug },
-                    },
-                  },
-                },
-                [
-                  apartment.visible == true
-                    ? _c("div", { staticClass: "row" }, [
-                        _c("img", {
-                          attrs: {
-                            src: __webpack_require__("./resources/js/pages sync recursive ^.*$")("" + apartment.main_image),
-                            alt: "",
-=======
           return _c("div", { key: apartment.id, staticClass: "card" }, [
             apartment.visible == true
               ? _c(
@@ -9464,7 +9422,6 @@ var render = function () {
                           to: {
                             name: "SingleApartment",
                             params: { slug: apartment.slug },
->>>>>>> new-feature
                           },
                         },
                       },
@@ -25271,19 +25228,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
-<<<<<<< HEAD
-!(function webpackMissingModule() { var e = new Error("Cannot find module '@fortawesome/fontawesome-free/css/all.css'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-!(function webpackMissingModule() { var e = new Error("Cannot find module '@fortawesome/fontawesome-free/js/all.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-=======
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/fontawesome-free/css/all.css */ "./node_modules/@fortawesome/fontawesome-free/css/all.css");
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ "./node_modules/@fortawesome/fontawesome-free/js/all.js");
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3__);
->>>>>>> new-feature
 //require('./bootstrap');
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+
 
 
 
@@ -25298,49 +25252,6 @@ var app = new Vue({
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ "./resources/js/pages sync recursive ^.*$":
-/*!**************************************!*\
-  !*** ./resources/js/pages sync ^.*$ ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./ApartmentList": "./resources/js/pages/ApartmentList.vue",
-	"./ApartmentList.vue": "./resources/js/pages/ApartmentList.vue",
-	"./Homepage": "./resources/js/pages/Homepage.vue",
-	"./Homepage.vue": "./resources/js/pages/Homepage.vue",
-	"./PageNotFound": "./resources/js/pages/PageNotFound.vue",
-	"./PageNotFound.vue": "./resources/js/pages/PageNotFound.vue",
-	"./SingleApartment": "./resources/js/pages/SingleApartment.vue",
-	"./SingleApartment.vue": "./resources/js/pages/SingleApartment.vue"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./resources/js/pages sync recursive ^.*$";
-
-/***/ }),
-
-=======
->>>>>>> new-feature
 /***/ "./resources/js/pages/ApartmentList.vue":
 /*!**********************************************!*\
   !*** ./resources/js/pages/ApartmentList.vue ***!
