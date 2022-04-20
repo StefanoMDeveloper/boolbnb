@@ -9,8 +9,8 @@
                             <p v-if="image.main_image">
                                 <img  :src="`/storage/${image.url}`">
                             </p>
-                        </div>
-                    
+
+                        </div>                
                         <p class="col">{{apartment.name}}</p>
                     </router-link>
                     <div v-for="user in users" :key="user.id">
