@@ -9,7 +9,9 @@
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
                     <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-                    <li><router-link :to="{ name: 'ApartmentList' }">ApartmentList</router-link></li>
+
+                    <li><router-link :to="{ name: 'ApartmentList' }">ApartmentsList</router-link></li>
+
                     <li><router-link :to="{ name: 'SingleApartment' }">SingleApartment</router-link></li>
                 </ul>
                 </nav>
@@ -194,4 +196,3 @@ header{
 }
 
 </style>
-
