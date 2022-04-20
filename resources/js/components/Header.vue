@@ -3,15 +3,13 @@
         <div class="row header-container">
             <div class="col-3 headerleft" :class="{ 'pink': scrollEffect }">
                 <i class="fa-brands fa-airbnb"></i>
-                <span>airbnb</span>
+                <span>Boolbnb</span>
             </div>
             <div class="col-5 headercenter d-flex flex-column align-items-center">
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
                     <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-
                     <li><router-link :to="{ name: 'ApartmentList' }">ApartmentsList</router-link></li>
-
                     <li><router-link :to="{ name: 'SingleApartment' }">SingleApartment</router-link></li>
                 </ul>
                 </nav>
@@ -95,14 +93,15 @@ header{
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 80px;
   background-color: white;
   color: black;
   transition: .5s ease all; 
+  z-index: 1000;
   .header-container{
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .headerleft{
       font-size: 30px;
     }
@@ -179,10 +178,10 @@ header{
   }
 }
 .is-hidden {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) , rgb(16, 17, 17) 20vh, rgb(16, 17, 17)100%);
+    background: black;
      color: white;
     transition: .5s ease all; 
-    height: 190px;
+    height: 153px;
 }
 .pink{
   color:#ff385c;
@@ -196,3 +195,5 @@ header{
 }
 
 </style>
+
+
