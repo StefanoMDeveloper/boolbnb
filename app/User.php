@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,6 +17,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $dates = ['birth_date' => 'birth_date'];
+
     protected $fillable = [
         'name', 'last_name', 'email', 'password', 'lastdate', 'birth_date', 'phone'
     ];
