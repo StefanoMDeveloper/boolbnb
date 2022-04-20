@@ -17,7 +17,7 @@
     </label>
       <input type="text" class="form-control col-8 @error('name') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")}}">
       @error('name')
-        <div class="alert alert-danger">{{ $message }}</div>
+        <div class="alert alert-danger">Il nome è obbligatorio.</div>
       @enderror
     </div>
   
@@ -32,7 +32,7 @@
       </label>
       <textarea class="col-8 form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="aggiungi descrizione dell'appartamento" value="{{old("description")}}"></textarea>
       @error('description')
-        <div class="alert alert-danger">{{ $message }}</div>
+        <div class="alert alert-danger">La descrizione è obbligatorio</div>
       @enderror
     </div>
   
@@ -51,7 +51,7 @@
               class="col-1 form-control @error('rooms') is-invalid @enderror">
   
       @error('rooms')
-      <div class="invalid-feedback">{{ $message }}</div>
+      <div class="invalid-feedback">l numero di stanze è obbligatorio</div>
       @enderror
     </div>
   
@@ -70,7 +70,7 @@
                 class="col-1 form-control @error('beds') is-invalid @enderror">
   
         @error('beds')
-        <div class="invalid-feedback">{{ $message }}</div>
+        <div class="invalid-feedback">il numero di letti è obbligatorio</div>
         @enderror
     </div>
   
@@ -89,7 +89,7 @@
                 class="col-1 form-control @error('bathrooms') is-invalid @enderror">
   
         @error('bathrooms')
-        <div class="invalid-feedback">{{ $message }}</div>
+        <div class="invalid-feedback">Il numero di bagni è obbligatorio</div>
         @enderror
     </div>
   
@@ -108,7 +108,7 @@
                 class="col-1 form-control @error('square_meters') is-invalid @enderror">
   
         @error('square_meters')
-        <div class="invalid-feedback">{{ $message }}</div>
+        <div class="invalid-feedback">Il numero di metri quadrati è obbligatorio</div>
         @enderror
     </div>
   
@@ -123,7 +123,7 @@
       </label>
       <input type="text" class="form-control col-8 @error('address') is-invalid @enderror" id="address" name="address" placeholder="aggiungi l'indirizzo completo" value="{{old("address")}}">
       @error('address')
-        <div class="alert alert-danger">{{ $message }}</div>
+        <div class="alert alert-danger">L'indirizzo è obbligatorio</div>
       @enderror
     </div>
   
