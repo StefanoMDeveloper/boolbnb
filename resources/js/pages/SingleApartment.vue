@@ -4,25 +4,16 @@
             <h1>{{apartment.name}}</h1>
             <p>{{apartment.address}}</p>
             <div class="container d-flex containerImages">
-                <div>
-                    <!--img :src="`/storage/${}`"-->
-                </div>
-                <div>
-                    <div class="container d-flex">
-                        <div>
-                            <!--img :src="`/storage/${}`"-->
-                        </div>
-                        <div>
-                            <!--img :src="`/storage/${}`"-->
-                        </div>
+                <div v-for="image in apartment.images" :key="image.id" class="d-flex"><!-- non usare ccs su questo div -->
+                    <div>
+                        <p v-if="image.main_image"  class="card-immagine main-immagine">
+                            <img  :src="`/storage/${image.url}`">
+                        </p>
                     </div>
-                    <div class="container d-flex">
-                        <div>
-                            <!--img :src="`/storage/${}`"-->      
-                        </div>
-                        <div>
-                            <!--img :src="`/storage/${}`"-->         
-                        </div>
+                    <div class="d-flex g-3">
+                        <p v-if="!image.main_image"  class="card-immagine">
+                            <img  :src="`/storage/${image.url}`">
+                        </p>
                     </div>
                 </div>
             </div>
@@ -65,5 +56,10 @@ export default {
             border: 6px solid white;
         }
     }
+}
+
+.card-immagine{
+    height: 200px;
+    width: 200px;
 }
 </style>

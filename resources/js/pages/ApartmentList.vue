@@ -15,11 +15,11 @@
                             <h4>{{apartment.name}}</h4>
                         </router-link>
                         <ul class="d-flex">
-                            <li>stanze {{apartment.rooms}} |</li>
-                            <li>letti {{apartment.beds}} |</li>
-                            <li>bagni {{apartment.bathrooms}} |</li>
+                            <li>stanze {{apartment.rooms}} •</li>
+                            <li>letti {{apartment.beds}} •</li>
+                            <li>bagni {{apartment.bathrooms}} •</li>
                             <span v-for="service in apartment.services" :key="service.id">
-                                <li>{{service.name}} |</li>
+                                <li>{{service.name}} •</li>
                             </span>
                         </ul>
 
@@ -40,11 +40,11 @@
                             <h4>{{apartment.name}}</h4>
                         </router-link>
                         <ul class="d-flex">
-                            <li>stanze {{apartment.rooms}} |</li>
-                            <li>letti {{apartment.beds}} |</li>
-                            <li>bagni {{apartment.bathrooms}} |</li>
+                            <li>stanze {{apartment.rooms}} •</li>
+                            <li>letti {{apartment.beds}} •</li>
+                            <li>bagni {{apartment.bathrooms}} •</li>
                             <span v-for="service in apartment.services" :key="service.id">
-                                <li>{{service.name}} |</li>
+                                <li>{{service.name}} •</li>
                             </span>
                         </ul>
                     </div>
