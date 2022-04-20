@@ -27,7 +27,7 @@ Route::middleware('auth')
         // Route::delete('messages/{message}','MessageController@destroy')->name('messages.destroy');
         Route::get('/messages','MessageController@index')->name('messages');
         Route::get('/profile','ProfileController@index')->name('profile');
-        Route::resource('/profile/info','ProfileController');
+        Route::get('/infoprofile','InfoprofileController@index')->name('infoprofile');
 
     });
 
