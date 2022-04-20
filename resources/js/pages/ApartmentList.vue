@@ -5,7 +5,7 @@
             <div v-for="apartment in apartments" :key="apartment.id" class="card">
                 <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                     <div v-if="apartment.visible==true" class="row">
-                        <img :src="require(apartment.main_image)" alt="">
+                        <img :src="require(`${apartment.main_image}`)" alt="">
                         <p class="col">{{apartment.name}}</p>
                         <!-- <p class="col">{{apartment.user_id.name}} {{apartment.user_id.lastname}}</p> -->
                         

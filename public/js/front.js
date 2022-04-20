@@ -3300,18 +3300,9 @@ var render = function () {
       _c(
         "li",
         [
-          _c(
-            "router-link",
-            {
-              attrs: {
-                to: {
-                  name: "ApartmentList",
-                  params: { slug: _vm.apartment.slug },
-                },
-              },
-            },
-            [_vm._v("ApartmentsList")]
-          ),
+          _c("router-link", { attrs: { to: { name: "ApartmentList" } } }, [
+            _vm._v("ApartmentsList"),
+          ]),
         ],
         1
       ),
@@ -3401,7 +3392,7 @@ var render = function () {
                     ? _c("div", { staticClass: "row" }, [
                         _c("img", {
                           attrs: {
-                            src: __webpack_require__("./resources/js/pages sync recursive")(apartment.main_image),
+                            src: __webpack_require__("./resources/js/pages sync recursive ^.*$")("" + apartment.main_image),
                             alt: "",
                           },
                         }),
@@ -19167,22 +19158,43 @@ var app = new Vue({
 
 /***/ }),
 
-/***/ "./resources/js/pages sync recursive":
-/*!*********************************!*\
-  !*** ./resources/js/pages sync ***!
-  \*********************************/
+/***/ "./resources/js/pages sync recursive ^.*$":
+/*!**************************************!*\
+  !*** ./resources/js/pages sync ^.*$ ***!
+  \**************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
+var map = {
+	"./ApartmentList": "./resources/js/pages/ApartmentList.vue",
+	"./ApartmentList.vue": "./resources/js/pages/ApartmentList.vue",
+	"./Homepage": "./resources/js/pages/Homepage.vue",
+	"./Homepage.vue": "./resources/js/pages/Homepage.vue",
+	"./PageNotFound": "./resources/js/pages/PageNotFound.vue",
+	"./PageNotFound.vue": "./resources/js/pages/PageNotFound.vue",
+	"./SingleApartment": "./resources/js/pages/SingleApartment.vue",
+	"./SingleApartment.vue": "./resources/js/pages/SingleApartment.vue"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
 }
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "./resources/js/pages sync recursive";
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/pages sync recursive ^.*$";
 
 /***/ }),
 
@@ -19534,7 +19546,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
