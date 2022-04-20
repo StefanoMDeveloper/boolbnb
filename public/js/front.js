@@ -7764,8 +7764,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -7943,6 +7941,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
   data: function data() {
@@ -8058,7 +8066,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 30px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  width: scale(1.1);\n  transition: 0.5s ease all;\n}\nheader .header-container .headercenter .inputContainer span[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  align-items: center;\n}\nheader .header-container .headercenter .inputContainer span .searchIcon[data-v-1f42fb90] {\n  margin-right: 5px;\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 30px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  width: scale(1.1);\n  transition: 0.5s ease all;\n}\nheader .header-container .headercenter .inputContainer span[data-v-1f42fb90] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nheader .header-container .headercenter .inputContainer span .searchIcon[data-v-1f42fb90] {\n  margin-right: 5px;\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}", ""]);
 
 // exports
 
@@ -8096,7 +8104,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jubotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n}\n.jubotron .imagecontainerJubo[data-v-00e83377] {\n  margin-top: 200px;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  overflow: hidden;\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n}\n.jubotron .imagecontainerJubo img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.citiesContainer .cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 100px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer .cityCard .textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.experienceContainer .imgsEsp[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.experienceContainer .imgsEsp .imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.experienceContainer .imgsEsp .imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.experienceContainer .imgsEsp .imgEsp .esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}", ""]);
+exports.push([module.i, ".jubotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n}\n.jubotron .imagecontainerJubo[data-v-00e83377] {\n  margin-top: 200px;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  overflow: hidden;\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n}\n.jubotron .imagecontainerJubo img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.citiesContainer .cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 100px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer .cityCard .textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.experienceContainer .imgsEsp[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.experienceContainer .imgsEsp .imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.experienceContainer .imgsEsp .imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.experienceContainer .imgsEsp .imgEsp .esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.giftContainer .giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.giftContainer .giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -9675,17 +9683,7 @@ var render = function () {
                   },
                   [
                     _c("input", {
-                      staticClass: "col-4",
-                      attrs: { type: "text" },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "col-3",
-                      attrs: { type: "text" },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "col-3",
+                      staticClass: "col-10 ml-4",
                       attrs: { type: "text" },
                     }),
                     _vm._v(" "),
@@ -9972,6 +9970,8 @@ var render = function () {
     ),
     _vm._v(" "),
     _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
   ])
 }
 var staticRenderFns = [
@@ -10027,6 +10027,31 @@ var staticRenderFns = [
             _vm._v(" da casa"),
           ]),
         ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "giftContainer" }, [
+      _c("div", { staticClass: "col-4" }, [
+        _c("h1", { staticClass: "giftFont" }, [
+          _vm._v("Acquista "),
+          _c("br"),
+          _vm._v(" le gift card "),
+          _c("br"),
+          _vm._v(" di Airbnb"),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "giftImg col-8" }, [
+        _c("img", {
+          attrs: {
+            src: __webpack_require__(/*! ../../../public/storage/uploads/gift.jpg */ "./storage/app/public/uploads/gift.jpg"),
+            alt: "",
+          },
+        }),
       ]),
     ])
   },
@@ -25517,6 +25542,7 @@ var map = {
 	"./city4.jpg": "./storage/app/public/uploads/city4.jpg",
 	"./experience1.jpg": "./storage/app/public/uploads/experience1.jpg",
 	"./experience2.jpg": "./storage/app/public/uploads/experience2.jpg",
+	"./gift.jpg": "./storage/app/public/uploads/gift.jpg",
 	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg"
 };
 
@@ -27154,6 +27180,17 @@ module.exports = "/images/experience1.jpg?c7cde91b85f77ddf8551d0f83c9ecae5";
 /***/ (function(module, exports) {
 
 module.exports = "/images/experience2.jpg?556ced935329c6fd88eeddd80641cce0";
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/gift.jpg":
+/*!*********************************************!*\
+  !*** ./storage/app/public/uploads/gift.jpg ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/gift.jpg?fa9097ff0426fd28008a8ca396e5c918";
 
 /***/ }),
 
