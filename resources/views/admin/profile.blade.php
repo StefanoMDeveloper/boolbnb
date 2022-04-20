@@ -11,9 +11,6 @@
                 <a href="{{route('admin.infoprofile')}}">Informazioni personali</a>
             </div>
             <div class="profileBox">
-                <a href="{{route('password.update')}}">Accesso e sicurezza</a>
-            </div>
-            <div class="profileBox">
                 <a href="{{route('admin.apartments.index')}}">Appartamenti</a>
             </div>
             <div class="profileBox">
@@ -21,6 +18,9 @@
             </div>
             <div class="profileBox">
                 <a href="{{route('password.update')}}">Statistiche</a>
+            </div>
+            <div class="profileBox">
+                <a href="{{route('password.update')}}">Ripristina la password</a>
             </div>
             <div>
                 <a href="{{route('admin.home') }}">Torna alla Dashboard</a>                                        
