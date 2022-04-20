@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+
         <div class="experienceContainer">
             <h1>Scopri le Esperienze Boolbnb</h1>
             <div class="imgsEsp">
@@ -28,6 +29,15 @@
                     <img  src="../../../public/storage/uploads/experience1.jpg" alt="">
                     <h1 class="esptext text-white">Attività <br> da casa</h1>
                 </div>  
+            </div>
+        </div>
+
+        <div class="giftContainer">
+            <div class="col-4">
+                <h1 class="giftFont">Acquista <br> le gift card <br> di Airbnb</h1>
+            </div>
+            <div class="giftImg col-8">
+                <img  src="../../../public/storage/uploads/gift.jpg" alt="">
             </div>
         </div>
     </div>
@@ -136,6 +146,22 @@ export default {
                 left: 60px;
                 font-size: 60px;
             }
+        }
+    }
+}
+
+.giftContainer{
+    width: 1319px ;
+    margin:100px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .giftFont{
+        font-size: 65px;
+    }
+    .giftImg{
+        img{
+            width: 100%;
         }
     }
 }

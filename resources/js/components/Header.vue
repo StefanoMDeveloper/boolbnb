@@ -16,9 +16,7 @@
                 <div class="container-fluid m-auto" >
                 <div class="row d-flex justify-content-center">
                     <div class="inputContainer col-12" :class="{ 'search': scrollEffect }">
-                    <input class="col-4"  type="text">
-                    <input class="col-3" type="text">
-                    <input class="col-3" type="text">
+                    <input class="col-10 ml-4"  type="text">
                     <span class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
                     </div>
                 </div>
@@ -126,7 +124,7 @@ header{
         transition: .5s ease all;
         span{
           display: flex;
-          justify-content: end;
+          justify-content: center;
           align-items: center;
            .searchIcon{
              margin-right: 5px;
