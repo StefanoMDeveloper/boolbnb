@@ -10,7 +10,6 @@
                 <ul>
                     <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
                     <li><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
-                    
                 </ul>
                 </nav>
                 <div class="container-fluid m-auto" >

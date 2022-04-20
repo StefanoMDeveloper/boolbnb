@@ -1,8 +1,7 @@
 <template>
     <div>
         <div class="container-lista">
-            <div v-for="apartment in apartments" :key="apartment.id" class="card">
-                
+            <div v-for="apartment in apartments" :key="apartment.id" class="card">       
                 <div v-if="apartment.visible && apartment.sponsorships.length != 0" class="d-flex">
                     <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
                         <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
