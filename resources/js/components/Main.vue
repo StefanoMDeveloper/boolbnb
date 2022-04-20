@@ -11,7 +11,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main{
-    height: 1110px;
-}
+
 </style>

@@ -51,7 +51,7 @@
               class="col-1 form-control @error('rooms') is-invalid @enderror">
   
       @error('rooms')
-      <div class="invalid-feedback">l numero di stanze è obbligatorio</div>
+      <div class="invalid-feedback">Il numero di stanze è obbligatorio</div>
       @enderror
     </div>
   
@@ -70,7 +70,7 @@
                 class="col-1 form-control @error('beds') is-invalid @enderror">
   
         @error('beds')
-        <div class="invalid-feedback">il numero di letti è obbligatorio</div>
+        <div class="invalid-feedback">Il numero di letti è obbligatorio</div>
         @enderror
     </div>
   
