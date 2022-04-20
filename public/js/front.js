@@ -10050,7 +10050,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "imgEsp" }, [
           _c("img", {
             attrs: {
-              src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./public/storage/uploads/experience2.jpg"),
+              src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./storage/app/public/uploads/experience2.jpg"),
               alt: "",
             },
           }),
@@ -25565,7 +25565,7 @@ var map = {
 	"./city3.jpg": "./storage/app/public/uploads/city3.jpg",
 	"./city4.jpg": "./storage/app/public/uploads/city4.jpg",
 	"./experience1.jpg": "./storage/app/public/uploads/experience1.jpg",
-	"./experience2.jpg": "./public/storage/uploads/experience2.jpg",
+	"./experience2.jpg": "./storage/app/public/uploads/experience2.jpg",
 	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg"
 };
 
@@ -25588,17 +25588,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$";
-
-/***/ }),
-
-/***/ "./public/storage/uploads/experience2.jpg":
-/*!************************************************!*\
-  !*** ./public/storage/uploads/experience2.jpg ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/experience2.jpg?556ced935329c6fd88eeddd80641cce0";
 
 /***/ }),
 
@@ -27221,6 +27210,17 @@ module.exports = "/images/city4.jpg?a95ba602f0da9d366ef3c6cbf0ce9ccf";
 /***/ (function(module, exports) {
 
 module.exports = "/images/experience1.jpg?c7cde91b85f77ddf8551d0f83c9ecae5";
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/experience2.jpg":
+/*!****************************************************!*\
+  !*** ./storage/app/public/uploads/experience2.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/experience2.jpg?556ced935329c6fd88eeddd80641cce0";
 
 /***/ }),
 
