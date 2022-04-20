@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -25958,3 +25959,5 @@ module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e prog
 /***/ })
 
 /******/ });
+=======
+>>>>>>> c4db1a3833b8a727364c367f36a4ea8386ec3a2f
