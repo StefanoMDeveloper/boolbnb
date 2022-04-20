@@ -19,7 +19,7 @@
       <input type="text" class="form-control col-8 @error('name') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")??$apartment->name}}">
       
       @error('name')
-        <div class="alert alert-danger">{{ $message }}</div>
+        <div class="alert alert-danger">Il nome è obbligatorio.</div>
       @enderror
     </div>
   
@@ -34,7 +34,7 @@
       </label>
       <textarea name="description" id="description" class="form-control col-8" cols="30" rows="10">{{ old ('description') ?? $apartment->description}}</textarea>
       @error('description')
-        <div class="alert alert-danger">{{ $message }}</div>
+        <div class="alert alert-danger">La discrezione è obbligatorio</div>
       @enderror
     </div>
   
