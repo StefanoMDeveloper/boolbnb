@@ -1970,6 +1970,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -2623,8 +2624,18 @@ var render = function () {
       _c(
         "li",
         [
-          _c("router-link", { attrs: { to: { name: "Dashboard" } } }, [
-            _vm._v("Dashboard"),
+          _c("router-link", { attrs: { to: { name: "ApartmentsList" } } }, [
+            _vm._v("ApartmentsList"),
+          ]),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [
+          _c("router-link", { attrs: { to: { name: "SingleApartment" } } }, [
+            _vm._v("SingleApartment"),
           ]),
         ],
         1
@@ -18735,7 +18746,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

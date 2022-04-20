@@ -2,8 +2,8 @@
     <header>
         <nav>
             <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-            <li><router-link :to="{ name: 'Dashboard' }">Dashboard</router-link></li>
-            <li><router-link :to="{ name: 'ApartmentList' }">appartamenti</router-link></li>
+            <li><router-link :to="{ name: 'ApartmentsList' }">ApartmentsList</router-link></li>
+            <li><router-link :to="{ name: 'SingleApartment' }">SingleApartment</router-link></li>
         </nav>
     </header>
 </template>
