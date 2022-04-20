@@ -9,8 +9,8 @@
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
                     <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-                    <li><router-link :to="{ name: 'ApartmentList' }">ApartmentsList</router-link></li>
-                    <li><router-link :to="{ name: 'SingleApartment' }">SingleApartment</router-link></li>
+                    <li><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
+                    
                 </ul>
                 </nav>
                 <div class="container-fluid m-auto" >
@@ -26,7 +26,7 @@
             </div>
             <div class="headerright col-3">
                 <ul>
-                <li>Become a Host</li>
+                <li>Diventa un Host</li>
                 <li><i class="fa-solid fa-globe"></i></li>
                 <li><button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button></li>
                 </ul>
@@ -104,6 +104,7 @@ header{
     align-items: center;
     .headerleft{
       font-size: 30px;
+      padding-left: 7%;
     }
     .headercenter{
       nav{

@@ -96,7 +96,7 @@ export default {
     justify-content: space-between;
     .cityCard{
         width: calc(100% / 4 - 20px);
-        margin-top: 100px;
+        margin-top: 200px;
         border-radius: 20px;
         background-color: #BC1A6E;
         height: 400px;
