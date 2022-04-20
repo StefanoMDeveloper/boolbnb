@@ -8,7 +8,7 @@
         </h3>
         <div class="profile">
             <div class="profileBox">
-                <a href="{{route('password.update')}}">Informazioni personali</a>
+                <a href="{{route('admin.profiles.index')}}">Informazioni personali</a>
             </div>
             <div class="profileBox">
                 <a href="{{route('password.update')}}">Accesso e sicurezza</a>
@@ -22,10 +22,7 @@
             <div class="profileBox">
                 <a href="{{route('password.update')}}">Statistiche</a>
             </div>
-            <div class="profileBox">
-                <a href="{{route('password.update')}}">Preferenze globali</a>
-            </div>
-            <div class="profileBox">
+            <div>
                 <a href="{{route('admin.home') }}">Torna alla Dashboard</a>                                        
             </div>
         </div>
