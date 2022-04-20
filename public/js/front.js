@@ -7812,11 +7812,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ApartmentList",
   data: function data() {
     return {
-      apartments: []
+      apartments: [],
+      users: []
     };
   },
   created: function created() {
@@ -7824,7 +7833,11 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/apartments").then(function (response) {
       _this.apartments = response.data;
-    });
+    }); // axios
+    // .get("/api/users")
+    // .then((response) => {
+    //     this.users = response.data;
+    // })
   }
 });
 
@@ -7937,7 +7950,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "router-link[data-v-908b7792] {\n  color: black;\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, "a[data-v-908b7792] {\n  color: black;\n  text-decoration: none;\n}\nimg[data-v-908b7792] {\n  width: 150px;\n}", ""]);
 
 // exports
 
@@ -9397,60 +9410,74 @@ var render = function () {
         _c("div", [_vm._v("ciao")]),
         _vm._v(" "),
         _vm._l(_vm.apartments, function (apartment) {
-          return _c(
-            "div",
-            { key: apartment.id, staticClass: "card" },
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: {
-                      name: "SingleApartment",
-                      params: { slug: apartment.slug },
-                    },
-                  },
-                },
-                [
-                  apartment.visible == true
-                    ? _c("div", { staticClass: "row" }, [
-                        _c("img", {
-                          attrs: {
-                            src: __webpack_require__("./resources/js/pages sync recursive")(apartment.main_image),
-                            alt: "",
+          return _c("div", { key: apartment.id, staticClass: "card" }, [
+            apartment.visible == true
+              ? _c(
+                  "div",
+                  { staticClass: "row" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: {
+                            name: "SingleApartment",
+                            params: { slug: apartment.slug },
                           },
+                        },
+                      },
+                      [
+                        _vm._l(apartment.images, function (image) {
+                          return _c("div", { key: image.id }, [
+                            image.main_image
+                              ? _c("p", [
+                                  _c("img", {
+                                    attrs: { src: "/storage/" + image.url },
+                                  }),
+                                ])
+                              : _vm._e(),
+                          ])
                         }),
                         _vm._v(" "),
                         _c("p", { staticClass: "col" }, [
                           _vm._v(_vm._s(apartment.name)),
                         ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col" }, [
-                          _c("p", [
-                            _vm._v(
-                              "Numero di stanze: " + _vm._s(apartment.rooms)
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Numero di letti: " + _vm._s(apartment.beds)
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Numero di bagni: " + _vm._s(apartment.bathrooms)
-                            ),
-                          ]),
-                        ]),
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _vm._l(_vm.users, function (user) {
+                      return _c("div", { key: user.id }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(user.name) +
+                            " " +
+                            _vm._s(user.last_name) +
+                            "\n                "
+                        ),
                       ])
-                    : _vm._e(),
-                ]
-              ),
-            ],
-            1
-          )
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col" }, [
+                      _c("p", [
+                        _vm._v("Numero di stanze: " + _vm._s(apartment.rooms)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v("Numero di letti: " + _vm._s(apartment.beds)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "Numero di bagni: " + _vm._s(apartment.bathrooms)
+                        ),
+                      ]),
+                    ]),
+                  ],
+                  2
+                )
+              : _vm._e(),
+          ])
         }),
       ],
       2
@@ -25224,25 +25251,6 @@ var app = new Vue({
 
 /***/ }),
 
-/***/ "./resources/js/pages sync recursive":
-/*!*********************************!*\
-  !*** ./resources/js/pages sync ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "./resources/js/pages sync recursive";
-
-/***/ }),
-
 /***/ "./resources/js/pages/ApartmentList.vue":
 /*!**********************************************!*\
   !*** ./resources/js/pages/ApartmentList.vue ***!
@@ -25591,7 +25599,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
