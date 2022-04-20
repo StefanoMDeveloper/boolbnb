@@ -38,8 +38,8 @@
                 <span><a href="#">Dettagli dell'azienda</a></span>
             </div>
             <div>
-                <span style="text-decoration: underline;"><i class="fas fa-globe"></i> Italiano (IT)</span>
-                <span style="text-decoration: underline;"><i class="fas fa-euro-sign"></i> EUR</span>
+                <span style="text-decoration: underline;"><i class="fas fa-globe"></i>Italiano (IT)</span>
+                <span style="text-decoration: underline;"><i class="fas fa-euro-sign"></i>EUR</span>
                 <span><i class="fab fa-facebook-f"></i></span>
                 <span><i class="fab fa-twitter"></i></span>
                 <span><i class="fab fa-instagram"></i></span>
@@ -82,6 +82,10 @@ footer {
 
     .containerFooter2 {
         padding: 40px;
+    }
+
+    .fa-globe, .fa-euro-sign {
+        margin-right: 4px;
     }
 
     .fa-facebook-f {
