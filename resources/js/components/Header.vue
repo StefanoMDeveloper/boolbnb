@@ -9,12 +9,7 @@
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
                     <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-<<<<<<< HEAD
-                    <li><router-link :to="{ name: 'ApartmentList' }">ApartmentsList</router-link></li>
-=======
                     <li><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
-                    
->>>>>>> 10f31c33453d1b67b2d4e9de59354f68bf0b82ff
                 </ul>
                 </nav>
                 <div class="container-fluid m-auto" >
