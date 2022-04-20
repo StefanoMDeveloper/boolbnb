@@ -14,7 +14,15 @@
                         <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                             <h4>{{apartment.name}}</h4>
                         </router-link>
-                        <p>stanze {{apartment.rooms}} letti {{apartment.beds}} bagni {{apartment.bathrooms}}</p>
+                        <ul class="d-flex">
+                            <li>stanze {{apartment.rooms}} |</li>
+                            <li>letti {{apartment.beds}} |</li>
+                            <li>bagni {{apartment.bathrooms}} |</li>
+                            <span v-for="service in apartment.services" :key="service.id">
+                                <li>{{service.name}} |</li>
+                            </span>
+                        </ul>
+
                     </div>
                 </div>
 
@@ -27,14 +35,17 @@
                             </p>
                         </div>
                     </router-link>
-                    <div class=" descrizione">
+                    <div class="descrizione">
                         <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                             <h4>{{apartment.name}}</h4>
                         </router-link>
-                        <ul>
-                            <li>stanze {{apartment.rooms}}</li>
-                            <li>letti {{apartment.beds}}</li>
-                            <li>bagni {{apartment.bathrooms}}</li>
+                        <ul class="d-flex">
+                            <li>stanze {{apartment.rooms}} |</li>
+                            <li>letti {{apartment.beds}} |</li>
+                            <li>bagni {{apartment.bathrooms}} |</li>
+                            <span v-for="service in apartment.services" :key="service.id">
+                                <li>{{service.name}} |</li>
+                            </span>
                         </ul>
                     </div>
                 </div>
@@ -80,7 +91,7 @@ img{
 }
 
 .container-lista{
-    margin-top: 400px
+    margin-top: 200px
 }
 
 .card-immagine{
@@ -89,12 +100,19 @@ img{
     padding: 30px 0;
 }
 
+
 ul{
+
+    width: 70%;
+    flex-wrap: wrap;
     li{
         float: left;
         color: grey;
         font-weight: bold;
         font-size: 13px;
+        padding-right: 5px;
+        padding-left: 0;
+        list-style-type:none;
     }
 }
 </style>

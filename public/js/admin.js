@@ -37351,9 +37351,15 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\admin.js */"./resources/js/admin.js");
 __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\sass\admin.scss */"./resources/sass/admin.scss");
 module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\sass\front.scss */"./resources/sass/front.scss");
+=======
+__webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\admin.js */"./resources/js/admin.js");
+__webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\sass\front.scss */"./resources/sass/front.scss");
+>>>>>>> 10f31c33453d1b67b2d4e9de59354f68bf0b82ff
 
 
 /***/ })

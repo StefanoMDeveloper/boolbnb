@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-    bg-color: #eeeeee;
+    background-color: #eeeeee;
 
     ul {
         list-style-type: none;
