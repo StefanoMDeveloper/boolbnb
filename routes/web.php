@@ -28,7 +28,7 @@ Route::middleware('auth')
         Route::get('/messages','MessageController@index')->name('messages');
         Route::get('/profile','ProfileController@index')->name('profile');
         Route::get('/infoprofile','InfoprofileController@index')->name('infoprofile');
-
+        Route::get('/stats','StatController@index')->name('stats');
     });
 
 Route::get("{any?}", function() {
