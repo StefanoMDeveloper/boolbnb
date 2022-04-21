@@ -10,14 +10,14 @@
             </ul>
             <ul>
                 <li><b>Community</b></li>
-                <li><a href="#">Airbnb.org: un rifugio sicuro</a></li>
+                <li><a href="#">Boolbnb.org: un rifugio sicuro</a></li>
                 <li><a href="#">Supporta i rifugiati afghani</a></li>
                 <li><a href="#">Contro la discriminazione</a></li>
             </ul>
             <ul>
                 <li><b>Ospitare</b></li>
                 <li><a href="#">Prova ad ospitare</a></li>
-                <li><a href="#">AirCover: host protetti</a></li>
+                <li><a href="#">BoolCover: host protetti</a></li>
                 <li><a href="#">Esplora le risorse per host</a></li>
                 <li><a href="#">Vai al forum della community</a></li>
                 <li><a href="#">Come ospitare responsabilmente</a></li>
@@ -31,7 +31,7 @@
         </div>
         <div class="container containerFooter2 d-flex justify-content-between align-items-center">
             <div>
-                <span><a href="#"><i class="far fa-copyright"></i> 2022 Airbnb, Inc. &nbsp;&nbsp;•</a></span>
+                <span><a href="#"><i class="far fa-copyright"></i> 2022 Boolbnb, Inc. &nbsp;&nbsp;•</a></span>
                 <span><a href="#">Privacy &nbsp;&nbsp;•</a></span>
                 <span><a href="#">Termini &nbsp;&nbsp;•</a></span>
                 <span><a href="#">Mappa del sito &nbsp;&nbsp;•</a></span>

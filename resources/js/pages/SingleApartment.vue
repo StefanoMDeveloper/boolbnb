@@ -23,6 +23,22 @@
             <div v-for="service in apartment.services" :key="service.id" class="container">
                 <p>{{service.name}}</p>
             </div>
+            <h4>Scrivi un messaggio al proprietario dell&#39;appartamento</h4>
+            <form @submit.prevent='sendMail'>
+                <div v-if="authUser==false">
+                    <label for="email">Ciaone!</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div v-else>
+                    <label for="email">Inserisci la tua email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <textarea class="col-8 form-control" id="message" name="message" placeholder="Inserisci qui il messaggio"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+            <div v-show="messageSent">
+                Messaggio inviato!
+            </div>
         </div>
     </div>
 </template>
@@ -32,7 +48,8 @@ export default {
     name: "SingleApartment",
     data() {
         return {
-            apartment: []
+            apartment: [],
+            messageSent: false
         }
     },
     created() {
@@ -41,6 +58,17 @@ export default {
         .then((response) => {
             this.apartment = response.data;
         });
+    },
+    methods: {
+        sendMail(){
+            axios
+            .post('/api/messages',this.formData)
+            .then((response) => {
+                this.formData.content = '';
+                this.formData.email = '';
+                this.messageSent = true;
+            });
+        }
     }
 };
 </script>
