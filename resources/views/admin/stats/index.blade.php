@@ -7,7 +7,6 @@
             {{Auth::user()->name}}, le tue statistiche per appartamento!
         </h1>
         <div class="profile">
-            @dd($stats);
             {{-- @foreach ($views as $view)
                 <p><strong>{{ $view->id }}</strong></p>
                 <p>Da {{$view->date}} </p>

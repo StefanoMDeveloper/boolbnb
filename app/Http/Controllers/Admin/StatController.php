@@ -30,6 +30,6 @@ class StatController extends Controller
     {
         $user_id = User::all();
         $apartments = Apartment::all()->where('user_id', $user_id);
-        return view('admin.stats', compact('user_id','apartments'));
+        return view('admin.stats.index', compact('user_id','apartments'));
     }
 }
