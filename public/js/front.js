@@ -7714,6 +7714,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Footer"
 });
@@ -7782,7 +7785,8 @@ __webpack_require__.r(__webpack_exports__);
         current: false
       }],
       search: "",
-      autocompleters: []
+      autocompleters: [],
+      filteredApartments: []
     };
   },
   mounted: function mounted() {
@@ -7794,9 +7798,18 @@ __webpack_require__.r(__webpack_exports__);
     autocomplete: function autocomplete() {
       var _this = this;
 
-      axios.get("/api/apartments/autocomplete/" + this.search).then(function (response) {
-        _this.autocompleters = response.data.results;
+      axios.get("https://api.tomtom.com/search/2/geocode/" + this.search + ".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT").then(function (response) {
+        _this.autocompleters = response;
       });
+    },
+    filter: function filter() {
+      var _this2 = this;
+
+      if (this.search.length > 1) {
+        axios.get("/api/apartments/filter/" + this.search).then(function (response) {
+          _this2.filteredApartments = response.data;
+        });
+      }
     },
     // Toggle if navigation is shown or hidden
     onScroll: function onScroll() {
@@ -7970,10 +7983,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
   data: function data() {
     return {
+      colors: ['#DE3151', '#BC1A6E', '#CC2D4A', '#D93B30'],
       cities: [{
         image: "city1",
         title: "Napoli",
@@ -8025,13 +8055,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -8160,7 +8183,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jubotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n}\n.jubotron .imagecontainerJubo[data-v-00e83377] {\n  margin-top: 200px;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  overflow: hidden;\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n}\n.jubotron .imagecontainerJubo img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.citiesContainer .cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer .cityCard .textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.experienceContainer .imgsEsp[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.experienceContainer .imgsEsp .imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.experienceContainer .imgsEsp .imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.experienceContainer .imgsEsp .imgEsp .esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.giftContainer .giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.giftContainer .giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -8179,7 +8202,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 20px;\n}\n.singleApartment .containerImages div[data-v-4fd40851] {\n  border: 6px solid white;\n}\n.card-immagine[data-v-4fd40851] {\n  height: 200px;\n  width: 200px;\n}", ""]);
+exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  max-width: 25%;\n  max-height: 25%;\n  float: left;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}", ""]);
 
 // exports
 
@@ -9528,112 +9551,117 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", [
-      _c(
-        "div",
-        {
-          staticClass:
-            "container containerFooter1 d-flex justify-content-between",
-        },
-        [
-          _c("ul", [
-            _c("li", [_c("b", [_vm._v("Assistenza")])]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Centro Assistenza")]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Informazioni di sicurezza"),
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          {
+            staticClass: "row containerFooter1 d-flex justify-content-between",
+          },
+          [
+            _c("ul", [
+              _c("li", [_c("b", [_vm._v("Assistenza")])]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Centro Assistenza"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Informazioni di sicurezza"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Opzioni di cancellazione"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Segnala problemi")]),
               ]),
             ]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Opzioni di cancellazione"),
+            _c("ul", [
+              _c("li", [_c("b", [_vm._v("Community")])]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Airbnb.org: un rifugio sicuro"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Supporta i rifugiati afghani"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Contro la discriminazione"),
+                ]),
               ]),
             ]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Segnala problemi")]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_c("b", [_vm._v("Community")])]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Airbnb.org: un rifugio sicuro"),
+            _c("ul", [
+              _c("li", [_c("b", [_vm._v("Ospitare")])]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Prova ad ospitare"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("AirCover: host protetti"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Esplora le risorse per host"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Vai al forum della community"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Come ospitare responsabilmente"),
+                ]),
               ]),
             ]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Supporta i rifugiati afghani"),
+            _c("ul", [
+              _c("li", [_c("b", [_vm._v("Informazioni")])]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Lettera dai nostri fondatori"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Assistenza")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Opportunità di lavoro"),
+                ]),
               ]),
             ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Contro la discriminazione"),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_c("b", [_vm._v("Ospitare")])]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Prova ad ospitare")]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("AirCover: host protetti"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Esplora le risorse per host"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Vai al forum della community"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Come ospitare responsabilmente"),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_c("b", [_vm._v("Informazioni")])]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Lettera dai nostri fondatori"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Assistenza")]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v("Opportunità di lavoro"),
-              ]),
-            ]),
-          ]),
-        ]
-      ),
+          ]
+        ),
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -9642,7 +9670,7 @@ var staticRenderFns = [
             "container containerFooter2 d-flex justify-content-between align-items-center",
         },
         [
-          _c("div", [
+          _c("div", { staticClass: "row" }, [
             _c("span", [
               _c("a", { attrs: { href: "#" } }, [
                 _c("i", { staticClass: "far fa-copyright" }),
@@ -9800,7 +9828,16 @@ var render = function () {
                       },
                     }),
                     _vm._v(" "),
-                    _vm._m(0),
+                    _c(
+                      "span",
+                      { staticClass: "col-2", on: { click: _vm.filter } },
+                      [
+                        _c("i", {
+                          staticClass:
+                            "fa-solid fa-magnifying-glass searchIcon",
+                        }),
+                      ]
+                    ),
                   ]
                 ),
               ]),
@@ -9808,20 +9845,12 @@ var render = function () {
           ]
         ),
         _vm._v(" "),
-        _vm._m(1),
+        _vm._m(0),
       ]),
     ]
   )
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-2" }, [
-      _c("i", { staticClass: "fa-solid fa-magnifying-glass searchIcon" }),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -10085,35 +10114,45 @@ var render = function () {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "citiesContainer d-flex" },
-      _vm._l(_vm.cities, function (element, index) {
-        return _c("div", { key: index, staticClass: "cityCard" }, [
-          _c("div", { staticClass: "imageContainer" }, [
-            _c("img", {
-              attrs: {
-                src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
-                  element.image +
-                  ".jpg"),
-                alt: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "textcity" }, [
-            _c("h1", { staticClass: "text-white" }, [
-              _vm._v(_vm._s(element.title)),
-            ]),
-            _vm._v(" "),
-            _c("h4", { staticClass: "text-white" }, [
-              _vm._v(_vm._s(element.text)),
-            ]),
-          ]),
-        ])
-      }),
-      0
-    ),
+    _c("div", { staticClass: "container-fluid" }, [
+      _c(
+        "div",
+        { staticClass: "row ms_citiesContainer d-flex" },
+        _vm._l(_vm.cities, function (element, index) {
+          return _c(
+            "div",
+            {
+              key: index,
+              staticClass: "ms_cityCard",
+              style: { "background-color": _vm.colors[index] },
+            },
+            [
+              _c("div", { staticClass: "ms_imageContainer" }, [
+                _c("img", {
+                  attrs: {
+                    src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
+                      element.image +
+                      ".jpg"),
+                    alt: "",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ms_textcity" }, [
+                _c("h1", { staticClass: "text-white" }, [
+                  _vm._v(_vm._s(element.title)),
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-white" }, [
+                  _vm._v(_vm._s(element.text)),
+                ]),
+              ]),
+            ]
+          )
+        }),
+        0
+      ),
+    ]),
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
@@ -10125,14 +10164,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "jubotron" }, [
-      _c("div", { staticClass: "imagecontainerJubo" }, [
-        _c("img", {
-          attrs: {
-            src: __webpack_require__(/*! ../../../public/storage/uploads/jubotron.jpg */ "./storage/app/public/uploads/jubotron.jpg"),
-            alt: "",
-          },
-        }),
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row ms_jumbotron" }, [
+        _c("div", { staticClass: "ms_imagecontainerJumbo col-10 p-0" }, [
+          _c("img", {
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/storage/uploads/jubotron.jpg */ "./storage/app/public/uploads/jubotron.jpg"),
+              alt: "",
+            },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ms_textcontainer" }, [
+            _c("h1", { staticClass: "text-white ms_textJombo" }, [
+              _vm._v("Lasciati guidare dalla curiosità"),
+            ]),
+            _vm._v(" "),
+            _c("button", [_vm._v("Sono flessibile")]),
+          ]),
+        ]),
       ]),
     ])
   },
@@ -10140,64 +10189,68 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "experienceContainer" }, [
-      _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "imgsEsp" }, [
-        _c("div", { staticClass: "imgEsp" }, [
-          _c("img", {
-            attrs: {
-              src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./storage/app/public/uploads/experience2.jpg"),
-              alt: "",
-            },
-          }),
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row ms_experienceContainer" }, [
+        _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ms_imgsEsp" }, [
+          _c("div", { staticClass: "ms_imgEsp" }, [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./storage/app/public/uploads/experience2.jpg"),
+                alt: "",
+              },
+            }),
+            _vm._v(" "),
+            _c("h1", { staticClass: "ms_esptext text-white" }, [
+              _vm._v("Esperienze "),
+              _c("br"),
+              _vm._v(" per il tuo viaggio"),
+            ]),
+          ]),
           _vm._v(" "),
-          _c("h1", { staticClass: "esptext text-white" }, [
-            _vm._v("Esperienze "),
+          _c("div", { staticClass: "ms_imgEsp" }, [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/storage/uploads/experience1.jpg */ "./storage/app/public/uploads/experience1.jpg"),
+                alt: "",
+              },
+            }),
+            _vm._v(" "),
+            _c("h1", { staticClass: "ms_esptext text-white" }, [
+              _vm._v("Attività "),
+              _c("br"),
+              _vm._v(" da casa"),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row ms_giftContainer" }, [
+        _c("div", { staticClass: "col-4" }, [
+          _c("h1", { staticClass: "ms_giftFont" }, [
+            _vm._v("Acquista "),
             _c("br"),
-            _vm._v(" per il tuo viaggio"),
+            _vm._v(" le gift card "),
+            _c("br"),
+            _vm._v(" di Airbnb"),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "imgEsp" }, [
+        _c("div", { staticClass: "ms_giftImg col-8" }, [
           _c("img", {
             attrs: {
-              src: __webpack_require__(/*! ../../../public/storage/uploads/experience1.jpg */ "./storage/app/public/uploads/experience1.jpg"),
+              src: __webpack_require__(/*! ../../../public/storage/uploads/gift.jpg */ "./storage/app/public/uploads/gift.jpg"),
               alt: "",
             },
           }),
-          _vm._v(" "),
-          _c("h1", { staticClass: "esptext text-white" }, [
-            _vm._v("Attività "),
-            _c("br"),
-            _vm._v(" da casa"),
-          ]),
         ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "giftContainer" }, [
-      _c("div", { staticClass: "col-4" }, [
-        _c("h1", { staticClass: "giftFont" }, [
-          _vm._v("Acquista "),
-          _c("br"),
-          _vm._v(" le gift card "),
-          _c("br"),
-          _vm._v(" di Airbnb"),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "giftImg col-8" }, [
-        _c("img", {
-          attrs: {
-            src: __webpack_require__(/*! ../../../public/storage/uploads/gift.jpg */ "./storage/app/public/uploads/gift.jpg"),
-            alt: "",
-          },
-        }),
       ]),
     ])
   },
@@ -10258,24 +10311,18 @@ var render = function () {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "container d-flex containerImages" },
+          { staticClass: "container containerImages" },
           _vm._l(_vm.apartment.images, function (image) {
-            return _c("div", { key: image.id, staticClass: "d-flex" }, [
-              _c("div", [
-                image.main_image
-                  ? _c("p", { staticClass: "card-immagine main-immagine" }, [
-                      _c("img", { attrs: { src: "/storage/" + image.url } }),
-                    ])
-                  : _vm._e(),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "d-flex g-3" }, [
-                !image.main_image
-                  ? _c("p", { staticClass: "card-immagine" }, [
-                      _c("img", { attrs: { src: "/storage/" + image.url } }),
-                    ])
-                  : _vm._e(),
-              ]),
+            return _c("span", { key: image.id }, [
+              image.main_image
+                ? _c("img", {
+                    staticClass: "main-immagine",
+                    attrs: { src: "/storage/" + image.url },
+                  })
+                : _c("img", {
+                    staticClass: "other-immagini",
+                    attrs: { src: "/storage/" + image.url },
+                  }),
             ])
           }),
           0
@@ -27483,7 +27530,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

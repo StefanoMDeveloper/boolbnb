@@ -67,13 +67,11 @@ export default {
   methods: {
     //autocomplete
     autocomplete(){
-      if(this.search.length>1){
-        axios
-          .get("/api/apartments/autocomplete/" + this.search)
-          .then((response) => {
-            this.autocompleters = response.data;
-          });             
-      }
+      axios
+        .get("https://api.tomtom.com/search/2/geocode/"+this.search+".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT")
+        .then((response) => {
+          this.autocompleters = response;
+        });             
     },
 
     filter(){
