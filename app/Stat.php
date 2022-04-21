@@ -10,7 +10,10 @@ class Stat extends Model
         'ip', 'date', 'apartment_id'
     ];
 
+    protected $dates = ['date'];
+
     public function apartment(){
         return $this->belongsTo('App\Apartment');
     }
+    
 }
