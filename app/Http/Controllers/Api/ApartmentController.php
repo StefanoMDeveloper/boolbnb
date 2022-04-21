@@ -27,7 +27,7 @@ class ApartmentController extends Controller
      */
     public function show($slug)
     {
-        $apartment = Apartment::where("slug", $slug)->with(["images", "sponsorships", "services", "views"])->first();
+        $apartment = Apartment::where("slug", $slug)->with(["images", "sponsorships", "services", "stats"])->first();
         if (empty($apartment)){
             return response()->json(["message"=>"Nessun appartamento trovato con questo nome!"]);
         }
