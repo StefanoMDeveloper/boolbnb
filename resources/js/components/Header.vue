@@ -15,8 +15,8 @@
                 <div class="container-fluid m-auto" >
                 <div class="row d-flex justify-content-center">
                     <div class="inputContainer col-12" :class="{ 'search': scrollEffect }">
-                    <input class="col-10 ml-4"  type="text">
-                    <span class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
+                      <input class="col-10 ml-4"  type="text" v-model="search" @input="autocomplete">
+                      <span class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
                     </div>
                 </div>
                 </div>
@@ -42,39 +42,43 @@ export default {
         lastScrollPosition: 0,
         scrollOffset: 0,
         links:[
-       
-        {
-          text: "Places to visit",
-          current: true,
-        },
-        {
-          text: "Experiences",  
-          current: false,
-        },
-        {
-          text: "Online experiences",     
-          current: false,
-        },
-        
-      ]
+          {
+            text: "Places to visit",
+            current: true,
+          },
+          {
+            text: "Experiences",  
+            current: false,
+          },
+          {
+            text: "Online experiences",     
+            current: false,
+          },
+        ],
+        search : "",
+        autocompleters:[]
     }
   },
-
-  
    mounted() {
     this.lastScrollPosition = window.pageYOffset
     window.addEventListener('scroll', this.onScroll)
   },
-  
   methods: {
+    //autocomplete
+    autocomplete(){
+      axios
+        .get("/api/apartments/autocomplete/" + this.search)
+        .then((response) => {
+            this.autocompleters = response.data.results;
+        });         
+    },
+ 
     // Toggle if navigation is shown or hidden
     onScroll() {
       if (window.pageYOffset < 0) {
         return
       }
-      
       this.scrollEffect =  this.lastScrollPosition < window.pageYOffset
-      
     },
   },
   props: {

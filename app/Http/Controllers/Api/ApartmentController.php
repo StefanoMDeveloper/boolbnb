@@ -43,14 +43,22 @@ class ApartmentController extends Controller
     
         return $distance * $radius;
     }  
-    
-    public function filter($search){
-        // geocoding
+
+    public function geocode($search){
         $address = $search;
         $address = urlencode($address);
         $url = "https://api.tomtom.com/search/2/geocode/{$address}.json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT";
         $response_json = file_get_contents($url);
-        $response = json_decode($response_json, true);
+        return  json_decode($response_json, true);
+    }
+
+    public function autocomplete($search){
+        $response = self::geocode($search);
+        return response()->json($response);
+    }
+    
+    public function filter($search){
+        $response = self::geocode($search);
         $searchLat=$response['results'][0]['position']['lat'];
         $searchLon=$response['results'][0]['position']['lon'];
 
