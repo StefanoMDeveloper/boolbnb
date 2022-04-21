@@ -7798,11 +7798,9 @@ __webpack_require__.r(__webpack_exports__);
     autocomplete: function autocomplete() {
       var _this = this;
 
-      if (this.search.length > 1) {
-        axios.get("/api/apartments/autocomplete/" + this.search).then(function (response) {
-          _this.autocompleters = response.data;
-        });
-      }
+      axios.get("https://api.tomtom.com/search/2/geocode/" + this.search + ".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT").then(function (response) {
+        _this.autocompleters = response;
+      });
     },
     filter: function filter() {
       var _this2 = this;
@@ -27532,7 +27530,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
