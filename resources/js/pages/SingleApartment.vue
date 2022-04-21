@@ -18,7 +18,7 @@
             </div>
             <h4>Scrivi un messaggio al proprietario dell&#39;appartamento</h4>
             <form @submit.prevent='sendMail'>
-                <div v-if="authUser==false">
+                <div v-if="authUser==0">
                     <label for="email">Ciaone!</label>
                     <input type="email" id="email" name="email">
                 </div>
@@ -46,6 +46,7 @@ export default {
         }
     },
     created() {
+        console.log(this.authUser);
         axios
         .get(`/api/apartments/${this.$route.params.slug}`)
         .then((response) => {

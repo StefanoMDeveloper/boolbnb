@@ -7941,11 +7941,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-//
-//
-//
-=======
 //
 //
 //
@@ -7965,7 +7960,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 //
 //
 //
@@ -8092,7 +8086,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
 //
@@ -8102,34 +8095,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-=======
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
     return {
-<<<<<<< HEAD
       apartment: [],
       messageSent: false
-=======
-      apartment: []
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
     };
   },
   created: function created() {
     var _this = this;
 
+    console.log(this.authUser);
     axios.get("/api/apartments/".concat(this.$route.params.slug)).then(function (response) {
       _this.apartment = response.data;
     });
-<<<<<<< HEAD
   },
   methods: {
     sendMail: function sendMail() {
@@ -8141,8 +8121,6 @@ __webpack_require__.r(__webpack_exports__);
         _this2.messageSent = true;
       });
     }
-=======
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
   }
 });
 
@@ -8236,11 +8214,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, ".jubotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n}\n.jubotron .imagecontainerJubo[data-v-00e83377] {\n  margin-top: 200px;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  overflow: hidden;\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n}\n.jubotron .imagecontainerJubo img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.citiesContainer .cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer .cityCard .textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.experienceContainer .imgsEsp[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.experienceContainer .imgsEsp .imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.experienceContainer .imgsEsp .imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.experienceContainer .imgsEsp .imgEsp .esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.giftContainer .giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.giftContainer .giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
-=======
 exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 
 // exports
 
@@ -8259,7 +8233,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 20px;\n}\n.singleApartment .containerImages div[data-v-4fd40851] {\n  border: 6px solid white;\n}\n.card-immagine[data-v-4fd40851] {\n  height: 200px;\n  width: 200px;\n}", ""]);
+exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  max-width: 25%;\n  max-height: 25%;\n  float: left;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}", ""]);
 
 // exports
 
@@ -9856,8 +9830,6 @@ var render = function () {
                   },
                   [
                     _c("input", {
-<<<<<<< HEAD
-=======
                       directives: [
                         {
                           name: "model",
@@ -9866,7 +9838,6 @@ var render = function () {
                           expression: "search",
                         },
                       ],
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
                       staticClass: "col-10 ml-4",
                       attrs: { type: "text" },
                       domProps: { value: _vm.search },
@@ -10358,24 +10329,18 @@ var render = function () {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "container d-flex containerImages" },
+          { staticClass: "container containerImages" },
           _vm._l(_vm.apartment.images, function (image) {
-            return _c("div", { key: image.id, staticClass: "d-flex" }, [
-              _c("div", [
-                image.main_image
-                  ? _c("p", { staticClass: "card-immagine main-immagine" }, [
-                      _c("img", { attrs: { src: "/storage/" + image.url } }),
-                    ])
-                  : _vm._e(),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "d-flex g-3" }, [
-                !image.main_image
-                  ? _c("p", { staticClass: "card-immagine" }, [
-                      _c("img", { attrs: { src: "/storage/" + image.url } }),
-                    ])
-                  : _vm._e(),
-              ]),
+            return _c("span", { key: image.id }, [
+              image.main_image
+                ? _c("img", {
+                    staticClass: "main-immagine",
+                    attrs: { src: "/storage/" + image.url },
+                  })
+                : _c("img", {
+                    staticClass: "other-immagini",
+                    attrs: { src: "/storage/" + image.url },
+                  }),
             ])
           }),
           0
@@ -10419,7 +10384,7 @@ var render = function () {
             },
           },
           [
-            _vm.authUser == false
+            _vm.authUser == 0
               ? _c("div", [
                   _c("label", { attrs: { for: "email" } }, [_vm._v("Ciaone!")]),
                   _vm._v(" "),
@@ -26294,21 +26259,23 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-var globalVariables = {
-  data: function data() {
-    return {
-      authUser: 'false'
-    };
-  }
-};
+/* const globalVariables = {
+    data(){
+        return {
+            authUser: 'false'
+        }
+    }
+} */
+// Vue.prototype.$hostname = 'your variable name'
+
+vue__WEBPACK_IMPORTED_MODULE_4___default.a.prototype.authUser = '0';
 var app = new vue__WEBPACK_IMPORTED_MODULE_4___default.a({
   el: '#app',
   render: function render(h) {
     return h(_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
   },
   router: _router__WEBPACK_IMPORTED_MODULE_1__["default"]
-});
-app.mixin(globalVariables);
+}); // app.mixin(globalVariables);
 
 /***/ }),
 
@@ -26689,8 +26656,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg":
 /*!*********************************************************************************!*\
   !*** ./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg ***!
@@ -26713,7 +26678,6 @@ module.exports = "/images/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg?4476f49eb
 
 /***/ }),
 
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 /***/ "./storage/app/public/uploads/ap10p1.jpg":
 /*!***********************************************!*\
   !*** ./storage/app/public/uploads/ap10p1.jpg ***!
@@ -27627,8 +27591,6 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg":
 /*!*********************************************************************************!*\
   !*** ./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg ***!
@@ -27651,7 +27613,6 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 
 /***/ }),
 
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 /***/ 1:
 /*!*************************************!*\
   !*** multi ./resources/js/front.js ***!
@@ -27659,11 +27620,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
->>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 
 
 /***/ })

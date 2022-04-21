@@ -12,13 +12,17 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js' 
 import Vue from 'vue';
 
-const globalVariables = {
+/* const globalVariables = {
     data(){
         return {
             authUser: 'false'
         }
     }
-}
+} */
+
+// Vue.prototype.$hostname = 'your variable name'
+
+Vue.prototype.authUser = '0';
 
 const app = new Vue({
     el:'#app',
@@ -26,4 +30,4 @@ const app = new Vue({
     router
 });
 
-app.mixin(globalVariables);
+// app.mixin(globalVariables);
