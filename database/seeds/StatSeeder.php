@@ -15,7 +15,7 @@ class StatSeeder extends Seeder
         $stats = config('stats');
         foreach ($stats as $stat){
             $new_stat = new Stat();
-            $new_stat->id = $stat['id'];
+            $new_stat->ip = $stat['ip'];
             $new_stat->date = $stat['date'];
             $new_stat->apartment_id = $stat['apartment_id'];
             $new_stat->save();

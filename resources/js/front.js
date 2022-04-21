@@ -31,3 +31,4 @@ const app = new Vue({
 });
 
 // app.mixin(globalVariables);
+

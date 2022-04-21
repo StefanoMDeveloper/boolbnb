@@ -7795,11 +7795,9 @@ __webpack_require__.r(__webpack_exports__);
     autocomplete: function autocomplete() {
       var _this = this;
 
-      if (this.search.length > 1) {
-        axios.get("/api/apartments/autocomplete/" + this.search).then(function (response) {
-          _this.autocompleters = response.data;
-        });
-      }
+      axios.get("https://api.tomtom.com/search/2/geocode/" + this.search + ".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT").then(function (response) {
+        _this.autocompleters = response;
+      });
     },
     filter: function filter() {
       var _this2 = this;
@@ -7998,32 +7996,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
   data: function data() {
     return {
+      test: "",
+      colors: ['#DE3151', '#BC1A6E', '#CC2D4A', '#D93B30'],
       cities: [{
         image: "city1",
         title: "Napoli",
-        text: "189 chilometri di distanza",
-        color: '#DE3151'
+        text: "189 chilometri di distanza"
       }, {
         image: "city2",
         title: "Bologna",
-        text: "303 chilometri di distanza",
-        color: '#BC1A6E'
+        text: "303 chilometri di distanza"
       }, {
         image: "city3",
         title: "Roccaraso",
-        text: "132 chilometri di distanza",
-        color: '#CC2D4A'
+        text: "132 chilometri di distanza"
       }, {
         image: "city4",
         title: "Verona",
-        text: "411 chilometri di distanza",
-        color: '#D93B30'
+        text: "411 chilometri di distanza"
       }]
     };
+  },
+  created: function created() {
+    this.test = this.logged_in;
   }
 });
 
@@ -8214,7 +8214,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -10138,51 +10138,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
     _c("div", { staticClass: "container-fluid" }, [
-      _c(
-        "div",
-        { staticClass: "row ms_citiesContainer d-flex" },
-        _vm._l(_vm.cities, function (element, index) {
-          return _c("div", { key: index, staticClass: "ms_cityCard" }, [
-            _c("div", { staticClass: "ms_imageContainer" }, [
-              _c("img", {
-                attrs: {
-                  src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
-                    element.image +
-                    ".jpg"),
-                  alt: "",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "ms_textcity" }, [
-              _c("h1", { staticClass: "text-white" }, [
-                _vm._v(_vm._s(element.title)),
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "text-white" }, [
-                _vm._v(_vm._s(element.text)),
-              ]),
-            ]),
-          ])
-        }),
-        0
-      ),
-    ]),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2),
-  ])
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row ms_jumbotron" }, [
         _c("div", { staticClass: "ms_imagecontainerJumbo col-10 p-0" }, [
           _c("img", {
@@ -10197,12 +10153,60 @@ var staticRenderFns = [
               _vm._v("Lasciati guidare dalla curiosità"),
             ]),
             _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.test))]),
+            _vm._v(" "),
             _c("button", [_vm._v("Sono flessibile")]),
           ]),
         ]),
       ]),
-    ])
-  },
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "container-fluid" }, [
+      _c(
+        "div",
+        { staticClass: "row ms_citiesContainer d-flex" },
+        _vm._l(_vm.cities, function (element, index) {
+          return _c(
+            "div",
+            {
+              key: index,
+              staticClass: "ms_cityCard",
+              style: { "background-color": _vm.colors[index] },
+            },
+            [
+              _c("div", { staticClass: "ms_imageContainer" }, [
+                _c("img", {
+                  attrs: {
+                    src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
+                      element.image +
+                      ".jpg"),
+                    alt: "",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ms_textcity" }, [
+                _c("h1", { staticClass: "text-white" }, [
+                  _vm._v(_vm._s(element.title)),
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-white" }, [
+                  _vm._v(_vm._s(element.text)),
+                ]),
+              ]),
+            ]
+          )
+        }),
+        0
+      ),
+    ]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+  ])
+}
+var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
