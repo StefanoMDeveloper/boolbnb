@@ -7,12 +7,12 @@
             {{Auth::user()->name}}, le tue statistiche per appartamento!
         </h1>
         <div class="profile">
-            {{-- @foreach ($views as $view)
-                <p><strong>{{ $view->id }}</strong></p>
-                <p>Da {{$view->date}} </p>
-                <p>{{ $view->apartment_id }}</p>
+            @foreach ($stats as $stat)
+                <p><strong>{{ $stat->ip }}</strong></p>
+                <p> {{$stat->date->format('d/m/Y')}} </p>
+                <p>{{ $stat->apartment->name }}</p>
                 
-            @endforeach --}}
+            @endforeach
             <a href="{{ URL::previous() }}">
                 <button type="button" class="btn backBtn m-1 text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">

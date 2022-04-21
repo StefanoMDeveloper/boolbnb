@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Stat;
 use App\Apartment;
 use App\Service;
 use App\Image;
@@ -35,7 +36,7 @@ class ApartmentController extends Controller
     {
         $user_id= Auth::user()->id;
         $apartments=Apartment::all()->where('user_id',$user_id);
-        return view('admin.apartments.index',compact('apartments'));
+        return view('admin.apartments.index',compact('apartments','stats'));
     }
 
     /**
