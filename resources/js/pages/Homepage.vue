@@ -9,7 +9,7 @@
         <div class="citiesContainer d-flex">
             <div v-for="(element, index) in cities" :key="index" class="cityCard">
                 <div class="imageContainer">
-                    <img :src="require('.../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
+                    <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
                 </div>
                 <div class="textcity">
                     <h1 class="text-white">{{element.title}}</h1>
