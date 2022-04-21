@@ -17,7 +17,7 @@
                 <a href="{{route('admin.messages')}}">Messaggi</a>
             </div>
             <div class="profileBox">
-                <a href="{{route('password.update')}}">Statistiche</a>
+                <a href="{{route('admin.stats')}}">Statistiche</a>
             </div>
             <div class="profileBox">
                 <a href="{{route('password.update')}}">Ripristina la password</a>
