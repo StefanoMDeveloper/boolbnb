@@ -3,19 +3,12 @@
         <div class="container p-3 singleApartment">
             <h1>{{apartment.name}}</h1>
             <p>{{apartment.address}}</p>
-            <div class="container d-flex containerImages">
-                <div v-for="image in apartment.images" :key="image.id" class="d-flex"><!-- non usare ccs su questo div -->
-                    <div>
-                        <p v-if="image.main_image"  class="card-immagine main-immagine">
-                            <img  :src="`/storage/${image.url}`">
-                        </p>
-                    </div>
-                    <div class="d-flex g-3">
-                        <p v-if="!image.main_image"  class="card-immagine">
-                            <img  :src="`/storage/${image.url}`">
-                        </p>
-                    </div>
-                </div>
+            <div class="container containerImages">
+                <span v-for="image in apartment.images" :key="image.id" ><!-- non usare ccs su questo span -->
+                    <img v-if="image.main_image" class="main-immagine" :src="`/storage/${image.url}`">
+                    <img v-else class="other-immagini" :src="`/storage/${image.url}`">
+                </span>
+
             </div>
             <h2>{{apartment.description}}</h2>
             <p>Stanze: {{apartment.rooms}} • letti: {{apartment.beds}} • bagni: {{apartment.bathrooms}} • metri quadrati: {{apartment.square_meters}}</p>
@@ -78,16 +71,30 @@ export default {
     margin-top: 200px;
 
     .containerImages {
-        border-radius: 20px;
-    
-        div {
-            border: 6px solid white;
-        }
+        border-radius: 30px;
+        overflow: hidden;
+        padding: 0;
+        max-height: 560px;
+
     }
 }
 
-.card-immagine{
-    height: 200px;
-    width: 200px;
-}
+    .main-immagine{
+        width: 50%;
+        float: left;
+
+    }
+    
+    .other-immagini{
+        max-width: 25%;
+        max-height: 25%;
+        float: left;
+        object-fit: cover;
+        
+    }
+
+    img{
+        border: 2px solid white;
+    }
+
 </style>

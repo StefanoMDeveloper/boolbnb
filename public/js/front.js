@@ -7780,7 +7780,10 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         text: "Online experiences",
         current: false
-      }]
+      }],
+      search: "",
+      autocompleters: [],
+      filteredApartments: []
     };
   },
   mounted: function mounted() {
@@ -7788,6 +7791,25 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener('scroll', this.onScroll);
   },
   methods: {
+    //autocomplete
+    autocomplete: function autocomplete() {
+      var _this = this;
+
+      if (this.search.length > 1) {
+        axios.get("/api/apartments/autocomplete/" + this.search).then(function (response) {
+          _this.autocompleters = response.data;
+        });
+      }
+    },
+    filter: function filter() {
+      var _this2 = this;
+
+      if (this.search.length > 1) {
+        axios.get("/api/apartments/filter/" + this.search).then(function (response) {
+          _this2.filteredApartments = response.data;
+        });
+      }
+    },
     // Toggle if navigation is shown or hidden
     onScroll: function onScroll() {
       if (window.pageYOffset < 0) {
@@ -7919,9 +7941,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
 //
+=======
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 //
 //
 //
@@ -7967,19 +8011,23 @@ __webpack_require__.r(__webpack_exports__);
       cities: [{
         image: "city1",
         title: "Napoli",
-        text: "189 chilometri di distanza"
+        text: "189 chilometri di distanza",
+        color: '#DE3151'
       }, {
         image: "city2",
         title: "Bologna",
-        text: "303 chilometri di distanza"
+        text: "303 chilometri di distanza",
+        color: '#BC1A6E'
       }, {
         image: "city3",
         title: "Roccaraso",
-        text: "132 chilometri di distanza"
+        text: "132 chilometri di distanza",
+        color: '#CC2D4A'
       }, {
         image: "city4",
         title: "Verona",
-        text: "411 chilometri di distanza"
+        text: "411 chilometri di distanza",
+        color: '#D93B30'
       }]
     };
   }
@@ -8044,6 +8092,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
 //
@@ -8060,12 +8109,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+=======
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
     return {
+<<<<<<< HEAD
       apartment: [],
       messageSent: false
+=======
+      apartment: []
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
     };
   },
   created: function created() {
@@ -8074,6 +8129,7 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/apartments/".concat(this.$route.params.slug)).then(function (response) {
       _this.apartment = response.data;
     });
+<<<<<<< HEAD
   },
   methods: {
     sendMail: function sendMail() {
@@ -8085,6 +8141,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.messageSent = true;
       });
     }
+=======
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
   }
 });
 
@@ -8178,7 +8236,11 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
+<<<<<<< HEAD
 exports.push([module.i, ".jubotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n}\n.jubotron .imagecontainerJubo[data-v-00e83377] {\n  margin-top: 200px;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  overflow: hidden;\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n}\n.jubotron .imagecontainerJubo img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.citiesContainer .cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.citiesContainer .cityCard .imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.citiesContainer .cityCard .textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.experienceContainer .imgsEsp[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.experienceContainer .imgsEsp .imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.experienceContainer .imgsEsp .imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.experienceContainer .imgsEsp .imgEsp .esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.giftContainer .giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.giftContainer .giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+=======
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  background-color: #BC1A6E;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 
 // exports
 
@@ -9794,11 +9856,43 @@ var render = function () {
                   },
                   [
                     _c("input", {
+<<<<<<< HEAD
+=======
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.search,
+                          expression: "search",
+                        },
+                      ],
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
                       staticClass: "col-10 ml-4",
                       attrs: { type: "text" },
+                      domProps: { value: _vm.search },
+                      on: {
+                        input: [
+                          function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.search = $event.target.value
+                          },
+                          _vm.autocomplete,
+                        ],
+                      },
                     }),
                     _vm._v(" "),
-                    _vm._m(0),
+                    _c(
+                      "span",
+                      { staticClass: "col-2", on: { click: _vm.filter } },
+                      [
+                        _c("i", {
+                          staticClass:
+                            "fa-solid fa-magnifying-glass searchIcon",
+                        }),
+                      ]
+                    ),
                   ]
                 ),
               ]),
@@ -9806,20 +9900,12 @@ var render = function () {
           ]
         ),
         _vm._v(" "),
-        _vm._m(1),
+        _vm._m(0),
       ]),
     ]
   )
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-2" }, [
-      _c("i", { staticClass: "fa-solid fa-magnifying-glass searchIcon" }),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -10083,35 +10169,37 @@ var render = function () {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "citiesContainer d-flex" },
-      _vm._l(_vm.cities, function (element, index) {
-        return _c("div", { key: index, staticClass: "cityCard" }, [
-          _c("div", { staticClass: "imageContainer" }, [
-            _c("img", {
-              attrs: {
-                src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
-                  element.image +
-                  ".jpg"),
-                alt: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "textcity" }, [
-            _c("h1", { staticClass: "text-white" }, [
-              _vm._v(_vm._s(element.title)),
+    _c("div", { staticClass: "container-fluid" }, [
+      _c(
+        "div",
+        { staticClass: "row ms_citiesContainer d-flex" },
+        _vm._l(_vm.cities, function (element, index) {
+          return _c("div", { key: index, staticClass: "ms_cityCard" }, [
+            _c("div", { staticClass: "ms_imageContainer" }, [
+              _c("img", {
+                attrs: {
+                  src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
+                    element.image +
+                    ".jpg"),
+                  alt: "",
+                },
+              }),
             ]),
             _vm._v(" "),
-            _c("h4", { staticClass: "text-white" }, [
-              _vm._v(_vm._s(element.text)),
+            _c("div", { staticClass: "ms_textcity" }, [
+              _c("h1", { staticClass: "text-white" }, [
+                _vm._v(_vm._s(element.title)),
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-white" }, [
+                _vm._v(_vm._s(element.text)),
+              ]),
             ]),
-          ]),
-        ])
-      }),
-      0
-    ),
+          ])
+        }),
+        0
+      ),
+    ]),
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
@@ -10123,14 +10211,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "jubotron" }, [
-      _c("div", { staticClass: "imagecontainerJubo" }, [
-        _c("img", {
-          attrs: {
-            src: __webpack_require__(/*! ../../../public/storage/uploads/jubotron.jpg */ "./storage/app/public/uploads/jubotron.jpg"),
-            alt: "",
-          },
-        }),
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row ms_jumbotron" }, [
+        _c("div", { staticClass: "ms_imagecontainerJumbo col-10 p-0" }, [
+          _c("img", {
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/storage/uploads/jubotron.jpg */ "./storage/app/public/uploads/jubotron.jpg"),
+              alt: "",
+            },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ms_textcontainer" }, [
+            _c("h1", { staticClass: "text-white ms_textJombo" }, [
+              _vm._v("Lasciati guidare dalla curiosità"),
+            ]),
+            _vm._v(" "),
+            _c("button", [_vm._v("Sono flessibile")]),
+          ]),
+        ]),
       ]),
     ])
   },
@@ -10138,64 +10236,68 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "experienceContainer" }, [
-      _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "imgsEsp" }, [
-        _c("div", { staticClass: "imgEsp" }, [
-          _c("img", {
-            attrs: {
-              src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./storage/app/public/uploads/experience2.jpg"),
-              alt: "",
-            },
-          }),
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row ms_experienceContainer" }, [
+        _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ms_imgsEsp" }, [
+          _c("div", { staticClass: "ms_imgEsp" }, [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./storage/app/public/uploads/experience2.jpg"),
+                alt: "",
+              },
+            }),
+            _vm._v(" "),
+            _c("h1", { staticClass: "ms_esptext text-white" }, [
+              _vm._v("Esperienze "),
+              _c("br"),
+              _vm._v(" per il tuo viaggio"),
+            ]),
+          ]),
           _vm._v(" "),
-          _c("h1", { staticClass: "esptext text-white" }, [
-            _vm._v("Esperienze "),
+          _c("div", { staticClass: "ms_imgEsp" }, [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/storage/uploads/experience1.jpg */ "./storage/app/public/uploads/experience1.jpg"),
+                alt: "",
+              },
+            }),
+            _vm._v(" "),
+            _c("h1", { staticClass: "ms_esptext text-white" }, [
+              _vm._v("Attività "),
+              _c("br"),
+              _vm._v(" da casa"),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row ms_giftContainer" }, [
+        _c("div", { staticClass: "col-4" }, [
+          _c("h1", { staticClass: "ms_giftFont" }, [
+            _vm._v("Acquista "),
             _c("br"),
-            _vm._v(" per il tuo viaggio"),
+            _vm._v(" le gift card "),
+            _c("br"),
+            _vm._v(" di Airbnb"),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "imgEsp" }, [
+        _c("div", { staticClass: "ms_giftImg col-8" }, [
           _c("img", {
             attrs: {
-              src: __webpack_require__(/*! ../../../public/storage/uploads/experience1.jpg */ "./storage/app/public/uploads/experience1.jpg"),
+              src: __webpack_require__(/*! ../../../public/storage/uploads/gift.jpg */ "./storage/app/public/uploads/gift.jpg"),
               alt: "",
             },
           }),
-          _vm._v(" "),
-          _c("h1", { staticClass: "esptext text-white" }, [
-            _vm._v("Attività "),
-            _c("br"),
-            _vm._v(" da casa"),
-          ]),
         ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "giftContainer" }, [
-      _c("div", { staticClass: "col-4" }, [
-        _c("h1", { staticClass: "giftFont" }, [
-          _vm._v("Acquista "),
-          _c("br"),
-          _vm._v(" le gift card "),
-          _c("br"),
-          _vm._v(" di Airbnb"),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "giftImg col-8" }, [
-        _c("img", {
-          attrs: {
-            src: __webpack_require__(/*! ../../../public/storage/uploads/gift.jpg */ "./storage/app/public/uploads/gift.jpg"),
-            alt: "",
-          },
-        }),
       ]),
     ])
   },
@@ -25725,6 +25827,8 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg": "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg",
+	"./ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg": "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg",
 	"./ap10p1.jpg": "./storage/app/public/uploads/ap10p1.jpg",
 	"./ap10p2.jpg": "./storage/app/public/uploads/ap10p2.jpg",
 	"./ap10p3.jpg": "./storage/app/public/uploads/ap10p3.jpg",
@@ -25807,7 +25911,9 @@ var map = {
 	"./experience1.jpg": "./storage/app/public/uploads/experience1.jpg",
 	"./experience2.jpg": "./storage/app/public/uploads/experience2.jpg",
 	"./gift.jpg": "./storage/app/public/uploads/gift.jpg",
-	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg"
+	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg",
+	"./sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg": "./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg",
+	"./vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg": "./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg"
 };
 
 
@@ -26583,6 +26689,31 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg?b76706f2ec3ff9ccf566f536f7eb7a3a";
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
+
+/***/ }),
+
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 /***/ "./storage/app/public/uploads/ap10p1.jpg":
 /*!***********************************************!*\
   !*** ./storage/app/public/uploads/ap10p1.jpg ***!
@@ -27496,6 +27627,31 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4014efe82e731d5cdb126df3";
+
+/***/ }),
+
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 /***/ 1:
 /*!*************************************!*\
   !*** multi ./resources/js/front.js ***!
@@ -27503,7 +27659,11 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+>>>>>>> 593f1e6551a884087c26faaf0b5ba05b32d3f40d
 
 
 /***/ })

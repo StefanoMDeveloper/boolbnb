@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class View extends Model
+class Stat extends Model
 {
     protected $fillable = [
         'ip', 'date', 'apartment_id'
