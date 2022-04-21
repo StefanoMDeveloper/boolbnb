@@ -7780,7 +7780,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         text: "Online experiences",
         current: false
-      }]
+      }],
+      search: "",
+      autocompleters: []
     };
   },
   mounted: function mounted() {
@@ -7788,6 +7790,14 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener('scroll', this.onScroll);
   },
   methods: {
+    //autocomplete
+    autocomplete: function autocomplete() {
+      var _this = this;
+
+      axios.get("/api/apartments/autocomplete/" + this.search).then(function (response) {
+        _this.autocompleters = response.data.results;
+      });
+    },
     // Toggle if navigation is shown or hidden
     onScroll: function onScroll() {
       if (window.pageYOffset < 0) {
@@ -9766,8 +9776,28 @@ var render = function () {
                   },
                   [
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.search,
+                          expression: "search",
+                        },
+                      ],
                       staticClass: "col-10 ml-4",
                       attrs: { type: "text" },
+                      domProps: { value: _vm.search },
+                      on: {
+                        input: [
+                          function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.search = $event.target.value
+                          },
+                          _vm.autocomplete,
+                        ],
+                      },
                     }),
                     _vm._v(" "),
                     _vm._m(0),
@@ -25637,6 +25667,7 @@ module.exports = g;
 
 var map = {
 	"./1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg": "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg",
+	"./ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg": "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg",
 	"./ap10p1.jpg": "./storage/app/public/uploads/ap10p1.jpg",
 	"./ap10p2.jpg": "./storage/app/public/uploads/ap10p2.jpg",
 	"./ap10p3.jpg": "./storage/app/public/uploads/ap10p3.jpg",
@@ -26496,6 +26527,17 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /***/ (function(module, exports) {
 
 module.exports = "/images/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg?b76706f2ec3ff9ccf566f536f7eb7a3a";
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
 
 /***/ }),
 
