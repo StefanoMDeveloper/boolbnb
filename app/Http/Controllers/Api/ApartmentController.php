@@ -34,6 +34,16 @@ class ApartmentController extends Controller
         return response()->json($apartment);
     }
 
+    public function computeDistance($lat1, $lng1, $lat2, $lng2, $radius = 6378137)
+    {
+        static $x = M_PI / 180;
+        $lat1 *= $x; $lng1 *= $x;
+        $lat2 *= $x; $lng2 *= $x;
+        $distance = 2 * asin(sqrt(pow(sin(($lat1 - $lat2) / 2), 2) + cos($lat1) * cos($lat2) * pow(sin(($lng1 - $lng2) / 2), 2)));
+    
+        return $distance * $radius;
+    }  
+    
     public function filter($search){
         // geocoding
         $address = $search;
@@ -46,59 +56,24 @@ class ApartmentController extends Controller
 
         //First gross filter
         $apartments = Apartment::all()->whereBetween('lat', [$searchLat-0.5, $searchLat+0.5])->whereBetween('lon', [$searchLon-0.5, $searchLon+0.5]);
-        if(empty($apartments->items)){
+        if(empty($apartments)){
             return response()->json(["message"=>"Nessun appartamento."]);
         }
 
-        //listing apartments to pass on api call
-        $apartmentList = [];
-        $count = 0;
-        foreach($apartments as $apartment){
-            $apartmentJson =
-                [
-                    $count =>
-                        [
-                            "poi" => [
-                            "name" => $apartment->name
-                            ],
-                            "address" => [
-                            "freeformAddress" => $apartment->address
-                            ],
-                            "position" => [
-                            "lat" => $apartment->lat,
-                            "lon" => $apartment->lon
-                            ],
-                            [
-                                "infos"  => 
-                                    [
-                                        "id"  => $apartment->id,
-                                        "slug"  => $apartment->slug,
-                                        "description" => $apartment->description,
-                                        "beds"  => $apartment->beds,
-                                        "bathrooms"  => $apartment->bathrooms,
-                                        "square_meters"  => $apartment->square_meters,
-                                        "user_id"  => $apartment->user_id
-                                    ]
-                            ]
-                        ]
-                ];
-            array_push($apartmentList, $apartmentJson);
-        }
-        @dd($apartmentList);
-        //other params for api call
-        $latLon = $searchLat.",".$searchLon;
-        $geometry = [
-            [
-            "type" => "CIRCLE",
-            "position" => $latLon,
-            "radius" => 20000
-            ]
-        ];
+        $filteredApartments = [];
 
-        //api call
-        $url = "https://api.tomtom.com/search/2/geometryFilter.json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&geometryList={$geometry}&poiList={$apartmentList}";
-        $response_json = file_get_contents($url);
-        $response = json_decode($response_json, true);
-        return response()->json($response);
+        foreach($apartments as $apartment){
+            $dist = round(self::computeDistance($searchLat,$searchLon,$apartment->lat,$apartment->lon));
+            if($dist<20000){
+                $apartment['distance_from_search'] = $dist;
+                array_push($filteredApartments, $apartment);
+            }
+        }
+
+        if(empty($filteredApartments)){
+            return response()->json([]);
+        }
+
+        return response()->json($filteredApartments);
     }
 }
