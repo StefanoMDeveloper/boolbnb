@@ -14,7 +14,7 @@
         </div>
         <div class="d-flex align-items-center mb-3">
             <h1 class="mr-4">Data di nascita:</h1>  
-            <h3 class="mt-1">{{Auth::user()->birth_date->format('d/m/Y')}}</h3>
+            <h3 class="mt-1">{{Carbon\Carbon::parse(Auth::user()->birth_date)->format('d/m/Y')}}</h3>
         </div>
         <div class="d-flex align-items-center mb-3">
             <h1 class="mr-4">Telefono:</h1>  

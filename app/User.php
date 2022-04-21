@@ -17,6 +17,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // protected $dates = ['birth_date'];
 
     protected $dates = ['birth_date' => 'birth_date'];
 
