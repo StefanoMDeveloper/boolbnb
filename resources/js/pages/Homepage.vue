@@ -16,7 +16,7 @@
         <!-- cities cards -->
         <div class="container-fluid">
             <div class="row ms_citiesContainer d-flex">
-                <div v-for="(element, index) in cities" :key="index" class="ms_cityCard">
+                <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}">
                     <div class="ms_imageContainer">
                         <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
                     </div>
@@ -64,30 +64,27 @@ export default {
     name: "Homepage",
     data(){
       return{
+          colors:['#DE3151', '#BC1A6E', '#CC2D4A', '#D93B30'],
           cities:[
               {
                 image:"city1",
                 title:"Napoli",   
                 text:"189 chilometri di distanza",
-                color: '#DE3151'
               },
               {
                 image:"city2",
                 title:"Bologna",
                 text:"303 chilometri di distanza",
-                color: '#BC1A6E'
               }, 
               {
                 image:"city3",
                 title:"Roccaraso",
                 text:"132 chilometri di distanza",
-                color: '#CC2D4A'
               }, 
               {
                 image:"city4",
                 title:"Verona",
                 text:"411 chilometri di distanza",
-                color: '#D93B30'
               },     
           ]
       }
@@ -153,7 +150,7 @@ export default {
         width: calc(100% / 4 - 20px);
         margin-top: 200px;
         border-radius: 20px;
-        background-color: #BC1A6E;
+       
         height: 400px;
         overflow: hidden;
         .ms_imageContainer{
