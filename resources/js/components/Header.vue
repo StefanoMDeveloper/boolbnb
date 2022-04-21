@@ -3,22 +3,19 @@
         <div class="row header-container">
             <div class="col-3 headerleft" :class="{ 'pink': scrollEffect }">
                 <i class="fa-brands fa-airbnb"></i>
-                <span>airbnb</span>
+                <span>Boolbnb</span>
             </div>
             <div class="col-5 headercenter d-flex flex-column align-items-center">
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
                     <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-                    <li><router-link :to="{ name: 'ApartmentsList' }">ApartmentsList</router-link></li>
-                    <li><router-link :to="{ name: 'SingleApartment' }">SingleApartment</router-link></li>
+                    <li><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                 </ul>
                 </nav>
                 <div class="container-fluid m-auto" >
                 <div class="row d-flex justify-content-center">
                     <div class="inputContainer col-12" :class="{ 'search': scrollEffect }">
-                    <input class="col-4"  type="text">
-                    <input class="col-3" type="text">
-                    <input class="col-3" type="text">
+                    <input class="col-10 ml-4"  type="text">
                     <span class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
                     </div>
                 </div>
@@ -26,7 +23,7 @@
             </div>
             <div class="headerright col-3">
                 <ul>
-                <li>Become a Host</li>
+                <li>Diventa un Host</li>
                 <li><i class="fa-solid fa-globe"></i></li>
                 <li><button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button></li>
                 </ul>
@@ -93,16 +90,18 @@ header{
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 80px;
   background-color: white;
   color: black;
   transition: .5s ease all; 
+  z-index: 1000;
   .header-container{
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .headerleft{
       font-size: 30px;
+      padding-left: 7%;
     }
     .headercenter{
       nav{
@@ -125,7 +124,7 @@ header{
         transition: .5s ease all;
         span{
           display: flex;
-          justify-content: end;
+          justify-content: center;
           align-items: center;
            .searchIcon{
              margin-right: 5px;
@@ -177,10 +176,10 @@ header{
   }
 }
 .is-hidden {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) , rgb(16, 17, 17) 20vh, rgb(16, 17, 17)100%);
+    background: black;
      color: white;
     transition: .5s ease all; 
-    height: 190px;
+    height: 153px;
 }
 .pink{
   color:#ff385c;
@@ -194,4 +193,5 @@ header{
 }
 
 </style>
+
 

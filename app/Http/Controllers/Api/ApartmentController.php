@@ -20,27 +20,6 @@ class ApartmentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -49,40 +28,52 @@ class ApartmentController extends Controller
     public function show($slug)
     {
         $apartment = Apartment::where("slug", $slug)->with(["images", "sponsorships", "services", "views"])->first();
+        if (empty($apartment)){
+            return response()->json(["message"=>"Nessun appartamento trovato con questo nome!"]);
+        }
         return response()->json($apartment);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function computeDistance($lat1, $lng1, $lat2, $lng2, $radius = 6378137)
     {
-        //
-    }
+        static $x = M_PI / 180;
+        $lat1 *= $x; $lng1 *= $x;
+        $lat2 *= $x; $lng2 *= $x;
+        $distance = 2 * asin(sqrt(pow(sin(($lat1 - $lat2) / 2), 2) + cos($lat1) * cos($lat2) * pow(sin(($lng1 - $lng2) / 2), 2)));
+    
+        return $distance * $radius;
+    }  
+    
+    public function filter($search){
+        // geocoding
+        $address = $search;
+        $address = urlencode($address);
+        $url = "https://api.tomtom.com/search/2/geocode/{$address}.json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT";
+        $response_json = file_get_contents($url);
+        $response = json_decode($response_json, true);
+        $searchLat=$response['results'][0]['position']['lat'];
+        $searchLon=$response['results'][0]['position']['lon'];
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        //First gross filter
+        $apartments = Apartment::all()->whereBetween('lat', [$searchLat-0.5, $searchLat+0.5])->whereBetween('lon', [$searchLon-0.5, $searchLon+0.5]);
+        if(empty($apartments)){
+            return response()->json(["message"=>"Nessun appartamento."]);
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $filteredApartments = [];
+
+        foreach($apartments as $apartment){
+            $dist = round(self::computeDistance($searchLat,$searchLon,$apartment->lat,$apartment->lon));
+            if($dist<20000){
+                $apartment['distance_from_search'] = $dist;
+                array_push($filteredApartments, $apartment);
+            }
+        }
+
+        if(empty($filteredApartments)){
+            return response()->json([]);
+        }
+
+        return response()->json($filteredApartments);
     }
 }

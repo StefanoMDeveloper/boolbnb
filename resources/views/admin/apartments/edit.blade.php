@@ -34,7 +34,7 @@
       </label>
       <textarea name="description" id="description" class="form-control col-8" cols="30" rows="10">{{ old ('description') ?? $apartment->description}}</textarea>
       @error('description')
-        <div class="alert alert-danger">La discrezione è obbligatorio</div>
+        <div class="alert alert-danger">La descrizione è obbligatorio</div>
       @enderror
     </div>
   
@@ -53,7 +53,7 @@
               class="form-control col-1 @error('rooms') is-invalid @enderror">
   
       @error('rooms')
-      <div class="invalid-feedback">il numero di stanze è obbligatorio</div>
+      <div class="invalid-feedback">Il numero di stanze è obbligatorio</div>
       @enderror
     </div>
   
@@ -110,7 +110,7 @@
               class="form-control col-1 @error('square_meters') is-invalid @enderror">
   
       @error('square_meters')
-      <div class="invalid-feedback">il numero di metri quadrati è obbligatorio</div>
+      <div class="invalid-feedback">Il numero di metri quadrati è obbligatorio</div>
       @enderror
     </div>
   
@@ -126,7 +126,7 @@
       </label>
       <input type="text" class="form-control col-8 @error('address') is-invalid @enderror" id="address" name="address" placeholder="aggiungi l'indirizzo completo" value="{{old("address") ?? $apartment->address}}">
       @error('address')
-        <div class="alert alert-danger">l'indirizzo è obbligatorio</div>
+        <div class="alert alert-danger">L'indirizzo è obbligatorio</div>
       @enderror
     </div>
   
@@ -210,3 +210,4 @@
   </div>
 
 @endsection
+
