@@ -7,6 +7,7 @@
                     <img  src="../../../public/storage/uploads/jubotron.jpg" alt="">
                     <div class="ms_textcontainer">
                         <h1 class="text-white ms_textJombo">Lasciati guidare dalla curiosità</h1>
+                                <p>{{test}}</p>
                         <button>Sono flessibile</button>
                     </div>
                 </div>
@@ -64,6 +65,7 @@ export default {
     name: "Homepage",
     data(){
       return{
+          test : "",
           colors:['#DE3151', '#BC1A6E', '#CC2D4A', '#D93B30'],
           cities:[
               {
@@ -88,6 +90,9 @@ export default {
               },     
           ]
       }
+    },
+    created(){
+        this.test = this.logged_in;
     }
 
 }

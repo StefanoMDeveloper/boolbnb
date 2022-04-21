@@ -7999,10 +7999,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
   data: function data() {
     return {
+      test: "",
       colors: ['#DE3151', '#BC1A6E', '#CC2D4A', '#D93B30'],
       cities: [{
         image: "city1",
@@ -8022,6 +8024,9 @@ __webpack_require__.r(__webpack_exports__);
         text: "411 chilometri di distanza"
       }]
     };
+  },
+  created: function created() {
+    this.test = this.logged_in;
   }
 });
 
@@ -10112,7 +10117,28 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row ms_jumbotron" }, [
+        _c("div", { staticClass: "ms_imagecontainerJumbo col-10 p-0" }, [
+          _c("img", {
+            attrs: {
+              src: __webpack_require__(/*! ../../../public/storage/uploads/jubotron.jpg */ "./storage/app/public/uploads/jubotron.jpg"),
+              alt: "",
+            },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ms_textcontainer" }, [
+            _c("h1", { staticClass: "text-white ms_textJombo" }, [
+              _vm._v("Lasciati guidare dalla curiosità"),
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.test))]),
+            _vm._v(" "),
+            _c("button", [_vm._v("Sono flessibile")]),
+          ]),
+        ]),
+      ]),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "container-fluid" }, [
       _c(
@@ -10154,37 +10180,12 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(0),
     _vm._v(" "),
-    _vm._m(2),
+    _vm._m(1),
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row ms_jumbotron" }, [
-        _c("div", { staticClass: "ms_imagecontainerJumbo col-10 p-0" }, [
-          _c("img", {
-            attrs: {
-              src: __webpack_require__(/*! ../../../public/storage/uploads/jubotron.jpg */ "./storage/app/public/uploads/jubotron.jpg"),
-              alt: "",
-            },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "ms_textcontainer" }, [
-            _c("h1", { staticClass: "text-white ms_textJombo" }, [
-              _vm._v("Lasciati guidare dalla curiosità"),
-            ]),
-            _vm._v(" "),
-            _c("button", [_vm._v("Sono flessibile")]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -26179,6 +26180,13 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
+var login_auth = {
+  data: function data() {
+    return {
+      logged_in: false
+    };
+  }
+};
 var app = new Vue({
   el: '#app',
   render: function render(h) {
@@ -26186,6 +26194,7 @@ var app = new Vue({
   },
   router: _router__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
+app.mixin(login_auth);
 
 /***/ }),
 
