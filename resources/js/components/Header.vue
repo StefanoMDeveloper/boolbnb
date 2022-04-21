@@ -15,8 +15,8 @@
                 <div class="container-fluid m-auto" >
                 <div class="row d-flex justify-content-center">
                     <div class="inputContainer col-12" :class="{ 'search': scrollEffect }">
-                      <input class="col-10 ml-4"  type="text" v-model="search" @input="autocomplete">
-                      <span class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
+                      <input class="col-10 ml-4"  type="text" v-model="search" @input=autocomplete>
+                      <span  @click=filter class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
                     </div>
                 </div>
                 </div>
@@ -56,7 +56,8 @@ export default {
           },
         ],
         search : "",
-        autocompleters:[]
+        autocompleters:[],
+        filteredApartments: []
     }
   },
    mounted() {
@@ -66,11 +67,23 @@ export default {
   methods: {
     //autocomplete
     autocomplete(){
-      axios
-        .get("/api/apartments/autocomplete/" + this.search)
-        .then((response) => {
-            this.autocompleters = response.data.results;
-        });         
+      if(this.search.length>1){
+        axios
+          .get("/api/apartments/autocomplete/" + this.search)
+          .then((response) => {
+            this.autocompleters = response.data;
+          });             
+      }
+    },
+
+    filter(){
+      if(this.search.length>1){
+        axios
+          .get("/api/apartments/filter/" + this.search)
+          .then((response) => {
+            this.filteredApartments = response.data;
+          });             
+      }      
     },
  
     // Toggle if navigation is shown or hidden

@@ -54,7 +54,11 @@ class ApartmentController extends Controller
 
     public function autocomplete($search){
         $response = self::geocode($search);
-        return response()->json($response);
+        $resultings = [];
+        foreach($response['results'] as $result){
+            array_push($resultings, $result['address']);
+        }
+        return response()->json($resultings);
     }
     
     public function filter($search){
