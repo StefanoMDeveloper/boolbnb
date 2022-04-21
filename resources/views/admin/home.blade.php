@@ -22,7 +22,7 @@
                         <a href="{{route('admin.apartments.create')}}">Aggiungi un nuovo appartamento</a>                  
                     </div>
                     <div>
-                        <a href="{{route('admin.home')}}">Vedi il tuo profilo</a>                                  
+                        <a href="{{route('admin.profile')}}">Vedi il tuo profilo</a>                                  
                     </div>
                     <div>
                         <a href="{{route('admin.messages')}}">Visualizza i messaggi ricevuti</a>                                  

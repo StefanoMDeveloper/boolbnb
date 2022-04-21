@@ -183,17 +183,17 @@
     </form>
 
       <!-- images -->
-      <div class="form-group col-10 pl-4 ml-4">
+      <div class="form-group col-10 ml-2 mt-3">
         <label for="files">Inserisci delle altre immagini relative all'appartamento:</label>
         <input class="form-control col-4" type="file" id="images" name="images[]" multiple><br><br>
       </div>
       {{-- image --}}
       @forelse($apartment->images as $image)
-        <div class="ml-5">
-          <div class="imgContainer">
+        <div class="ml-3 d-flex my-4">
+          <div class="imgContainer ml-3 mr-3">
             <img src="{{asset( 'storage/'.$image->url )}}" alt="">
           </div>
-          <label class="d-flex" for="main_image">Vuoi che questa sia l'immagine principale del tuo appartamento?</label>
+          <label class="d-flex mr-3" for="main_image">Vuoi che questa sia l'immagine principale del tuo appartamento?</label>
           <form class="d-block" action="{{ route('admin.images.destroy', $image->id) }}" method="POST">
             @csrf
             @method("DELETE")

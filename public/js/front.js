@@ -7780,7 +7780,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         text: "Online experiences",
         current: false
-      }]
+      }],
+      search: "",
+      autocompleters: []
     };
   },
   mounted: function mounted() {
@@ -7788,6 +7790,14 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener('scroll', this.onScroll);
   },
   methods: {
+    //autocomplete
+    autocomplete: function autocomplete() {
+      var _this = this;
+
+      axios.get("/api/apartments/autocomplete/" + this.search).then(function (response) {
+        _this.autocompleters = response.data.results;
+      });
+    },
     // Toggle if navigation is shown or hidden
     onScroll: function onScroll() {
       if (window.pageYOffset < 0) {
@@ -9766,8 +9776,28 @@ var render = function () {
                   },
                   [
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.search,
+                          expression: "search",
+                        },
+                      ],
                       staticClass: "col-10 ml-4",
                       attrs: { type: "text" },
+                      domProps: { value: _vm.search },
+                      on: {
+                        input: [
+                          function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.search = $event.target.value
+                          },
+                          _vm.autocomplete,
+                        ],
+                      },
                     }),
                     _vm._v(" "),
                     _vm._m(0),
@@ -25636,6 +25666,8 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg": "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg",
+	"./ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg": "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg",
 	"./ap10p1.jpg": "./storage/app/public/uploads/ap10p1.jpg",
 	"./ap10p2.jpg": "./storage/app/public/uploads/ap10p2.jpg",
 	"./ap10p3.jpg": "./storage/app/public/uploads/ap10p3.jpg",
@@ -25718,7 +25750,9 @@ var map = {
 	"./experience1.jpg": "./storage/app/public/uploads/experience1.jpg",
 	"./experience2.jpg": "./storage/app/public/uploads/experience2.jpg",
 	"./gift.jpg": "./storage/app/public/uploads/gift.jpg",
-	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg"
+	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg",
+	"./sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg": "./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg",
+	"./vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg": "./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg"
 };
 
 
@@ -26482,6 +26516,28 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg?b76706f2ec3ff9ccf566f536f7eb7a3a";
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
 
 /***/ }),
 
@@ -27398,6 +27454,28 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 
 /***/ }),
 
+/***/ "./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
+
+/***/ }),
+
+/***/ "./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg":
+/*!*********************************************************************************!*\
+  !*** ./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4014efe82e731d5cdb126df3";
+
+/***/ }),
+
 /***/ 1:
 /*!*************************************!*\
   !*** multi ./resources/js/front.js ***!
@@ -27405,7 +27483,7 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
