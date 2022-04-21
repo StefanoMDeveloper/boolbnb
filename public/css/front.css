@@ -14180,6 +14180,11 @@ a.logo {
   margin-bottom: 10px;
 }
 
+.showContainer .borderlineTop {
+  border-top: 1px solid rgb(193, 192, 192);
+  margin-top: 10px;
+}
+
 .showContainer .infoContainer {
   height: 150px;
   width: 200px;
