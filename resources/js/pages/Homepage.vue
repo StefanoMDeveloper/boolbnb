@@ -14,7 +14,7 @@
         </div>
 
         <!-- appartamenti consigliati -->
-        <div class="container-fluid ms_apartmentSlider col-12">
+        <div class="container-fluid ms_apartmentSlider col-11">
             <h1>Appartamenti Dei Nostri Migliori Host</h1>
             <vue-horizontal >
                 <section v-for="apartment in apartments" :key="apartment.id">
@@ -48,7 +48,7 @@
         <div class="container-fluid">
             <div class="ms_citiesContainer d-flex flex-column">
                 <h1 class="mb-2">Destinazioni Più Gettonate</h1>
-                <div class="row ms_citiesContainer d-flex col-12">
+                <div class="row ms_citiesContainer d-flex justify-content-center col-12">
                     <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}">
                         <div class="ms_imageContainer">
                             <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
@@ -189,7 +189,6 @@ export default {
 
 // appartamenti
 .ms_apartmentSlider{
-    width: 1319px ;
     margin: 200px auto 40px auto;
 
     button{
@@ -232,7 +231,6 @@ export default {
 }
 
 .ms_citiesContainer { 
-    width: 1319px ;
     margin:40px auto 90px auto;
     .ms_flexContainer{
         display: flex;
@@ -260,7 +258,6 @@ export default {
     }
 }
 .ms_experienceContainer{
-    width: 1319px ;
     margin:40px auto;
     .ms_imgsEsp{
         width: 100%;
@@ -285,7 +282,6 @@ export default {
 }
 
 .ms_giftContainer{
-    width: 1319px ;
     margin:100px auto;
     display: flex;
     justify-content: space-between;
