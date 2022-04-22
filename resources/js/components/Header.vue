@@ -72,7 +72,6 @@ export default {
   methods: {
     //autocomplete
     autocomplete(){
-      axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       axios
         .get("https://cors-anywhere.herokuapp.com/https://api.tomtom.com/search/2/search/"+this.search+".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&typeahead=true&limit=5&countrySet=IT&language=it-IT")
         .then((response) => {
