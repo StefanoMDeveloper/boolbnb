@@ -1,7 +1,7 @@
 <template>
     <div>
-        <Header />
-        <Main />
+        <Header @filter="filterApartments" />
+        <Main :apartmentList=apartments />
         <Footer />
     </div>
 </template>
@@ -16,6 +16,27 @@ export default{
         Header,
         Main,
         Footer
+    },
+    data(){
+        return{
+            filteredApartments:[]
+        }
+    },
+    methods:{
+        filterApartments: function(data){
+            data.search = data.search.replace(", ", "-");
+            alert("/api/apartments/filter/search=" + data.search +"&radius=20000&lat="+data.lat + "&lon="+data.lon);
+            axios
+                .get("/api/apartments/filter/search=" + data.search +"&radius=20000&lat="+data.lat + "&lon="+data.lon)
+                .then((response) => {
+                    this.filteredApartments = response.data;
+                });             
+        }
+    },
+    computed:{
+        apartments(){
+            return this.filteredApartments;
+        }
     }
 }
 </script>

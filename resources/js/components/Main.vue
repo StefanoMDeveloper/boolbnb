@@ -1,12 +1,15 @@
 <template>
     <main>
-        <router-view :key="$route.path"></router-view>
+        <router-view :apartmentList=apartmentList :key="$route.path"></router-view>
     </main>
 </template>
 
 <script>
 export default {
-    name: "Main"
+    name: "Main",
+    props:{
+        apartmentList: Array
+    }
 };
 </script>
 
