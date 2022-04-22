@@ -3,10 +3,11 @@
         <!-- jumbotron -->
         <div class="container-fluid">
             <div class="row ms_jumbotron">
-                <div class="ms_imagecontainerJumbo col-10 p-0">
+                <div class="ms_imagecontainerJumbo col-11 col-lg-10 p-0">
                     <img  src="../../../public/storage/uploads/jubotron.jpg" alt="">
                     <div class="ms_textcontainer">
-                        <h1 class="text-white ms_textJombo">Lasciati guidare dalla curiosità</h1>
+                        <h3 class="text-white ms_textJombo d-lg-none">Lasciati guidare dalla curiosità</h3>
+                        <h1 class="text-white ms_textJombo d-none d-lg-block">Lasciati guidare dalla curiosità</h1>
                         <button>Sono flessibile</button>
                     </div>
                 </div>
@@ -167,20 +168,9 @@ export default {
 
 <style lang="scss" scoped>
 
-.item {
-  padding: 16px 24px;
-  margin-right: 24px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .ms_logo,
-  i{
-      color: #DE3151;
-  }
-}
 
+
+//jumbotron
 .ms_jumbotron{
     background-color: black;
     height: 800px;
@@ -206,12 +196,12 @@ export default {
             position: absolute;
                 bottom: 30px;
                 left: 50%;
-                transform:translate(-50%, -50%);
+                transform:translate(-50%);
                 width: 700px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-            .ms_textJombo{
+            h1.ms_textJombo{
                 font-size: 50px;
                 text-align: center;
             }
@@ -234,7 +224,23 @@ export default {
     
 }
 
+       
+
 // appartamenti
+.item {
+  padding: 16px 24px;
+  margin-right: 24px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .ms_logo,
+  i{
+      color: #DE3151;
+  }
+}
+
 .ms_apartmentSlider{
     margin: 250px 0 40px 0;
     position: relative;
