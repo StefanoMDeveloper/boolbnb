@@ -14,11 +14,11 @@
                 </nav>
                 <div class="container-fluid m-auto" >
                   <div class="row d-flex justify-content-center">
-                      <div class="inputContainer col-12" :class="{ 'search': scrollEffect }">
-                        <input class="col-10 ml-4"  type="text" v-model="search" @input=autocomplete>
-                        <span  @click=filter class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
+                      <div class="inputContainer col-12" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                        <input class="col-10 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
+                        <span class="col-2"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></span>
                         <div class="autocompleters" v-show="autocompleters">
-                          <div class="option" v-for="(option, index) in autocompleters" :key="index">
+                          <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
                               {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
                           </div>
                         </div>                           
@@ -61,13 +61,19 @@ export default {
           },
         ],
         search : "",
-        autocompleters:[],
-        filteredApartments: []
+        searchLat:"",
+        searchLon:"",
+        autocompleters:[]
     }
   },
    mounted() {
     this.lastScrollPosition = window.pageYOffset
     window.addEventListener('scroll', this.onScroll)
+  },
+  computed: {
+    choosedSearch(){    
+      return this.search;
+    }
   },
   methods: {
     //autocomplete
@@ -78,15 +84,15 @@ export default {
           this.autocompleters = response.data.results;
         });             
     },
-
+    setSearch(index){
+      this.search = this.autocompleters[index].address.freeformAddress +", " + this.autocompleters[index].address.municipality;
+      this.searchLat = this.autocompleters[index].position.lat;
+      this.searchLon = this.autocompleters[index].position.lon;
+      this.autocompleters = [];
+    },
     filter(){
-      if(this.search.length>1){
-        axios
-          .get("/api/apartments/filter/" + this.search)
-          .then((response) => {
-            this.filteredApartments = response.data;
-          });             
-      }      
+      this.autocompleters = [];
+      this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon});              
     },
  
     // Toggle if navigation is shown or hidden
@@ -153,8 +159,10 @@ header{
             border-radius: 50%;
             color: white;
             padding: 15px;
-
           }
+            .searchIcon:hover{
+              cursor: pointer;
+            }          
         }
       }
     }
