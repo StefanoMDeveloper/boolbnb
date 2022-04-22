@@ -8177,6 +8177,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
@@ -11204,6 +11210,20 @@ var render = function () {
             _c("input", { attrs: { type: "submit", value: "Submit" } }),
           ]
         ),
+        _vm._v(" "),
+        _c("button", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function ($event) {
+                  return _vm.$router.back()
+                },
+              },
+            },
+            [_vm._v("\n                Torna indietro  \n        ")]
+          ),
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -28410,7 +28430,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

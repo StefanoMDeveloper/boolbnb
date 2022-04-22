@@ -29,6 +29,12 @@
                 <textarea class="col-8 form-control" id="message" name="message" placeholder="Inserisci qui il messaggio"></textarea>
                 <input type="submit" value="Submit">
             </form>
+            <button>
+            <a @click="$router.back()">
+                    Torna indietro  
+            </a>
+            </button>
+
             <div v-show="messageSent">
                 Messaggio inviato!
             </div>
