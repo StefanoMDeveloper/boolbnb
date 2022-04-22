@@ -14,7 +14,7 @@
         </div>
 
         <!-- appartamenti consigliati -->
-        <div class="container-fluid ms_apartmentSlider">
+        <div class="container-fluid ms_apartmentSlider col-12">
             <h1>Appartamenti Dei Nostri Migliori Host</h1>
             <vue-horizontal >
                 <section v-for="apartment in apartments" :key="apartment.id">
