@@ -28,30 +28,7 @@ class MessageController extends Controller
     public function index()
     {
         $user_id=Auth::user()->id;
-        
-        // $actual = Message::all();
-        // $makeComparer = function($criteria) {
-        //     $comparer = function ($first, $second) use ($criteria) {
-        //       foreach ($criteria as $key => $orderType) {
-        //         // normalize sort direction
-        //         $orderType = strtolower($orderType);
-        //         if ($first[$key] < $second[$key]) {
-        //           return $orderType === "asc" ? -1 : 1;
-        //         } else if ($first[$key] > $second[$key]) {
-        //           return $orderType === "asc" ? 1 : -1;
-        //         }
-        //       }
-        //       // all elements were equal
-        //       return 0;
-        //     };
-        //     return $comparer;
-        //   };
-
-        // $criteria = ["date" => "desc"];
-        // $comparer = $makeComparer($criteria);
-        // $sorted = $actual->sort($comparer);
-        // $messages = $sorted->values()->toArray();
-        
+ 
         $messages = [];
         
         $apartments = Apartment::all()->where('user_id', $user_id);
