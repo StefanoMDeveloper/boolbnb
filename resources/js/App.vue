@@ -42,9 +42,15 @@ export default{
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400;500&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
+
+
 </style>
