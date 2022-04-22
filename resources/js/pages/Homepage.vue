@@ -16,7 +16,7 @@
         <!-- appartamenti consigliati -->
         <div class="container-fluid ms_apartmentSlider col-11">
             <h1>Appartamenti Dei Nostri Migliori Host</h1>
-            <vue-horizontal >
+            <vue-horizontal>
                 <section v-for="apartment in apartments" :key="apartment.id">
                     <div v-if="apartment.visible && apartment.sponsorships.length != 0" class="d-flex flex-column">
                         <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
@@ -46,7 +46,7 @@
         
         <!-- cities cards -->
         <div class="container-fluid">
-            <div class="ms_citiesContainer d-flex flex-column">
+            <div class="ms_citiesContainer container-fluid d-flex flex-column">
                 <h1 class="mb-2">Destinazioni Più Gettonate</h1>
                 <div class="row ms_citiesContainer d-flex justify-content-center col-12">
                     <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}">
@@ -66,12 +66,12 @@
         <div class="container-fluid">
             <div class="row ms_experienceContainer col-12">
                 <h1>Scopri le Esperienze Boolbnb</h1>
-                <div class="ms_imgsEsp">
-                    <div class="ms_imgEsp">
+                <div class="ms_imgsEsp row">
+                    <div class="ms_imgEsp col">
                         <img  src="../../../public/storage/uploads/experience2.jpg" alt="">
                         <h1 class="ms_esptext text-white">Esperienze <br> per il tuo viaggio</h1>
                     </div>
-                    <div class="ms_imgEsp">
+                    <div class="ms_imgEsp col">
                         <img  src="../../../public/storage/uploads/experience1.jpg" alt="">
                         <h1 class="ms_esptext text-white">Attività <br> da casa</h1>
                     </div>  
@@ -207,8 +207,8 @@ export default {
     }
 
     h5{
-        max-width: 300px;
-        margin: 0;
+        max-width: 320px;
+        margin: 0 10px;
     }
 
     a{
@@ -239,7 +239,8 @@ export default {
     .ms_cityCard{
         width: calc(100% / 4 - 20px);
         border-radius: 20px;
-       
+        padding: 0;
+        margin: 0 15px;
         height: 400px;
         overflow: hidden;
         .ms_imageContainer{
@@ -264,12 +265,12 @@ export default {
         display: flex;
         justify-content: space-between;
         .ms_imgEsp{
-            width: 647px;
-            border-radius: 20px;
+            
             overflow: hidden;
             position: relative;
             img{
                 width: 100%;
+                border-radius: 20px;
             }
             .ms_esptext{
                 position: absolute;
