@@ -7763,6 +7763,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -7795,8 +7800,9 @@ __webpack_require__.r(__webpack_exports__);
     autocomplete: function autocomplete() {
       var _this = this;
 
-      axios.get("https://api.tomtom.com/search/2/geocode/" + this.search + ".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT").then(function (response) {
-        _this.autocompleters = response;
+      axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+      axios.get("https://cors-anywhere.herokuapp.com/https://api.tomtom.com/search/2/search/" + this.search + ".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&typeahead=true&limit=5&countrySet=IT&language=it-IT").then(function (response) {
+        _this.autocompleters = response.data.results;
       });
     },
     filter: function filter() {
@@ -7935,6 +7941,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-horizontal'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 //
 //
 //
@@ -7997,11 +8004,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
+  components: {
+    VueHorizontal: !(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-horizontal'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+  },
   data: function data() {
     return {
-      test: "",
+      apartments: [],
       colors: ['#DE3151', '#BC1A6E', '#CC2D4A', '#D93B30'],
       cities: [{
         image: "city1",
@@ -8023,7 +8067,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.test = this.logged_in;
+    var _this = this;
+
+    axios.get("/api/apartments").then(function (response) {
+      _this.apartments = response.data;
+    });
   }
 });
 
@@ -8176,7 +8224,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 30px;\n  padding-left: 7%;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  width: scale(1.1);\n  transition: 0.5s ease all;\n}\nheader .header-container .headercenter .inputContainer span[data-v-1f42fb90] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nheader .header-container .headercenter .inputContainer span .searchIcon[data-v-1f42fb90] {\n  margin-right: 5px;\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 30px;\n  padding-left: 7%;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  width: scale(1.1);\n  transition: 0.5s ease all;\n}\nheader .header-container .headercenter .inputContainer span[data-v-1f42fb90] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nheader .header-container .headercenter .inputContainer span .searchIcon[data-v-1f42fb90] {\n  margin-right: 5px;\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}", ""]);
 
 // exports
 
@@ -8214,7 +8262,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 80px auto;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  margin-top: 200px;\n  border-radius: 20px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  width: 1319px;\n  margin: 200px auto 40px auto;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 10px;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 300px;\n  margin: 0;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 10px;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto 90px auto;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 20px);\n  border-radius: 20px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  width: 647px;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  width: 1319px;\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -9864,6 +9912,41 @@ var render = function () {
                         }),
                       ]
                     ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.autocompleters,
+                            expression: "autocompleters",
+                          },
+                        ],
+                        staticClass: "autocompleters",
+                      },
+                      _vm._l(_vm.autocompleters, function (option, index) {
+                        return _c(
+                          "div",
+                          { key: index, staticClass: "option" },
+                          [
+                            _vm._v(
+                              "\n                          " +
+                                _vm._s(option.address.freeformAddress) +
+                                ", " +
+                                _vm._s(option.address.municipality) +
+                                ", " +
+                                _vm._s(
+                                  option.address.countrySecondarySubdivision
+                                ) +
+                                "\n                      "
+                            ),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
                   ]
                 ),
               ]),
@@ -10138,7 +10221,162 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container-fluid ms_apartmentSlider" },
+      [
+        _c("h1", [_vm._v("Appartamenti Dei Nostri Migliori Host")]),
+        _vm._v(" "),
+        _c(
+          "vue-horizontal",
+          {
+            scopedSlots: _vm._u([
+              {
+                key: "btn-prev",
+                fn: function () {
+                  return [
+                    _c("button", [
+                      _c("i", { staticClass: "fa-solid fa-arrow-left" }),
+                    ]),
+                  ]
+                },
+                proxy: true,
+              },
+              {
+                key: "btn-next",
+                fn: function () {
+                  return [
+                    _c("button", [
+                      _c("i", { staticClass: "fa-solid fa-arrow-right" }),
+                    ]),
+                  ]
+                },
+                proxy: true,
+              },
+            ]),
+          },
+          _vm._l(_vm.apartments, function (apartment) {
+            return _c("section", { key: apartment.id }, [
+              apartment.visible && apartment.sponsorships.length != 0
+                ? _c(
+                    "div",
+                    { staticClass: "d-flex flex-column" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: {
+                              name: "SingleApartment",
+                              params: { slug: apartment.slug },
+                            },
+                          },
+                        },
+                        _vm._l(apartment.images, function (image) {
+                          return _c("div", { key: image.id }, [
+                            image.main_image
+                              ? _c("p", { staticClass: "ms_cardImage" }, [
+                                  _c("img", {
+                                    staticClass: "border",
+                                    attrs: { src: "/storage/" + image.url },
+                                  }),
+                                ])
+                              : _vm._e(),
+                          ])
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: " ms_description" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  name: "SingleApartment",
+                                  params: { slug: apartment.slug },
+                                },
+                              },
+                            },
+                            [_c("h5", [_vm._v(_vm._s(apartment.name))])]
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  )
+                : _vm._e(),
+            ])
+          }),
+          0
+        ),
+      ],
+      1
+    ),
+    _vm._v(" "),
     _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "ms_citiesContainer d-flex flex-column" }, [
+        _c("h1", { staticClass: "mb-2" }, [
+          _vm._v("Destinazioni Più Gettonate"),
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row ms_citiesContainer d-flex col-12" },
+          _vm._l(_vm.cities, function (element, index) {
+            return _c(
+              "div",
+              {
+                key: index,
+                staticClass: "ms_cityCard",
+                style: { "background-color": _vm.colors[index] },
+              },
+              [
+                _c("div", { staticClass: "ms_imageContainer" }, [
+                  _c("img", {
+                    attrs: {
+                      src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
+                        element.image +
+                        ".jpg"),
+                      alt: "",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ms_textcity" }, [
+                  _c("h1", { staticClass: "text-white" }, [
+                    _vm._v(_vm._s(element.title)),
+                  ]),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "text-white" }, [
+                    _vm._v(_vm._s(element.text)),
+                  ]),
+                ]),
+              ]
+            )
+          }),
+          0
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row ms_jumbotron" }, [
         _c("div", { staticClass: "ms_imagecontainerJumbo col-10 p-0" }, [
           _c("img", {
@@ -10153,60 +10391,12 @@ var render = function () {
               _vm._v("Lasciati guidare dalla curiosità"),
             ]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.test))]),
-            _vm._v(" "),
             _c("button", [_vm._v("Sono flessibile")]),
           ]),
         ]),
       ]),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "container-fluid" }, [
-      _c(
-        "div",
-        { staticClass: "row ms_citiesContainer d-flex col-12" },
-        _vm._l(_vm.cities, function (element, index) {
-          return _c(
-            "div",
-            {
-              key: index,
-              staticClass: "ms_cityCard",
-              style: { "background-color": _vm.colors[index] },
-            },
-            [
-              _c("div", { staticClass: "ms_imageContainer" }, [
-                _c("img", {
-                  attrs: {
-                    src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
-                      element.image +
-                      ".jpg"),
-                    alt: "",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "ms_textcity" }, [
-                _c("h1", { staticClass: "text-white" }, [
-                  _vm._v(_vm._s(element.title)),
-                ]),
-                _vm._v(" "),
-                _c("h4", { staticClass: "text-white" }, [
-                  _vm._v(_vm._s(element.text)),
-                ]),
-              ]),
-            ]
-          )
-        }),
-        0
-      ),
-    ]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-  ])
-}
-var staticRenderFns = [
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -27624,7 +27814,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
