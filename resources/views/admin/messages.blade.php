@@ -34,7 +34,7 @@
                         @foreach ($apartment->messages as $message)
                         <a href="{{ route('admin.apartments.show', $apartment->id) }}"><h4>{{ $apartment->name }}</h4></a>
                             <p><strong>{{ $message->object }}</strong></p>
-                            <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date}} < email: {{$message->email}} > </p>
+                            <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date->format('d/m/Y')}} < email: {{$message->email}} > </p>
                             <p>{{ $message->content }}</p>
                             
                         @endforeach
