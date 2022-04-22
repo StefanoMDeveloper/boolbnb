@@ -10,7 +10,7 @@
                 </span>
 
             </div>
-            <h2>{{apartment.description}}</h2>
+            <h5>{{apartment.description}}</h5>
             <p>Stanze: {{apartment.rooms}} • letti: {{apartment.beds}} • bagni: {{apartment.bathrooms}} • metri quadrati: {{apartment.square_meters}}</p>
             <h2>Servizi</h2>
             <div v-for="service in apartment.services" :key="service.id" class="container">
@@ -98,4 +98,7 @@ export default {
         border: 2px solid white;
     }
 
+    h5{
+        padding-top:20px
+    }
 </style>
