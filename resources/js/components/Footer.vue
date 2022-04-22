@@ -1,8 +1,8 @@
 <template>
     <footer>
         <div class="container-fluid">
-            <div class="row d-flex justify-content-center">
-                <div class="col-10 containerFooter1 d-flex justify-content-between align-items-center">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-10 containerFooter1 d-flex justify-content-between ">
                     <ul>
                         <li><b>Assistenza</b></li>
                         <li><a href="#">Centro Assistenza</a></li>
@@ -33,7 +33,7 @@
                 </div>
             </div>        
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid my-3">
             <div class="row d-flex justify-content-center">
                 <div class="col-11 d-flex justify-content-between">
                     <div>
@@ -84,7 +84,7 @@ footer {
     }
 
     .containerFooter1 {
-        padding: 120px 40px 0;
+        padding: 120px 0;
         border-bottom: 1px solid #dddddd;
     }
 
