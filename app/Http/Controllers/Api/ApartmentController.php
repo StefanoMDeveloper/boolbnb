@@ -43,31 +43,10 @@ class ApartmentController extends Controller
     
         return $distance * $radius;
     }  
-
-    public function geocode($search){
-        $address = $search;
-        $address = urlencode($address);
-        $url = "https://api.tomtom.com/search/2/geocode/{$address}.json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT";
-        $response_json = file_get_contents($url);
-        return  json_decode($response_json, true);
-    }
-
-    public function autocomplete($search){
-        $response = self::geocode($search);
-        $resultings = [];
-        foreach($response['results'] as $result){
-            array_push($resultings, $result['address']);
-        }
-        return response()->json($resultings);
-    }
     
-    public function filter($search){
-        $response = self::geocode($search);
-        $searchLat=$response['results'][0]['position']['lat'];
-        $searchLon=$response['results'][0]['position']['lon'];
-
+    public function filter($search,$radius,$lat,$lon){
         //First gross filter
-        $apartments = Apartment::all()->whereBetween('lat', [$searchLat-0.5, $searchLat+0.5])->whereBetween('lon', [$searchLon-0.5, $searchLon+0.5]);
+        $apartments = Apartment::all()->whereBetween('lat', [$lat-0.5, $lat+0.5])->whereBetween('lon', [$lon-0.5, $lon+0.5]);
         if(empty($apartments)){
             return response()->json(["message"=>"Nessun appartamento."]);
         }
@@ -75,8 +54,8 @@ class ApartmentController extends Controller
         $filteredApartments = [];
 
         foreach($apartments as $apartment){
-            $dist = round(self::computeDistance($searchLat,$searchLon,$apartment->lat,$apartment->lon));
-            if($dist<20000){
+            $dist = round(self::computeDistance($lat,$lon,$apartment->lat,$apartment->lon));
+            if($dist<$radius){
                 $apartment['distance_from_search'] = $dist;
                 array_push($filteredApartments, $apartment);
             }

@@ -133,7 +133,9 @@ export default {
             this.apartments = response.data;
         });
     },
-
+    props:{
+        apartmentList: Array
+    }
 }
 </script>
 
