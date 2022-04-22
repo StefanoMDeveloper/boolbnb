@@ -68,36 +68,6 @@
             </div>
         </div>
 
-        <!-- Esperienze Boolbnb -->
-        <div class="container-fluid ms_apartmentSlider col-11">
-            <h1>Appartamenti Dei Nostri Migliori Host</h1>
-            <vue-horizontal>
-                <section v-for="apartment in apartments" :key="apartment.id">
-                    <div v-if="apartment.visible && apartment.sponsorships.length != 0" class="d-flex flex-column">
-                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
-                            <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
-                                <p v-if="image.main_image"  class="ms_cardImage">
-                                    <img  :src="`/storage/${image.url}`"  class="border">
-                                </p>
-                            </div>
-                        </router-link>
-                        <div class=" ms_description">
-                            <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                                <h5>{{apartment.name}}</h5>
-                            </router-link>
-                        </div>
-                    </div>
-                </section>
-
-                <template v-slot:btn-prev>
-                    <button><i class="fa-solid fa-arrow-left"></i></button>
-                </template>
-
-                <template v-slot:btn-next>
-                    <button><i class="fa-solid fa-arrow-right"></i></button>
-                </template>
-            </vue-horizontal>
-        </div>
 
         <!-- gift card  -->
         <div class="container-fluid">
