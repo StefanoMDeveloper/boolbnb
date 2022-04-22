@@ -16,7 +16,7 @@
         <!-- appartamenti consigliati -->
         <div class="container-fluid ms_apartmentSlider col-12">
             <h1>Appartamenti Dei Nostri Migliori Host</h1>
-            <vue-horizontal >
+            <vue-horizontal>
                 <section v-for="apartment in apartments" :key="apartment.id">
                     <div v-if="apartment.visible && apartment.sponsorships.length != 0" class="d-flex flex-column">
                         <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
@@ -46,7 +46,7 @@
         
         <!-- cities cards -->
         <div class="container-fluid">
-            <div class="ms_citiesContainer d-flex flex-column">
+            <div class="ms_citiesContainer container-fluid d-flex flex-column">
                 <h1 class="mb-2">Destinazioni Più Gettonate</h1>
                 <div class="row ms_flexContainer d-flex col-12">
                     <div v-for="(element, index) in cities" :key="index" class="ms_cityCard col"  :style="{'background-color':colors[index]}">
@@ -208,8 +208,8 @@ export default {
     }
 
     h5{
-        max-width: 300px;
-        margin: 0;
+        max-width: 320px;
+        margin: 0 10px;
     }
 
     a{

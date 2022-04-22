@@ -6,7 +6,7 @@
                     <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
                         <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
                             <p v-if="image.main_image"  class="card-immagine">
-                                <img  :src="`/storage/${image.url}`"  class="border">
+                                <img  :src="`/storage/${image.url}`" class="border">
                             </p>
                         </div>
                     </router-link>
@@ -22,6 +22,8 @@
                                 <li>{{service.name}} •</li>
                             </span>
                         </ul>
+
+                        <p>Visualizza ulteriori dettagli...</p>
 
                     </div>
                 </div>
@@ -47,6 +49,9 @@
                                 <li>{{service.name}} •</li>
                             </span>
                         </ul>
+                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                            <p>Visualizza ulteriori dettagli...</p>
+                         </router-link>
                     </div>
                 </div>
             </div>
@@ -87,6 +92,12 @@ img{
 
 .descrizione{
     padding: 30px 20px;
+
+    p{
+        color: gray;
+        text-decoration: underline;
+        vertical-align: bottom;
+    }
 
 }
 
