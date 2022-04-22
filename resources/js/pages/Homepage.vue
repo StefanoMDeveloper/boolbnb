@@ -195,7 +195,6 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
         height: 712px;
-        width: 1319px;
         border-radius: 20px;
         overflow: hidden;
         img{

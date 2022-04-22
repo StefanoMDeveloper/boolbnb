@@ -7797,6 +7797,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -8268,7 +8274,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400;500&display=swap);", ""]);
 
 // module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Open Sans\", sans-serif;\n  font-family: \"Roboto\", sans-serif;\n}", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Open Sans\", sans-serif;\n  font-family: \"Roboto\", sans-serif;\n}\nbody {\n  min-width: 500px;\n}", ""]);
 
 // exports
 
@@ -8287,7 +8293,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #eeeeee;\n}\nfooter ul[data-v-61a7c374] {\n  list-style-type: none;\n}\nfooter li[data-v-61a7c374] {\n  padding-bottom: 10px;\n}\nfooter a[data-v-61a7c374] {\n  color: black;\n  text-decoration: none;\n}\nfooter span[data-v-61a7c374] {\n  padding: 0 4px;\n}\nfooter .containerFooter1[data-v-61a7c374] {\n  padding: 120px 40px 0;\n  border-bottom: 1px solid #dddddd;\n}\nfooter .containerFooter2[data-v-61a7c374] {\n  padding: 40px 0;\n}\nfooter .fa-globe[data-v-61a7c374], footer .fa-euro-sign[data-v-61a7c374] {\n  margin-right: 4px;\n}\nfooter .fa-facebook-f[data-v-61a7c374] {\n  margin-left: 35px;\n}\nfooter .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  margin-left: 10px;\n}\nfooter .fa-facebook-f[data-v-61a7c374], footer .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  font-size: 20px;\n}", ""]);
+exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #eeeeee;\n}\nfooter ul[data-v-61a7c374] {\n  list-style-type: none;\n}\nfooter li[data-v-61a7c374] {\n  padding-bottom: 10px;\n}\nfooter a[data-v-61a7c374] {\n  color: black;\n  text-decoration: none;\n}\nfooter span[data-v-61a7c374] {\n  padding: 0 4px;\n}\nfooter .containerFooter1[data-v-61a7c374] {\n  padding: 120px 0;\n  border-bottom: 1px solid #dddddd;\n}\nfooter .containerFooter2[data-v-61a7c374] {\n  padding: 40px 0;\n}\nfooter .fa-globe[data-v-61a7c374], footer .fa-euro-sign[data-v-61a7c374] {\n  margin-right: 4px;\n}\nfooter .fa-facebook-f[data-v-61a7c374] {\n  margin-left: 35px;\n}\nfooter .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  margin-left: 10px;\n}\nfooter .fa-facebook-f[data-v-61a7c374], footer .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  font-size: 20px;\n}", ""]);
 
 // exports
 
@@ -8306,7 +8312,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  width: scale(1.1);\n  transition: 0.5s ease all;\n}\nheader .header-container .headercenter .inputContainer span[data-v-1f42fb90] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nheader .header-container .headercenter .inputContainer span .searchIcon[data-v-1f42fb90] {\n  margin-right: 5px;\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .inputContainer span .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  width: 460px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}", ""]);
 
 // exports
 
@@ -8344,7 +8350,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  width: 1319px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 40px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 10px);\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 10px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer .ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 40px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 10px);\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 10px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -10211,7 +10217,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "body",
     [
       _c("Header", { on: { filter: _vm.filterApartments } }),
       _vm._v(" "),
@@ -10253,123 +10259,129 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("footer", [
       _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row d-flex justify-content-center" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-10 containerFooter1 d-flex justify-content-between align-items-center",
-            },
-            [
-              _c("ul", [
-                _c("li", [_c("b", [_vm._v("Assistenza")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Centro Assistenza"),
+        _c(
+          "div",
+          {
+            staticClass: "row d-flex justify-content-center align-items-center",
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-10 containerFooter1 d-flex justify-content-between ",
+              },
+              [
+                _c("ul", [
+                  _c("li", [_c("b", [_vm._v("Assistenza")])]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Centro Assistenza"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Informazioni di sicurezza"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Opzioni di cancellazione"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Segnala problemi"),
+                    ]),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Informazioni di sicurezza"),
+                _c("ul", [
+                  _c("li", [_c("b", [_vm._v("Community")])]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Boolbnb.org: un rifugio sicuro"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Supporta i rifugiati afghani"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Contro la discriminazione"),
+                    ]),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Opzioni di cancellazione"),
+                _c("ul", [
+                  _c("li", [_c("b", [_vm._v("Ospitare")])]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Prova ad ospitare"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("BoolCover: host protetti"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Esplora le risorse per host"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Vai al forum della community"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Come ospitare responsabilmente"),
+                    ]),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Segnala problemi"),
+                _c("ul", [
+                  _c("li", [_c("b", [_vm._v("Informazioni")])]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Lettera dai nostri fondatori"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Assistenza")]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Opportunità di lavoro"),
+                    ]),
                   ]),
                 ]),
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [_c("b", [_vm._v("Community")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Boolbnb.org: un rifugio sicuro"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Supporta i rifugiati afghani"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Contro la discriminazione"),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [_c("b", [_vm._v("Ospitare")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Prova ad ospitare"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("BoolCover: host protetti"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Esplora le risorse per host"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Vai al forum della community"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Come ospitare responsabilmente"),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [_c("b", [_vm._v("Informazioni")])]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Lettera dai nostri fondatori"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Assistenza")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Opportunità di lavoro"),
-                  ]),
-                ]),
-              ]),
-            ]
-          ),
-        ]),
+              ]
+            ),
+          ]
+        ),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "container-fluid my-3" }, [
         _c("div", { staticClass: "row d-flex justify-content-center" }, [
           _c("div", { staticClass: "col-11 d-flex justify-content-between" }, [
             _c("div", [
@@ -10452,167 +10464,178 @@ var render = function () {
       class: { "is-hidden": !_vm.scrollEffect },
     },
     [
-      _c("div", { staticClass: "row header-container" }, [
-        _c(
-          "div",
-          {
-            staticClass: "col-3 headerleft",
-            class: { pink: _vm.scrollEffect },
-          },
-          [
-            _c("i", { staticClass: "fa-brands fa-airbnb" }),
-            _vm._v(" "),
-            _c("span", [_vm._v("Boolbnb")]),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "col-5 headercenter d-flex flex-column align-items-center",
-          },
-          [
-            _c("nav", { class: { hide: _vm.scrollEffect } }, [
-              _c("ul", [
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: { name: "Homepage" } } }, [
-                      _vm._v("Homepage"),
-                    ]),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: { name: "ApartmentList" } } },
-                      [_vm._v("Appartamenti")]
-                    ),
-                  ],
-                  1
-                ),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "header-container col-12" }, [
+          _c(
+            "div",
+            {
+              staticClass: "col-3 d-none d-xl-block headerleft",
+              class: { pink: _vm.scrollEffect },
+            },
+            [
+              _c("i", { staticClass: "fa-brands fa-airbnb" }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Boolbnb")]),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-12 col-xl-5 headercenter d-flex flex-column align-items-center m-auto",
+            },
+            [
+              _c("nav", { class: { hide: _vm.scrollEffect } }, [
+                _c("ul", [
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: { name: "Homepage" } } },
+                        [_vm._v("Homepage")]
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: { name: "ApartmentList" } } },
+                        [_vm._v("Appartamenti")]
+                      ),
+                    ],
+                    1
+                  ),
+                ]),
               ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "container-fluid m-auto" }, [
-              _c("div", { staticClass: "row d-flex justify-content-center" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "inputContainer col-12",
-                    class: { search: _vm.scrollEffect },
-                    on: {
-                      keyup: function ($event) {
-                        if (
-                          !$event.type.indexOf("key") &&
-                          _vm._k(
-                            $event.keyCode,
-                            "enter",
-                            13,
-                            $event.key,
-                            "Enter"
-                          )
-                        ) {
-                          return null
-                        }
-                        $event.stopPropagation()
-                        return _vm.filter.apply(null, arguments)
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "d-flex headercenterB justify-content-center m-auto",
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "inputContainer col-12 d-flex justify-content-between",
+                      class: { search: _vm.scrollEffect },
+                      on: {
+                        keyup: function ($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k(
+                              $event.keyCode,
+                              "enter",
+                              13,
+                              $event.key,
+                              "Enter"
+                            )
+                          ) {
+                            return null
+                          }
+                          $event.stopPropagation()
+                          return _vm.filter.apply(null, arguments)
+                        },
                       },
                     },
-                  },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.search,
-                          expression: "search",
-                        },
-                      ],
-                      staticClass: "col-10 ml-4",
-                      attrs: { type: "text", value: "choosedSearch" },
-                      domProps: { value: _vm.search },
-                      on: {
-                        input: [
-                          function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.search = $event.target.value
-                          },
-                          _vm.autocomplete,
-                        ],
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "col-2" }, [
-                      _c("i", {
-                        staticClass: "fa-solid fa-magnifying-glass searchIcon",
-                        on: {
-                          click: function ($event) {
-                            $event.stopPropagation()
-                            return _vm.filter.apply(null, arguments)
-                          },
-                        },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
+                    [
+                      _c("input", {
                         directives: [
                           {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.autocompleters,
-                            expression: "autocompleters",
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.search,
+                            expression: "search",
                           },
                         ],
-                        staticClass: "autocompleters",
-                      },
-                      _vm._l(_vm.autocompleters, function (option, index) {
-                        return _c(
-                          "div",
-                          {
-                            key: index,
-                            staticClass: "option",
-                            on: {
-                              click: function ($event) {
-                                return _vm.setSearch(index)
-                              },
+                        staticClass: "col-8 ml-4",
+                        attrs: { type: "text", value: "choosedSearch" },
+                        domProps: { value: _vm.search },
+                        on: {
+                          input: [
+                            function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.search = $event.target.value
+                            },
+                            _vm.autocomplete,
+                          ],
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-2 p-0 ms_icon" }, [
+                        _c("i", {
+                          staticClass:
+                            "fa-solid fa-magnifying-glass searchIcon",
+                          on: {
+                            click: function ($event) {
+                              $event.stopPropagation()
+                              return _vm.filter.apply(null, arguments)
                             },
                           },
-                          [
-                            _vm._v(
-                              "\n                          " +
-                                _vm._s(option.address.freeformAddress) +
-                                ", " +
-                                _vm._s(option.address.municipality) +
-                                ", " +
-                                _vm._s(
-                                  option.address.countrySecondarySubdivision
-                                ) +
-                                "\n                      "
-                            ),
-                          ]
-                        )
-                      }),
-                      0
-                    ),
-                  ]
-                ),
-              ]),
-            ]),
-          ]
-        ),
-        _vm._v(" "),
-        _vm._m(0),
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.autocompleters,
+                              expression: "autocompleters",
+                            },
+                          ],
+                          staticClass: "autocompleters",
+                        },
+                        _vm._l(_vm.autocompleters, function (option, index) {
+                          return _c(
+                            "div",
+                            {
+                              key: index,
+                              staticClass: "option",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.setSearch(index)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(option.address.freeformAddress) +
+                                  ", " +
+                                  _vm._s(option.address.municipality) +
+                                  ", " +
+                                  _vm._s(
+                                    option.address.countrySecondarySubdivision
+                                  ) +
+                                  "\n                    "
+                              ),
+                            ]
+                          )
+                        }),
+                        0
+                      ),
+                    ]
+                  ),
+                ]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+        ]),
       ]),
     ]
   )
@@ -10622,7 +10645,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "headerright col-3" }, [
+    return _c("div", { staticClass: "headerright d-none d-lg-block col-3" }, [
       _c("ul", [
         _c("li", [_vm._v("Diventa un Host")]),
         _vm._v(" "),

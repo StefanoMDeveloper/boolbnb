@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <body>
         <Header @filter="filterApartments" />
         <Main :apartmentList=apartments />
         <Footer />
-    </div>
+    </body>
 </template>
 
 <script>
@@ -52,5 +52,8 @@ export default{
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+    min-width: 500px;
+}
 
 </style>

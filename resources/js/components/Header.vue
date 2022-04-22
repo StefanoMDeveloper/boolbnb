@@ -1,38 +1,44 @@
 <template>
     <header class="container-fluid" :class="{ 'is-hidden': !scrollEffect }">
-        <div class="row header-container">
-            <div class="col-3 headerleft" :class="{ 'pink': scrollEffect }">
+        <div class="row">
+          <div class="header-container col-12">
+
+            <!-- header left -->
+            <div class="col-3 d-none d-xl-block headerleft" :class="{ 'pink': scrollEffect }">
                 <i class="fa-brands fa-airbnb"></i>
                 <span>Boolbnb</span>
             </div>
-            <div class="col-5 headercenter d-flex flex-column align-items-center">
+
+            <!-- header center -->
+            <div class="col-12 col-xl-5 headercenter d-flex flex-column align-items-center m-auto">
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
                     <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
                     <li><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                 </ul>
                 </nav>
-                <div class="container-fluid m-auto" >
-                  <div class="row d-flex justify-content-center">
-                      <div class="inputContainer col-12" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
-                        <input class="col-10 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
-                        <span class="col-2"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></span>
-                        <div class="autocompleters" v-show="autocompleters">
-                          <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
-                              {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
-                          </div>
-                        </div>                           
-                      </div>                 
-                  </div>
+                <div class="d-flex headercenterB justify-content-center m-auto">
+                    <div class="inputContainer col-12 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                      <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
+                      <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
+                      <div class="autocompleters" v-show="autocompleters">
+                        <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
+                            {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
+                        </div>
+                      </div>                           
+                    </div>                 
                 </div>
-            </div>          
-            <div class="headerright col-3">
+            </div>  
+            
+            <!-- header right -->
+            <div class="headerright d-none d-lg-block col-3">
                 <ul>
                 <li>Diventa un Host</li>
                 <li><i class="fa-solid fa-globe"></i></li>
                 <li><button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button></li>
                 </ul>
             </div>
+          </div>
         </div>
     </header>
 </template>
@@ -146,25 +152,27 @@ header{
           }
         }
       }
-      .inputContainer{
-        border:1px solid gray;
-        width: scale(1.1);
-        transition: .5s ease all;
-        span{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-           .searchIcon{
-             margin-right: 5px;
-            background-color: #ff385c;
-            border-radius: 50%;
-            color: white;
-            padding: 15px;
+      .headercenterB{
+        width: 460px;
+
+          .inputContainer{
+            border:1px solid gray;
+            .ms_icon{
+              display: flex;
+              justify-content: end;
+              width: 30px;
+              align-items: center;
+              .searchIcon{
+                  background-color: #ff385c;
+                  border-radius: 50%;
+                  color: white;
+                  padding: 15px;
+              }
+                .searchIcon:hover{
+                  cursor: pointer;
+                }          
+            }
           }
-            .searchIcon:hover{
-              cursor: pointer;
-            }          
-        }
       }
     }
     .headerright{
