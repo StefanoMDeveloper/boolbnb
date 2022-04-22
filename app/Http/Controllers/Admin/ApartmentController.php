@@ -6,6 +6,7 @@ use App\Stat;
 use App\Apartment;
 use App\Service;
 use App\Image;
+use App\Message;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -36,6 +37,9 @@ class ApartmentController extends Controller
     {
         $user_id= Auth::user()->id;
         $apartments=Apartment::all()->where('user_id',$user_id);
+
+        $messages= Message::orderBy('date','desc')->get();
+        return view('admin.apartments.index',compact('apartments','messages'));
         return view('admin.apartments.index',compact('apartments','user_id'));
     }
 

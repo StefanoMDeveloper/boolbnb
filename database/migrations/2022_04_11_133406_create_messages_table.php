@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
             $table->string('object')->nullable();
             $table->text('content');
             $table->string('email');
-            $table->dateTime('date');
+            $table->date('date');
             $table->string('name');
             $table->string('lastname');
             $table->foreignId('apartment_id')->constrained()->onDelete('cascade');
