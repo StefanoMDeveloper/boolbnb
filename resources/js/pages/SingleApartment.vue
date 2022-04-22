@@ -4,7 +4,7 @@
             <h1>{{apartment.name}}</h1>
             <p>{{apartment.address}}</p>
             <div class="container containerImages">
-                <span v-for="image in apartment.images" :key="image.id" ><!-- non usare ccs su questo span -->
+                <span v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo span -->
                     <img v-if="image.main_image" class="main-immagine" :src="`/storage/${image.url}`">
                     <img v-else class="other-immagini" :src="`/storage/${image.url}`">
                 </span>
@@ -80,25 +80,24 @@ export default {
     }
 }
 
-    .main-immagine{
-        width: 50%;
-        float: left;
+.main-immagine{
+    width: 50%;
+    height: 560px;
+    float:left;
+}
 
-    }
-    
-    .other-immagini{
-        max-width: 25%;
-        max-height: 25%;
-        float: left;
-        object-fit: cover;
-        
-    }
+.other-immagini{
+    width: 25%;
+    height: 280px;
+    object-fit: cover;
+    float:left;
+}
 
-    img{
-        border: 2px solid white;
-    }
+img{
+    border: 2px solid white;
+}
 
-    h5{
-        padding-top:20px
-    }
+h5{
+    padding-top:20px
+}
 </style>
