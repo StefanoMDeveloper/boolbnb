@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Api')->name('api.')->group(function () {
     Route::get("/apartments", "ApartmentController@index")->name('apartments');
     Route::get("/apartments/{slug}", "ApartmentController@show")->name('apartments.show');
-    Route::get('apartments/filter/search={search}&radius={radius}&lat={lat}&lon={lon}' , "ApartmentController@filter")->name('apartments.filter');
+    Route::get('apartments/filter/search={search}&radius={radius}&lat={lat}&lon={lon}&services={services}' , "ApartmentController@filter")->name('apartments.filter');
     Route::get('apartments/autocomplete/{search}' , "ApartmentController@autocomplete")->name('apartments.autocomplete');
     Route::get("/users/{id}", "UserController@show")->name('users.show');
     Route::post("/messages", "MessagesController@store")->name('messages.store');

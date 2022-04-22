@@ -8315,7 +8315,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  max-width: 25%;\n  max-height: 25%;\n  float: left;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}", ""]);
+exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  height: 560px;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 25%;\n  height: 280px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  float: left;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}", ""]);
 
 // exports
 

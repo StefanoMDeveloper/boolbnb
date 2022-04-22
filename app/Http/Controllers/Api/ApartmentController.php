@@ -44,16 +44,43 @@ class ApartmentController extends Controller
         return $distance * $radius;
     }  
     
-    public function filter($search,$radius,$lat,$lon){
+    public function filter($search,$radius,$beds,$rooms,$lat,$lon,$services){
+        //get Services requested
+        if(isset($services)){
+            $serviceList = explode("-",$services);
+        }
+
         //First gross filter
         $apartments = Apartment::all()->whereBetween('lat', [$lat-0.5, $lat+0.5])->whereBetween('lon', [$lon-0.5, $lon+0.5]);
         if(empty($apartments)){
             return response()->json(["message"=>"Nessun appartamento."]);
         }
 
+        //filter by service
+        $filteringApartments=[];
+        $checkVar = false;
+        foreach($apartments as $apartment){
+            $servicing = $apartment->services->toArray();
+            for($i=0;$i<count($servicing);$i++){
+                $servicing[$i] = $servicing[$i]['id'];
+            }
+            foreach($serviceList as $service){
+                if(in_array($service, $servicing)){
+                    $checkVar = true;
+                }
+                else{
+                    $checkVar = false;
+                    break 1;
+                }
+            }
+            if($checkVar){
+                array_push($filteringApartments, $apartment);
+            }
+        }
         $filteredApartments = [];
 
-        foreach($apartments as $apartment){
+        //filter by distance
+        foreach($filteringApartments as $apartment){
             $dist = round(self::computeDistance($lat,$lon,$apartment->lat,$apartment->lon));
             if($dist<$radius){
                 $apartment['distance_from_search'] = $dist;
