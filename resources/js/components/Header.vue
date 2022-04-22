@@ -13,14 +13,19 @@
                 </ul>
                 </nav>
                 <div class="container-fluid m-auto" >
-                <div class="row d-flex justify-content-center">
-                    <div class="inputContainer col-12" :class="{ 'search': scrollEffect }">
-                      <input class="col-10 ml-4"  type="text" v-model="search" @input=autocomplete>
-                      <span  @click=filter class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
-                    </div>
+                  <div class="row d-flex justify-content-center">
+                      <div class="inputContainer col-12" :class="{ 'search': scrollEffect }">
+                        <input class="col-10 ml-4"  type="text" v-model="search" @input=autocomplete>
+                        <span  @click=filter class="col-2"><i class="fa-solid fa-magnifying-glass searchIcon"></i></span>
+                        <div class="autocompleters" v-show="autocompleters">
+                          <div class="option" v-for="(option, index) in autocompleters" :key="index">
+                              {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
+                          </div>
+                        </div>                           
+                      </div>                 
+                  </div>
                 </div>
-                </div>
-            </div>
+            </div>          
             <div class="headerright col-3">
                 <ul>
                 <li>Diventa un Host</li>
@@ -67,10 +72,11 @@ export default {
   methods: {
     //autocomplete
     autocomplete(){
+      axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       axios
-        .get("https://api.tomtom.com/search/2/geocode/"+this.search+".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&limit=5&countrySet=IT&language=it-IT")
+        .get("https://cors-anywhere.herokuapp.com/https://api.tomtom.com/search/2/search/"+this.search+".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&typeahead=true&limit=5&countrySet=IT&language=it-IT")
         .then((response) => {
-          this.autocompleters = response;
+          this.autocompleters = response.data.results;
         });             
     },
 
@@ -111,6 +117,7 @@ header{
   transition: .5s ease all; 
   z-index: 1000;
   .header-container{
+    position:relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -207,6 +214,23 @@ header{
   width: 300px; 
 }
 
+.autocompleters{
+  background-color: white;
+  color:black;
+  width:100%;
+  position:absolute;
+  top:52px;
+  left:50%;
+  transform: translateX(-50%);
+
+  .option{
+    border-bottom:1px solid black;    
+  }
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
 </style>
 
 
