@@ -14,6 +14,61 @@
         </div>
 
         <!-- appartamenti consigliati -->
+        <div class="container-fluid ms_apartmentSlider">
+            <div class="row d-flex justify-content-center">
+                <div class="col-10">
+                    <h1>Appartamenti Dei Nostri Migliori Host</h1>
+                    <vue-horizontal>
+                        <section v-for="apartment in apartments" :key="apartment.id">
+                            <div v-if="apartment.visible && apartment.sponsorships.length != 0" class="d-flex flex-column">
+                                <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
+                                    <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
+                                        <p v-if="image.main_image"  class="ms_cardImage">
+                                            <img  :src="`/storage/${image.url}`"  class="border">
+                                        </p>
+                                    </div>
+                                </router-link>
+                                <div class=" ms_description">
+                                    <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                                        <h5>{{apartment.name}}</h5>
+                                    </router-link>
+                                </div>
+                            </div>
+                        </section>
+
+                        <template v-slot:btn-prev>
+                            <button><i class="fa-solid fa-arrow-left"></i></button>
+                        </template>
+
+                        <template v-slot:btn-next>
+                            <button><i class="fa-solid fa-arrow-right"></i></button>
+                        </template>
+                    </vue-horizontal>
+                </div>
+            </div>
+        </div>
+        
+        <!-- cities cards -->
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="ms_citiesContainer container-fluid d-flex flex-column col-10">
+                    <h1 class="mb-2">Destinazioni Più Gettonate</h1>
+                    <div class="row ms_citiesContainer col-12">
+                        <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}">
+                            <div class="ms_imageContainer">
+                                <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
+                            </div>
+                            <div class="ms_textcity">
+                                <h1 class="text-white">{{element.title}}</h1>
+                                <h4 class="text-white">{{element.text}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Esperienze Boolbnb -->
         <div class="container-fluid ms_apartmentSlider col-11">
             <h1>Appartamenti Dei Nostri Migliori Host</h1>
             <vue-horizontal>
@@ -43,50 +98,17 @@
                 </template>
             </vue-horizontal>
         </div>
-        
-        <!-- cities cards -->
-        <div class="container-fluid">
-            <div class="ms_citiesContainer container-fluid d-flex flex-column">
-                <h1 class="mb-2">Destinazioni Più Gettonate</h1>
-                <div class="row ms_citiesContainer d-flex justify-content-center col-12">
-                    <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}">
-                        <div class="ms_imageContainer">
-                            <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
-                        </div>
-                        <div class="ms_textcity">
-                            <h1 class="text-white">{{element.title}}</h1>
-                            <h4 class="text-white">{{element.text}}</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Esperienze Boolbnb -->
-        <div class="container-fluid">
-            <div class="row ms_experienceContainer col-12">
-                <h1>Scopri le Esperienze Boolbnb</h1>
-                <div class="ms_imgsEsp row">
-                    <div class="ms_imgEsp col">
-                        <img  src="../../../public/storage/uploads/experience2.jpg" alt="">
-                        <h1 class="ms_esptext text-white">Esperienze <br> per il tuo viaggio</h1>
-                    </div>
-                    <div class="ms_imgEsp col">
-                        <img  src="../../../public/storage/uploads/experience1.jpg" alt="">
-                        <h1 class="ms_esptext text-white">Attività <br> da casa</h1>
-                    </div>  
-                </div>
-            </div>
-        </div>
 
         <!-- gift card  -->
         <div class="container-fluid">
-            <div class="row ms_giftContainer col-12">
-                <div class="col-4">
-                    <h1 class="ms_giftFont">Acquista <br> le gift card <br> di Airbnb</h1>
-                </div>
-                <div class="ms_giftImg col-8">
-                    <img  src="../../../public/storage/uploads/gift.jpg" alt="">
+            <div class="row d-flex justify-content-center p-0">
+                <div class="row ms_giftContainer col-10">
+                    <div class="col-4">
+                        <h1 class="ms_giftFont">Acquista <br> le gift card <br> di Airbnb</h1>
+                    </div>
+                    <div class="ms_giftImg col-8">
+                        <img  src="../../../public/storage/uploads/gift.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,16 +253,17 @@ export default {
 }
 
 .ms_citiesContainer { 
-    margin:40px auto 90px auto;
+    margin:40px 0;
+    padding: 0;
     .ms_flexContainer{
         display: flex;
         justify-content: space-between;
     }
     .ms_cityCard{
-        width: calc(100% / 4 - 20px);
+        width: calc(100% / 4 - 10px);
         border-radius: 20px;
         padding: 0;
-        margin: 0 15px;
+        margin: 0 5px;
         height: 400px;
         overflow: hidden;
         .ms_imageContainer{
