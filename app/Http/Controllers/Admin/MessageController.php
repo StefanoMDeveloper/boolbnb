@@ -58,7 +58,6 @@ class MessageController extends Controller
 
         $messagesList = Message::all();
 
-        
         foreach ($apartments as $apartment) {
             foreach ($messagesList as $message) {
                 if($message['apartment_id'] == $apartment['id']){
