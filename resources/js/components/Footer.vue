@@ -1,40 +1,37 @@
 <template>
     <footer>
-        <div class="container">
-            <div class="row containerFooter1 d-flex justify-content-between">
-                <ul>
-                    <li><b>Assistenza</b></li>
-                    <li><a href="#">Centro Assistenza</a></li>
-                    <li><a href="#">Informazioni di sicurezza</a></li>
-                    <li><a href="#">Opzioni di cancellazione</a></li>
-                    <li><a href="#">Segnala problemi</a></li>
-                </ul>
-                <ul>
-                    <li><b>Community</b></li>
-                    <li><a href="#">Airbnb.org: un rifugio sicuro</a></li>
-                    <li><a href="#">Supporta i rifugiati afghani</a></li>
-                    <li><a href="#">Contro la discriminazione</a></li>
-                </ul>
-                <ul>
-                    <li><b>Ospitare</b></li>
-                    <li><a href="#">Prova ad ospitare</a></li>
-                    <li><a href="#">AirCover: host protetti</a></li>
-                    <li><a href="#">Esplora le risorse per host</a></li>
-                    <li><a href="#">Vai al forum della community</a></li>
-                    <li><a href="#">Come ospitare responsabilmente</a></li>
-                </ul>
-                <ul>
-                    <li><b>Informazioni</b></li>
-                    <li><a href="#">Lettera dai nostri fondatori</a></li>
-                    <li><a href="#">Assistenza</a></li>
-                    <li><a href="#">Opportunità di lavoro</a></li>
-                </ul>
-            </div>
-                
+        <div class="container containerFooter1 d-flex justify-content-between">
+            <ul>
+                <li><b>Assistenza</b></li>
+                <li><a href="#">Centro Assistenza</a></li>
+                <li><a href="#">Informazioni di sicurezza</a></li>
+                <li><a href="#">Opzioni di cancellazione</a></li>
+                <li><a href="#">Segnala problemi</a></li>
+            </ul>
+            <ul>
+                <li><b>Community</b></li>
+                <li><a href="#">Boolbnb.org: un rifugio sicuro</a></li>
+                <li><a href="#">Supporta i rifugiati afghani</a></li>
+                <li><a href="#">Contro la discriminazione</a></li>
+            </ul>
+            <ul>
+                <li><b>Ospitare</b></li>
+                <li><a href="#">Prova ad ospitare</a></li>
+                <li><a href="#">BoolCover: host protetti</a></li>
+                <li><a href="#">Esplora le risorse per host</a></li>
+                <li><a href="#">Vai al forum della community</a></li>
+                <li><a href="#">Come ospitare responsabilmente</a></li>
+            </ul>
+            <ul>
+                <li><b>Informazioni</b></li>
+                <li><a href="#">Lettera dai nostri fondatori</a></li>
+                <li><a href="#">Assistenza</a></li>
+                <li><a href="#">Opportunità di lavoro</a></li>
+            </ul>
         </div>
         <div class="container containerFooter2 d-flex justify-content-between align-items-center">
-            <div class="row">
-                <span><a href="#"><i class="far fa-copyright"></i> 2022 Airbnb, Inc. &nbsp;&nbsp;•</a></span>
+            <div>
+                <span><a href="#"><i class="far fa-copyright"></i> 2022 Boolbnb, Inc. &nbsp;&nbsp;•</a></span>
                 <span><a href="#">Privacy &nbsp;&nbsp;•</a></span>
                 <span><a href="#">Termini &nbsp;&nbsp;•</a></span>
                 <span><a href="#">Mappa del sito &nbsp;&nbsp;•</a></span>

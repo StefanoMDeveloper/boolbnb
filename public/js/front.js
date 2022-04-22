@@ -7714,9 +7714,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Footer"
 });
@@ -8082,19 +8079,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
     return {
-      apartment: []
+      apartment: [],
+      messageSent: false
     };
   },
   created: function created() {
     var _this = this;
 
+    console.log(this.authUser);
     axios.get("/api/apartments/".concat(this.$route.params.slug)).then(function (response) {
       _this.apartment = response.data;
     });
+  },
+  methods: {
+    sendMail: function sendMail() {
+      var _this2 = this;
+
+      axios.post('/api/messages', this.formData).then(function (response) {
+        _this2.formData.content = '';
+        _this2.formData.email = '';
+        _this2.messageSent = true;
+      });
+    }
   }
 });
 
@@ -9556,117 +9582,112 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          {
-            staticClass: "row containerFooter1 d-flex justify-content-between",
-          },
-          [
-            _c("ul", [
-              _c("li", [_c("b", [_vm._v("Assistenza")])]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Centro Assistenza"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Informazioni di sicurezza"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Opzioni di cancellazione"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Segnala problemi")]),
+      _c(
+        "div",
+        {
+          staticClass:
+            "container containerFooter1 d-flex justify-content-between",
+        },
+        [
+          _c("ul", [
+            _c("li", [_c("b", [_vm._v("Assistenza")])]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Centro Assistenza")]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Informazioni di sicurezza"),
               ]),
             ]),
             _vm._v(" "),
-            _c("ul", [
-              _c("li", [_c("b", [_vm._v("Community")])]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Airbnb.org: un rifugio sicuro"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Supporta i rifugiati afghani"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Contro la discriminazione"),
-                ]),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Opzioni di cancellazione"),
               ]),
             ]),
             _vm._v(" "),
-            _c("ul", [
-              _c("li", [_c("b", [_vm._v("Ospitare")])]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Prova ad ospitare"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("AirCover: host protetti"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Esplora le risorse per host"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Vai al forum della community"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Come ospitare responsabilmente"),
-                ]),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Segnala problemi")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("ul", [
+            _c("li", [_c("b", [_vm._v("Community")])]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Boolbnb.org: un rifugio sicuro"),
               ]),
             ]),
             _vm._v(" "),
-            _c("ul", [
-              _c("li", [_c("b", [_vm._v("Informazioni")])]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Lettera dai nostri fondatori"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Assistenza")]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Opportunità di lavoro"),
-                ]),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Supporta i rifugiati afghani"),
               ]),
             ]),
-          ]
-        ),
-      ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Contro la discriminazione"),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("ul", [
+            _c("li", [_c("b", [_vm._v("Ospitare")])]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Prova ad ospitare")]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("BoolCover: host protetti"),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Esplora le risorse per host"),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Vai al forum della community"),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Come ospitare responsabilmente"),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("ul", [
+            _c("li", [_c("b", [_vm._v("Informazioni")])]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Lettera dai nostri fondatori"),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Assistenza")]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("Opportunità di lavoro"),
+              ]),
+            ]),
+          ]),
+        ]
+      ),
       _vm._v(" "),
       _c(
         "div",
@@ -9675,11 +9696,11 @@ var staticRenderFns = [
             "container containerFooter2 d-flex justify-content-between align-items-center",
         },
         [
-          _c("div", { staticClass: "row" }, [
+          _c("div", [
             _c("span", [
               _c("a", { attrs: { href: "#" } }, [
                 _c("i", { staticClass: "far fa-copyright" }),
-                _vm._v(" 2022 Airbnb, Inc.   •"),
+                _vm._v(" 2022 Boolbnb, Inc.   •"),
               ]),
             ]),
             _vm._v(" "),
@@ -10143,7 +10164,7 @@ var render = function () {
     _c("div", { staticClass: "container-fluid" }, [
       _c(
         "div",
-        { staticClass: "row ms_citiesContainer d-flex" },
+        { staticClass: "row ms_citiesContainer d-flex col-12" },
         _vm._l(_vm.cities, function (element, index) {
           return _c(
             "div",
@@ -10191,7 +10212,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row ms_experienceContainer" }, [
+      _c("div", { staticClass: "row ms_experienceContainer col-12" }, [
         _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
         _vm._v(" "),
         _c("div", { staticClass: "ms_imgsEsp" }, [
@@ -10233,7 +10254,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row ms_giftContainer" }, [
+      _c("div", { staticClass: "row ms_giftContainer col-12" }, [
         _c("div", { staticClass: "col-4" }, [
           _c("h1", { staticClass: "ms_giftFont" }, [
             _vm._v("Acquista "),
@@ -10351,6 +10372,67 @@ var render = function () {
             _c("p", [_vm._v(_vm._s(service.name))]),
           ])
         }),
+        _vm._v(" "),
+        _c("h4", [
+          _vm._v("Scrivi un messaggio al proprietario dell'appartamento"),
+        ]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            on: {
+              submit: function ($event) {
+                $event.preventDefault()
+                return _vm.sendMail.apply(null, arguments)
+              },
+            },
+          },
+          [
+            _vm.authUser == 1
+              ? _c("div", [
+                  _c("label", { attrs: { for: "email" } }, [_vm._v("Ciaone!")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "email", id: "email", name: "email" },
+                  }),
+                ])
+              : _c("div", [
+                  _c("label", { attrs: { for: "email" } }, [
+                    _vm._v("Inserisci la tua email:"),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "email", id: "email", name: "email" },
+                  }),
+                ]),
+            _vm._v(" "),
+            _c("textarea", {
+              staticClass: "col-8 form-control",
+              attrs: {
+                id: "message",
+                name: "message",
+                placeholder: "Inserisci qui il messaggio",
+              },
+            }),
+            _vm._v(" "),
+            _c("input", { attrs: { type: "submit", value: "Submit" } }),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.messageSent,
+                expression: "messageSent",
+              },
+            ],
+          },
+          [_vm._v("\n            Messaggio inviato!\n        ")]
+        ),
       ],
       2
     ),
@@ -26170,6 +26252,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ "./node_modules/@fortawesome/fontawesome-free/js/all.js");
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
 //require('./bootstrap');
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -26179,22 +26263,23 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
+/* const globalVariables = {
+    data(){
+        return {
+            authUser: 'false'
+        }
+    }
+} */
+// Vue.prototype.$hostname = 'your variable name'
 
-var login_auth = {
-  data: function data() {
-    return {
-      logged_in: false
-    };
-  }
-};
-var app = new Vue({
+vue__WEBPACK_IMPORTED_MODULE_4___default.a.prototype.authUser = '0';
+var app = new vue__WEBPACK_IMPORTED_MODULE_4___default.a({
   el: '#app',
   render: function render(h) {
     return h(_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
   },
   router: _router__WEBPACK_IMPORTED_MODULE_1__["default"]
-});
-app.mixin(login_auth);
+}); // app.mixin(globalVariables);
 
 /***/ }),
 
@@ -27539,7 +27624,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
