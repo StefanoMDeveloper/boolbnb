@@ -16,7 +16,7 @@
         
         <!-- cities cards -->
         <div class="container-fluid">
-            <div class="row ms_citiesContainer d-flex">
+            <div class="row ms_citiesContainer d-flex col-12">
                 <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}">
                     <div class="ms_imageContainer">
                         <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
@@ -31,7 +31,7 @@
 
         <!-- Esperienze Boolbnb -->
         <div class="container-fluid">
-            <div class="row ms_experienceContainer">
+            <div class="row ms_experienceContainer col-12">
                 <h1>Scopri le Esperienze Boolbnb</h1>
                 <div class="ms_imgsEsp">
                     <div class="ms_imgEsp">
@@ -48,7 +48,7 @@
 
         <!-- gift card  -->
         <div class="container-fluid">
-            <div class="row ms_giftContainer">
+            <div class="row ms_giftContainer col-12">
                 <div class="col-4">
                     <h1 class="ms_giftFont">Acquista <br> le gift card <br> di Airbnb</h1>
                 </div>

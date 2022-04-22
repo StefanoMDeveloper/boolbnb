@@ -10164,7 +10164,7 @@ var render = function () {
     _c("div", { staticClass: "container-fluid" }, [
       _c(
         "div",
-        { staticClass: "row ms_citiesContainer d-flex" },
+        { staticClass: "row ms_citiesContainer d-flex col-12" },
         _vm._l(_vm.cities, function (element, index) {
           return _c(
             "div",
@@ -10212,7 +10212,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row ms_experienceContainer" }, [
+      _c("div", { staticClass: "row ms_experienceContainer col-12" }, [
         _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
         _vm._v(" "),
         _c("div", { staticClass: "ms_imgsEsp" }, [
@@ -10254,7 +10254,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row ms_giftContainer" }, [
+      _c("div", { staticClass: "row ms_giftContainer col-12" }, [
         _c("div", { staticClass: "col-4" }, [
           _c("h1", { staticClass: "ms_giftFont" }, [
             _vm._v("Acquista "),
@@ -10388,7 +10388,7 @@ var render = function () {
             },
           },
           [
-            _vm.authUser == 0
+            _vm.authUser == 1
               ? _c("div", [
                   _c("label", { attrs: { for: "email" } }, [_vm._v("Ciaone!")]),
                   _vm._v(" "),

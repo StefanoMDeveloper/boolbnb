@@ -18,7 +18,7 @@
             </div>
             <h4>Scrivi un messaggio al proprietario dell&#39;appartamento</h4>
             <form @submit.prevent='sendMail'>
-                <div v-if="authUser==0">
+                <div v-if="authUser==1">
                     <label for="email">Ciaone!</label>
                     <input type="email" id="email" name="email">
                 </div>
