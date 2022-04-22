@@ -127,7 +127,8 @@ header{
     justify-content: space-between;
     align-items: center;
     .headerleft{
-      font-size: 30px;
+      font-size: 26px;
+      font-weight: 500;
       padding-left: 7%;
     }
     .headercenter{
