@@ -124,8 +124,8 @@
                                                 <button  type="submit" class="btn btn-danger ml-1 text-white" >
                                                 Cancella
                                                 </button>                                            
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>     
                             </div>     
