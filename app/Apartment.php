@@ -38,8 +38,8 @@ class Apartment extends Model
         return $this->belongsToMany('App\Sponsorship')->as('sponsorships_taken');
     }
 
-    public function active_sponsorshiips(){
-        $currentDate = now('Y-m-d');
-        return $this->sponsorships()->where('start_date','<=' , $currentDate)->where('end_date', '>=', $currentDate)->get();
+    public function active_sponsorships(){
+        $currentDate = date('Y-m-d');
+        return $this->sponsorships()->where('start_date','<=' , $currentDate)->where('end_date', '>=', $currentDate);
     }
 }

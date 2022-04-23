@@ -1,8 +1,9 @@
 <template>
     <div>
         <div class="container-lista">
+            <h2>Sponsorizzati</h2>
             <div v-for="apartment in apartments" :key="apartment.id" class="card">       
-                <div v-if="apartment.visible && apartment.sponsorships.length != 0" class="d-flex">
+                <div v-if="apartment.visible && apartment.active_sponsorships.length != 0" class="d-flex sponsored">
                     <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
                         <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
                             <p v-if="image.main_image"  class="card-immagine">
@@ -27,31 +28,35 @@
 
                     </div>
                 </div>
+            </div>
 
-                <!-- non sposorizzate -->
-                <div v-if="apartment.visible && apartment.sponsorships.length < 1" class="d-flex">
-                    <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
-                        <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
-                            <p v-if="image.main_image"  class="card-immagine">
-                                <img  :src="`/storage/${image.url}`"  class="border">
-                            </p>
-                        </div>
-                    </router-link>
-                    <div class="descrizione">
-                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                            <h4>{{apartment.name}}</h4>
+            <!-- non sponsorizzate -->
+            <div class="non-sponsored">
+                <div v-for="apartment in apartments" :key="apartment.id" class="card">   
+                    <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="d-flex">
+                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
+                            <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
+                                <p v-if="image.main_image"  class="card-immagine">
+                                    <img  :src="`/storage/${image.url}`"  class="border">
+                                </p>
+                            </div>
                         </router-link>
-                        <ul class="d-flex">
-                            <li>stanze {{apartment.rooms}} •</li>
-                            <li>letti {{apartment.beds}} •</li>
-                            <li>bagni {{apartment.bathrooms}} •</li>
-                            <span v-for="service in apartment.services" :key="service.id">
-                                <li>{{service.name}} •</li>
-                            </span>
-                        </ul>
-                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                            <p>Visualizza ulteriori dettagli...</p>
-                         </router-link>
+                        <div class="descrizione">
+                            <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                                <h4>{{apartment.name}}</h4>
+                            </router-link>
+                            <ul class="d-flex">
+                                <li>stanze {{apartment.rooms}} •</li>
+                                <li>letti {{apartment.beds}} •</li>
+                                <li>bagni {{apartment.bathrooms}} •</li>
+                                <span v-for="service in apartment.services" :key="service.id">
+                                    <li>{{service.name}} •</li>
+                                </span>
+                            </ul>
+                            <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                                <p>Visualizza ulteriori dettagli...</p>
+                            </router-link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,5 +130,13 @@ ul{
         padding-left: 0;
         list-style-type:none;
     }
+}
+
+.sponsored{
+    background-color: rgb(235,235,235);
+}
+
+.non-sponsored{
+    margin-top:50px;
 }
 </style>

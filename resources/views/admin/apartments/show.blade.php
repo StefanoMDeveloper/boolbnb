@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container showContainer">
-
     <h1 class="text-center my-5">{{ $apartment->name }}</h1>
     <ul>
         <li class="borderline">{{ $apartment->description }}</li>
