@@ -33,7 +33,7 @@
                 </div>
             </div>        
         </div>
-        <div class="container-fluid my-3">
+        <div class="container-fluid py-3">
             <div class="row d-flex justify-content-center">
                 <div class="col-11 d-flex justify-content-between">
                     <div>
