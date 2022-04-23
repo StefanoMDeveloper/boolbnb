@@ -54,6 +54,7 @@ export default{
 
 body{
     min-width: 500px;
+    background-color: white;
 }
 
 </style>
