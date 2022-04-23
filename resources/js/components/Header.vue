@@ -156,7 +156,7 @@ header{
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px;
+  height: 125px;
   background-color: white;
   color: black;
   transition: .5s ease all; 
@@ -166,6 +166,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 20px;
     .headerleft{
       font-size: 26px;
       font-weight: 500;
@@ -274,7 +275,7 @@ header{
   transform: translateX(-50%);
 
   .option{
-    border-bottom:1px solid black;    
+    border-bottom:1px solid black;  
   }
 }
 
@@ -283,6 +284,10 @@ input:focus, textarea:focus, select:focus{
 }
 .filter{
   padding: 10px 0;
+}
+
+select{
+  height: 25px;
 }
 </style>
 
