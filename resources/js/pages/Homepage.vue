@@ -168,7 +168,6 @@ export default {
 
 <style lang="scss" scoped>
 
-
 //jumbotron
 .ms_jumbotron{
     background-color: black;
@@ -284,21 +283,17 @@ export default {
 
 //cities cards
 .ms_citiesContainer { 
-    margin:40px 0;
+    margin:30px 0;
     padding: 0;
-    .ms_flexContainer{
-        display: flex;
-        justify-content: space-between;
-    }
     .ms_cityCard{
-        width: calc(100% / 4 - 10px);
+        width: 100%;
         border-radius: 20px;
         padding: 0;
         margin: 0 5px;
-        height: 400px;
+        height: 300px;
         overflow: hidden;
         .ms_imageContainer{
-            height: 200px;
+            height: 167px;
             width: 100%;
             overflow: hidden;
             img{
@@ -307,18 +302,75 @@ export default {
             }
         }
         .ms_textcity{
-            padding: 20px;
+            padding: 10px 20px;
         }
     
     }
 }
-@media only screen and (min-width:768px){
-    
+@media only screen and (min-width:712px){
+        .ms_citiesContainer { 
+        margin:30px 0;
+        padding: 0;
+        .ms_flexContainer{
+            display: flex;
+            justify-content: space-between;
+        }
+        .ms_cityCard{
+            width: calc(100% / 2 - 10px);
+            border-radius: 20px;
+            padding: 0;
+            margin: 0 5px;
+            height: 300px;
+            overflow: hidden;
+            .ms_imageContainer{
+                height: 167px;
+                width: 100%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .ms_textcity{
+                padding: 10px 20px;
+            }
+        
+        }
+    } 
+}
+@media only screen and (min-width:1200px){
+        .ms_citiesContainer { 
+        margin:40px 0;
+        .ms_flexContainer{
+            display: flex;
+            justify-content: space-between;
+        }
+        .ms_cityCard{
+            width: calc(100% / 4 - 10px);
+            border-radius: 20px;
+            padding: 0;
+            margin: 0 5px;
+            height: 400px;
+            overflow: hidden;
+            .ms_imageContainer{
+                height: 200px;
+                width: 100%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .ms_textcity{
+                padding: 20px;
+            } 
+        }
+    }   
 }
 
 //experiences
 .ms_experienceContainer{
-    margin:40px auto;
+    margin:78px auto;
     .ms_imgsEsp{
         width: 100%;
         .ms_imgEsp{
@@ -332,14 +384,14 @@ export default {
             .ms_esptext{
                 position: absolute;
                 top: 80px;
-                left: 60px;
+                left: 30px;
                 font-size: 40px;
             }
         }
     }
 }
 
-@media only screen and (min-width:768px){
+@media only screen and (min-width:1200px){
         .ms_experienceContainer{
         margin:40px auto;
         .ms_imgsEsp{
@@ -350,6 +402,9 @@ export default {
                 padding: 20px 10px;
                 .ms_esptext{
                     font-size: 60px;
+                    position: absolute;
+                    top: 80px;
+                    left: 60px;
                 }
             }
         }
@@ -369,7 +424,7 @@ export default {
         }
     }
 }
-@media only screen and (min-width:768px){
+@media only screen and (min-width:1200px){
         .ms_giftContainer{
             margin:100px auto;
         display: flex;
@@ -382,5 +437,6 @@ export default {
     }       
 }
 </style>
+
 
 
