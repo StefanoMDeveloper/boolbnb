@@ -28,7 +28,41 @@
                       </div>                           
                     </div>                 
                 </div>
-            </div>  
+            
+            <!-- campi aggiuntivi -->
+              <div class="row col justify-content-around filter">
+                    <label for="rooms">Numero di Stanze</label>
+                      <select id="rooms" name="rooms_number" >
+                        <option value="">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select>
+                    <label for="beds">Numero di Letti</label>
+                      <select id="beds" name="beds_number" >
+                        <option value="">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select>
+                    <label for="range">Raggio di Ricerca</label>
+                      <select id="range" name="range_number">
+                        <option value="10">10 km</option>
+                        <option value="20" selected="selected">20 km</option>
+                        <option value="25">25 km</option>
+                        <option value="30">30 km</option>
+                        <option value="35">35 km</option>
+                      </select>
+                  </div>
+              </div>
             
             <!-- header right -->
             <div class="headerright d-none d-lg-block col-3">
@@ -247,6 +281,8 @@ header{
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
+.filter{
+  padding: 10px 0;
+}
 </style>
-
 
