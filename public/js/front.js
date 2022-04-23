@@ -7662,7 +7662,7 @@ __webpack_require__.r(__webpack_exports__);
 
       data.search = data.search.replace(", ", "-");
       alert("/api/apartments/filter/search=" + data.search + "&radius=20000&lat=" + data.lat + "&lon=" + data.lon);
-      axios.get("/api/apartments/filter/search=" + data.search + "&radius=20000&lat=" + data.lat + "&lon=" + data.lon).then(function (response) {
+      axios.get("/api/apartments/filter/search=" + data.search + "&radius=" + data.radius + "&beds=" + data.beds + "&rooms=" + data.rooms + "&lat=" + data.lat + "&lon=" + data.lon + "&services=" + data.services).then(function (response) {
         _this.filteredApartments = response.data;
       });
     }
@@ -7758,6 +7758,40 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7967,6 +8001,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ApartmentList",
   data: function data() {
@@ -7995,8 +8034,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-horizontal */ "./node_modules/vue-horizontal/dist/vue-horizontal.esm.js");
-//
-//
 //
 //
 //
@@ -8313,7 +8350,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  width: 460px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  width: 460px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n}", ""]);
 
 // exports
 
@@ -8332,7 +8369,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-908b7792] {\n  color: black;\n  text-decoration: none;\n}\nimg[data-v-908b7792] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.descrizione[data-v-908b7792] {\n  padding: 30px 20px;\n}\n.descrizione p[data-v-908b7792] {\n  color: gray;\n  text-decoration: underline;\n  vertical-align: bottom;\n}\n.container-lista[data-v-908b7792] {\n  margin-top: 200px;\n}\n.card-immagine[data-v-908b7792] {\n  margin-left: 50px;\n  margin-bottom: 0;\n  padding: 30px 0;\n}\nul[data-v-908b7792] {\n  width: 70%;\n  flex-wrap: wrap;\n}\nul li[data-v-908b7792] {\n  float: left;\n  color: grey;\n  font-weight: bold;\n  font-size: 13px;\n  padding-right: 5px;\n  padding-left: 0;\n  list-style-type: none;\n}", ""]);
+exports.push([module.i, "a[data-v-908b7792] {\n  color: black;\n  text-decoration: none;\n}\nimg[data-v-908b7792] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.descrizione[data-v-908b7792] {\n  padding: 30px 20px;\n}\n.descrizione p[data-v-908b7792] {\n  color: gray;\n  text-decoration: underline;\n  vertical-align: bottom;\n}\n.container-lista[data-v-908b7792] {\n  margin-top: 200px;\n}\n.card-immagine[data-v-908b7792] {\n  margin-left: 50px;\n  margin-bottom: 0;\n  padding: 30px 0;\n}\nul[data-v-908b7792] {\n  width: 70%;\n  flex-wrap: wrap;\n}\nul li[data-v-908b7792] {\n  float: left;\n  color: grey;\n  font-weight: bold;\n  font-size: 13px;\n  padding-right: 5px;\n  padding-left: 0;\n  list-style-type: none;\n}\n.sponsored[data-v-908b7792] {\n  background-color: rgb(235, 235, 235);\n}\n.non-sponsored[data-v-908b7792] {\n  margin-top: 50px;\n}", ""]);
 
 // exports
 
@@ -10632,16 +10669,80 @@ var render = function () {
                   ),
                 ]
               ),
+              _vm._v(" "),
+              _vm._m(0),
             ]
           ),
           _vm._v(" "),
-          _vm._m(0),
+          _vm._m(1),
         ]),
       ]),
     ]
   )
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row col justify-content-around filter" }, [
+      _c("label", { attrs: { for: "rooms" } }, [_vm._v("Numero di Stanze")]),
+      _vm._v(" "),
+      _c("select", { attrs: { id: "rooms", name: "rooms_number" } }, [
+        _c("option", { attrs: { value: "" } }, [_vm._v("-")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "2" } }, [_vm._v("2")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "3" } }, [_vm._v("3")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "4" } }, [_vm._v("4")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "6" } }, [_vm._v("6")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "7" } }, [_vm._v("7")]),
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "beds" } }, [_vm._v("Numero di Letti")]),
+      _vm._v(" "),
+      _c("select", { attrs: { id: "beds", name: "beds_number" } }, [
+        _c("option", { attrs: { value: "" } }, [_vm._v("-")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "2" } }, [_vm._v("2")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "3" } }, [_vm._v("3")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "4" } }, [_vm._v("4")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "6" } }, [_vm._v("6")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "7" } }, [_vm._v("7")]),
+      ]),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "range" } }, [_vm._v("Raggio di Ricerca")]),
+      _vm._v(" "),
+      _c("select", { attrs: { id: "range", name: "range_number" } }, [
+        _c("option", { attrs: { value: "10" } }, [_vm._v("10 km")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "20", selected: "selected" } }, [
+          _vm._v("20 km"),
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "25" } }, [_vm._v("25 km")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "30" } }, [_vm._v("30 km")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "35" } }, [_vm._v("35 km")]),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -10720,41 +10821,107 @@ var render = function () {
     _c(
       "div",
       { staticClass: "container-lista" },
-      _vm._l(_vm.apartments, function (apartment) {
-        return _c("div", { key: apartment.id, staticClass: "card" }, [
-          apartment.visible && apartment.sponsorships.length != 0
-            ? _c(
-                "div",
-                { staticClass: "d-flex" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: {
-                          name: "SingleApartment",
-                          params: { slug: apartment.slug },
+      [
+        _c("h2", [_vm._v("Sponsorizzati")]),
+        _vm._v(" "),
+        _vm._l(_vm.apartments, function (apartment) {
+          return _c("div", { key: apartment.id, staticClass: "card" }, [
+            apartment.visible && apartment.active_sponsorships.length != 0
+              ? _c(
+                  "div",
+                  { staticClass: "d-flex sponsored" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: {
+                            name: "SingleApartment",
+                            params: { slug: apartment.slug },
+                          },
                         },
                       },
-                    },
-                    _vm._l(apartment.images, function (image) {
-                      return _c("div", { key: image.id }, [
-                        image.main_image
-                          ? _c("p", { staticClass: "card-immagine" }, [
-                              _c("img", {
-                                staticClass: "border",
-                                attrs: { src: "/storage/" + image.url },
-                              }),
-                            ])
-                          : _vm._e(),
-                      ])
-                    }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c(
+                      _vm._l(apartment.images, function (image) {
+                        return _c("div", { key: image.id }, [
+                          image.main_image
+                            ? _c("p", { staticClass: "card-immagine" }, [
+                                _c("img", {
+                                  staticClass: "border",
+                                  attrs: { src: "/storage/" + image.url },
+                                }),
+                              ])
+                            : _vm._e(),
+                        ])
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: " descrizione" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "SingleApartment",
+                                params: { slug: apartment.slug },
+                              },
+                            },
+                          },
+                          [_c("h4", [_vm._v(_vm._s(apartment.name))])]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "ul",
+                          { staticClass: "d-flex" },
+                          [
+                            _c("li", [
+                              _vm._v(
+                                "stanze " + _vm._s(apartment.rooms) + " •"
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("letti " + _vm._s(apartment.beds) + " •"),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v(
+                                "bagni " + _vm._s(apartment.bathrooms) + " •"
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(apartment.services, function (service) {
+                              return _c("span", { key: service.id }, [
+                                _c("li", [_vm._v(_vm._s(service.name) + " •")]),
+                              ])
+                            }),
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Visualizza ulteriori dettagli...")]),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                )
+              : _vm._e(),
+          ])
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "non-sponsored" },
+          _vm._l(_vm.apartments, function (apartment) {
+            return _c("div", { key: apartment.id, staticClass: "card" }, [
+              apartment.visible && apartment.active_sponsorships.length < 1
+                ? _c(
                     "div",
-                    { staticClass: " descrizione" },
+                    { staticClass: "d-flex" },
                     [
                       _c(
                         "router-link",
@@ -10766,141 +10933,100 @@ var render = function () {
                             },
                           },
                         },
-                        [_c("h4", [_vm._v(_vm._s(apartment.name))])]
+                        _vm._l(apartment.images, function (image) {
+                          return _c("div", { key: image.id }, [
+                            image.main_image
+                              ? _c("p", { staticClass: "card-immagine" }, [
+                                  _c("img", {
+                                    staticClass: "border",
+                                    attrs: { src: "/storage/" + image.url },
+                                  }),
+                                ])
+                              : _vm._e(),
+                          ])
+                        }),
+                        0
                       ),
                       _vm._v(" "),
                       _c(
-                        "ul",
-                        { staticClass: "d-flex" },
+                        "div",
+                        { staticClass: "descrizione" },
                         [
-                          _c("li", [
-                            _vm._v("stanze " + _vm._s(apartment.rooms) + " •"),
-                          ]),
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  name: "SingleApartment",
+                                  params: { slug: apartment.slug },
+                                },
+                              },
+                            },
+                            [_c("h4", [_vm._v(_vm._s(apartment.name))])]
+                          ),
                           _vm._v(" "),
-                          _c("li", [
-                            _vm._v("letti " + _vm._s(apartment.beds) + " •"),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _vm._v(
-                              "bagni " + _vm._s(apartment.bathrooms) + " •"
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _vm._l(apartment.services, function (service) {
-                            return _c("span", { key: service.id }, [
-                              _c("li", [_vm._v(_vm._s(service.name) + " •")]),
-                            ])
-                          }),
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("Visualizza ulteriori dettagli...")]),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          apartment.visible && apartment.sponsorships.length < 1
-            ? _c(
-                "div",
-                { staticClass: "d-flex" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: {
-                          name: "SingleApartment",
-                          params: { slug: apartment.slug },
-                        },
-                      },
-                    },
-                    _vm._l(apartment.images, function (image) {
-                      return _c("div", { key: image.id }, [
-                        image.main_image
-                          ? _c("p", { staticClass: "card-immagine" }, [
-                              _c("img", {
-                                staticClass: "border",
-                                attrs: { src: "/storage/" + image.url },
+                          _c(
+                            "ul",
+                            { staticClass: "d-flex" },
+                            [
+                              _c("li", [
+                                _vm._v(
+                                  "stanze " + _vm._s(apartment.rooms) + " •"
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "letti " + _vm._s(apartment.beds) + " •"
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _vm._v(
+                                  "bagni " + _vm._s(apartment.bathrooms) + " •"
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(apartment.services, function (service) {
+                                return _c("span", { key: service.id }, [
+                                  _c("li", [
+                                    _vm._v(_vm._s(service.name) + " •"),
+                                  ]),
+                                ])
                               }),
-                            ])
-                          : _vm._e(),
-                      ])
-                    }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "descrizione" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to: {
-                              name: "SingleApartment",
-                              params: { slug: apartment.slug },
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  name: "SingleApartment",
+                                  params: { slug: apartment.slug },
+                                },
+                              },
                             },
-                          },
-                        },
-                        [_c("h4", [_vm._v(_vm._s(apartment.name))])]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        { staticClass: "d-flex" },
-                        [
-                          _c("li", [
-                            _vm._v("stanze " + _vm._s(apartment.rooms) + " •"),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _vm._v("letti " + _vm._s(apartment.beds) + " •"),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _vm._v(
-                              "bagni " + _vm._s(apartment.bathrooms) + " •"
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _vm._l(apartment.services, function (service) {
-                            return _c("span", { key: service.id }, [
-                              _c("li", [_vm._v(_vm._s(service.name) + " •")]),
-                            ])
-                          }),
+                            [
+                              _c("p", [
+                                _vm._v("Visualizza ulteriori dettagli..."),
+                              ]),
+                            ]
+                          ),
                         ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to: {
-                              name: "SingleApartment",
-                              params: { slug: apartment.slug },
-                            },
-                          },
-                        },
-                        [_c("p", [_vm._v("Visualizza ulteriori dettagli...")])]
+                        1
                       ),
                     ],
                     1
-                  ),
-                ],
-                1
-              )
-            : _vm._e(),
-        ])
-      }),
-      0
+                  )
+                : _vm._e(),
+            ])
+          }),
+          0
+        ),
+      ],
+      2
     ),
   ])
 }
@@ -10955,7 +11081,8 @@ var render = function () {
                 _vm._v(" "),
                 _vm._l(_vm.apartments, function (apartment) {
                   return _c("section", { key: apartment.id }, [
-                    apartment.visible && apartment.sponsorships.length != 0
+                    apartment.visible &&
+                    apartment.active_sponsorships.length != 0
                       ? _c(
                           "div",
                           [
@@ -10985,29 +11112,23 @@ var render = function () {
                               }),
                               0
                             ),
+                            _vm._v(" "),
+                            _c(
+                              "router-link",
+                              {
+                                attrs: {
+                                  to: {
+                                    name: "SingleApartment",
+                                    params: { slug: apartment.slug },
+                                  },
+                                },
+                              },
+                              [_c("h5", [_vm._v(_vm._s(apartment.name))])]
+                            ),
                           ],
                           1
                         )
                       : _vm._e(),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: {
-                                name: "SingleApartment",
-                                params: { slug: apartment.slug },
-                              },
-                            },
-                          },
-                          [_c("h5", [_vm._v(_vm._s(apartment.name))])]
-                        ),
-                      ],
-                      1
-                    ),
                   ])
                 }),
                 _vm._v(" "),
@@ -28592,7 +28713,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
