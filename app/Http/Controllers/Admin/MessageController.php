@@ -28,12 +28,22 @@ class MessageController extends Controller
     public function index()
     {
         $user_id=Auth::user()->id;
-        // $messages=Message::orderBy('date', 'ASC')
-        // ->pluck('date')
-        // ->map(function($date) {
-        //   return $date->format("d-m-Y");
-        // })->unique();
+ 
+        $messages = [];
+        
         $apartments = Apartment::all()->where('user_id', $user_id);
-        return view('admin.messages', compact('apartments'));
+
+        $messagesList = Message::all();
+
+        foreach ($apartments as $apartment) {
+            foreach ($messagesList as $message) {
+                if($message['apartment_id'] == $apartment['id']){
+                    array_push($messages, $message);
+                }
+            }
+        }
+        $messages = collect($messages)->sortBy('date')->reverse();
+        return view('admin.messages', compact('messages'));
+        
     }
 }

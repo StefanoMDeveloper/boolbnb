@@ -84,7 +84,7 @@
             </h3>
             @forelse ($apartment->messages as $message)
                 <p><strong>{{ $message->object }}</strong></p>
-                <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date}} < email: {{$message->email}} > </p>
+                <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date->format('d/m/Y')}} < email: {{$message->email}} > </p>
                 <p>{{ $message->content }}</p>
             @empty
                 Non si sono messaggi!
@@ -98,7 +98,7 @@
                 Visualizzazioni
             </h3>
             @forelse ($apartment->stats as $stat)
-                <p>{{$stat->ip}} il {{$stat->date}}</p>
+                <p>{{$stat->ip}} il {{$stat->date->format('d/m/Y')}}</p>
             @empty
                 <p>Non ci sono visualizzazioni!</p>
             @endforelse

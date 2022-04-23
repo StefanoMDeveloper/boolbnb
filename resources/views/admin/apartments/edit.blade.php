@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<h1 class="text-center">update:{{$apartment->name}}</h1>
+<h1 class="text-center">{{$apartment->name}}</h1>
 <form action="{{route("admin.apartments.update", $apartment->id)}}" method="POST" enctype="multipart/form-data">
   @csrf
   @method('PUT')

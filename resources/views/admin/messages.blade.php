@@ -30,14 +30,12 @@
                     Benvenuto, {{Auth::user()->name}}.
                     <h3>Messaggi:</h3>
                     
-                    @foreach ($apartments as $apartment)                        
-                        @foreach ($apartment->messages as $message)
-                        <a href="{{ route('admin.apartments.show', $apartment->id) }}"><h4>{{ $apartment->name }}</h4></a>
+                    @foreach ($messages as $message)
+                    {{-- @dd($message->) --}}
+                        <a href="{{ route('admin.apartments.show', $message->apartment->id) }}"><h4>{{ $message->apartment->name }}</h4></a>
                             <p><strong>{{ $message->object }}</strong></p>
                             <p>Da {{$message->name}} {{$message->lastname}} il {{$message->date->format('d/m/Y')}} < email: {{$message->email}} > </p>
                             <p>{{ $message->content }}</p>
-                            
-                        @endforeach
                     @endforeach
                 </div>
             </div>
