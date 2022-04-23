@@ -8153,6 +8153,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
@@ -8425,7 +8427,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 40px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 10px);\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 10px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 40px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 10px);\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 0;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 40px;\n}\n@media only screen and (min-width: 768px) {\n.ms_experienceContainer[data-v-00e83377] {\n    margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n    padding: 20px 10px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n    font-size: 60px;\n}\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 50px auto;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n  font-size: 40px;\n  padding-bottom: 50px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}\n@media only screen and (min-width: 768px) {\n.ms_giftContainer[data-v-00e83377] {\n    margin: 100px auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n    font-size: 45px;\n    padding-bottom: 0;\n}\n}", ""]);
 
 // exports
 
@@ -11167,8 +11169,7 @@ var render = function () {
                 _vm._v(" "),
                 _vm._l(_vm.apartments, function (apartment) {
                   return _c("section", { key: apartment.id }, [
-                    apartment.visible &&
-                    apartment.active_sponsorships.length != 0
+                    apartment.visible && apartment.sponsorships.length != 0
                       ? _c(
                           "div",
                           [
@@ -11198,23 +11199,29 @@ var render = function () {
                               }),
                               0
                             ),
-                            _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                attrs: {
-                                  to: {
-                                    name: "SingleApartment",
-                                    params: { slug: apartment.slug },
-                                  },
-                                },
-                              },
-                              [_c("h5", [_vm._v(_vm._s(apartment.name))])]
-                            ),
                           ],
                           1
                         )
                       : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "SingleApartment",
+                                params: { slug: apartment.slug },
+                              },
+                            },
+                          },
+                          [_c("h5", [_vm._v(_vm._s(apartment.name))])]
+                        ),
+                      ],
+                      1
+                    ),
                   ])
                 }),
                 _vm._v(" "),
@@ -11373,8 +11380,8 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-10 ms_experienceContainer" }, [
           _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
           _vm._v(" "),
-          _c("div", { staticClass: "ms_imgsEsp row" }, [
-            _c("div", { staticClass: "ms_imgEsp col-6" }, [
+          _c("div", { staticClass: "ms_imgsEsp" }, [
+            _c("div", { staticClass: "ms_imgEsp col col-lg-6" }, [
               _c("img", {
                 attrs: {
                   src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./storage/app/public/uploads/experience2.jpg"),
@@ -11389,7 +11396,7 @@ var staticRenderFns = [
               ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "ms_imgEsp col-6" }, [
+            _c("div", { staticClass: "ms_imgEsp col col-lg-6" }, [
               _c("img", {
                 attrs: {
                   src: __webpack_require__(/*! ../../../public/storage/uploads/experience1.jpg */ "./storage/app/public/uploads/experience1.jpg"),
@@ -11414,9 +11421,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row d-flex justify-content-center p-0" }, [
-        _c("div", { staticClass: "row ms_giftContainer col-10" }, [
-          _c("div", { staticClass: "col-4" }, [
-            _c("h1", { staticClass: "ms_giftFont" }, [
+        _c("div", { staticClass: "ms_giftContainer p-0 col-10" }, [
+          _c("div", { staticClass: "col-12 col-lg-4 ms_giftFont" }, [
+            _c("h1", [
               _vm._v("Acquista "),
               _c("br"),
               _vm._v(" le gift card "),
@@ -11425,7 +11432,7 @@ var staticRenderFns = [
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "ms_giftImg col-8" }, [
+          _c("div", { staticClass: "ms_giftImg col col-lg-8" }, [
             _c("img", {
               attrs: {
                 src: __webpack_require__(/*! ../../../public/storage/uploads/gift.jpg */ "./storage/app/public/uploads/gift.jpg"),
