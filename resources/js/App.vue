@@ -52,7 +52,7 @@ export default{
 }
 
 body{
-    min-width: 500px;
+    min-width: 375px;
     background-color: white;
 }
 
