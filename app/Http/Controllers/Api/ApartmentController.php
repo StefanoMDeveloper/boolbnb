@@ -27,7 +27,7 @@ class ApartmentController extends Controller
      */
     public function show($slug)
     {
-        $apartment = Apartment::where("slug", $slug)->with(["images", "sponsorships", "services","stats"])->first();
+        $apartment = Apartment::where("slug", $slug)->with(["images","services","stats"])->first();
         if (empty($apartment)){
             return response()->json(["message"=>"Nessun appartamento trovato con questo nome!"]);
         }
@@ -56,8 +56,24 @@ class ApartmentController extends Controller
             return response()->json(["message"=>"Nessun appartamento."]);
         }
 
+        //filter by beds
+        $filteredApartments=[];
+        foreach($apartments as $apartment){
+            if($apartment->beds >= $beds){
+                array_push($filteredApartments, $apartment);
+            }
+        }
+
+        //filter by rooms
+        $apartments = [];
+        foreach ($filteredApartments as $apartment){
+            if($apartment->rooms >= $rooms){
+                array_push($apartments, $apartment);
+            }
+        }
+
         //filter by service
-        $filteringApartments=[];
+        $filteredApartments=[];
         $checkVar = false;
         foreach($apartments as $apartment){
             $servicing = $apartment->services->toArray();
@@ -74,24 +90,24 @@ class ApartmentController extends Controller
                 }
             }
             if($checkVar){
-                array_push($filteringApartments, $apartment);
-            }
-        }
-        $filteredApartments = [];
-
-        //filter by distance
-        foreach($filteringApartments as $apartment){
-            $dist = round(self::computeDistance($lat,$lon,$apartment->lat,$apartment->lon));
-            if($dist<$radius){
-                $apartment['distance_from_search'] = $dist;
                 array_push($filteredApartments, $apartment);
             }
         }
 
-        if(empty($filteredApartments)){
+        //filter by distance
+        $apartments = [];
+        foreach($filteredApartments as $apartment){
+            $dist = round(self::computeDistance($lat,$lon,$apartment->lat,$apartment->lon));
+            if($dist<$radius){
+                $apartment['distance_from_search'] = $dist;
+                array_push($apartments, $apartment);
+            }
+        }
+
+        if(empty($apartments)){
             return response()->json([]);
         }
 
-        return response()->json($filteredApartments);
+        return response()->json($apartments);
     }
 }
