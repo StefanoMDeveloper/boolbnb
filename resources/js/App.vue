@@ -25,7 +25,6 @@ export default{
     methods:{
         filterApartments: function(data){
             data.search = data.search.replace(", ", "-");
-            alert("/api/apartments/filter/search=" + data.search +"&radius=20000&lat="+data.lat + "&lon="+data.lon);
             axios
                 .get("/api/apartments/filter/search="+data.search+"&radius="+data.radius+"&beds="+data.beds+"&rooms="+ data.rooms+"&lat="+data.lat+"&lon="+data.lon+"&services="+ data.services)  
                 .then((response) => {

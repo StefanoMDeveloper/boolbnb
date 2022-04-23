@@ -27,7 +27,7 @@ const router = new VueRouter({
             component: ApartmentList
         },
         {
-            path: '#',
+            path: '*',
 	        name: "page-404",
 	        component: PageNotFound
         }

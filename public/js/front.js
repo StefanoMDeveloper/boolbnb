@@ -7661,7 +7661,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       data.search = data.search.replace(", ", "-");
-      alert("/api/apartments/filter/search=" + data.search + "&radius=20000&lat=" + data.lat + "&lon=" + data.lon);
       axios.get("/api/apartments/filter/search=" + data.search + "&radius=" + data.radius + "&beds=" + data.beds + "&rooms=" + data.rooms + "&lat=" + data.lat + "&lon=" + data.lon + "&services=" + data.services).then(function (response) {
         _this.filteredApartments = response.data;
       });
@@ -8269,21 +8268,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
     return {
       apartment: [],
-      messageSent: false
+      messageSent: false,
+      lat: "",
+      lon: ""
     };
   },
   created: function created() {
     var _this = this;
 
-    console.log(this.authUser);
+    // console.log(this.authUser);
     axios.get("/api/apartments/".concat(this.$route.params.slug)).then(function (response) {
       _this.apartment = response.data;
+      _this.lat = parseFloat(_this.apartment.lat);
+      _this.lon = parseFloat(_this.apartment.lon);
     });
+  },
+  updated: function updated() {
+    var center = [this.lon, this.lat];
+    var map = tt.map({
+      key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
+      container: "map",
+      center: center,
+      zoom: 9
+    });
+    new tt.Marker().setLngLat(center).addTo(map);
   },
   methods: {
     sendMail: function sendMail() {
@@ -11522,6 +11539,11 @@ var render = function () {
           },
           [_vm._v("\n            Messaggio inviato!\n        ")]
         ),
+        _vm._v(" "),
+        _c("div", {
+          staticStyle: { width: "100%", height: "500px", "margin-top": "50px" },
+          attrs: { id: "map" },
+        }),
       ],
       2
     ),
@@ -27740,7 +27762,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "ApartmentList",
     component: _pages_ApartmentList_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '#',
+    path: '*',
     name: "page-404",
     component: _pages_PageNotFound_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }]

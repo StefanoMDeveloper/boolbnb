@@ -38,6 +38,10 @@
             <div v-show="messageSent">
                 Messaggio inviato!
             </div>
+
+            <div id="map" style="width: 100%; height: 500px; margin-top:50px;">
+
+            </div>
         </div>
     </div>
 </template>
@@ -48,16 +52,30 @@ export default {
     data() {
         return {
             apartment: [],
-            messageSent: false
+            messageSent: false,
+            lat: "",
+            lon: ""
         }
     },
     created() {
-        console.log(this.authUser);
+        // console.log(this.authUser);
         axios
         .get(`/api/apartments/${this.$route.params.slug}`)
         .then((response) => {
             this.apartment = response.data;
-        });
+            this.lat = parseFloat(this.apartment.lat);
+            this.lon = parseFloat(this.apartment.lon);
+        });     
+    },
+    updated(){
+        let center = [this.lon,this.lat];
+        const map= tt.map({
+            key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
+            container: "map",
+            center: center,
+            zoom: 9
+        })         
+            new tt.Marker().setLngLat(center).addTo(map);      
     },
     methods: {
         sendMail(){
