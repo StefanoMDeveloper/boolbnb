@@ -15,12 +15,12 @@
             <div class="col-12 col-xl-5 headercenter d-flex flex-column align-items-center m-auto">
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
-                    <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-                    <li><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
+                    <li class="fontLink"><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
+                    <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                 </ul>
                 </nav>
                 <div class="d-flex headercenterB justify-content-center m-auto">
-                    <div class="inputContainer col-12 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                    <div class="inputContainer col-10 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
@@ -29,7 +29,7 @@
                         </div>
                       </div> 
                     </div>                 
-                    <button class="btnSearch"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
+                    <button class="btnSearch col-2"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
                 </div>
             
             <!-- campi aggiuntivi -->
@@ -210,6 +210,10 @@ header{
       font-size: 26px;
       font-weight: 500;
       padding-left: 7%;
+      transition: 1s ease all; 
+      &:hover{
+        font-size: 29px;
+      }
     }
     .headercenter{
       min-width: 375px;
@@ -220,21 +224,33 @@ header{
           li{
             margin: 10px;
             border-bottom: 1px black;
+            width: 70px;
+            transition: 1s ease all; 
+            &:hover{
+              font-size: 15px;
+              font-weight: 700;
+            }
             a{
               cursor: pointer;
               color:white;  
             }
+            
           }
         }
       }
       .headercenterB{
         min-width: 375px;
         .btnSearch{
-          background-color: #ff385c;
+          background-color: hwb(349 17% 45%);
           border: none;
           border-radius: 5px;
           margin:0 10px;
-          padding: 0 5px;
+          padding: 0 2px;
+          text-align: center;
+          transition:linear .5s;
+          &:hover{
+            background-color: #ff385c;
+          }
           a{
             text-decoration: none;
             color: white;
@@ -251,9 +267,14 @@ header{
               align-items: center;
               .searchIcon{
                   background-color: #ff385c;
+                  transition:linear .5s;
                   border-radius: 50%;
                   color: white;
                   padding: 15px;
+                  &:hover{
+                    padding: 17px;
+                    background-color: hwb(349 17% 45%);
+                  }
               }
                 .searchIcon:hover{
                   cursor: pointer;
@@ -277,6 +298,10 @@ header{
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: .5s ease all; 
+            &:hover{
+              width: 95px;
+            }
             .fa-user{
               border-radius: 50%;
               background-color: #717171;
