@@ -29,7 +29,10 @@ Route::middleware('auth')
         Route::get('/profile','ProfileController@index')->name('profile');
         Route::get('/infoprofile','InfoprofileController@index')->name('infoprofile');
         Route::get('/stats','StatController@index')->name('stats');
+        Route::get('/sponsorize/{apartment}', 'SponsorController@sponsorize')->name('sponsorize');
+        Route::get('/sponsorships/store', 'SponsorController@store')->name('sponsorships.store');
     });
+
 
 Route::get("{any?}", function() {
     return view("front");

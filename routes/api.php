@@ -21,4 +21,5 @@ Route::namespace('Api')->name('api.')->group(function () {
     Route::get("/users/{id}", "UserController@show")->name('users.show');
     Route::post("/messages", "MessagesController@store")->name('messages.store');
     Route::get("/services", "ServiceController@index")->name('services');
+    Route::post("/make/payment", "PaymentController@makePayment")->name('make.payment');
 });

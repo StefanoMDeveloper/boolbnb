@@ -8161,8 +8161,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
@@ -11190,7 +11188,8 @@ var render = function () {
                 _vm._v(" "),
                 _vm._l(_vm.apartments, function (apartment) {
                   return _c("section", { key: apartment.id }, [
-                    apartment.visible && apartment.sponsorships.length != 0
+                    apartment.visible &&
+                    apartment.active_sponsorships.length != 0
                       ? _c(
                           "div",
                           [
@@ -11220,29 +11219,23 @@ var render = function () {
                               }),
                               0
                             ),
+                            _vm._v(" "),
+                            _c(
+                              "router-link",
+                              {
+                                attrs: {
+                                  to: {
+                                    name: "SingleApartment",
+                                    params: { slug: apartment.slug },
+                                  },
+                                },
+                              },
+                              [_c("h5", [_vm._v(_vm._s(apartment.name))])]
+                            ),
                           ],
                           1
                         )
                       : _vm._e(),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            attrs: {
-                              to: {
-                                name: "SingleApartment",
-                                params: { slug: apartment.slug },
-                              },
-                            },
-                          },
-                          [_c("h5", [_vm._v(_vm._s(apartment.name))])]
-                        ),
-                      ],
-                      1
-                    ),
                   ])
                 }),
                 _vm._v(" "),
