@@ -27,12 +27,13 @@
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
                             {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
                         </div>
-                      </div>                           
+                      </div> 
                     </div>                 
+                    <button class="btnSearch"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
                 </div>
             
             <!-- campi aggiuntivi -->
-              <div class="row col justify-content-around filter">
+              <div v-if="selectOption===true" class="row col justify-content-around filter">
                     <label for="rooms">Numero di Stanze</label>
                       <select id="rooms" name="rooms_number" >
                         <option value="">-</option>
@@ -63,6 +64,13 @@
                         <option value="30">30 km</option>
                         <option value="35">35 km</option>
                       </select>
+
+                      <!--services  -->
+                      <span class="text-black" :class="{ 'services': !scrollEffect }">Servizi:</span>
+                      <div class="services" v-for="service in services" :key="service.id">
+                        <input type="checkbox" id="service" name="services[]" :value="service.id">
+                      <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
+                      </div>
                   </div>
               </div>
             
@@ -95,6 +103,7 @@ export default {
         scrollEffect: false,
         lastScrollPosition: 0,
         scrollOffset: 0,
+        selectOption: false,
         links:[
           {
             text: "Places to visit",
@@ -160,6 +169,14 @@ export default {
       }
       this.scrollEffect =  this.lastScrollPosition < window.pageYOffset
     },
+    ricercaAvanzata: function(){
+      if(this.selectOption===false){
+          this.selectOption=true;
+      }else 
+      if(this.selectOption===true){
+          this.selectOption=false;
+      }
+    },
   },
   props: {
     
@@ -179,7 +196,7 @@ header{
   position: fixed;
   top: 0;
   width: 100%;
-  height: 125px;
+  min-height: 125px;
   background-color: white;
   color: black;
   transition: .5s ease all; 
@@ -188,7 +205,6 @@ header{
     position:relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding-top: 20px;
     .headerleft{
       font-size: 26px;
@@ -212,10 +228,22 @@ header{
         }
       }
       .headercenterB{
-        width: 375px;
+        min-width: 375px;
+        .btnSearch{
+          background-color: #ff385c;
+          border: none;
+          border-radius: 5px;
+          margin:0 10px;
+          padding: 0 5px;
+          a{
+            text-decoration: none;
+            color: white;
+          }
+        }
 
           .inputContainer{
             border:1px solid gray;
+            z-index: 999;
             .ms_icon{
               display: flex;
               justify-content: end;
@@ -276,7 +304,7 @@ header{
     background: black;
      color: white;
     transition: .5s ease all; 
-    height: 153px;
+    min-height: 153px;
 }
 .pink{
   color:#ff385c;
@@ -330,15 +358,25 @@ select{
     width: 70px;
 }
 @media only screen and (min-width:1200px){
-  label{
-  font-size: 15px;
-  select{
-    height: 25px;
-    .ms_km{
-      width: 40px;
-    }  
+    label{
+    font-size: 15px;
+    select{
+      height: 25px;
+      .ms_km{
+        width: 40px;
+      }  
+    }
   }
 }
+
+.servicesContainer{
+
+  .services{
+    color: white;
+    width: 100%;
+  }
 }
+
+
 </style>
 
