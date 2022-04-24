@@ -240,6 +240,7 @@ header{
       }
       .headercenterB{
         min-width: 375px;
+        width: 100%;
         .btnSearch{
           background-color: hwb(349 17% 45%);
           border: none;
