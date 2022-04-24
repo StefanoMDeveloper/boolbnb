@@ -2,7 +2,7 @@
     <footer>
         <div class="container-fluid">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-10 containerFooter1 d-flex justify-content-between ">
+                <div class="col-10 containerFooter1 d-lg-flex justify-content-between">
                     <ul>
                         <li><b>Assistenza</b></li>
                         <li><a href="#">Centro Assistenza</a></li>
@@ -35,7 +35,7 @@
         </div>
         <div class="container-fluid py-3">
             <div class="row d-flex justify-content-center">
-                <div class="col-11 d-flex justify-content-between">
+                <div class="col-11 d-lg-flex justify-content-between">
                     <div>
                         <span><a href="#"><i class="far fa-copyright"></i>2022 Boolbnb, Inc. &nbsp;&nbsp;•</a></span>
                         <span><a href="#">Privacy &nbsp;&nbsp;•</a></span>
@@ -68,6 +68,14 @@ footer {
 
     ul {
         list-style-type: none;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgb(214, 209, 209);
+    }
+    @media only screen and (min-width:992px){
+         ul {
+        padding-bottom: 0;
+        border-bottom: none;
+        }
     }
 
     li {
@@ -79,14 +87,34 @@ footer {
         text-decoration: none;
     }
 
-    span {
-        padding: 0 4px;
+    span,
+    span .fa-facebook-f,
+    span .fa-twitter,
+    span .fa-instagram {    
+        font-size: 8px;
     }
 
+     @media only screen and (min-width:992px){
+        span,
+        span .fa-facebook-f,
+        span .fa-twitter,
+        span .fa-instagram {
+        padding: 0 4px;
+        font-size: 13px;
+    }
+     }
+
     .containerFooter1 {
+        padding: 20px 0;
+        
+    }
+     @media only screen and (min-width:992px){
+        .containerFooter1 {
         padding: 120px 0;
         border-bottom: 1px solid #dddddd;
     }
+
+     }
 
     .containerFooter2 {
         padding: 40px 0;
