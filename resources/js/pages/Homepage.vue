@@ -28,7 +28,7 @@
                             <p class="text-dark">Can be just any HTML declaration</p>
                         </div>
                         <section v-for="apartment in apartments" :key="apartment.id">
-                            <div v-if="apartment.visible && apartment.sponsorships.length != 0">
+                            <div v-if="apartment.visible && apartment.active_sponsorships.length!=0">
                                 <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                     <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
                                         <p v-if="image.main_image"  class="ms_cardImage">
