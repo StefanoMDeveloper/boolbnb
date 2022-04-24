@@ -20,7 +20,7 @@
                 </ul>
                 </nav>
                 <div class="d-flex headercenterB justify-content-center m-auto">
-                    <div class="inputContainer col-10 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                    <div class="inputContainer col-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
@@ -224,7 +224,7 @@ header{
           li{
             margin: 10px;
             border-bottom: 1px black;
-            width: 70px;
+            width: 92px;
             transition: 1s ease all; 
             &:hover{
               font-size: 15px;

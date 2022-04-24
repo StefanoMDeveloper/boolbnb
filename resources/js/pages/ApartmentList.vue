@@ -3,15 +3,15 @@
         <div class="container-lista">
             <h2>Sponsorizzati</h2>
             <div v-for="apartment in apartments" :key="apartment.id" class="card">       
-                <div v-if="apartment.visible && apartment.active_sponsorships.length != 0" class="d-flex sponsored">
-                    <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
+                <div v-if="apartment.visible && apartment.active_sponsorships.length != 0" class="sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                    <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="col-11 col-lg-3">
                         <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
-                            <p v-if="image.main_image"  class="card-immagine">
+                            <div v-if="image.main_image"  class="card-immagine">
                                 <img  :src="`/storage/${image.url}`" class="border">
-                            </p>
+                            </div>
                         </div>
                     </router-link>
-                    <div class=" descrizione">
+                    <div class=" descrizione col-11 col-lg-9 ml-lg-5">
                         <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                             <h4>{{apartment.name}}</h4>
                         </router-link>
@@ -24,7 +24,14 @@
                             </span>
                         </ul>
 
-                        <p>Visualizza ulteriori dettagli...</p>
+                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                            <button>
+                                <a>
+                                    <i class="fa-solid fa-eye"></i>
+                                    Visualizza ulteriori dettagli...
+                                </a>
+                            </button>
+                        </router-link>
 
                     </div>
                 </div>
@@ -33,15 +40,15 @@
             <!-- non sponsorizzate -->
             <div class="non-sponsored">
                 <div v-for="apartment in apartments" :key="apartment.id" class="card">   
-                    <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="d-flex">
-                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="">
+                    <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}" class="col-11 col-lg-3">
                             <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
                                 <p v-if="image.main_image"  class="card-immagine">
                                     <img  :src="`/storage/${image.url}`"  class="border">
                                 </p>
                             </div>
                         </router-link>
-                        <div class="descrizione">
+                        <div class="descrizione col-11 col-lg-9 ml-lg-5">
                             <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                 <h4>{{apartment.name}}</h4>
                             </router-link>
@@ -54,7 +61,12 @@
                                 </span>
                             </ul>
                             <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                                <p>Visualizza ulteriori dettagli...</p>
+                               <button>
+                                    <a>
+                                        <i class="fa-solid fa-eye"></i>
+                                        Visualizza ulteriori dettagli...
+                                    </a>
+                                </button>
                             </router-link>
                         </div>
                     </div>
@@ -97,24 +109,53 @@ img{
 
 .descrizione{
     padding: 30px 20px;
-
-    p{
-        color: gray;
-        text-decoration: underline;
-        vertical-align: bottom;
-    }
-
+    button{
+        background-color:  #39858a;
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition:linear 1s;
+        border: none;
+        &:hover{
+        background-color:  #54b4ba;
+        color: white;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            line-height: 100%;
+            &:hover{
+                color: white;
+            }
+        }
+    }   
 }
 
 .container-lista{
     margin-top: 200px
 }
-
+    
 .card-immagine{
-    margin-left:50px;
     margin-bottom:0;
     padding: 30px 0;
+    height: 400px;
+    width: 3;
+    margin: auto;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
+
+@media only screen and (min-width:1200px){  
+    .card-immagine{
+    margin-left:50px; 
+    height: 300px;
+    width: 100%; 
+    }
+}
+
+
 
 
 ul{
@@ -135,6 +176,7 @@ ul{
 .sponsored{
     background-color: rgb(235,235,235);
 }
+
 
 .non-sponsored{
     margin-top:50px;
