@@ -8370,7 +8370,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #eeeeee;\n}\nfooter ul[data-v-61a7c374] {\n  list-style-type: none;\n}\nfooter li[data-v-61a7c374] {\n  padding-bottom: 10px;\n}\nfooter a[data-v-61a7c374] {\n  color: black;\n  text-decoration: none;\n}\nfooter span[data-v-61a7c374] {\n  padding: 0 4px;\n}\nfooter .containerFooter1[data-v-61a7c374] {\n  padding: 120px 0;\n  border-bottom: 1px solid #dddddd;\n}\nfooter .containerFooter2[data-v-61a7c374] {\n  padding: 40px 0;\n}\nfooter .fa-globe[data-v-61a7c374], footer .fa-euro-sign[data-v-61a7c374] {\n  margin-right: 4px;\n}\nfooter .fa-facebook-f[data-v-61a7c374] {\n  margin-left: 35px;\n}\nfooter .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  margin-left: 10px;\n}\nfooter .fa-facebook-f[data-v-61a7c374], footer .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  font-size: 20px;\n}", ""]);
+exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #eeeeee;\n}\nfooter ul[data-v-61a7c374] {\n  list-style-type: none;\n  padding-bottom: 40px;\n  border-bottom: 1px solid rgb(214, 209, 209);\n}\n@media only screen and (min-width: 992px) {\nfooter ul[data-v-61a7c374] {\n    padding-bottom: 0;\n    border-bottom: none;\n}\n}\nfooter li[data-v-61a7c374] {\n  padding-bottom: 10px;\n}\nfooter a[data-v-61a7c374] {\n  color: black;\n  text-decoration: none;\n}\nfooter span[data-v-61a7c374],\nfooter span .fa-facebook-f[data-v-61a7c374],\nfooter span .fa-twitter[data-v-61a7c374],\nfooter span .fa-instagram[data-v-61a7c374] {\n  font-size: 8px;\n}\n@media only screen and (min-width: 992px) {\nfooter span[data-v-61a7c374],\nfooter span .fa-facebook-f[data-v-61a7c374],\nfooter span .fa-twitter[data-v-61a7c374],\nfooter span .fa-instagram[data-v-61a7c374] {\n    padding: 0 4px;\n    font-size: 13px;\n}\n}\nfooter .containerFooter1[data-v-61a7c374] {\n  padding: 20px 0;\n}\n@media only screen and (min-width: 992px) {\nfooter .containerFooter1[data-v-61a7c374] {\n    padding: 120px 0;\n    border-bottom: 1px solid #dddddd;\n}\n}\nfooter .containerFooter2[data-v-61a7c374] {\n  padding: 40px 0;\n}\nfooter .fa-globe[data-v-61a7c374], footer .fa-euro-sign[data-v-61a7c374] {\n  margin-right: 4px;\n}\nfooter .fa-facebook-f[data-v-61a7c374] {\n  margin-left: 35px;\n}\nfooter .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  margin-left: 10px;\n}\nfooter .fa-facebook-f[data-v-61a7c374], footer .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  font-size: 20px;\n}", ""]);
 
 // exports
 
@@ -10395,7 +10395,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "col-10 containerFooter1 d-flex justify-content-between ",
+                  "col-10 containerFooter1 d-lg-flex justify-content-between",
               },
               [
                 _c("ul", [
@@ -10509,54 +10509,63 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "container-fluid py-3" }, [
         _c("div", { staticClass: "row d-flex justify-content-center" }, [
-          _c("div", { staticClass: "col-11 d-flex justify-content-between" }, [
-            _c("div", [
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "far fa-copyright" }),
-                  _vm._v("2022 Boolbnb, Inc.   •"),
+          _c(
+            "div",
+            { staticClass: "col-11 d-lg-flex justify-content-between" },
+            [
+              _c("div", [
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("i", { staticClass: "far fa-copyright" }),
+                    _vm._v("2022 Boolbnb, Inc.   •"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Privacy   •")]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Termini   •")]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Mappa del sito   •"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Dettagli dell'azienda"),
+                  ]),
                 ]),
               ]),
               _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Privacy   •")]),
+              _c("div", [
+                _c(
+                  "span",
+                  { staticStyle: { "text-decoration": "underline" } },
+                  [
+                    _c("i", { staticClass: "fas fa-globe" }),
+                    _vm._v("Italiano (IT)"),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticStyle: { "text-decoration": "underline" } },
+                  [_c("i", { staticClass: "fas fa-euro-sign" }), _vm._v("EUR")]
+                ),
+                _vm._v(" "),
+                _c("span", [_c("i", { staticClass: "fab fa-facebook-f" })]),
+                _vm._v(" "),
+                _c("span", [_c("i", { staticClass: "fab fa-twitter" })]),
+                _vm._v(" "),
+                _c("span", [_c("i", { staticClass: "fab fa-instagram" })]),
               ]),
-              _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Termini   •")]),
-              ]),
-              _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Mappa del sito   •"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Dettagli dell'azienda"),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("span", { staticStyle: { "text-decoration": "underline" } }, [
-                _c("i", { staticClass: "fas fa-globe" }),
-                _vm._v("Italiano (IT)"),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticStyle: { "text-decoration": "underline" } }, [
-                _c("i", { staticClass: "fas fa-euro-sign" }),
-                _vm._v("EUR"),
-              ]),
-              _vm._v(" "),
-              _c("span", [_c("i", { staticClass: "fab fa-facebook-f" })]),
-              _vm._v(" "),
-              _c("span", [_c("i", { staticClass: "fab fa-twitter" })]),
-              _vm._v(" "),
-              _c("span", [_c("i", { staticClass: "fab fa-instagram" })]),
-            ]),
-          ]),
+            ]
+          ),
         ]),
       ]),
     ])
