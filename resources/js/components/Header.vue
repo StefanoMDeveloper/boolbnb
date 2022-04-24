@@ -103,10 +103,19 @@ export default {
         search : "",
         searchLat:"",
         searchLon:"",
-        autocompleters:[]
+        autocompleters:[],
+        services:[]
     }
   },
-   mounted() {
+  created(){
+    axios
+      .get("/api/services")
+      .then((response) => {
+        this.services = response.data;
+      });  
+  },
+
+  mounted() {
     this.lastScrollPosition = window.pageYOffset
     window.addEventListener('scroll', this.onScroll)
   },
