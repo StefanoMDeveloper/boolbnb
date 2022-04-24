@@ -14249,6 +14249,17 @@ a.logo {
   margin: 100px 0;
 }
 
+.container-profile .profilePic {
+  background-color: #39858a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
 .container-profile .profile {
   display: flex;
   flex-wrap: wrap;
@@ -14264,5 +14275,34 @@ a.logo {
   border-radius: 10px;
   border: solid 1px black;
   margin: 10px 10px;
+}
+
+.container-profile .profile .profileBox a {
+  color: black;
+}
+
+.container-profile .profile .profileBox a .iconColor {
+  color: #FF385C;
+  margin-right: 10px;
+}
+
+.container-profile button {
+  background-color: #39858a;
+  transition: linear 1s;
+  border: none;
+  height: 50px;
+  width: 160px;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin-left: 10px;
+}
+
+.container-profile button:hover {
+  background-color: #1c4144;
+}
+
+.container-profile button a {
+  text-decoration: none;
+  color: white;
 }
 
