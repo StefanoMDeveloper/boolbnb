@@ -19,7 +19,7 @@
                     <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                 </ul>
                 </nav>
-                <div class="d-flex headercenterB justify-content-center m-auto">
+                <div class="d-flex headercenterB justify-content-center align-items-center m-auto">
                     <div class="inputContainer col-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
@@ -29,7 +29,7 @@
                         </div>
                       </div> 
                     </div>                 
-                    <button class="btnSearch col-2"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
+                    <button class="btnSearch"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
                 </div>
             
             <!-- campi aggiuntivi -->
@@ -242,11 +242,12 @@ header{
         min-width: 375px;
         width: 100%;
         .btnSearch{
+          height: 30px;
           background-color: hwb(349 17% 45%);
           border: none;
           border-radius: 5px;
           margin:0 10px;
-          padding: 0 2px;
+          padding: 0 5px;
           text-align: center;
           transition:linear .5s;
           &:hover{
