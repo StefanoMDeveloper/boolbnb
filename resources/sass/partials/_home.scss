@@ -1,0 +1,30 @@
+.name{
+    font-weight: 700;
+    font-size: 30px;
+}
+a{
+    color: black;
+    line-height: 34px;
+}
+
+.linkContainer{
+    margin: 20px 0;
+}
+
+.iconHome{
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#39858a;
+    transition:linear 1s;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+    &:hover{
+        background-color: #5bcfd7;
+    }
+}
