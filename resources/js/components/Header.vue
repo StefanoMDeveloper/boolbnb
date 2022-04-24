@@ -6,7 +6,9 @@
             <!-- header left -->
             <div class="col-3 d-none d-xl-block headerleft" :class="{ 'pink': scrollEffect }">
                 <i class="fa-brands fa-airbnb"></i>
-                <span>Boolbnb</span>
+                <a href="/">
+                  <span>Boolbnb</span>
+                </a>
             </div>
 
             <!-- header center -->
@@ -69,7 +71,14 @@
                 <ul>
                 <li>Diventa un Host</li>
                 <li><i class="fa-solid fa-globe"></i></li>
-                <li><button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button></li>
+                <li>
+                  <a href="/admin">
+                  <button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
+                  </a>
+                </li>
+                <li>
+
+                </li>
                 </ul>
             </div>
           </div>
@@ -160,6 +169,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
+a{
+  text-decoration: none;
+  color: #ff385c;
+}
 
 header{
   position: fixed;
