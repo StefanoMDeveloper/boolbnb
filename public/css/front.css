@@ -14017,33 +14017,54 @@ a.logo {
 }
 
 .addBtn {
-  background-color: #39858a;
+  background-color: #1c4144;
   transition: linear 1s;
   border: none;
 }
 
 .addBtn:hover {
-  background-color: #1c4144;
+  background-color: #39858a;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a .plusBtnMobile {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+a .plusBtnMobile:hover {
+  background-color: #f25b76;
 }
 
 .backBtn {
-  background-color: #1c4144;
+  background-color: #39858a;
   transition: linear 1s;
   border: none;
 }
 
 .backBtn:hover {
-  background-color: #39858a;
+  background-color: #1c4144;
 }
 
 .apartmentscontainer {
-  display: flex;
-  flex-wrap: wrap;
   margin: 40px 0;
 }
 
 .apartmentscontainer .card {
-  width: calc(33.3333333333% - 20px);
+  width: 100%;
+  height: 814px;
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
@@ -14062,9 +14083,19 @@ a.logo {
 
 .apartmentscontainer .card .imgContainer img {
   height: 100%;
+  transition: linear 1s;
 }
 
-.apartmentscontainer .card h6 {
+.apartmentscontainer .card .imgContainer:hover img {
+  transform: scale(1.1);
+}
+
+.apartmentscontainer .card .textContainer {
+  height: 200px;
+  margin: 30px 0;
+}
+
+.apartmentscontainer .card .textContainer h6 {
   margin: 10px;
 }
 
@@ -14081,6 +14112,23 @@ a.logo {
 .apartmentscontainer .card .editbtn:hover,
 .apartmentscontainer .card .cancelbtn:hover {
   background-color: #1c4144;
+}
+
+@media only screen and (min-width: 780px) {
+  .apartmentscontainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .apartmentscontainer .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .apartmentscontainer .card {
+    width: calc(33.3333333333% - 20px);
+  }
 }
 
 .createContainer {
@@ -14179,6 +14227,10 @@ a.logo {
   padding: 15px 0;
 }
 
+.showContainer .iconColor {
+  color: #39858a;
+}
+
 .showContainer .borderline {
   border-bottom: 1px solid rgb(193, 192, 192);
   margin-bottom: 10px;
@@ -14221,6 +14273,11 @@ a.logo {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: linear 1s;
+}
+
+.showContainer .imagesContainer .imageContainer:hover img {
+  transform: scale(1.1);
 }
 
 .showContainer .backBtn {
@@ -14249,6 +14306,17 @@ a.logo {
   margin: 100px 0;
 }
 
+.container-profile .profilePic {
+  background-color: #39858a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
 .container-profile .profile {
   display: flex;
   flex-wrap: wrap;
@@ -14264,5 +14332,34 @@ a.logo {
   border-radius: 10px;
   border: solid 1px black;
   margin: 10px 10px;
+}
+
+.container-profile .profile .profileBox a {
+  color: black;
+}
+
+.container-profile .profile .profileBox a .iconColor {
+  color: #FF385C;
+  margin-right: 10px;
+}
+
+.container-profile button {
+  background-color: #39858a;
+  transition: linear 1s;
+  border: none;
+  height: 50px;
+  width: 160px;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin-left: 10px;
+}
+
+.container-profile button:hover {
+  background-color: #1c4144;
+}
+
+.container-profile button a {
+  text-decoration: none;
+  color: white;
 }
 

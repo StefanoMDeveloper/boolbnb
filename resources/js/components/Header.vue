@@ -6,31 +6,34 @@
             <!-- header left -->
             <div class="col-3 d-none d-xl-block headerleft" :class="{ 'pink': scrollEffect }">
                 <i class="fa-brands fa-airbnb"></i>
-                <span>Boolbnb</span>
+                <a href="/">
+                  <span>Boolbnb</span>
+                </a>
             </div>
 
             <!-- header center -->
             <div class="col-12 col-xl-5 headercenter d-flex flex-column align-items-center m-auto">
                 <nav :class="{ 'hide': scrollEffect }">
                 <ul>
-                    <li><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
-                    <li><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
+                    <li class="fontLink"><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
+                    <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                 </ul>
                 </nav>
-                <div class="d-flex headercenterB justify-content-center m-auto">
-                    <div class="inputContainer col-12 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                <div class="d-flex headercenterB justify-content-center align-items-center m-auto">
+                    <div class="inputContainer col-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
                             {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
                         </div>
-                      </div>                           
+                      </div> 
                     </div>                 
+                    <button class="btnSearch"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
                 </div>
             
             <!-- campi aggiuntivi -->
-              <div class="row col justify-content-around filter">
+              <div v-if="selectOption===true" class="row col justify-content-around filter">
                     <label for="rooms">Numero di Stanze</label>
                       <select id="rooms" name="rooms_number" >
                         <option value="">-</option>
@@ -61,6 +64,13 @@
                         <option value="30">30 km</option>
                         <option value="35">35 km</option>
                       </select>
+
+                      <!--services  -->
+                      <span class="text-black" :class="{ 'services': !scrollEffect }">Servizi:</span>
+                      <div class="services" v-for="service in services" :key="service.id">
+                        <input type="checkbox" id="service" name="services[]" :value="service.id">
+                      <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
+                      </div>
                   </div>
               </div>
             
@@ -69,7 +79,14 @@
                 <ul>
                 <li>Diventa un Host</li>
                 <li><i class="fa-solid fa-globe"></i></li>
-                <li><button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button></li>
+                <li>
+                  <a href="/admin">
+                  <button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
+                  </a>
+                </li>
+                <li>
+
+                </li>
                 </ul>
             </div>
           </div>
@@ -86,6 +103,7 @@ export default {
         scrollEffect: false,
         lastScrollPosition: 0,
         scrollOffset: 0,
+        selectOption: false,
         links:[
           {
             text: "Places to visit",
@@ -151,6 +169,14 @@ export default {
       }
       this.scrollEffect =  this.lastScrollPosition < window.pageYOffset
     },
+    ricercaAvanzata: function(){
+      if(this.selectOption===false){
+          this.selectOption=true;
+      }else 
+      if(this.selectOption===true){
+          this.selectOption=false;
+      }
+    },
   },
   props: {
     
@@ -161,11 +187,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
+a{
+  text-decoration: none;
+  color: #ff385c;
+}
+
 header{
   position: fixed;
   top: 0;
   width: 100%;
-  height: 125px;
+  min-height: 125px;
   background-color: white;
   color: black;
   transition: .5s ease all; 
@@ -174,12 +205,15 @@ header{
     position:relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding-top: 20px;
     .headerleft{
       font-size: 26px;
       font-weight: 500;
       padding-left: 7%;
+      transition: 1s ease all; 
+      &:hover{
+        font-size: 29px;
+      }
     }
     .headercenter{
       min-width: 375px;
@@ -190,18 +224,44 @@ header{
           li{
             margin: 10px;
             border-bottom: 1px black;
+            width: 92px;
+            transition: 1s ease all; 
+            &:hover{
+              font-size: 15px;
+              font-weight: 700;
+            }
             a{
               cursor: pointer;
               color:white;  
             }
+            
           }
         }
       }
       .headercenterB{
-        width: 375px;
+        min-width: 375px;
+        width: 100%;
+        .btnSearch{
+          height: 30px;
+          background-color: hwb(349 17% 45%);
+          border: none;
+          border-radius: 5px;
+          margin:0 10px;
+          padding: 0 5px;
+          text-align: center;
+          transition:linear .5s;
+          &:hover{
+            background-color: #ff385c;
+          }
+          a{
+            text-decoration: none;
+            color: white;
+          }
+        }
 
           .inputContainer{
             border:1px solid gray;
+            z-index: 999;
             .ms_icon{
               display: flex;
               justify-content: end;
@@ -209,9 +269,14 @@ header{
               align-items: center;
               .searchIcon{
                   background-color: #ff385c;
+                  transition:linear .5s;
                   border-radius: 50%;
                   color: white;
                   padding: 15px;
+                  &:hover{
+                    padding: 17px;
+                    background-color: hwb(349 17% 45%);
+                  }
               }
                 .searchIcon:hover{
                   cursor: pointer;
@@ -235,6 +300,10 @@ header{
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: .5s ease all; 
+            &:hover{
+              width: 95px;
+            }
             .fa-user{
               border-radius: 50%;
               background-color: #717171;
@@ -262,7 +331,7 @@ header{
     background: black;
      color: white;
     transition: .5s ease all; 
-    height: 153px;
+    min-height: 153px;
 }
 .pink{
   color:#ff385c;
@@ -316,15 +385,25 @@ select{
     width: 70px;
 }
 @media only screen and (min-width:1200px){
-  label{
-  font-size: 15px;
-  select{
-    height: 25px;
-    .ms_km{
-      width: 40px;
-    }  
+    label{
+    font-size: 15px;
+    select{
+      height: 25px;
+      .ms_km{
+        width: 40px;
+      }  
+    }
   }
 }
+
+.servicesContainer{
+
+  .services{
+    color: white;
+    width: 100%;
+  }
 }
+
+
 </style>
 
