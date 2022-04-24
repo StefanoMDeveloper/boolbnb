@@ -54,7 +54,7 @@
                         <option value="7">7</option>
                       </select>
                     <label for="range">Raggio di Ricerca</label>
-                      <select id="range" name="range_number">
+                      <select class="ms_km" id="range" name="range_number">
                         <option value="10">10 km</option>
                         <option value="20" selected="selected">20 km</option>
                         <option value="25">25 km</option>
@@ -165,7 +165,7 @@ header{
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px;
+  height: 125px;
   background-color: white;
   color: black;
   transition: .5s ease all; 
@@ -175,12 +175,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 20px;
     .headerleft{
       font-size: 26px;
       font-weight: 500;
       padding-left: 7%;
     }
     .headercenter{
+      min-width: 375px;
       nav{
         ul{
           display: flex;
@@ -196,7 +198,7 @@ header{
         }
       }
       .headercenterB{
-        width: 460px;
+        width: 375px;
 
           .inputContainer{
             border:1px solid gray;
@@ -283,7 +285,7 @@ header{
   transform: translateX(-50%);
 
   .option{
-    border-bottom:1px solid black;    
+    border-bottom:1px solid black;  
   }
 }
 
@@ -292,6 +294,37 @@ input:focus, textarea:focus, select:focus{
 }
 .filter{
   padding: 10px 0;
+  max-width: 374px;
+}
+@media only screen and (min-width:1200px){
+    .filter{
+    max-width: 760px;
+    min-width: 480px;
+  }
+}
+
+
+
+label{
+  font-size: 10px;
+}
+select{
+    height: 20px;
+    width: 33px;
+  }
+  select.ms_km{
+    width: 70px;
+}
+@media only screen and (min-width:1200px){
+  label{
+  font-size: 15px;
+  select{
+    height: 25px;
+    .ms_km{
+      width: 40px;
+    }  
+  }
+}
 }
 </style>
 

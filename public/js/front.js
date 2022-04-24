@@ -8161,6 +8161,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
@@ -8357,7 +8359,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400;500&display=swap);", ""]);
 
 // module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Open Sans\", sans-serif;\n  font-family: \"Roboto\", sans-serif;\n}\nbody {\n  min-width: 500px;\n  background-color: white;\n}", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Open Sans\", sans-serif;\n  font-family: \"Roboto\", sans-serif;\n}\nbody {\n  min-width: 375px;\n  background-color: white;\n}", ""]);
 
 // exports
 
@@ -8376,7 +8378,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #eeeeee;\n}\nfooter ul[data-v-61a7c374] {\n  list-style-type: none;\n}\nfooter li[data-v-61a7c374] {\n  padding-bottom: 10px;\n}\nfooter a[data-v-61a7c374] {\n  color: black;\n  text-decoration: none;\n}\nfooter span[data-v-61a7c374] {\n  padding: 0 4px;\n}\nfooter .containerFooter1[data-v-61a7c374] {\n  padding: 120px 0;\n  border-bottom: 1px solid #dddddd;\n}\nfooter .containerFooter2[data-v-61a7c374] {\n  padding: 40px 0;\n}\nfooter .fa-globe[data-v-61a7c374], footer .fa-euro-sign[data-v-61a7c374] {\n  margin-right: 4px;\n}\nfooter .fa-facebook-f[data-v-61a7c374] {\n  margin-left: 35px;\n}\nfooter .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  margin-left: 10px;\n}\nfooter .fa-facebook-f[data-v-61a7c374], footer .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  font-size: 20px;\n}", ""]);
+exports.push([module.i, "footer[data-v-61a7c374] {\n  background-color: #eeeeee;\n}\nfooter ul[data-v-61a7c374] {\n  list-style-type: none;\n  padding-bottom: 40px;\n  border-bottom: 1px solid rgb(214, 209, 209);\n}\n@media only screen and (min-width: 992px) {\nfooter ul[data-v-61a7c374] {\n    padding-bottom: 0;\n    border-bottom: none;\n}\n}\nfooter li[data-v-61a7c374] {\n  padding-bottom: 10px;\n}\nfooter a[data-v-61a7c374] {\n  color: black;\n  text-decoration: none;\n}\nfooter span[data-v-61a7c374],\nfooter span .fa-facebook-f[data-v-61a7c374],\nfooter span .fa-twitter[data-v-61a7c374],\nfooter span .fa-instagram[data-v-61a7c374] {\n  font-size: 8px;\n}\n@media only screen and (min-width: 992px) {\nfooter span[data-v-61a7c374],\nfooter span .fa-facebook-f[data-v-61a7c374],\nfooter span .fa-twitter[data-v-61a7c374],\nfooter span .fa-instagram[data-v-61a7c374] {\n    padding: 0 4px;\n    font-size: 13px;\n}\n}\nfooter .containerFooter1[data-v-61a7c374] {\n  padding: 20px 0;\n}\n@media only screen and (min-width: 992px) {\nfooter .containerFooter1[data-v-61a7c374] {\n    padding: 120px 0;\n    border-bottom: 1px solid #dddddd;\n}\n}\nfooter .containerFooter2[data-v-61a7c374] {\n  padding: 40px 0;\n}\nfooter .fa-globe[data-v-61a7c374], footer .fa-euro-sign[data-v-61a7c374] {\n  margin-right: 4px;\n}\nfooter .fa-facebook-f[data-v-61a7c374] {\n  margin-left: 35px;\n}\nfooter .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  margin-left: 10px;\n}\nfooter .fa-facebook-f[data-v-61a7c374], footer .fa-twitter[data-v-61a7c374], footer .fa-instagram[data-v-61a7c374] {\n  font-size: 20px;\n}", ""]);
 
 // exports
 
@@ -8395,7 +8397,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 80px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  width: 460px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  width: 375px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}", ""]);
 
 // exports
 
@@ -8433,7 +8435,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 40px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n  display: flex;\n  justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: calc(25% - 10px);\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 400px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 200px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 20px;\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 10px;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 60px;\n  font-size: 60px;\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 100px auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.ms_giftContainer .ms_giftFont[data-v-00e83377] {\n  font-size: 65px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 30px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 300px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 167px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 10px 20px;\n}\n@media only screen and (min-width: 712px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 30px 0;\n    padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(50% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 300px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 167px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 10px 20px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 40px 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(25% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 400px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 200px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 20px;\n}\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 78px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 0;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 30px;\n  font-size: 40px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_experienceContainer[data-v-00e83377] {\n    margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n    padding: 20px 10px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n    font-size: 60px;\n    position: absolute;\n    top: 80px;\n    left: 60px;\n}\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 50px auto;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n  font-size: 40px;\n  padding-bottom: 50px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}\n@media only screen and (min-width: 1200px) {\n.ms_giftContainer[data-v-00e83377] {\n    margin: 100px auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n    font-size: 45px;\n    padding-bottom: 0;\n}\n}", ""]);
 
 // exports
 
@@ -10401,7 +10403,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "col-10 containerFooter1 d-flex justify-content-between ",
+                  "col-10 containerFooter1 d-lg-flex justify-content-between",
               },
               [
                 _c("ul", [
@@ -10515,54 +10517,63 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "container-fluid py-3" }, [
         _c("div", { staticClass: "row d-flex justify-content-center" }, [
-          _c("div", { staticClass: "col-11 d-flex justify-content-between" }, [
-            _c("div", [
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "far fa-copyright" }),
-                  _vm._v("2022 Boolbnb, Inc.   •"),
+          _c(
+            "div",
+            { staticClass: "col-11 d-lg-flex justify-content-between" },
+            [
+              _c("div", [
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("i", { staticClass: "far fa-copyright" }),
+                    _vm._v("2022 Boolbnb, Inc.   •"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Privacy   •")]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Termini   •")]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Mappa del sito   •"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Dettagli dell'azienda"),
+                  ]),
                 ]),
               ]),
               _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Privacy   •")]),
+              _c("div", [
+                _c(
+                  "span",
+                  { staticStyle: { "text-decoration": "underline" } },
+                  [
+                    _c("i", { staticClass: "fas fa-globe" }),
+                    _vm._v("Italiano (IT)"),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticStyle: { "text-decoration": "underline" } },
+                  [_c("i", { staticClass: "fas fa-euro-sign" }), _vm._v("EUR")]
+                ),
+                _vm._v(" "),
+                _c("span", [_c("i", { staticClass: "fab fa-facebook-f" })]),
+                _vm._v(" "),
+                _c("span", [_c("i", { staticClass: "fab fa-twitter" })]),
+                _vm._v(" "),
+                _c("span", [_c("i", { staticClass: "fab fa-instagram" })]),
               ]),
-              _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Termini   •")]),
-              ]),
-              _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Mappa del sito   •"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Dettagli dell'azienda"),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("span", { staticStyle: { "text-decoration": "underline" } }, [
-                _c("i", { staticClass: "fas fa-globe" }),
-                _vm._v("Italiano (IT)"),
-              ]),
-              _vm._v(" "),
-              _c("span", { staticStyle: { "text-decoration": "underline" } }, [
-                _c("i", { staticClass: "fas fa-euro-sign" }),
-                _vm._v("EUR"),
-              ]),
-              _vm._v(" "),
-              _c("span", [_c("i", { staticClass: "fab fa-facebook-f" })]),
-              _vm._v(" "),
-              _c("span", [_c("i", { staticClass: "fab fa-twitter" })]),
-              _vm._v(" "),
-              _c("span", [_c("i", { staticClass: "fab fa-instagram" })]),
-            ]),
-          ]),
+            ]
+          ),
         ]),
       ]),
     ])
@@ -10822,19 +10833,23 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("label", { attrs: { for: "range" } }, [_vm._v("Raggio di Ricerca")]),
       _vm._v(" "),
-      _c("select", { attrs: { id: "range", name: "range_number" } }, [
-        _c("option", { attrs: { value: "10" } }, [_vm._v("10 km")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "20", selected: "selected" } }, [
-          _vm._v("20 km"),
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "25" } }, [_vm._v("25 km")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "30" } }, [_vm._v("30 km")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "35" } }, [_vm._v("35 km")]),
-      ]),
+      _c(
+        "select",
+        { staticClass: "ms_km", attrs: { id: "range", name: "range_number" } },
+        [
+          _c("option", { attrs: { value: "10" } }, [_vm._v("10 km")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "20", selected: "selected" } }, [
+            _vm._v("20 km"),
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "25" } }, [_vm._v("25 km")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "30" } }, [_vm._v("30 km")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "35" } }, [_vm._v("35 km")]),
+        ]
+      ),
     ])
   },
   function () {
@@ -11175,8 +11190,7 @@ var render = function () {
                 _vm._v(" "),
                 _vm._l(_vm.apartments, function (apartment) {
                   return _c("section", { key: apartment.id }, [
-                    apartment.visible &&
-                    apartment.active_sponsorships.length != 0
+                    apartment.visible && apartment.sponsorships.length != 0
                       ? _c(
                           "div",
                           [
@@ -11206,23 +11220,29 @@ var render = function () {
                               }),
                               0
                             ),
-                            _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                attrs: {
-                                  to: {
-                                    name: "SingleApartment",
-                                    params: { slug: apartment.slug },
-                                  },
-                                },
-                              },
-                              [_c("h5", [_vm._v(_vm._s(apartment.name))])]
-                            ),
                           ],
                           1
                         )
                       : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "SingleApartment",
+                                params: { slug: apartment.slug },
+                              },
+                            },
+                          },
+                          [_c("h5", [_vm._v(_vm._s(apartment.name))])]
+                        ),
+                      ],
+                      1
+                    ),
                   ])
                 }),
                 _vm._v(" "),
@@ -11381,8 +11401,8 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-10 ms_experienceContainer" }, [
           _c("h1", [_vm._v("Scopri le Esperienze Boolbnb")]),
           _vm._v(" "),
-          _c("div", { staticClass: "ms_imgsEsp row" }, [
-            _c("div", { staticClass: "ms_imgEsp col-6" }, [
+          _c("div", { staticClass: "ms_imgsEsp" }, [
+            _c("div", { staticClass: "ms_imgEsp col col-lg-6" }, [
               _c("img", {
                 attrs: {
                   src: __webpack_require__(/*! ../../../public/storage/uploads/experience2.jpg */ "./storage/app/public/uploads/experience2.jpg"),
@@ -11397,7 +11417,7 @@ var staticRenderFns = [
               ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "ms_imgEsp col-6" }, [
+            _c("div", { staticClass: "ms_imgEsp col col-lg-6" }, [
               _c("img", {
                 attrs: {
                   src: __webpack_require__(/*! ../../../public/storage/uploads/experience1.jpg */ "./storage/app/public/uploads/experience1.jpg"),
@@ -11422,9 +11442,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row d-flex justify-content-center p-0" }, [
-        _c("div", { staticClass: "row ms_giftContainer col-10" }, [
-          _c("div", { staticClass: "col-4" }, [
-            _c("h1", { staticClass: "ms_giftFont" }, [
+        _c("div", { staticClass: "ms_giftContainer p-0 col-10" }, [
+          _c("div", { staticClass: "col-12 col-lg-4 ms_giftFont" }, [
+            _c("h1", [
               _vm._v("Acquista "),
               _c("br"),
               _vm._v(" le gift card "),
@@ -11433,7 +11453,7 @@ var staticRenderFns = [
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "ms_giftImg col-8" }, [
+          _c("div", { staticClass: "ms_giftImg col col-lg-8" }, [
             _c("img", {
               attrs: {
                 src: __webpack_require__(/*! ../../../public/storage/uploads/gift.jpg */ "./storage/app/public/uploads/gift.jpg"),
