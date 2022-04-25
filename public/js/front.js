@@ -7828,6 +7828,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -8208,10 +8218,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Homepage",
@@ -8303,6 +8309,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -8456,7 +8468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n}\nheader .header-container .headercenter .headercenterB .btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: hwb(349 17% 45%);\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n}\nheader .header-container .headercenter .headercenterB .btnSearch[data-v-1f42fb90]:hover {\n  background-color: #ff385c;\n}\nheader .header-container .headercenter .headercenterB .btnSearch a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}", ""]);
+exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: hwb(349 17% 45%);\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: #ff385c;\n}\nheader .header-container .headercenter .headercenterB .ms_search .btnSearch[data-v-1f42fb90]:hover {\n  background-color: #ff385c;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -8532,7 +8544,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  height: 560px;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 25%;\n  height: 280px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  float: left;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}", ""]);
+exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  height: 560px;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 25%;\n  height: 280px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  float: left;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}\n.icon[data-v-4fd40851] {\n  color: #39858a;\n}\n.ms_submit[data-v-4fd40851],\n.ms_back[data-v-4fd40851] {\n  margin: 5px 0;\n  transition: linear 1s;\n  border: none;\n  color: white;\n  padding: 10px 20px;\n  border-radius: 20px;\n  background-color: #39858a;\n}\n.ms_submit[data-v-4fd40851]:hover,\n.ms_back[data-v-4fd40851]:hover {\n  background-color: #7bdee5;\n}", ""]);
 
 // exports
 
@@ -10722,14 +10734,14 @@ var render = function () {
                 "div",
                 {
                   staticClass:
-                    "d-flex headercenterB justify-content-center align-items-center m-auto",
+                    "d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto",
                 },
                 [
                   _c(
                     "div",
                     {
                       staticClass:
-                        "inputContainer col-9 d-flex justify-content-between",
+                        "inputContainer col-7 col-sm-9 d-flex justify-content-between",
                       class: { search: _vm.scrollEffect },
                       on: {
                         keyup: function ($event) {
@@ -10834,24 +10846,23 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("button", { staticClass: "btnSearch" }, [
+                  _c("div", { staticClass: "col-2" }, [
                     _c(
                       "a",
                       {
+                        staticClass: "ms_search",
                         attrs: { href: "#" },
                         on: { click: _vm.ricercaAvanzata },
                       },
-                      [_vm._v("Ricerca  "), _c("br"), _vm._v("Avanzata")]
+                      [_vm._m(1)]
                     ),
                   ]),
                 ]
               ),
               _vm._v(" "),
               _vm.selectOption === true
-                ? _c(
-                    "div",
-                    { staticClass: "row col justify-content-around filter" },
-                    [
+                ? _c("div", { staticClass: "row col filter" }, [
+                    _c("div", [
                       _c("label", { attrs: { for: "rooms" } }, [
                         _vm._v("Numero di Stanze"),
                       ]),
@@ -10945,55 +10956,60 @@ var render = function () {
                           },
                         },
                       }),
-                      _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "text-black",
-                          class: { services: !_vm.scrollEffect },
-                        },
-                        [_vm._v("Servizi:")]
-                      ),
-                      _vm._v(" "),
-                      _vm._l(_vm.services, function (service, index) {
-                        return _c(
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      [
+                        _c(
                           "div",
-                          { key: index, staticClass: "services" },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "checkbox",
-                                id: "service",
-                                name: "services[]",
-                              },
-                              on: {
-                                change: function ($event) {
-                                  return _vm.serviceList(index)
+                          {
+                            staticClass: "text-black",
+                            class: { services: !_vm.scrollEffect },
+                          },
+                          [_vm._v(" Servizi:")]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.services, function (service, index) {
+                          return _c(
+                            "div",
+                            { key: index, staticClass: "services" },
+                            [
+                              _c("input", {
+                                attrs: {
+                                  type: "checkbox",
+                                  id: "service",
+                                  name: "services[]",
                                 },
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "text-black",
-                                class: { services: !_vm.scrollEffect },
-                                attrs: { for: "service" },
-                              },
-                              [_vm._v(_vm._s(service.name))]
-                            ),
-                            _c("br"),
-                          ]
-                        )
-                      }),
-                    ],
-                    2
-                  )
+                                on: {
+                                  change: function ($event) {
+                                    return _vm.serviceList(index)
+                                  },
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "text-black",
+                                  class: { services: !_vm.scrollEffect },
+                                  attrs: { for: "service" },
+                                },
+                                [_vm._v(_vm._s(service.name))]
+                              ),
+                              _c("br"),
+                            ]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                  ])
                 : _vm._e(),
             ]
           ),
           _vm._v(" "),
-          _vm._m(1),
+          _vm._m(2),
         ]),
       ]),
     ]
@@ -11005,6 +11021,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/" } }, [_c("span", [_vm._v("Boolbnb")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "btnSearch" }, [
+      _vm._v("Ricerca  "),
+      _c("br"),
+      _vm._v("Avanzata"),
+    ])
   },
   function () {
     var _vm = this
@@ -11469,7 +11495,7 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-dark" }, [
-                    _vm._v("Can be just any HTML declaration"),
+                    _vm._v("Easer Egg. Grazie Antony"),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -11555,16 +11581,6 @@ var render = function () {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-white" }, [
                     _vm._v("You can just trackpad to scroll still!"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [
-                    _vm._v("Touch screen"),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v("Touch screen works too!"),
                   ]),
                 ]),
               ],
@@ -11871,7 +11887,7 @@ var render = function () {
       [
         _c("h1", [_vm._v(_vm._s(_vm.apartment.name))]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.apartment.address))]),
+        _c("p", [_vm._m(0), _vm._v(_vm._s(_vm.apartment.address))]),
         _vm._v(" "),
         _c(
           "div",
@@ -11894,20 +11910,18 @@ var render = function () {
         _vm._v(" "),
         _c("h5", [_vm._v(_vm._s(_vm.apartment.description))]),
         _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Stanze: " +
-              _vm._s(_vm.apartment.rooms) +
-              " • letti: " +
-              _vm._s(_vm.apartment.beds) +
-              " • bagni: " +
-              _vm._s(_vm.apartment.bathrooms) +
-              " • metri quadrati: " +
-              _vm._s(_vm.apartment.square_meters)
-          ),
+        _c("p", { staticClass: "py-3" }, [
+          _vm._m(1),
+          _vm._v("Stanze: " + _vm._s(_vm.apartment.rooms) + " • "),
+          _vm._m(2),
+          _vm._v(" letti: " + _vm._s(_vm.apartment.beds) + " • "),
+          _vm._m(3),
+          _vm._v(" bagni: " + _vm._s(_vm.apartment.bathrooms) + " • "),
+          _vm._m(4),
+          _vm._v(" metri quadrati: " + _vm._s(_vm.apartment.square_meters)),
         ]),
         _vm._v(" "),
-        _c("h2", [_vm._v("Servizi")]),
+        _vm._m(5),
         _vm._v(" "),
         _vm._l(_vm.apartment.services, function (service) {
           return _c("div", { key: service.id, staticClass: "container" }, [
@@ -11915,9 +11929,7 @@ var render = function () {
           ])
         }),
         _vm._v(" "),
-        _c("h4", [
-          _vm._v("Scrivi un messaggio al proprietario dell'appartamento"),
-        ]),
+        _vm._m(6),
         _vm._v(" "),
         _c(
           "form",
@@ -11938,7 +11950,7 @@ var render = function () {
                     attrs: { type: "email", id: "email", name: "email" },
                   }),
                 ])
-              : _c("div", [
+              : _c("div", { staticClass: "my-3" }, [
                   _c("label", { attrs: { for: "email" } }, [
                     _vm._v("Inserisci la tua email:"),
                   ]),
@@ -11957,11 +11969,14 @@ var render = function () {
               },
             }),
             _vm._v(" "),
-            _c("input", { attrs: { type: "submit", value: "Submit" } }),
+            _c("input", {
+              staticClass: "ms_submit",
+              attrs: { type: "submit", value: "Submit" },
+            }),
           ]
         ),
         _vm._v(" "),
-        _c("button", [
+        _c("button", { staticClass: "ms_back" }, [
           _c(
             "a",
             {
@@ -11999,7 +12014,72 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon mr-2" }, [
+      _c("i", { staticClass: "fa-solid fa-location-dot" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon pr-1" }, [
+      _c("i", { staticClass: "fa-solid fa-person-shelter" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon pr-1" }, [
+      _c("i", { staticClass: "fa-solid fa-bed" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon pr-1" }, [
+      _c("i", { staticClass: "fa-solid fa-toilet" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon pr-1" }, [
+      _c("i", { staticClass: "fa-solid fa-maximize" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [
+      _c("span", { staticClass: "icon" }, [
+        _c("i", { staticClass: "fa-solid fa-bell-concierge" }),
+      ]),
+      _vm._v("\n            Servizi\n        "),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { staticClass: "mt-4" }, [
+      _c("span", { staticClass: "icon" }, [
+        _c("i", { staticClass: "fa-solid fa-message" }),
+      ]),
+      _vm._v(
+        "\n            Scrivi un messaggio al proprietario dell'appartamento\n        "
+      ),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -29275,7 +29355,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
