@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-2">
                       <a class="ms_search" href="#" @click='ricercaAvanzata'>
-                        <button class="btnSearch">Ricerca  <br>Avanzata</a></button>
+                        <button class="btnSearch">Ricerca  <br>Avanzata</button>
                       </a>
                     </div>
                 </div>
