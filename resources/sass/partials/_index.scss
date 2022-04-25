@@ -74,14 +74,37 @@ a{
         .showbtn,
         .editbtn,
         .messagebtn,
-        .sponsorbtn,
-        .cancelbtn{
+        .sponsorbtn{
             width: 200px;
             background-color: #39858a;
             transition:linear 1s;
             border: none;
             &:hover{
             background-color: #1c4144;
+    
+            }
+        }
+
+        .sponsorizzatobtn{
+            width: 200px;
+            background-color: #ffcc00;
+            transition:linear 1s;
+            border: none;
+            text-decoration: none;
+            &:hover{
+            background-color: #885500;
+    
+            }
+        }
+
+        .cancelbtn{
+            width: 200px;
+            background-color: #dd2211;
+            transition:linear 1s;
+            border: none;
+            text-decoration: none;
+            &:hover{
+            background-color: #882211;
     
             }
         }
