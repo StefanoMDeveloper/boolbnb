@@ -29,7 +29,7 @@
                         </div>
                       </div> 
                     </div>                 
-                    <button class="btnSearch"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
+                    <button class="btnSearch"><a href="#" @click='ricercaAvanzata'>Ricerca  <br>Avanzata</a></button>                                         
                 </div>
             
             <!-- campi aggiuntivi -->
@@ -59,9 +59,6 @@
                   <a href="/admin">
                   <button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
                   </a>
-                </li>
-                <li>
-
                 </li>
                 </ul>
             </div>
@@ -230,12 +227,12 @@ header{
         min-width: 375px;
         width: 100%;
         .btnSearch{
-          min-height: 30px;
+          min-height: 60px;
           background-color: hwb(349 17% 45%);
           border: none;
-          border-radius: 5px;
+          border-radius: 25px;
           margin:0 10px;
-          padding: 0 5px;
+          padding: 5px 20px;
           text-align: center;
           transition:linear .5s;
           &:hover{
