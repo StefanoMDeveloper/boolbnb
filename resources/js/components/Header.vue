@@ -19,8 +19,8 @@
                     <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                 </ul>
                 </nav>
-                <div class="d-flex headercenterB justify-content-center align-items-center m-auto">
-                    <div class="inputContainer col-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                <div class="d-flex headercenterB justify-content-sm-center justify-content-start   align-items-center m-auto">
+                    <div class="inputContainer col-7 col-sm-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
@@ -28,8 +28,12 @@
                             {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
                         </div>
                       </div> 
-                    </div>                 
-                    <button class="btnSearch"><a href="#" @click='ricercaAvanzata'>ricerca avanzata</a></button>                                         
+                    </div>
+                    <div class="col-2">
+                      <a class="ms_search" href="#" @click='ricercaAvanzata'>
+                        <button class="btnSearch">Ricerca  <br>Avanzata</a></button>
+                      </a>
+                    </div>
                 </div>
             
             <!-- campi aggiuntivi -->
@@ -59,9 +63,6 @@
                   <a href="/admin">
                   <button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
                   </a>
-                </li>
-                <li>
-
                 </li>
                 </ul>
             </div>
@@ -229,22 +230,23 @@ header{
       .headercenterB{
         min-width: 375px;
         width: 100%;
-        .btnSearch{
-          height: 30px;
+        .ms_search{
+          text-decoration: none;
+          .btnSearch{
+          min-height: 60px;
           background-color: hwb(349 17% 45%);
           border: none;
-          border-radius: 5px;
+          border-radius: 25px;
           margin:0 10px;
-          padding: 0 5px;
+          padding: 5px 20px;
           text-align: center;
           transition:linear .5s;
+          color: #ff385c;
           &:hover{
             background-color: #ff385c;
-          }
-          a{
-            text-decoration: none;
             color: white;
           }
+        }
         }
 
           .inputContainer{
@@ -279,7 +281,7 @@ header{
         display: flex;
         align-items: center;
         li{
-          margin: 10px;
+          padding: 10px;
           button{
             border: none;
             border-radius: 35px;

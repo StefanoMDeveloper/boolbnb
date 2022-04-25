@@ -14064,7 +14064,7 @@ a .plusBtnMobile:hover {
 
 .apartmentscontainer .card {
   width: 100%;
-  height: 814px;
+  height: 964px;
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
@@ -14101,6 +14101,8 @@ a .plusBtnMobile:hover {
 
 .apartmentscontainer .card .showbtn,
 .apartmentscontainer .card .editbtn,
+.apartmentscontainer .card .messagebtn,
+.apartmentscontainer .card .sponsorbtn,
 .apartmentscontainer .card .cancelbtn {
   width: 200px;
   background-color: #39858a;
@@ -14110,6 +14112,8 @@ a .plusBtnMobile:hover {
 
 .apartmentscontainer .card .showbtn:hover,
 .apartmentscontainer .card .editbtn:hover,
+.apartmentscontainer .card .messagebtn:hover,
+.apartmentscontainer .card .sponsorbtn:hover,
 .apartmentscontainer .card .cancelbtn:hover {
   background-color: #1c4144;
 }
@@ -14366,18 +14370,25 @@ a .plusBtnMobile:hover {
 .name {
   font-weight: 700;
   font-size: 30px;
+  color: #39adb5;
 }
 
 a {
   color: black;
-  line-height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+a span {
+  line-height: 40px;
 }
 
 .linkContainer {
   margin: 20px 0;
+  height: 40px;
 }
 
-.iconHome {
+.linkContainer .iconHome {
   color: white;
   width: 20px;
   height: 20px;
@@ -14390,10 +14401,21 @@ a {
   padding: 15px;
   border-radius: 50%;
   margin-right: 5px;
+  transition: linear 1s;
 }
 
-.iconHome:hover {
+.linkContainer .iconHome:hover {
   background-color: #5bcfd7;
+}
+
+.linkContainer .iconHome .iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkContainer:hover .iconHome {
+  padding: 17px;
 }
 
 main {

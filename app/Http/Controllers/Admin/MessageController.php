@@ -46,4 +46,14 @@ class MessageController extends Controller
         return view('admin.messages', compact('messages'));
         
     }
+
+    public function show(Apartment $apartment)
+    {
+ 
+        $messages = Message::all()->where('apartment_id', $apartment->id);
+
+        $messages = collect($messages)->sortBy('date')->reverse();
+        return view('admin.apartmentMessages', compact('messages'));
+        
+    }
 }

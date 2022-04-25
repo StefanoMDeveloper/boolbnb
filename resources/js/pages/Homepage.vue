@@ -25,7 +25,7 @@
                                 <i class="fa-brands fa-airbnb"></i>
                                 <span>Boolbnb</span>
                             </h3>
-                            <p class="text-dark">Can be just any HTML declaration</p>
+                            <p class="text-dark">Easer Egg. Grazie Antony</p>
                         </div>
                         <section v-for="apartment in apartments" :key="apartment.id">
                             <div v-if="apartment.visible && apartment.active_sponsorships.length!=0">
@@ -52,10 +52,6 @@
                         <section>
                             <h3 class="text-white">Scroll</h3>
                             <p class="text-white">You can just trackpad to scroll still!</p>
-                        </section>
-                        <section>
-                            <h3 class="text-white">Touch screen</h3>
-                            <p class="text-white">Touch screen works too!</p>
                         </section>
                     </vue-horizontal>
                 </div>
