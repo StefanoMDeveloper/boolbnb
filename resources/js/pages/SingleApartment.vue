@@ -1,6 +1,9 @@
 <template>
     <div>
-        <div class="container p-3 singleApartment">
+        <div class="container" v-show="loading==true">
+            <img src="/storage/loadingPage.gif">
+        </div>
+        <div class="container p-3 singleApartment" v-show="loading==false">
             <h1>{{apartment.name}}</h1>
             <p>{{apartment.address}}</p>
             <div class="container containerImages">
@@ -54,7 +57,8 @@ export default {
             apartment: [],
             messageSent: false,
             lat: "",
-            lon: ""
+            lon: "",
+            loading: true
         }
     },
     created() {
@@ -66,6 +70,11 @@ export default {
             this.lat = parseFloat(this.apartment.lat);
             this.lon = parseFloat(this.apartment.lon);
         });     
+    },
+    mounted(){
+        console.log(this.loading);
+        this.loading = false;
+        console.log(this.loading);
     },
     updated(){
         let center = [this.lon,this.lat];

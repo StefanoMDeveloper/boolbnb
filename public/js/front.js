@@ -7661,7 +7661,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       data.search = data.search.replace(", ", "-");
-      axios.get("/api/apartments/filter/search=" + data.search + "&radius=" + data.radius + "&beds=" + data.beds + "&rooms=" + data.rooms + "&lat=" + data.lat + "&lon=" + data.lon + "&services=" + data.services).then(function (response) {
+      data.servicesList = data.servicesList.slice(0, -1);
+      console.log("/api/apartments/filter/search=" + data.search + "&radius=" + data.radius * 1000 + "&beds=" + data.beds + "&rooms=" + data.rooms + "&lat=" + data.lat + "&lon=" + data.lon + "&services=" + data.servicesList);
+      axios.get("api/apartments/filter/search=" + data.search + "&radius=" + data.radius * 1000 + "&beds=" + data.beds + "&rooms=" + data.rooms + "&lat=" + data.lat + "&lon=" + data.lon + "&services=" + data.servicesList).then(function (response) {
         _this.filteredApartments = response.data;
       });
     }
@@ -7829,30 +7831,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -7876,7 +7854,11 @@ __webpack_require__.r(__webpack_exports__);
       searchLat: "",
       searchLon: "",
       autocompleters: [],
-      services: []
+      services: [],
+      beds: 1,
+      rooms: 1,
+      servicesList: "",
+      radius: 20
     };
   },
   created: function created() {
@@ -7910,12 +7892,23 @@ __webpack_require__.r(__webpack_exports__);
       this.searchLon = this.autocompleters[index].position.lon;
       this.autocompleters = [];
     },
+    serviceList: function serviceList(counter) {
+      if (document.querySelectorAll("#service")[counter].checked) {
+        this.servicesList += counter + "-";
+      } else {
+        this.servicesList = this.servicesList.replace(counter + "-", "");
+      }
+    },
     filter: function filter() {
       this.autocompleters = [];
       this.$emit('filter', {
         "search": this.search,
         "lat": this.searchLat,
-        "lon": this.searchLon
+        "lon": this.searchLon,
+        "beds": this.beds,
+        "rooms": this.rooms,
+        "radius": this.radius,
+        "servicesList": this.servicesList
       });
     },
     // Toggle if navigation is shown or hidden
@@ -8337,6 +8330,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
@@ -8344,7 +8340,8 @@ __webpack_require__.r(__webpack_exports__);
       apartment: [],
       messageSent: false,
       lat: "",
-      lon: ""
+      lon: "",
+      loading: true
     };
   },
   created: function created() {
@@ -8356,6 +8353,11 @@ __webpack_require__.r(__webpack_exports__);
       _this.lat = parseFloat(_this.apartment.lat);
       _this.lon = parseFloat(_this.apartment.lon);
     });
+  },
+  mounted: function mounted() {
+    console.log(this.loading);
+    this.loading = false;
+    console.log(this.loading);
   },
   updated: function updated() {
     var center = [this.lon, this.lat];
@@ -10833,19 +10835,95 @@ var render = function () {
                         _vm._v("Numero di Stanze"),
                       ]),
                       _vm._v(" "),
-                      _vm._m(1),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.rooms,
+                            expression: "rooms",
+                          },
+                        ],
+                        attrs: {
+                          type: "number",
+                          min: "1",
+                          max: "10",
+                          id: "rooms",
+                          name: "rooms",
+                        },
+                        domProps: { value: _vm.rooms },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.rooms = $event.target.value
+                          },
+                        },
+                      }),
                       _vm._v(" "),
                       _c("label", { attrs: { for: "beds" } }, [
                         _vm._v("Numero di Letti"),
                       ]),
                       _vm._v(" "),
-                      _vm._m(2),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.beds,
+                            expression: "beds",
+                          },
+                        ],
+                        attrs: {
+                          type: "number",
+                          min: "1",
+                          max: "6",
+                          id: "beds",
+                          name: "beds",
+                        },
+                        domProps: { value: _vm.beds },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.beds = $event.target.value
+                          },
+                        },
+                      }),
                       _vm._v(" "),
                       _c("label", { attrs: { for: "range" } }, [
                         _vm._v("Raggio di Ricerca"),
                       ]),
                       _vm._v(" "),
-                      _vm._m(3),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.radius,
+                            expression: "radius",
+                          },
+                        ],
+                        attrs: {
+                          type: "number",
+                          min: "5",
+                          max: "50",
+                          id: "radius",
+                          name: "radius",
+                          step: "5",
+                        },
+                        domProps: { value: _vm.radius },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.radius = $event.target.value
+                          },
+                        },
+                      }),
                       _vm._v(" "),
                       _c(
                         "span",
@@ -10856,10 +10934,10 @@ var render = function () {
                         [_vm._v("Servizi:")]
                       ),
                       _vm._v(" "),
-                      _vm._l(_vm.services, function (service) {
+                      _vm._l(_vm.services, function (service, index) {
                         return _c(
                           "div",
-                          { key: service.id, staticClass: "services" },
+                          { key: index, staticClass: "services" },
                           [
                             _c("input", {
                               attrs: {
@@ -10867,7 +10945,11 @@ var render = function () {
                                 id: "service",
                                 name: "services[]",
                               },
-                              domProps: { value: service.id },
+                              on: {
+                                change: function ($event) {
+                                  return _vm.serviceList(index)
+                                },
+                              },
                             }),
                             _vm._v(" "),
                             _c(
@@ -10890,7 +10972,7 @@ var render = function () {
             ]
           ),
           _vm._v(" "),
-          _vm._m(4),
+          _vm._m(1),
         ]),
       ]),
     ]
@@ -10902,72 +10984,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/" } }, [_c("span", [_vm._v("Boolbnb")])])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("select", { attrs: { id: "rooms", name: "rooms_number" } }, [
-      _c("option", { attrs: { value: "" } }, [_vm._v("-")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "2" } }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "3" } }, [_vm._v("3")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "4" } }, [_vm._v("4")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "6" } }, [_vm._v("6")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "7" } }, [_vm._v("7")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("select", { attrs: { id: "beds", name: "beds_number" } }, [
-      _c("option", { attrs: { value: "" } }, [_vm._v("-")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "2" } }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "3" } }, [_vm._v("3")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "4" } }, [_vm._v("4")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "6" } }, [_vm._v("6")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "7" } }, [_vm._v("7")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      { staticClass: "ms_km", attrs: { id: "range", name: "range_number" } },
-      [
-        _c("option", { attrs: { value: "10" } }, [_vm._v("10 km")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "20", selected: "selected" } }, [
-          _vm._v("20 km"),
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "25" } }, [_vm._v("25 km")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "30" } }, [_vm._v("30 km")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "35" } }, [_vm._v("35 km")]),
-      ]
-    )
   },
   function () {
     var _vm = this
@@ -11710,7 +11726,33 @@ var render = function () {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "container p-3 singleApartment" },
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.loading == true,
+            expression: "loading==true",
+          },
+        ],
+        staticClass: "container",
+      },
+      [_c("img", { attrs: { src: "/storage/loadingPage.gif" } })]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.loading == false,
+            expression: "loading==false",
+          },
+        ],
+        staticClass: "container p-3 singleApartment",
+      },
       [
         _c("h1", [_vm._v(_vm._s(_vm.apartment.name))]),
         _vm._v(" "),

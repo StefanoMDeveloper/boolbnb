@@ -14102,6 +14102,7 @@ a .plusBtnMobile:hover {
 .apartmentscontainer .card .showbtn,
 .apartmentscontainer .card .editbtn,
 .apartmentscontainer .card .messagebtn,
+.apartmentscontainer .card .sponsorbtn,
 .apartmentscontainer .card .cancelbtn {
   width: 200px;
   background-color: #39858a;
@@ -14112,6 +14113,7 @@ a .plusBtnMobile:hover {
 .apartmentscontainer .card .showbtn:hover,
 .apartmentscontainer .card .editbtn:hover,
 .apartmentscontainer .card .messagebtn:hover,
+.apartmentscontainer .card .sponsorbtn:hover,
 .apartmentscontainer .card .cancelbtn:hover {
   background-color: #1c4144;
 }
