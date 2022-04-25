@@ -5,8 +5,8 @@
     <h1 class="text-center my-5"><strong>{{ $apartment->name }}</strong></h1>
     <ul>
         <li class="borderline">{{ $apartment->description }}</li>
-        <div class="d-flex justify-content-center borderline m-0">
-            <li class="list-unstyled mr-3">
+        <div class="d-flex flex-wrap justify-content-around borderline m-0">
+            <li class="list-unstyled col-4 col-lg-2 mr-3">
                 <div class="infoContainer d-flex flex-column justify-content-center align-items-center">
                     <div class="iconColor">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 640 512">
@@ -18,7 +18,7 @@
                     </strong>
                 </div>
             </li>
-            <li class="list-unstyled mr-3">
+            <li class="list-unstyled col-4 col-lg-2 mr-3">
                 <div class="infoContainer d-flex flex-column justify-content-center align-items-center">
                     <div class="iconColor">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 512 512">
@@ -30,7 +30,7 @@
                     </strong>
                 </div>
             </li>
-            <li class="list-unstyled mr-3">
+            <li class="list-unstyled col-4 col-lg-2 mr-3">
                 <div class="infoContainer d-flex flex-column justify-content-center align-items-center">
                     <div class="iconColor">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 448 512">
@@ -42,7 +42,7 @@
                     </strong>
                 </div>
             </li>
-            <li class="list-unstyled mr-3">
+            <li class="list-unstyled col-4 col-lg-2 mr-3">
                 <div class="infoContainer d-flex flex-column justify-content-center align-items-center">
                     <div class="iconColor">
                         <svg xmlns="http://www.w3.org/2000/svg"  width="30" height="30" fill="currentColor" viewBox="0 0 448 512">

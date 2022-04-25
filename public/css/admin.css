@@ -14453,6 +14453,10 @@ button:hover {
   background-color: hwb(349 17% 45%);
 }
 
+h2 {
+  color: #39858a;
+}
+
 main {
   background-color: #dbd4d4;
   height: 100%;

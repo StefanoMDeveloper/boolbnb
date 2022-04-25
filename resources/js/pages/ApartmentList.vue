@@ -7,7 +7,7 @@
                         <div class="row trophyText">
                             <div class="col-12 d-flex justify-content-center align-items-center">
                                 <span class="ms_trophy"><i class="fa-solid fa-trophy"></i></span>
-                                <h2><strong>Appartamenti consigliati</strong></h2>
+                                <h2 class="ml-3"><strong>Appartamenti consigliati</strong></h2>
                             </div>
                         </div>
                     </div>
@@ -21,13 +21,11 @@
                                             <div v-for="image in apartment.images" :key="image.id" ><!-- non usare ccs su questo div -->
                                                 <div v-if="image.main_image"  class="card-immagine">
                                                     <img  :src="`/storage/${image.url}`" class="border">
+                                                    <span class="star"><i class="fa-solid fa-star"></i></span>
                                                 </div>
                                             </div>
                                         </div> 
-                                        <div class="col-12 col-lg-1">
-                                            <span class="star"><i class="fa-solid fa-star"></i></span>
-                                        </div>
-                                        <div class=" descrizione col-10 col-lg-7">
+                                        <div class=" descrizione col-10 col-lg-7 ml-lg-5">
                                             <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                                 <h4>{{apartment.name}}</h4>
                                             </router-link>
@@ -63,7 +61,7 @@
                                     <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5">   
                                         <div class="col-lg-3">
                                             <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
-                                                <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-10">
+                                                <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-12">
                                                     <img  :src="`/storage/${image.url}`"  class="border">
                                                 </div>
                                             </div>
@@ -146,6 +144,10 @@ a{
     .ms_trophy{
         color: gold;
         font-size: 20px;
+        height: 70px;
+        h2{
+            line-height: 70px;
+        }
     }
 }
 
@@ -159,14 +161,6 @@ a{
 
 }
 
-
-
-
-.star{
-    color: gold;
-    font-size: 40px;
-    padding: 30px 20px;
-}
 .descrizione{
     padding: 30px 0;
     button{
@@ -200,6 +194,7 @@ a{
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
+    position: relative;
     img{
         height: 100%;
         width: 100%;
@@ -208,7 +203,14 @@ a{
     }
      &:hover img{
         transform: scale(1.1);
-            }
+    }
+    .star{
+    color: gold;
+    font-size: 40px;
+    position: absolute;
+    top:20px;
+    left:20px
+}
 }
 
 @media only screen and (min-width:1200px){ 
@@ -228,6 +230,7 @@ a{
         width: 100%;
         object-fit: cover;
         transition:linear 1s; 
+        border-radius: 20px;
     }
      &:hover img{
         transform: scale(1.1);

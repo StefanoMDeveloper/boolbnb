@@ -1,61 +1,66 @@
 <template>
-    <div>
-        <div class="container" v-show="loading==true">
-            <img src="/storage/loadingPage.gif">
-        </div>
-        <div class="container p-3 singleApartment" v-show="loading==false">
-            <h1>{{apartment.name}}</h1>
-            <p><span class="icon mr-2"><i class="fa-solid fa-location-dot"></i></span>{{apartment.address}}</p>
-            <div class="container containerImages">
-                <span v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo span -->
-                    <img v-if="image.main_image" class="main-immagine" :src="`/storage/${image.url}`">
-                    <img v-else class="other-immagini" :src="`/storage/${image.url}`">
-                </span>
+    <div >
+        <div v-if="!loading">
+            <div class="container" v-show="loading==true">
+                <img src="/storage/loadingPage.gif">
+            </div>
+            <div class="container p-3 singleApartment" v-show="loading==false">
+                <h1>{{apartment.name}}</h1>
+                <p><span class="icon mr-2"><i class="fa-solid fa-location-dot"></i></span>{{apartment.address}}</p>
+                <div class="container containerImages">
+                    <span v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo span -->
+                        <img v-if="image.main_image" class="main-immagine" :src="`/storage/${image.url}`">
+                        <img v-else class="other-immagini" :src="`/storage/${image.url}`">
+                    </span>
 
-            </div>
-            <h5>{{apartment.description}}</h5>
-            <p class="py-3"><span class="icon pr-1"><i class="fa-solid fa-person-shelter"></i></span>Stanze: {{apartment.rooms}} • <span class="icon pr-1"><i class="fa-solid fa-bed"></i></span> letti: {{apartment.beds}} • <span class="icon pr-1"><i class="fa-solid fa-toilet"></i></span> bagni: {{apartment.bathrooms}} • <span class="icon pr-1"><i class="fa-solid fa-maximize"></i></span> metri quadrati: {{apartment.square_meters}}</p>
-            <h2>
-                <span class="icon"><i class="fa-solid fa-bell-concierge"></i></span>
-                Servizi
-            </h2>
-            <div v-for="service in apartment.services" :key="service.id" class="container">
-                <p>{{service.name}}</p>
-            </div>
-            <h4 class="mt-4">
-                <span class="icon"><i class="fa-solid fa-message"></i></span>
-                Scrivi un messaggio al proprietario dell&#39;appartamento
-            </h4>
-            <form @submit.prevent='sendMail'>
-                <div v-if="authUser==1">
-                    <label for="email">Ciaone!</label>
-                    <input type="email" id="email" name="email">
                 </div>
-                <div class="my-3" v-else>
-                    <label for="email">Inserisci la tua email:</label>
-                    <input type="email" id="email" name="email">
+                <h5>{{apartment.description}}</h5>
+                <p class="py-3"><span class="icon pr-1"><i class="fa-solid fa-person-shelter"></i></span>Stanze: {{apartment.rooms}} • <span class="icon pr-1"><i class="fa-solid fa-bed"></i></span> letti: {{apartment.beds}} • <span class="icon pr-1"><i class="fa-solid fa-toilet"></i></span> bagni: {{apartment.bathrooms}} • <span class="icon pr-1"><i class="fa-solid fa-maximize"></i></span> metri quadrati: {{apartment.square_meters}}</p>
+                <h2>
+                    <span class="icon"><i class="fa-solid fa-bell-concierge"></i></span>
+                    Servizi
+                </h2>
+                <div v-for="service in apartment.services" :key="service.id" class="container">
+                    <p>{{service.name}}</p>
                 </div>
-                <textarea class="col-8 form-control" id="message" name="message" placeholder="Inserisci qui il messaggio"></textarea>
-                <input class="ms_submit" type="submit" value="Submit">
-            </form>
-            <button class="ms_back">
-            <a @click="$router.back()">
-                    Torna indietro  
-            </a>
-            </button>
+                <h4 class="mt-4">
+                    <span class="icon"><i class="fa-solid fa-message"></i></span>
+                    Scrivi un messaggio al proprietario dell&#39;appartamento
+                </h4>
+                <form @submit.prevent='sendMail'>
+                    <div v-if="authUser==1">
+                        <label for="email">Ciaone!</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="my-3" v-else>
+                        <label for="email">Inserisci la tua email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <textarea class="col-8 form-control" id="message" name="message" placeholder="Inserisci qui il messaggio"></textarea>
+                    <input class="ms_submit" type="submit" value="Submit">
+                </form>
+                <button class="ms_back">
+                <a @click="$router.back()">
+                        Torna indietro  
+                </a>
+                </button>
 
-            <div v-show="messageSent">
-                Messaggio inviato!
-            </div>
+                <div v-show="messageSent">
+                    Messaggio inviato!
+                </div>
 
-            <div id="map" style="width: 100%; height: 500px; margin-top:50px;">
+                <div id="map" style="width: 100%; height: 500px; margin-top:50px;">
+
+                </div>
 
             </div>
         </div>
+        <Loader v-else/>
     </div>
 </template>
 
 <script>
+import Loader from "./Loader.vue";
 export default {
     name: "SingleApartment",
     data() {
@@ -64,8 +69,12 @@ export default {
             messageSent: false,
             lat: "",
             lon: "",
-            loading: true
+            loading: true,
+            
         }
+    },
+    components: {
+        Loader
     },
     created() {
         console.log(this.authUser);
@@ -75,13 +84,10 @@ export default {
             this.apartment = response.data;
             this.lat = parseFloat(this.apartment.lat);
             this.lon = parseFloat(this.apartment.lon);
+            this.loading = false;
         });     
     },
-    mounted(){
-        console.log(this.loading);
-        this.loading = false;
-        console.log(this.loading);
-    },
+ 
     updated(){
         let center = [this.lon,this.lat];
         const map= tt.map({
