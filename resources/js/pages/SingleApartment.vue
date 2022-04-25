@@ -58,7 +58,7 @@ export default {
         }
     },
     created() {
-        // console.log(this.authUser);
+        console.log(this.authUser);
         axios
         .get(`/api/apartments/${this.$route.params.slug}`)
         .then((response) => {
@@ -78,6 +78,8 @@ export default {
             new tt.Marker().setLngLat(center).addTo(map);      
     },
     methods: {
+        userLogged(){
+        },
         sendMail(){
             axios
             .post('/api/messages',this.formData)

@@ -8350,7 +8350,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    // console.log(this.authUser);
+    console.log(this.authUser);
     axios.get("/api/apartments/".concat(this.$route.params.slug)).then(function (response) {
       _this.apartment = response.data;
       _this.lat = parseFloat(_this.apartment.lat);
@@ -8368,6 +8368,7 @@ __webpack_require__.r(__webpack_exports__);
     new tt.Marker().setLngLat(center).addTo(map);
   },
   methods: {
+    userLogged: function userLogged() {},
     sendMail: function sendMail() {
       var _this2 = this;
 
@@ -29105,7 +29106,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
