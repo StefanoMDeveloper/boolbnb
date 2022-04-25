@@ -35,40 +35,16 @@
             <!-- campi aggiuntivi -->
               <div v-if="selectOption===true" class="row col justify-content-around filter">
                     <label for="rooms">Numero di Stanze</label>
-                      <select id="rooms" name="rooms_number" >
-                        <option value="">-</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                      </select>
+                      <input type="number" min="1" max="10" id="rooms" name="rooms" v-model="rooms">
                     <label for="beds">Numero di Letti</label>
-                      <select id="beds" name="beds_number" >
-                        <option value="">-</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                      </select>
+                      <input type="number" min="1" max="6" id="beds" name="beds" v-model="beds">
                     <label for="range">Raggio di Ricerca</label>
-                      <select class="ms_km" id="range" name="range_number">
-                        <option value="10">10 km</option>
-                        <option value="20" selected="selected">20 km</option>
-                        <option value="25">25 km</option>
-                        <option value="30">30 km</option>
-                        <option value="35">35 km</option>
-                      </select>
+                      <input type="number" min="5" max="50" id="radius" name="radius" step="5" v-model="radius">
 
                       <!--services  -->
                       <span class="text-black" :class="{ 'services': !scrollEffect }">Servizi:</span>
-                      <div class="services" v-for="service in services" :key="service.id">
-                        <input type="checkbox" id="service" name="services[]" :value="service.id">
+                      <div class="services" v-for="(service,index) in services" :key="index">
+                        <input type="checkbox" id="service" name="services[]" @change="serviceList(index)">
                       <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
                       </div>
                   </div>
@@ -122,7 +98,11 @@ export default {
         searchLat:"",
         searchLon:"",
         autocompleters:[],
-        services:[]
+        services:[],
+        beds: 1,
+        rooms: 1,
+        servicesList: "",
+        radius: 20
     }
   },
   created(){
@@ -157,9 +137,17 @@ export default {
       this.searchLon = this.autocompleters[index].position.lon;
       this.autocompleters = [];
     },
+    serviceList(counter){
+      if(document.querySelectorAll("#service")[counter].checked){
+          this.servicesList += counter + "-";
+        }
+         else{
+        this.servicesList=this.servicesList.replace(counter+"-","");
+      }
+    },
     filter(){
       this.autocompleters = [];
-      this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon});              
+      this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});              
     },
  
     // Toggle if navigation is shown or hidden
