@@ -25,8 +25,10 @@ export default{
     methods:{
         filterApartments: function(data){
             data.search = data.search.replace(", ", "-");
+            data.servicesList = data.servicesList.slice(0,-1);
+            console.log("/api/apartments/filter/search="+data.search+"&radius="+data.radius*1000+"&beds="+data.beds+"&rooms="+ data.rooms+"&lat="+data.lat+"&lon="+data.lon+"&services="+ data.servicesList)
             axios
-                .get("/api/apartments/filter/search="+data.search+"&radius="+data.radius+"&beds="+data.beds+"&rooms="+ data.rooms+"&lat="+data.lat+"&lon="+data.lon+"&services="+ data.services)  
+                .get("api/apartments/filter/search="+data.search+"&radius="+data.radius*1000+"&beds="+data.beds+"&rooms="+ data.rooms+"&lat="+data.lat+"&lon="+data.lon+"&services="+ data.servicesList)  
                 .then((response) => {
                     this.filteredApartments = response.data;
                 });             
