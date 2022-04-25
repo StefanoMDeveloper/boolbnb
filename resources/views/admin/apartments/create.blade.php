@@ -168,11 +168,12 @@
           </div>
         @endforeach
     </div>
-  
-    <button type="submit" class="btn btn-primary addApatmentBtn ml-4">Aggiungi appartamento</button>
-    <a href="{{route('admin.apartments.index')}}">
-      <button type="button" class="btn btn-secondary cancelBtn">Annulla</button>
-    </a>
+    <div class="d-flex">
+      <button type="submit" class="btn btn-primary addApatmentBtn ml-4">Aggiungi appartamento</button>
+      <a href="{{route('admin.apartments.index')}}">
+        <button type="button" class="btn btn-secondary cancelBtn ml-2">Annulla</button>
+      </a>
+    </div>
   </div>
 </form>
 
