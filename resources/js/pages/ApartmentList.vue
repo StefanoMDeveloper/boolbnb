@@ -1,6 +1,6 @@
 <template>
     <div class="m-auto">
-        <div class="container-fluid container-lista">
+        <div v-if="!loading" class="container-fluid container-lista">
             <div class="row">
                 <div class="col-12">
                     <div class="container-fluid">
@@ -95,23 +95,30 @@
                 </div>
             </div>
         </div>
+        <Loader v-else/>
     </div>
 </template>
 
 <script>
+import Loader from "./Loader.vue";
 export default {
     name: "ApartmentList",
     data() {
         return{
             apartments: [],
+            loading: true,
 
         }
+    },
+    components: {
+    Loader
     },
     created() {
         axios
         .get("/api/apartments")
         .then((response) => {
             this.apartments = response.data;
+             this.loading = false;
         });
     },
 };

@@ -7972,6 +7972,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
 //
 //
 //
@@ -8072,18 +8073,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ApartmentList",
   data: function data() {
     return {
-      apartments: []
+      apartments: [],
+      loading: true
     };
+  },
+  components: {
+    Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   created: function created() {
     var _this = this;
 
     axios.get("/api/apartments").then(function (response) {
       _this.apartments = response.data;
+      _this.loading = false;
     });
   }
 });
@@ -8099,7 +8107,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-horizontal */ "./node_modules/vue-horizontal/dist/vue-horizontal.esm.js");
+/* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
+/* harmony import */ var vue_horizontal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-horizontal */ "./node_modules/vue-horizontal/dist/vue-horizontal.esm.js");
+var _name$components$data;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
 //
 //
 //
@@ -8217,10 +8234,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+
+/* harmony default export */ __webpack_exports__["default"] = (_name$components$data = {
   name: "Homepage",
   components: {
-    VueHorizontal: vue_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    VueHorizontal: vue_horizontal__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -8242,20 +8260,22 @@ __webpack_require__.r(__webpack_exports__);
         image: "city4",
         title: "Verona",
         text: "411 chilometri di distanza"
-      }]
+      }],
+      loading: true
     };
-  },
-  created: function created() {
-    var _this = this;
-
-    axios.get("/api/apartments").then(function (response) {
-      _this.apartments = response.data;
-    });
-  },
-  props: {
-    apartmentList: Array
   }
-});
+}, _defineProperty(_name$components$data, "components", {
+  Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+}), _defineProperty(_name$components$data, "created", function created() {
+  var _this = this;
+
+  axios.get("/api/apartments").then(function (response) {
+    _this.apartments = response.data;
+    _this.loading = false;
+  });
+}), _defineProperty(_name$components$data, "props", {
+  apartmentList: Array
+}), _name$components$data);
 
 /***/ }),
 
@@ -8549,7 +8569,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".loader[data-v-a3277d48] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.455);\n}\n.loading[data-v-a3277d48] {\n  color: white;\n  font-size: 10px;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n}", ""]);
+exports.push([module.i, ".loader[data-v-a3277d48] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.455);\n  transition: 0.5s ease all;\n}\n.loading[data-v-a3277d48] {\n  color: white;\n  font-size: 30px;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n}", ""]);
 
 // exports
 
@@ -11181,316 +11201,356 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "m-auto" }, [
-    _c("div", { staticClass: "container-fluid container-lista" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "container-fluid" }, [
+  return _c(
+    "div",
+    { staticClass: "m-auto" },
+    [
+      !_vm.loading
+        ? _c("div", { staticClass: "container-fluid container-lista" }, [
             _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                _vm._l(_vm.apartments, function (apartment) {
-                  return _c(
-                    "div",
-                    { key: apartment.id, staticClass: "card col-12" },
-                    [
-                      apartment.visible &&
-                      apartment.active_sponsorships.length != 0
-                        ? _c(
-                            "div",
-                            {
-                              staticClass:
-                                "sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center",
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-lg-4" },
-                                _vm._l(apartment.images, function (image) {
-                                  return _c("div", { key: image.id }, [
-                                    image.main_image
-                                      ? _c(
-                                          "div",
-                                          { staticClass: "card-immagine" },
-                                          [
-                                            _c("img", {
-                                              staticClass: "border",
-                                              attrs: {
-                                                src: "/storage/" + image.url,
-                                              },
-                                            }),
-                                            _vm._v(" "),
-                                            _vm._m(1, true),
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                  ])
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    " descrizione col-10 col-lg-7 ml-lg-5",
-                                },
-                                [
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
-                                      },
-                                    },
-                                    [_c("h4", [_vm._v(_vm._s(apartment.name))])]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "ul",
-                                    { staticClass: "d-flex" },
-                                    [
-                                      _c("li", [
-                                        _vm._v(
-                                          "stanze " +
-                                            _vm._s(apartment.rooms) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "letti " +
-                                            _vm._s(apartment.beds) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "bagni " +
-                                            _vm._s(apartment.bathrooms) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
+              _c("div", { staticClass: "col-12" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-12" },
+                      _vm._l(_vm.apartments, function (apartment) {
+                        return _c(
+                          "div",
+                          { key: apartment.id, staticClass: "card col-12" },
+                          [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length != 0
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-lg-4" },
                                       _vm._l(
-                                        apartment.services,
-                                        function (service) {
-                                          return _c(
-                                            "span",
-                                            { key: service.id },
-                                            [
-                                              _c("li", [
-                                                _vm._v(
-                                                  _vm._s(service.name) + " •"
-                                                ),
-                                              ]),
-                                            ]
-                                          )
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "card-immagine",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _vm._m(1, true),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
                                         }
                                       ),
-                                    ],
-                                    2
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          " descrizione col-10 col-lg-7 ml-lg-5",
                                       },
-                                    },
-                                    [
-                                      _c("button", [
-                                        _c("a", [
-                                          _c("i", {
-                                            staticClass: "fa-solid fa-eye",
-                                          }),
-                                          _vm._v(
-                                            "\n                                                    Visualizza ulteriori dettagli...\n                                                "
-                                          ),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ],
-                                1
-                              ),
-                            ]
-                          )
-                        : _vm._e(),
-                    ]
-                  )
-                }),
-                0
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "container-fluid" }, [
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "non-sponsored col-12" },
-                _vm._l(_vm.apartments, function (apartment) {
-                  return _c(
-                    "div",
-                    { key: apartment.id, staticClass: "card col-12" },
-                    [
-                      apartment.visible &&
-                      apartment.active_sponsorships.length < 1
-                        ? _c(
-                            "div",
-                            {
-                              staticClass:
-                                "sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5",
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-lg-3" },
-                                _vm._l(apartment.images, function (image) {
-                                  return _c("div", { key: image.id }, [
-                                    image.main_image
-                                      ? _c(
-                                          "div",
+                                      [
+                                        _c(
+                                          "router-link",
                                           {
-                                            staticClass:
-                                              "card-immaginenonSpon col-lg-12",
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
                                           },
                                           [
-                                            _c("img", {
-                                              staticClass: "border",
-                                              attrs: {
-                                                src: "/storage/" + image.url,
-                                              },
-                                            }),
+                                            _c("h4", [
+                                              _vm._v(_vm._s(apartment.name)),
+                                            ]),
                                           ]
-                                        )
-                                      : _vm._e(),
-                                  ])
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "descrizione col-10 col-lg-8 ml-lg-5",
-                                },
-                                [
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
-                                      },
-                                    },
-                                    [_c("h4", [_vm._v(_vm._s(apartment.name))])]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "ul",
-                                    { staticClass: "d-flex" },
-                                    [
-                                      _c("li", [
-                                        _vm._v(
-                                          "stanze " +
-                                            _vm._s(apartment.rooms) +
-                                            " •"
                                         ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "letti " +
-                                            _vm._s(apartment.beds) +
-                                            " •"
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          { staticClass: "d-flex" },
+                                          [
+                                            _c("li", [
+                                              _vm._v(
+                                                "stanze " +
+                                                  _vm._s(apartment.rooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "letti " +
+                                                  _vm._s(apartment.beds) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "bagni " +
+                                                  _vm._s(apartment.bathrooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              apartment.services,
+                                              function (service) {
+                                                return _c(
+                                                  "span",
+                                                  { key: service.id },
+                                                  [
+                                                    _c("li", [
+                                                      _vm._v(
+                                                        _vm._s(service.name) +
+                                                          " •"
+                                                      ),
+                                                    ]),
+                                                  ]
+                                                )
+                                              }
+                                            ),
+                                          ],
+                                          2
                                         ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "bagni " +
-                                            _vm._s(apartment.bathrooms) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _vm._l(
-                                        apartment.services,
-                                        function (service) {
-                                          return _c(
-                                            "span",
-                                            { key: service.id },
-                                            [
-                                              _c("li", [
+                                        _vm._v(" "),
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("button", [
+                                              _c("a", [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa-solid fa-eye",
+                                                }),
                                                 _vm._v(
-                                                  _vm._s(service.name) + " •"
+                                                  "\n                                                    Visualizza ulteriori dettagli...\n                                                "
                                                 ),
                                               ]),
-                                            ]
-                                          )
+                                            ]),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "non-sponsored col-12" },
+                      _vm._l(_vm.apartments, function (apartment) {
+                        return _c(
+                          "div",
+                          { key: apartment.id, staticClass: "card col-12" },
+                          [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length < 1
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-lg-3" },
+                                      _vm._l(
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "card-immaginenonSpon col-lg-12",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
                                         }
                                       ),
-                                    ],
-                                    2
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "descrizione col-10 col-lg-8 ml-lg-5",
                                       },
-                                    },
-                                    [
-                                      _c("button", [
-                                        _c("a", [
-                                          _c("i", {
-                                            staticClass: "fa-solid fa-eye",
-                                          }),
-                                          _vm._v(
-                                            "\n                                                    Visualizza ulteriori dettagli...\n                                                "
-                                          ),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ],
-                                1
-                              ),
-                            ]
-                          )
-                        : _vm._e(),
-                    ]
-                  )
-                }),
-                0
-              ),
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("h4", [
+                                              _vm._v(_vm._s(apartment.name)),
+                                            ]),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          { staticClass: "d-flex" },
+                                          [
+                                            _c("li", [
+                                              _vm._v(
+                                                "stanze " +
+                                                  _vm._s(apartment.rooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "letti " +
+                                                  _vm._s(apartment.beds) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "bagni " +
+                                                  _vm._s(apartment.bathrooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              apartment.services,
+                                              function (service) {
+                                                return _c(
+                                                  "span",
+                                                  { key: service.id },
+                                                  [
+                                                    _c("li", [
+                                                      _vm._v(
+                                                        _vm._s(service.name) +
+                                                          " •"
+                                                      ),
+                                                    ]),
+                                                  ]
+                                                )
+                                              }
+                                            ),
+                                          ],
+                                          2
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("button", [
+                                              _c("a", [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa-solid fa-eye",
+                                                }),
+                                                _vm._v(
+                                                  "\n                                                    Visualizza ulteriori dettagli...\n                                                "
+                                                ),
+                                              ]),
+                                            ]),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
+                ]),
+              ]),
             ]),
-          ]),
-        ]),
-      ]),
-    ]),
-  ])
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function () {
@@ -11548,185 +11608,210 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "container-fluid ms_apartmentSlider" }, [
-      _c("div", { staticClass: "row d-flex justify-content-center" }, [
-        _c(
-          "div",
-          { staticClass: "col-10" },
-          [
-            _c("h1", [_vm._v("Appartamenti Dei Nostri Migliori Host")]),
+  return _c(
+    "div",
+    [
+      !_vm.loading
+        ? _c("div", [
+            _vm._m(0),
             _vm._v(" "),
-            _c(
-              "vue-horizontal",
-              { staticClass: "my-5" },
-              [
-                _c("div", { staticClass: "item bg-dark" }, [
-                  _c("h3", { staticClass: "ms_logo" }, [
-                    _c("i", { staticClass: "fa-brands fa-airbnb" }),
+            _c("div", { staticClass: "container-fluid ms_apartmentSlider" }, [
+              _c("div", { staticClass: "row d-flex justify-content-center" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-10" },
+                  [
+                    _c("h1", [_vm._v("Appartamenti Dei Nostri Migliori Host")]),
                     _vm._v(" "),
-                    _c("span", [_vm._v("Boolbnb")]),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-dark" }, [
-                    _vm._v("Easer Egg. Grazie Antony"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.apartments, function (apartment) {
-                  return _c("section", { key: apartment.id }, [
-                    apartment.visible &&
-                    apartment.active_sponsorships.length != 0
-                      ? _c(
-                          "div",
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                attrs: {
-                                  to: {
-                                    name: "SingleApartment",
-                                    params: { slug: apartment.slug },
-                                  },
-                                },
-                              },
-                              _vm._l(apartment.images, function (image) {
-                                return _c("div", { key: image.id }, [
-                                  image.main_image
-                                    ? _c("p", { staticClass: "ms_cardImage" }, [
-                                        _c("img", {
-                                          staticClass: "border",
-                                          attrs: {
-                                            src: "/storage/" + image.url,
-                                          },
-                                        }),
-                                      ])
-                                    : _vm._e(),
-                                ])
-                              }),
-                              0
-                            ),
+                    _c(
+                      "vue-horizontal",
+                      { staticClass: "my-5" },
+                      [
+                        _c("div", { staticClass: "item bg-dark" }, [
+                          _c("h3", { staticClass: "ms_logo" }, [
+                            _c("i", { staticClass: "fa-brands fa-airbnb" }),
                             _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                attrs: {
-                                  to: {
-                                    name: "SingleApartment",
-                                    params: { slug: apartment.slug },
-                                  },
-                                },
-                              },
-                              [_c("h5", [_vm._v(_vm._s(apartment.name))])]
+                            _c("span", [_vm._v("Boolbnb")]),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-dark" }, [
+                            _vm._v("Easer Egg. Grazie Antony"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.apartments, function (apartment) {
+                          return _c("section", { key: apartment.id }, [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length != 0
+                              ? _c(
+                                  "div",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: {
+                                            name: "SingleApartment",
+                                            params: { slug: apartment.slug },
+                                          },
+                                        },
+                                      },
+                                      _vm._l(
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "p",
+                                                  {
+                                                    staticClass: "ms_cardImage",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: {
+                                            name: "SingleApartment",
+                                            params: { slug: apartment.slug },
+                                          },
+                                        },
+                                      },
+                                      [
+                                        _c("h5", [
+                                          _vm._v(_vm._s(apartment.name)),
+                                        ]),
+                                      ]
+                                    ),
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("section", [
+                          _c("h3", { staticClass: "text-white" }, [
+                            _vm._v("Navigation Button"),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-white" }, [
+                            _vm._v(
+                              "The navigation button will appear if there is an overflow."
                             ),
-                          ],
-                          1
-                        )
-                      : _vm._e(),
-                  ])
-                }),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [
-                    _vm._v("Navigation Button"),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v(
-                      "The navigation button will appear if there is an overflow."
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("section", [
+                          _c("h3", { staticClass: "text-white" }, [
+                            _vm._v("Navigation Button"),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-white" }, [
+                            _vm._v(
+                              "The navigation button will appear if there is an overflow."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("section", [
+                          _c("h3", { staticClass: "text-white" }, [
+                            _vm._v("Scroll"),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-white" }, [
+                            _vm._v("You can just trackpad to scroll still!"),
+                          ]),
+                        ]),
+                      ],
+                      2
                     ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [
-                    _vm._v("Navigation Button"),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v(
-                      "The navigation button will appear if there is an overflow."
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [_vm._v("Scroll")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v("You can just trackpad to scroll still!"),
-                  ]),
-                ]),
-              ],
-              2
-            ),
-          ],
-          1
-        ),
-      ]),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row d-flex justify-content-center" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "ms_citiesContainer container-fluid d-flex flex-column col-10",
-          },
-          [
-            _c("h1", { staticClass: "mb-2" }, [
-              _vm._v("Destinazioni Più Gettonate"),
+                  ],
+                  1
+                ),
+              ]),
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row ms_citiesContainer col-12" },
-              _vm._l(_vm.cities, function (element, index) {
-                return _c(
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row d-flex justify-content-center" }, [
+                _c(
                   "div",
                   {
-                    key: index,
-                    staticClass: "ms_cityCard",
-                    style: { "background-color": _vm.colors[index] },
+                    staticClass:
+                      "ms_citiesContainer container-fluid d-flex flex-column col-10",
                   },
                   [
-                    _c("div", { staticClass: "ms_imageContainer" }, [
-                      _c("img", {
-                        attrs: {
-                          src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
-                            element.image +
-                            ".jpg"),
-                          alt: "",
-                        },
-                      }),
+                    _c("h1", { staticClass: "mb-2" }, [
+                      _vm._v("Destinazioni Più Gettonate"),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "ms_textcity" }, [
-                      _c("h1", { staticClass: "text-white" }, [
-                        _vm._v(_vm._s(element.title)),
-                      ]),
-                      _vm._v(" "),
-                      _c("h4", { staticClass: "text-white" }, [
-                        _vm._v(_vm._s(element.text)),
-                      ]),
-                    ]),
+                    _c(
+                      "div",
+                      { staticClass: "row ms_citiesContainer col-12" },
+                      _vm._l(_vm.cities, function (element, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "ms_cityCard",
+                            style: { "background-color": _vm.colors[index] },
+                          },
+                          [
+                            _c("div", { staticClass: "ms_imageContainer" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
+                                    element.image +
+                                    ".jpg"),
+                                  alt: "",
+                                },
+                              }),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "ms_textcity" }, [
+                              _c("h1", { staticClass: "text-white" }, [
+                                _vm._v(_vm._s(element.title)),
+                              ]),
+                              _vm._v(" "),
+                              _c("h4", { staticClass: "text-white" }, [
+                                _vm._v(_vm._s(element.text)),
+                              ]),
+                            ]),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
                   ]
-                )
-              }),
-              0
-            ),
-          ]
-        ),
-      ]),
-    ]),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2),
-  ])
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function () {

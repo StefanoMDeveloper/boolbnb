@@ -22,11 +22,12 @@ export default {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.455);
+    transition: .5s ease all;
    
 }
 .loading { 
     color: white;
-    font-size: 10px;
+    font-size: 30px;
     text-transform: uppercase;
     letter-spacing: 2px; 
     
