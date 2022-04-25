@@ -5,10 +5,11 @@
 @foreach ($sponsorships as $sponsorshippo)
     @if($loop->first)
         @if(count($apartment->active_sponsorships)<=0)
-        <div id="dropin-container">
+        <div class="container" id="dropin-container">
             <form action="{{route('api.make.payment')}}" method="post" id="payment-form">
             @csrf
             @method('POST')
+            <h3><strong>Sceglie uno dei seguenti pacchetti promozionali:</strong></h3>
                 @foreach ($sponsorships as $sponsorship)
                   <div class="form-check col-10 pl-4">
                     <input class="form-check-input" type="radio" name="sponsorships[]" id="{{$sponsorship->id}}"
@@ -23,7 +24,7 @@
                 </div>
                 <input id="apartment" name="apartment" value="{{$apartment->id}}" type="hidden" />
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button type="submit" class="btn btn-primary">Sponsorizza</button>
+                <button type="submit">Sponsorizza</button>
             </form>
         </div>
         @else

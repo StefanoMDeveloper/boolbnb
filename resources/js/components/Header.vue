@@ -19,7 +19,7 @@
                     <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                 </ul>
                 </nav>
-                <div class="d-flex headercenterB justify-content-sm-center justify-content-start   align-items-center m-auto">
+                <div class="d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto">
                     <div class="inputContainer col-7 col-sm-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
@@ -37,21 +37,27 @@
                 </div>
             
             <!-- campi aggiuntivi -->
-              <div v-if="selectOption===true" class="row col justify-content-around filter">
-                    <label for="rooms">Numero di Stanze</label>
-                      <input type="number" min="1" max="10" id="rooms" name="rooms" v-model="rooms">
-                    <label for="beds">Numero di Letti</label>
-                      <input type="number" min="1" max="6" id="beds" name="beds" v-model="beds">
-                    <label for="range">Raggio di Ricerca</label>
-                      <input type="number" min="5" max="50" id="radius" name="radius" step="5" v-model="radius">
+              <div v-if="selectOption===true" class="row col filter">
+                <div>
+                  <label for="rooms">Numero di Stanze</label>
+                    <input type="number" min="1" max="10" id="rooms" name="rooms" v-model="rooms">
+                  <label for="beds">Numero di Letti</label>
+                    <input type="number" min="1" max="6" id="beds" name="beds" v-model="beds">
+                  <label for="range">Raggio di Ricerca</label>
+                    <input type="number" min="5" max="50" id="radius" name="radius" step="5" v-model="radius">
+                </div>
 
-                      <!--services  -->
-                      <span class="text-black" :class="{ 'services': !scrollEffect }">Servizi:</span>
-                      <div class="services" v-for="(service,index) in services" :key="index">
-                        <input type="checkbox" id="service" name="services[]" @change="serviceList(index)">
-                      <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
-                      </div>
+                <div>
+                  <!--services  -->
+                  <div class="text-black" :class="{ 'services': !scrollEffect }"> Servizi:</div>
+                  <div class="services" v-for="(service,index) in services" :key="index">
+                    <input type="checkbox" id="service" name="services[]" @change="serviceList(index)">
+                  <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
                   </div>
+                </div>
+
+
+              </div>
               </div>
             
             <!-- header right -->
