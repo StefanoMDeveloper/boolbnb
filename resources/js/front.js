@@ -11,6 +11,9 @@ import router from './router'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js' 
 import Vue from 'vue';
+import VueHorizontal from 'vue-horizontal';
+
+Vue.use(VueHorizontal);
 
 /* const globalVariables = {
     data(){
