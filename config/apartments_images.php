@@ -1,7 +1,7 @@
 <?php
 return [
 	[
-		"apartment_id" => 1,
+		"apartment_id" => 19,
 		"url" => "/uploads/ap1p1.jpg",
 		"main_image" => true
 	],
@@ -375,4 +375,130 @@ return [
 		"url" => "/uploads/ap15p5.jpg",
 		"main_image" => false
 	],
+	[
+		"apartment_id" => 16,
+		"url" => "/uploads/ap16p1.jpg",
+		"main_image" => true
+	],
+	[
+		"apartment_id" => 16,
+		"url" => "/uploads/ap16p2.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 16,
+		"url" => "/uploads/ap16p3.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 16,
+		"url" => "/uploads/ap16p4.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 16,
+		"url" => "/uploads/ap16p5.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 17,
+		"url" => "/uploads/ap17p1.jpg",
+		"main_image" => true
+	],
+	[
+		"apartment_id" => 17,
+		"url" => "/uploads/ap17p2.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 17,
+		"url" => "/uploads/ap17p3.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 17,
+		"url" => "/uploads/ap17p4.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 17,
+		"url" => "/uploads/ap17p5.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 18,
+		"url" => "/uploads/ap18p1.jpg",
+		"main_image" => true
+	],
+	[
+		"apartment_id" => 18,
+		"url" => "/uploads/ap18p2.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 18,
+		"url" => "/uploads/ap18p3.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 18,
+		"url" => "/uploads/ap18p4.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 18,
+		"url" => "/uploads/ap18p5.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 19,
+		"url" => "/uploads/ap19p1.jpg",
+		"main_image" => true
+	],
+	[
+		"apartment_id" => 19,
+		"url" => "/uploads/ap19p2.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 19,
+		"url" => "/uploads/ap19p3.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 19,
+		"url" => "/uploads/ap19p4.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 19,
+		"url" => "/uploads/ap19p5.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 20,
+		"url" => "/uploads/ap20p1.jpg",
+		"main_image" => true
+	],
+	[
+		"apartment_id" => 20,
+		"url" => "/uploads/ap20p2.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 20,
+		"url" => "/uploads/ap20p3.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 20,
+		"url" => "/uploads/ap20p4.jpg",
+		"main_image" => false
+	],
+	[
+		"apartment_id" => 20,
+		"url" => "/uploads/ap20p5.jpg",
+		"main_image" => false
+	],
+
 ];
