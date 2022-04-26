@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-2">
                       <a class="ms_search" href="#" @click='ricercaAvanzata'>
-                        <button class="btnSearch">Ricerca  <br>Avanzata</button>
+                        <button class="ms_btnSearch">Ricerca  <br>Avanzata</button>
                       </a>
                     </div>
                 </div>
@@ -238,18 +238,18 @@ header{
         width: 100%;
         .ms_search{
           text-decoration: none;
-          .btnSearch{
+          .ms_btnSearch{
           min-height: 60px;
-          background-color: hwb(349 17% 45%);
+          background-color: #ff385c;
           border: none;
           border-radius: 25px;
           margin:0 10px;
           padding: 5px 20px;
           text-align: center;
           transition:linear .5s;
-          color: #ff385c;
+          color:white;
           &:hover{
-            background-color: #ff385c;
+            background-color: #df4e69;
             color: white;
           }
         }
