@@ -126,7 +126,7 @@ return [
     "beds"=>2,
     "bathrooms"=>1,
     "square_meters"=>110,
-    "address"=>"Via renovella, Napoli NA",
+    "address"=>"Via renovella 5, Napoli NA",
     "visible"=>true,
     "lat"=>40.84790432,
     "lon"=>14.26278577
@@ -134,7 +134,7 @@ return [
     [ //https://www.airbnb.it/rooms/18485112?federated_search_id=0a47a531-ba22-4e2e-8ab0-a83648baddf9&source_impression_id=p3_1649682698_K1uWevE3mdYH3qi%2B
     "name"=>"Lollotà Castello WiFi con soppalco (IUN P1849)",
     "description"=>"Appartamento con soppalco restaurato nel 2017, al secondo piano di un palazzo storico di proprietà della famiglia, di fronte alla Cattedrale di S.Maria e all'antico Palazzo di Città. Il palazzo si trova nel cuore del centro storico di Cagliari, il quartiere medievale di Castello. Affaccia sua una piccola piazza dove si trova un ottimo bar per le colazioni e per gli aperitivi. Nello stesso palazzo una bottega di prodotti locali biologici. Riceve il sole durante tutta la mattina.",
-    "rooms"=>1,
+    "rooms"=>3,
     "beds"=>1,
     "bathrooms"=>1,
     "square_meters"=>40,
