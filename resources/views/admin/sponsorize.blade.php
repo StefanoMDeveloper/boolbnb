@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@dd($apartment->active_sponsorships)
 @foreach ($sponsorships as $sponsorshippo)
     @if($loop->first)
         @if(count($apartment->active_sponsorships)<=0)
