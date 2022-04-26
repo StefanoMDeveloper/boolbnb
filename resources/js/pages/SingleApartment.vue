@@ -47,39 +47,35 @@
                     </div>
                 </div>
                 <h4><span class="ms_icon mr-2"><i class="fa-solid fa-comment-dots"></i></span>Scrivi un messaggio al proprietario dell&#39;appartamento</h4>
-                <form @submit.prevent='sendMail'>
-                    <div v-if="authUser==1">
-                        <label for="email">Ciaone!</label>
-                        <input type="email" id="email" name="email">
+                <form @submit.prevent="sendMail()">
+                    <input type="text" id="name" v-model="formData.name" placeholder="Nome">
+                    <input type="text" id="lastname" v-model="formData.lastname" placeholder="Cognome">
+                    <input type="email" id="email" v-model="formData.email" placeholder="email">
+                    <input type="text" id="object" v-model="formData.object" placeholder="Oggetto">
+                    <textarea name="content" id="content" class="col-8 form-control" v-model="formData.content" placeholder="Inserisci il testo del tuo messaggio"></textarea>
+                    <div v-if="formErrors.content">
+                        <ul>
+                            <li v-for="(error,index) in formErrors.content" :key="index">
+                                {{error}}
+                            </li>
+                        </ul>
                     </div>
-                    <div class="my-2" v-else>
-                        <label for="email">Inserisci la tua email:</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    <textarea class="col-8 my-2 form-control" id="message" name="message" placeholder="Inserisci qui il messaggio"></textarea>
-                    <button type="submit" class="btn backBtn m-1 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">
-                        <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
-                        Invia Messaggio
-                    </button>
+                    <button type="submit">Aggiungi</button>
                 </form>
-                <a @click="$router.back()">
-                    <button type="button" class="btn backBtn b m-1 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">
-                        <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
-                        Torna indietro  
-                    </button>
-                </a>
-
                 <div v-show="messageSent">
-                    Messaggio inviato!
+                    Il tuo messaggio è stato inviato!
                 </div>
 
-                <div id="map" style="width: 100%; height: 500px; margin-top:20px;">
+                <button>
+                <a @click="$router.back()">
+                        Torna indietro  
+                </a>
+                </button>
+
+                <div id="map" style="width: 100%; height: 500px; margin-top:50px;">
 
                 </div>
             </div>
-
         </div>
         <Loader v-else/>
     </div>
@@ -95,50 +91,70 @@ export default {
             messageSent: false,
             lat: "",
             lon: "",
-            loading: true
+            loading: true,
+            mapped:false,
+            formData: {
+                name:"",
+                lastname:"",
+                email:"",
+                object:"",
+                content: "",
+                apartment_id: null
+            },
+            formErrors:{}
         }
     },
     components: {
-    Loader
+        Loader
     },
-
     created() {
         console.log(this.authUser);
         axios
         .get(`/api/apartments/${this.$route.params.slug}`)
         .then((response) => {
             this.apartment = response.data;
+            this.formData.apartment_id = this.apartment.id;
             this.lat = parseFloat(this.apartment.lat);
             this.lon = parseFloat(this.apartment.lon);
             this.loading = false;
         });     
     },
-   
     updated(){
-        let center = [this.lon,this.lat];
-        const map= tt.map({
-            key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
-            container: "map",
-            center: center,
-            zoom: 9
-        })         
-            new tt.Marker().setLngLat(center).addTo(map);      
+        if(!this.mapped && this.lat!=""){
+            let center = [this.lon,this.lat];
+            const map= tt.map({
+                key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
+                container: "map",
+                center: center,
+                zoom: 9
+            })         
+                new tt.Marker().setLngLat(center).addTo(map);  
+            this.mapped = true;    
+        }
     },
     methods: {
-        userLogged(){
-        },
         sendMail(){
+            console.log(this.formData);
             axios
-            .post('/api/messages',this.formData)
-            .then((response) => {
-                this.formData.content = '';
-                this.formData.email = '';
+            .post(`/api/messages/`, this.formData)
+            .then((response)=>{
+                this.formData.name = "";
+                this.formData.lastname = "";
+                this.formData.email = "";
+                this.formData.object = "";
+                this.formData.content = "";
                 this.messageSent = true;
-                this.loading = false;
-            });
-        }
+            })
+            .catch((error)=>{
+                console.log('errori:');
+                console.log(error.response.data);
+                this.formErrors = error.response.data.errors;
+            })
+        }      
+        
     }
 };
+
 </script>
 
 <style lang="scss" scoped>

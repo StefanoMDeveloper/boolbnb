@@ -8568,10 +8568,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
@@ -8581,7 +8577,17 @@ __webpack_require__.r(__webpack_exports__);
       messageSent: false,
       lat: "",
       lon: "",
-      loading: true
+      loading: true,
+      mapped: false,
+      formData: {
+        name: "",
+        lastname: "",
+        email: "",
+        object: "",
+        content: "",
+        apartment_id: null
+      },
+      formErrors: {}
     };
   },
   components: {
@@ -8593,31 +8599,41 @@ __webpack_require__.r(__webpack_exports__);
     console.log(this.authUser);
     axios.get("/api/apartments/".concat(this.$route.params.slug)).then(function (response) {
       _this.apartment = response.data;
+      _this.formData.apartment_id = _this.apartment.id;
       _this.lat = parseFloat(_this.apartment.lat);
       _this.lon = parseFloat(_this.apartment.lon);
       _this.loading = false;
     });
   },
   updated: function updated() {
-    var center = [this.lon, this.lat];
-    var map = tt.map({
-      key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
-      container: "map",
-      center: center,
-      zoom: 9
-    });
-    new tt.Marker().setLngLat(center).addTo(map);
+    if (!this.mapped && this.lat != "") {
+      var center = [this.lon, this.lat];
+      var map = tt.map({
+        key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
+        container: "map",
+        center: center,
+        zoom: 9
+      });
+      new tt.Marker().setLngLat(center).addTo(map);
+      this.mapped = true;
+    }
   },
   methods: {
-    userLogged: function userLogged() {},
     sendMail: function sendMail() {
       var _this2 = this;
 
-      axios.post('/api/messages', this.formData).then(function (response) {
-        _this2.formData.content = '';
-        _this2.formData.email = '';
+      console.log(this.formData);
+      axios.post("/api/messages/", this.formData).then(function (response) {
+        _this2.formData.name = "";
+        _this2.formData.lastname = "";
+        _this2.formData.email = "";
+        _this2.formData.object = "";
+        _this2.formData.content = "";
         _this2.messageSent = true;
-        _this2.loading = false;
+      })["catch"](function (error) {
+        console.log('errori:');
+        console.log(error.response.data);
+        _this2.formErrors = error.response.data.errors;
       });
     }
   }
@@ -12821,123 +12837,161 @@ var render = function () {
                     on: {
                       submit: function ($event) {
                         $event.preventDefault()
-                        return _vm.sendMail.apply(null, arguments)
+                        return _vm.sendMail()
                       },
                     },
                   },
                   [
-                    _vm.authUser == 1
-                      ? _c("div", [
-                          _c("label", { attrs: { for: "email" } }, [
-                            _vm._v("Ciaone!"),
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: {
-                              type: "email",
-                              id: "email",
-                              name: "email",
-                            },
-                          }),
-                        ])
-                      : _c("div", { staticClass: "my-2" }, [
-                          _c("label", { attrs: { for: "email" } }, [
-                            _vm._v("Inserisci la tua email:"),
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: {
-                              type: "email",
-                              id: "email",
-                              name: "email",
-                            },
-                          }),
-                        ]),
-                    _vm._v(" "),
-                    _c("textarea", {
-                      staticClass: "col-8 my-2 form-control",
-                      attrs: {
-                        id: "message",
-                        name: "message",
-                        placeholder: "Inserisci qui il messaggio",
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.name,
+                          expression: "formData.name",
+                        },
+                      ],
+                      attrs: { type: "text", id: "name", placeholder: "Nome" },
+                      domProps: { value: _vm.formData.name },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "name", $event.target.value)
+                        },
                       },
                     }),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn backBtn m-1 text-white",
-                        attrs: { type: "submit" },
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.lastname,
+                          expression: "formData.lastname",
+                        },
+                      ],
+                      attrs: {
+                        type: "text",
+                        id: "lastname",
+                        placeholder: "Cognome",
                       },
-                      [
-                        _c(
-                          "svg",
-                          {
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              width: "16",
-                              height: "16",
-                              fill: "currentColor",
-                              viewBox: "0 0 256 512",
-                            },
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(
-                          "\n                    Invia Messaggio\n                "
-                        ),
-                      ]
-                    ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    on: {
-                      click: function ($event) {
-                        return _vm.$router.back()
+                      domProps: { value: _vm.formData.lastname },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.formData,
+                            "lastname",
+                            $event.target.value
+                          )
+                        },
                       },
-                    },
-                  },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn backBtn b m-1 text-white",
-                        attrs: { type: "button" },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.email,
+                          expression: "formData.email",
+                        },
+                      ],
+                      attrs: {
+                        type: "email",
+                        id: "email",
+                        placeholder: "email",
                       },
-                      [
-                        _c(
-                          "svg",
-                          {
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              width: "16",
-                              height: "16",
-                              fill: "currentColor",
-                              viewBox: "0 0 256 512",
-                            },
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(
-                          "\n                    Torna indietro  \n                "
-                        ),
-                      ]
-                    ),
+                      domProps: { value: _vm.formData.email },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "email", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.object,
+                          expression: "formData.object",
+                        },
+                      ],
+                      attrs: {
+                        type: "text",
+                        id: "object",
+                        placeholder: "Oggetto",
+                      },
+                      domProps: { value: _vm.formData.object },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "object", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.content,
+                          expression: "formData.content",
+                        },
+                      ],
+                      staticClass: "col-8 form-control",
+                      attrs: {
+                        name: "content",
+                        id: "content",
+                        placeholder: "Inserisci il testo del tuo messaggio",
+                      },
+                      domProps: { value: _vm.formData.content },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "content", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _vm.formErrors.content
+                      ? _c("div", [
+                          _c(
+                            "ul",
+                            _vm._l(
+                              _vm.formErrors.content,
+                              function (error, index) {
+                                return _c("li", { key: index }, [
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(error) +
+                                      "\n                        "
+                                  ),
+                                ])
+                              }
+                            ),
+                            0
+                          ),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("button", { attrs: { type: "submit" } }, [
+                      _vm._v("Aggiungi"),
+                    ]),
                   ]
                 ),
                 _vm._v(" "),
@@ -12953,14 +13007,36 @@ var render = function () {
                       },
                     ],
                   },
-                  [_vm._v("\n                Messaggio inviato!\n            ")]
+                  [
+                    _vm._v(
+                      "\n                Il tuo messaggio è stato inviato!\n            "
+                    ),
+                  ]
                 ),
+                _vm._v(" "),
+                _c("button", [
+                  _c(
+                    "a",
+                    {
+                      on: {
+                        click: function ($event) {
+                          return _vm.$router.back()
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Torna indietro  \n            "
+                      ),
+                    ]
+                  ),
+                ]),
                 _vm._v(" "),
                 _c("div", {
                   staticStyle: {
                     width: "100%",
                     height: "500px",
-                    "margin-top": "20px",
+                    "margin-top": "50px",
                   },
                   attrs: { id: "map" },
                 }),
@@ -30522,11 +30598,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
->>>>>>> e13a70186ffcd003909715167799f2dcbd13aa4f
+module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
