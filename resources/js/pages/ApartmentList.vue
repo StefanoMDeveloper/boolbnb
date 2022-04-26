@@ -118,7 +118,7 @@ export default {
         .get("/api/apartments")
         .then((response) => {
             this.apartments = response.data;
-             this.loading = false;
+            this.loading = false;
         });
     },
 };
