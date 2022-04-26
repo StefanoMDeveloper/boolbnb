@@ -60,6 +60,15 @@ export default{
 body{
     min-width: 375px;
     background-color: white;
+    //overflow-y: scroll;
 }
+
+// .example::-webkit-scrollbar{
+//     display: none;
+// }
+
+// .example{
+//     scrollbar-width: none;
+// }
 
 </style>
