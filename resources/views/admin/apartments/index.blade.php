@@ -3,8 +3,8 @@
 @section('content')
 
 @if (\Session::has('message'))
-    <div>
-        {!! \Session::get('message') !!}
+    <div class="container">
+        <h2>{!! \Session::get('message') !!}</h2>
     </div>
 @endif
 <div class="container ">
@@ -148,7 +148,7 @@
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            Sicuro di voler cancellare questo post?
+                                            Sicuro di voler cancellare questo appartamento?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Annulla</button>
