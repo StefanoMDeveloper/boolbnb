@@ -43,7 +43,7 @@ return [
     ],
     [
         "apartment_id"=>5,
-        "service_id"=>10
+        "service_id"=>8
     ],
     [
         "apartment_id"=>1,
