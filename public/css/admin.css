@@ -14046,6 +14046,7 @@ a .plusBtnMobile {
 
 a .plusBtnMobile:hover {
   background-color: #f25b76;
+  text-decoration: none;
 }
 
 .backBtn {
@@ -14107,6 +14108,7 @@ a .plusBtnMobile:hover {
   background-color: #39858a;
   transition: linear 1s;
   border: none;
+  text-decoration: none;
 }
 
 .apartmentscontainer .card .showbtn:hover,
@@ -14114,6 +14116,7 @@ a .plusBtnMobile:hover {
 .apartmentscontainer .card .messagebtn:hover,
 .apartmentscontainer .card .sponsorbtn:hover {
   background-color: #1c4144;
+  text-decoration: none;
 }
 
 .apartmentscontainer .card .sponsorizzatobtn {
@@ -14126,6 +14129,7 @@ a .plusBtnMobile:hover {
 
 .apartmentscontainer .card .sponsorizzatobtn:hover {
   background-color: #885500;
+  text-decoration: none;
 }
 
 .apartmentscontainer .card .cancelbtn {
@@ -14138,6 +14142,7 @@ a .plusBtnMobile:hover {
 
 .apartmentscontainer .card .cancelbtn:hover {
   background-color: #882211;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 780px) {
@@ -14330,6 +14335,16 @@ a .plusBtnMobile:hover {
   background-color: rgb(79, 77, 77);
 }
 
+.showContainer .ms_messageText {
+  background-color: #39858a;
+  border: 1px solid #39858a;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+}
+
 .container-profile {
   justify-content: center;
   flex-direction: column;
@@ -14470,8 +14485,24 @@ button:hover {
   height: 80vh;
 }
 
-h2 {
-  color: #39858a;
+.ms_messageText {
+  background-color: #39858a;
+  border: 1px solid #39858a;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.ms_messageText {
+  background-color: #39858a;
+  border: 1px solid #39858a;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
 }
 
 main {
