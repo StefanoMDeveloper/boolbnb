@@ -21,8 +21,9 @@ export default {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.455);
+    background-color: black;
     transition: .5s ease all;
+    z-index: 999;
    
 }
 .loading { 

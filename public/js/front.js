@@ -7828,6 +7828,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -7891,9 +7901,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     serviceList: function serviceList(counter) {
       if (document.querySelectorAll("#service")[counter].checked) {
-        this.servicesList += counter + "-";
+        this.servicesList += counter + 1 + "-";
       } else {
-        this.servicesList = this.servicesList.replace(counter + "-", "");
+        this.servicesList = this.servicesList.replace(counter + 1 + "-", "");
       }
     },
     filter: function filter() {
@@ -7962,6 +7972,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
 //
 //
 //
@@ -8063,19 +8074,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ApartmentList",
   data: function data() {
     return {
-      apartments: []
+      apartments: [],
+      loading: true
     };
+  },
+  components: {
+    Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   created: function created() {
     var _this = this;
 
     axios.get("/api/apartments").then(function (response) {
       _this.apartments = response.data;
+      _this.loading = false;
     });
   }
 });
@@ -8091,7 +8107,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-horizontal */ "./node_modules/vue-horizontal/dist/vue-horizontal.esm.js");
+/* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
+/* harmony import */ var vue_horizontal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-horizontal */ "./node_modules/vue-horizontal/dist/vue-horizontal.esm.js");
+var _name$components$data;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -8213,10 +8234,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+
+/* harmony default export */ __webpack_exports__["default"] = (_name$components$data = {
   name: "Homepage",
   components: {
-    VueHorizontal: vue_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    VueHorizontal: vue_horizontal__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -8238,19 +8260,42 @@ __webpack_require__.r(__webpack_exports__);
         image: "city4",
         title: "Verona",
         text: "411 chilometri di distanza"
-      }]
+      }],
+      loading: true
     };
-  },
-  created: function created() {
-    var _this = this;
-
-    axios.get("/api/apartments").then(function (response) {
-      _this.apartments = response.data;
-    });
-  },
-  props: {
-    apartmentList: Array
   }
+}, _defineProperty(_name$components$data, "components", {
+  Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+}), _defineProperty(_name$components$data, "created", function created() {
+  var _this = this;
+
+  axios.get("/api/apartments").then(function (response) {
+    _this.apartments = response.data;
+    _this.loading = false;
+  });
+}), _defineProperty(_name$components$data, "props", {
+  apartmentList: Array
+}), _name$components$data);
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Loader.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Loader'
 });
 
 /***/ }),
@@ -8303,6 +8348,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
 //
 //
 //
@@ -8346,14 +8392,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
@@ -8362,8 +8401,21 @@ __webpack_require__.r(__webpack_exports__);
       messageSent: false,
       lat: "",
       lon: "",
-      loading: true
+      loading: true,
+      mapped: false,
+      formData: {
+        name: "",
+        lastname: "",
+        email: "",
+        object: "",
+        content: "",
+        apartment_id: null
+      },
+      formErrors: {}
     };
+  },
+  components: {
+    Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   created: function created() {
     var _this = this;
@@ -8371,34 +8423,41 @@ __webpack_require__.r(__webpack_exports__);
     console.log(this.authUser);
     axios.get("/api/apartments/".concat(this.$route.params.slug)).then(function (response) {
       _this.apartment = response.data;
+      _this.formData.apartment_id = _this.apartment.id;
       _this.lat = parseFloat(_this.apartment.lat);
       _this.lon = parseFloat(_this.apartment.lon);
+      _this.loading = false;
     });
-  },
-  mounted: function mounted() {
-    console.log(this.loading);
-    this.loading = false;
-    console.log(this.loading);
   },
   updated: function updated() {
-    var center = [this.lon, this.lat];
-    var map = tt.map({
-      key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
-      container: "map",
-      center: center,
-      zoom: 9
-    });
-    new tt.Marker().setLngLat(center).addTo(map);
+    if (!this.mapped && this.lat != "") {
+      var center = [this.lon, this.lat];
+      var map = tt.map({
+        key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
+        container: "map",
+        center: center,
+        zoom: 9
+      });
+      new tt.Marker().setLngLat(center).addTo(map);
+      this.mapped = true;
+    }
   },
   methods: {
-    userLogged: function userLogged() {},
     sendMail: function sendMail() {
       var _this2 = this;
 
-      axios.post('/api/messages', this.formData).then(function (response) {
-        _this2.formData.content = '';
-        _this2.formData.email = '';
+      console.log(this.formData);
+      axios.post("/api/messages/", this.formData).then(function (response) {
+        _this2.formData.name = "";
+        _this2.formData.lastname = "";
+        _this2.formData.email = "";
+        _this2.formData.object = "";
+        _this2.formData.content = "";
         _this2.messageSent = true;
+      })["catch"](function (error) {
+        console.log('errori:');
+        console.log(error.response.data);
+        _this2.formErrors = error.response.data.errors;
       });
     }
   }
@@ -8456,7 +8515,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n}\nheader .header-container .headercenter .headercenterB .btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: hwb(349 17% 45%);\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n}\nheader .header-container .headercenter .headercenterB .btnSearch[data-v-1f42fb90]:hover {\n  background-color: #ff385c;\n}\nheader .header-container .headercenter .headercenterB .btnSearch a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  margin: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}", ""]);
+exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: hwb(349 17% 45%);\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: #ff385c;\n}\nheader .header-container .headercenter .headercenterB .ms_search .btnSearch[data-v-1f42fb90]:hover {\n  background-color: #ff385c;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}", ""]);
 
 // exports
 
@@ -8475,7 +8534,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".item[data-v-908b7792] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-908b7792],\n.item i[data-v-908b7792] {\n  color: #DE3151;\n}\na[data-v-908b7792] {\n  color: black;\n  text-decoration: none;\n  margin-top: 0;\n}\n.trophyText .ms_trophy[data-v-908b7792] {\n  color: gold;\n  font-size: 20px;\n}\n@media only screen and (min-width: 1200px) {\n.trophyText .ms_trophy[data-v-908b7792] {\n    font-size: 40px;\n}\n}\n.star[data-v-908b7792] {\n  color: gold;\n  font-size: 40px;\n  padding: 30px 20px;\n}\n.descrizione[data-v-908b7792] {\n  padding: 30px 0;\n}\n.descrizione button[data-v-908b7792] {\n  background-color: #39858a;\n  padding: 10px 20px;\n  border-radius: 20px;\n  transition: linear 1s;\n  border: none;\n}\n.descrizione button[data-v-908b7792]:hover {\n  background-color: #54b4ba;\n  color: white;\n}\n.descrizione button a[data-v-908b7792] {\n  color: white;\n  text-decoration: none;\n  line-height: 100%;\n}\n.descrizione button a[data-v-908b7792]:hover {\n  color: white;\n}\n.container-lista[data-v-908b7792] {\n  margin-top: 200px;\n}\n.card-immagine[data-v-908b7792] {\n  margin: 30px 0;\n  height: 300px;\n  width: 100%;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.card-immagine img[data-v-908b7792] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n}\n.card-immagine:hover img[data-v-908b7792] {\n  transform: scale(1.1);\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-908b7792] {\n    margin: 30px;\n    height: 300px;\n}\n}\n.card-immaginenonSpon[data-v-908b7792] {\n  margin: 30px 0;\n  height: 300px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.card-immaginenonSpon img[data-v-908b7792] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n}\n.card-immaginenonSpon:hover img[data-v-908b7792] {\n  transform: scale(1.1);\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-908b7792] {\n    margin: 30px;\n    height: 300px;\n}\n}\nul[data-v-908b7792] {\n  width: 70%;\n  flex-wrap: wrap;\n}\nul li[data-v-908b7792] {\n  float: left;\n  color: grey;\n  font-weight: bold;\n  font-size: 13px;\n  padding-right: 5px;\n  padding-left: 0;\n  list-style-type: none;\n}\n.sponsored[data-v-908b7792] {\n  background-color: rgb(235, 235, 235);\n}\n.non-sponsored[data-v-908b7792] {\n  margin-top: 50px;\n}", ""]);
+exports.push([module.i, ".item[data-v-908b7792] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-908b7792],\n.item i[data-v-908b7792] {\n  color: #DE3151;\n}\na[data-v-908b7792] {\n  color: black;\n  text-decoration: none;\n  margin-top: 0;\n}\n.trophyText .ms_trophy[data-v-908b7792] {\n  color: gold;\n  font-size: 20px;\n  height: 70px;\n}\n.trophyText .ms_trophy h2[data-v-908b7792] {\n  line-height: 70px;\n}\n@media only screen and (min-width: 1200px) {\n.trophyText .ms_trophy[data-v-908b7792] {\n    font-size: 40px;\n}\n}\n.descrizione[data-v-908b7792] {\n  padding: 30px 0;\n}\n.descrizione button[data-v-908b7792] {\n  background-color: #39858a;\n  padding: 10px 20px;\n  border-radius: 20px;\n  transition: linear 1s;\n  border: none;\n}\n.descrizione button[data-v-908b7792]:hover {\n  background-color: #54b4ba;\n  color: white;\n}\n.descrizione button a[data-v-908b7792] {\n  color: white;\n  text-decoration: none;\n  line-height: 100%;\n}\n.descrizione button a[data-v-908b7792]:hover {\n  color: white;\n}\n.container-lista[data-v-908b7792] {\n  margin-top: 200px;\n}\n.card-immagine[data-v-908b7792] {\n  margin: 30px 0;\n  height: 300px;\n  width: 100%;\n  border-radius: 20px;\n  overflow: hidden;\n  position: relative;\n}\n.card-immagine img[data-v-908b7792] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n}\n.card-immagine:hover img[data-v-908b7792] {\n  transform: scale(1.1);\n}\n.card-immagine .star[data-v-908b7792] {\n  color: gold;\n  font-size: 40px;\n  position: absolute;\n  top: 20px;\n  left: 20px;\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-908b7792] {\n    margin: 30px;\n    height: 300px;\n}\n}\n.card-immaginenonSpon[data-v-908b7792] {\n  margin: 30px 0;\n  height: 300px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.card-immaginenonSpon img[data-v-908b7792] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n  border-radius: 20px;\n}\n.card-immaginenonSpon:hover img[data-v-908b7792] {\n  transform: scale(1.1);\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-908b7792] {\n    margin: 30px;\n    height: 300px;\n}\n}\nul[data-v-908b7792] {\n  width: 70%;\n  flex-wrap: wrap;\n}\nul li[data-v-908b7792] {\n  float: left;\n  color: grey;\n  font-weight: bold;\n  font-size: 13px;\n  padding-right: 5px;\n  padding-left: 0;\n  list-style-type: none;\n}\n.sponsored[data-v-908b7792] {\n  background-color: rgb(235, 235, 235);\n}\n.non-sponsored[data-v-908b7792] {\n  margin-top: 50px;\n}", ""]);
 
 // exports
 
@@ -8495,6 +8554,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 30px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 300px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 167px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 10px 20px;\n}\n@media only screen and (min-width: 712px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 30px 0;\n    padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(50% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 300px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 167px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 10px 20px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 40px 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(25% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 400px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 200px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 20px;\n}\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 78px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 0;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 30px;\n  font-size: 40px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_experienceContainer[data-v-00e83377] {\n    margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n    padding: 20px 10px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n    font-size: 60px;\n    position: absolute;\n    top: 80px;\n    left: 60px;\n}\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 50px auto;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n  font-size: 40px;\n  padding-bottom: 50px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}\n@media only screen and (min-width: 1200px) {\n.ms_giftContainer[data-v-00e83377] {\n    margin: 100px auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n    font-size: 45px;\n    padding-bottom: 0;\n}\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".loader[data-v-a3277d48] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  transition: 0.5s ease all;\n  z-index: 999;\n}\n.loading[data-v-a3277d48] {\n  color: white;\n  font-size: 30px;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n}", ""]);
 
 // exports
 
@@ -8532,7 +8610,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  height: 560px;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 25%;\n  height: 280px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  float: left;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}", ""]);
+exports.push([module.i, ".singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  max-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 50%;\n  height: 560px;\n  float: left;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 25%;\n  height: 280px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  float: left;\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}\n.icon[data-v-4fd40851] {\n  color: #39858a;\n}\n.ms_submit[data-v-4fd40851],\n.ms_back[data-v-4fd40851] {\n  margin: 5px 0;\n  transition: linear 1s;\n  border: none;\n  color: white;\n  padding: 10px 20px;\n  border-radius: 20px;\n  background-color: #39858a;\n}\n.ms_submit[data-v-4fd40851]:hover,\n.ms_back[data-v-4fd40851]:hover {\n  background-color: #7bdee5;\n}", ""]);
 
 // exports
 
@@ -9195,6 +9273,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--8-2!../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Homepage.vue?vue&type=style&index=0&id=00e83377&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Homepage.vue?vue&type=style&index=0&id=00e83377&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--8-2!../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -10722,14 +10830,14 @@ var render = function () {
                 "div",
                 {
                   staticClass:
-                    "d-flex headercenterB justify-content-center align-items-center m-auto",
+                    "d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto",
                 },
                 [
                   _c(
                     "div",
                     {
                       staticClass:
-                        "inputContainer col-9 d-flex justify-content-between",
+                        "inputContainer col-7 col-sm-9 d-flex justify-content-between",
                       class: { search: _vm.scrollEffect },
                       on: {
                         keyup: function ($event) {
@@ -10780,12 +10888,7 @@ var render = function () {
                         _c("i", {
                           staticClass:
                             "fa-solid fa-magnifying-glass searchIcon",
-                          on: {
-                            click: function ($event) {
-                              $event.stopPropagation()
-                              return _vm.filter.apply(null, arguments)
-                            },
-                          },
+                          on: { click: _vm.filter },
                         }),
                       ]),
                       _vm._v(" "),
@@ -10834,14 +10937,15 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("button", { staticClass: "btnSearch" }, [
+                  _c("div", { staticClass: "col-2" }, [
                     _c(
                       "a",
                       {
+                        staticClass: "ms_search",
                         attrs: { href: "#" },
                         on: { click: _vm.ricercaAvanzata },
                       },
-                      [_vm._v("Ricerca  "), _c("br"), _vm._v("Avanzata")]
+                      [_vm._m(1)]
                     ),
                   ]),
                 ]
@@ -10850,150 +10954,157 @@ var render = function () {
               _vm.selectOption === true
                 ? _c(
                     "div",
-                    { staticClass: "row col justify-content-around filter" },
+                    { staticClass: "row col filter d-flex flex-column" },
                     [
-                      _c("label", { attrs: { for: "rooms" } }, [
-                        _vm._v("Numero di Stanze"),
+                      _c("div", [
+                        _c("label", { attrs: { for: "rooms" } }, [
+                          _vm._v("Numero di Stanze"),
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.rooms,
+                              expression: "rooms",
+                            },
+                          ],
+                          attrs: {
+                            type: "number",
+                            min: "1",
+                            max: "10",
+                            id: "rooms",
+                            name: "rooms",
+                          },
+                          domProps: { value: _vm.rooms },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.rooms = $event.target.value
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("label", { attrs: { for: "beds" } }, [
+                          _vm._v("Numero di Letti"),
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.beds,
+                              expression: "beds",
+                            },
+                          ],
+                          attrs: {
+                            type: "number",
+                            min: "1",
+                            max: "6",
+                            id: "beds",
+                            name: "beds",
+                          },
+                          domProps: { value: _vm.beds },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.beds = $event.target.value
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("label", { attrs: { for: "range" } }, [
+                          _vm._v("Raggio di Ricerca"),
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.radius,
+                              expression: "radius",
+                            },
+                          ],
+                          attrs: {
+                            type: "number",
+                            min: "5",
+                            max: "50",
+                            id: "radius",
+                            name: "radius",
+                            step: "5",
+                          },
+                          domProps: { value: _vm.radius },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.radius = $event.target.value
+                            },
+                          },
+                        }),
                       ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.rooms,
-                            expression: "rooms",
-                          },
-                        ],
-                        attrs: {
-                          type: "number",
-                          min: "1",
-                          max: "10",
-                          id: "rooms",
-                          name: "rooms",
-                        },
-                        domProps: { value: _vm.rooms },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.rooms = $event.target.value
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "beds" } }, [
-                        _vm._v("Numero di Letti"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.beds,
-                            expression: "beds",
-                          },
-                        ],
-                        attrs: {
-                          type: "number",
-                          min: "1",
-                          max: "6",
-                          id: "beds",
-                          name: "beds",
-                        },
-                        domProps: { value: _vm.beds },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.beds = $event.target.value
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "range" } }, [
-                        _vm._v("Raggio di Ricerca"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.radius,
-                            expression: "radius",
-                          },
-                        ],
-                        attrs: {
-                          type: "number",
-                          min: "5",
-                          max: "50",
-                          id: "radius",
-                          name: "radius",
-                          step: "5",
-                        },
-                        domProps: { value: _vm.radius },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.radius = $event.target.value
-                          },
-                        },
-                      }),
                       _vm._v(" "),
                       _c(
-                        "span",
-                        {
-                          staticClass: "text-black",
-                          class: { services: !_vm.scrollEffect },
-                        },
-                        [_vm._v("Servizi:")]
+                        "div",
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "text-black mb-2",
+                              class: { services: !_vm.scrollEffect },
+                            },
+                            [_c("strong", [_vm._v("Servizi:")])]
+                          ),
+                          _vm._v(" "),
+                          _vm._l(_vm.services, function (service, index) {
+                            return _c(
+                              "div",
+                              { key: index, staticClass: "services" },
+                              [
+                                _c("input", {
+                                  attrs: {
+                                    type: "checkbox",
+                                    id: "service",
+                                    name: "services[]",
+                                  },
+                                  on: {
+                                    change: function ($event) {
+                                      return _vm.serviceList(index)
+                                    },
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "text-black",
+                                    class: { services: !_vm.scrollEffect },
+                                    attrs: { for: "service" },
+                                  },
+                                  [_vm._v(_vm._s(service.name))]
+                                ),
+                                _c("br"),
+                              ]
+                            )
+                          }),
+                        ],
+                        2
                       ),
-                      _vm._v(" "),
-                      _vm._l(_vm.services, function (service, index) {
-                        return _c(
-                          "div",
-                          { key: index, staticClass: "services" },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "checkbox",
-                                id: "service",
-                                name: "services[]",
-                              },
-                              on: {
-                                change: function ($event) {
-                                  return _vm.serviceList(index)
-                                },
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "label",
-                              {
-                                staticClass: "text-black",
-                                class: { services: !_vm.scrollEffect },
-                                attrs: { for: "service" },
-                              },
-                              [_vm._v(_vm._s(service.name))]
-                            ),
-                            _c("br"),
-                          ]
-                        )
-                      }),
-                    ],
-                    2
+                    ]
                   )
                 : _vm._e(),
             ]
           ),
           _vm._v(" "),
-          _vm._m(1),
+          _vm._m(2),
         ]),
       ]),
     ]
@@ -11005,6 +11116,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/" } }, [_c("span", [_vm._v("Boolbnb")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "btnSearch" }, [
+      _vm._v("Ricerca  "),
+      _c("br"),
+      _vm._v("Avanzata"),
+    ])
   },
   function () {
     var _vm = this
@@ -11082,313 +11203,356 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "m-auto" }, [
-    _c("div", { staticClass: "container-fluid container-lista" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "container-fluid" }, [
+  return _c(
+    "div",
+    { staticClass: "m-auto" },
+    [
+      !_vm.loading
+        ? _c("div", { staticClass: "container-fluid container-lista" }, [
             _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                _vm._l(_vm.apartments, function (apartment) {
-                  return _c(
-                    "div",
-                    { key: apartment.id, staticClass: "card col-12" },
-                    [
-                      apartment.visible &&
-                      apartment.active_sponsorships.length != 0
-                        ? _c(
-                            "div",
-                            {
-                              staticClass:
-                                "sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center",
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-lg-4" },
-                                _vm._l(apartment.images, function (image) {
-                                  return _c("div", { key: image.id }, [
-                                    image.main_image
-                                      ? _c(
-                                          "div",
-                                          { staticClass: "card-immagine" },
-                                          [
-                                            _c("img", {
-                                              staticClass: "border",
-                                              attrs: {
-                                                src: "/storage/" + image.url,
-                                              },
-                                            }),
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                  ])
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _vm._m(1, true),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: " descrizione col-10 col-lg-7" },
-                                [
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
-                                      },
-                                    },
-                                    [_c("h4", [_vm._v(_vm._s(apartment.name))])]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "ul",
-                                    { staticClass: "d-flex" },
-                                    [
-                                      _c("li", [
-                                        _vm._v(
-                                          "stanze " +
-                                            _vm._s(apartment.rooms) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "letti " +
-                                            _vm._s(apartment.beds) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "bagni " +
-                                            _vm._s(apartment.bathrooms) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
+              _c("div", { staticClass: "col-12" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-12" },
+                      _vm._l(_vm.apartments, function (apartment) {
+                        return _c(
+                          "div",
+                          { key: apartment.id, staticClass: "card col-12" },
+                          [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length != 0
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-lg-4" },
                                       _vm._l(
-                                        apartment.services,
-                                        function (service) {
-                                          return _c(
-                                            "span",
-                                            { key: service.id },
-                                            [
-                                              _c("li", [
-                                                _vm._v(
-                                                  _vm._s(service.name) + " •"
-                                                ),
-                                              ]),
-                                            ]
-                                          )
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "card-immagine",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _vm._m(1, true),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
                                         }
                                       ),
-                                    ],
-                                    2
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          " descrizione col-10 col-lg-7 ml-lg-5",
                                       },
-                                    },
-                                    [
-                                      _c("button", [
-                                        _c("a", [
-                                          _c("i", {
-                                            staticClass: "fa-solid fa-eye",
-                                          }),
-                                          _vm._v(
-                                            "\n                                                    Visualizza ulteriori dettagli...\n                                                "
-                                          ),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ],
-                                1
-                              ),
-                            ]
-                          )
-                        : _vm._e(),
-                    ]
-                  )
-                }),
-                0
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "container-fluid" }, [
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "non-sponsored col-12" },
-                _vm._l(_vm.apartments, function (apartment) {
-                  return _c(
-                    "div",
-                    { key: apartment.id, staticClass: "card col-12" },
-                    [
-                      apartment.visible &&
-                      apartment.active_sponsorships.length < 1
-                        ? _c(
-                            "div",
-                            {
-                              staticClass:
-                                "sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5",
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-lg-3" },
-                                _vm._l(apartment.images, function (image) {
-                                  return _c("div", { key: image.id }, [
-                                    image.main_image
-                                      ? _c(
-                                          "div",
+                                      [
+                                        _c(
+                                          "router-link",
                                           {
-                                            staticClass:
-                                              "card-immaginenonSpon col-lg-10",
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
                                           },
                                           [
-                                            _c("img", {
-                                              staticClass: "border",
-                                              attrs: {
-                                                src: "/storage/" + image.url,
-                                              },
-                                            }),
+                                            _c("h4", [
+                                              _vm._v(_vm._s(apartment.name)),
+                                            ]),
                                           ]
-                                        )
-                                      : _vm._e(),
-                                  ])
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "descrizione col-10 col-lg-8 ml-lg-5",
-                                },
-                                [
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
-                                      },
-                                    },
-                                    [_c("h4", [_vm._v(_vm._s(apartment.name))])]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "ul",
-                                    { staticClass: "d-flex" },
-                                    [
-                                      _c("li", [
-                                        _vm._v(
-                                          "stanze " +
-                                            _vm._s(apartment.rooms) +
-                                            " •"
                                         ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "letti " +
-                                            _vm._s(apartment.beds) +
-                                            " •"
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          { staticClass: "d-flex" },
+                                          [
+                                            _c("li", [
+                                              _vm._v(
+                                                "stanze " +
+                                                  _vm._s(apartment.rooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "letti " +
+                                                  _vm._s(apartment.beds) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "bagni " +
+                                                  _vm._s(apartment.bathrooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              apartment.services,
+                                              function (service) {
+                                                return _c(
+                                                  "span",
+                                                  { key: service.id },
+                                                  [
+                                                    _c("li", [
+                                                      _vm._v(
+                                                        _vm._s(service.name) +
+                                                          " •"
+                                                      ),
+                                                    ]),
+                                                  ]
+                                                )
+                                              }
+                                            ),
+                                          ],
+                                          2
                                         ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("li", [
-                                        _vm._v(
-                                          "bagni " +
-                                            _vm._s(apartment.bathrooms) +
-                                            " •"
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _vm._l(
-                                        apartment.services,
-                                        function (service) {
-                                          return _c(
-                                            "span",
-                                            { key: service.id },
-                                            [
-                                              _c("li", [
+                                        _vm._v(" "),
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("button", [
+                                              _c("a", [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa-solid fa-eye",
+                                                }),
                                                 _vm._v(
-                                                  _vm._s(service.name) + " •"
+                                                  "\n                                                    Visualizza ulteriori dettagli...\n                                                "
                                                 ),
                                               ]),
-                                            ]
-                                          )
+                                            ]),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "non-sponsored col-12" },
+                      _vm._l(_vm.apartments, function (apartment) {
+                        return _c(
+                          "div",
+                          { key: apartment.id, staticClass: "card col-12" },
+                          [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length < 1
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-lg-3" },
+                                      _vm._l(
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "card-immaginenonSpon col-lg-12",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
                                         }
                                       ),
-                                    ],
-                                    2
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "SingleApartment",
-                                          params: { slug: apartment.slug },
-                                        },
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "descrizione col-10 col-lg-8 ml-lg-5",
                                       },
-                                    },
-                                    [
-                                      _c("button", [
-                                        _c("a", [
-                                          _c("i", {
-                                            staticClass: "fa-solid fa-eye",
-                                          }),
-                                          _vm._v(
-                                            "\n                                                    Visualizza ulteriori dettagli...\n                                                "
-                                          ),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ],
-                                1
-                              ),
-                            ]
-                          )
-                        : _vm._e(),
-                    ]
-                  )
-                }),
-                0
-              ),
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("h4", [
+                                              _vm._v(_vm._s(apartment.name)),
+                                            ]),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          { staticClass: "d-flex" },
+                                          [
+                                            _c("li", [
+                                              _vm._v(
+                                                "stanze " +
+                                                  _vm._s(apartment.rooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "letti " +
+                                                  _vm._s(apartment.beds) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "bagni " +
+                                                  _vm._s(apartment.bathrooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              apartment.services,
+                                              function (service) {
+                                                return _c(
+                                                  "span",
+                                                  { key: service.id },
+                                                  [
+                                                    _c("li", [
+                                                      _vm._v(
+                                                        _vm._s(service.name) +
+                                                          " •"
+                                                      ),
+                                                    ]),
+                                                  ]
+                                                )
+                                              }
+                                            ),
+                                          ],
+                                          2
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("button", [
+                                              _c("a", [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa-solid fa-eye",
+                                                }),
+                                                _vm._v(
+                                                  "\n                                                    Visualizza ulteriori dettagli...\n                                                "
+                                                ),
+                                              ]),
+                                            ]),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
+                ]),
+              ]),
             ]),
-          ]),
-        ]),
-      ]),
-    ]),
-  ])
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function () {
@@ -11408,7 +11572,9 @@ var staticRenderFns = [
               _c("i", { staticClass: "fa-solid fa-trophy" }),
             ]),
             _vm._v(" "),
-            _c("h2", [_c("strong", [_vm._v("Appartamenti consigliati")])]),
+            _c("h2", { staticClass: "ml-3" }, [
+              _c("strong", [_vm._v("Appartamenti consigliati")]),
+            ]),
           ]
         ),
       ]),
@@ -11418,10 +11584,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-lg-1" }, [
-      _c("span", { staticClass: "star" }, [
-        _c("i", { staticClass: "fa-solid fa-star" }),
-      ]),
+    return _c("span", { staticClass: "star" }, [
+      _c("i", { staticClass: "fa-solid fa-star" }),
     ])
   },
 ]
@@ -11446,195 +11610,210 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "container-fluid ms_apartmentSlider" }, [
-      _c("div", { staticClass: "row d-flex justify-content-center" }, [
-        _c(
-          "div",
-          { staticClass: "col-10" },
-          [
-            _c("h1", [_vm._v("Appartamenti Dei Nostri Migliori Host")]),
+  return _c(
+    "div",
+    [
+      !_vm.loading
+        ? _c("div", [
+            _vm._m(0),
             _vm._v(" "),
-            _c(
-              "vue-horizontal",
-              { staticClass: "my-5" },
-              [
-                _c("div", { staticClass: "item bg-dark" }, [
-                  _c("h3", { staticClass: "ms_logo" }, [
-                    _c("i", { staticClass: "fa-brands fa-airbnb" }),
+            _c("div", { staticClass: "container-fluid ms_apartmentSlider" }, [
+              _c("div", { staticClass: "row d-flex justify-content-center" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-10" },
+                  [
+                    _c("h1", [_vm._v("Appartamenti Dei Nostri Migliori Host")]),
                     _vm._v(" "),
-                    _c("span", [_vm._v("Boolbnb")]),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-dark" }, [
-                    _vm._v("Can be just any HTML declaration"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.apartments, function (apartment) {
-                  return _c("section", { key: apartment.id }, [
-                    apartment.visible &&
-                    apartment.active_sponsorships.length != 0
-                      ? _c(
-                          "div",
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                attrs: {
-                                  to: {
-                                    name: "SingleApartment",
-                                    params: { slug: apartment.slug },
-                                  },
-                                },
-                              },
-                              _vm._l(apartment.images, function (image) {
-                                return _c("div", { key: image.id }, [
-                                  image.main_image
-                                    ? _c("p", { staticClass: "ms_cardImage" }, [
-                                        _c("img", {
-                                          staticClass: "border",
-                                          attrs: {
-                                            src: "/storage/" + image.url,
-                                          },
-                                        }),
-                                      ])
-                                    : _vm._e(),
-                                ])
-                              }),
-                              0
-                            ),
+                    _c(
+                      "vue-horizontal",
+                      { staticClass: "my-5" },
+                      [
+                        _c("div", { staticClass: "item bg-dark" }, [
+                          _c("h3", { staticClass: "ms_logo" }, [
+                            _c("i", { staticClass: "fa-brands fa-airbnb" }),
                             _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                attrs: {
-                                  to: {
-                                    name: "SingleApartment",
-                                    params: { slug: apartment.slug },
-                                  },
-                                },
-                              },
-                              [_c("h5", [_vm._v(_vm._s(apartment.name))])]
+                            _c("span", [_vm._v("Boolbnb")]),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-dark" }, [
+                            _vm._v("Easer Egg. Grazie Antony"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.apartments, function (apartment) {
+                          return _c("section", { key: apartment.id }, [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length != 0
+                              ? _c(
+                                  "div",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: {
+                                            name: "SingleApartment",
+                                            params: { slug: apartment.slug },
+                                          },
+                                        },
+                                      },
+                                      _vm._l(
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "p",
+                                                  {
+                                                    staticClass: "ms_cardImage",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: {
+                                            name: "SingleApartment",
+                                            params: { slug: apartment.slug },
+                                          },
+                                        },
+                                      },
+                                      [
+                                        _c("h5", [
+                                          _vm._v(_vm._s(apartment.name)),
+                                        ]),
+                                      ]
+                                    ),
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("section", [
+                          _c("h3", { staticClass: "text-white" }, [
+                            _vm._v("Navigation Button"),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-white" }, [
+                            _vm._v(
+                              "The navigation button will appear if there is an overflow."
                             ),
-                          ],
-                          1
-                        )
-                      : _vm._e(),
-                  ])
-                }),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [
-                    _vm._v("Navigation Button"),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v(
-                      "The navigation button will appear if there is an overflow."
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("section", [
+                          _c("h3", { staticClass: "text-white" }, [
+                            _vm._v("Navigation Button"),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-white" }, [
+                            _vm._v(
+                              "The navigation button will appear if there is an overflow."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("section", [
+                          _c("h3", { staticClass: "text-white" }, [
+                            _vm._v("Scroll"),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-white" }, [
+                            _vm._v("You can just trackpad to scroll still!"),
+                          ]),
+                        ]),
+                      ],
+                      2
                     ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [
-                    _vm._v("Navigation Button"),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v(
-                      "The navigation button will appear if there is an overflow."
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [_vm._v("Scroll")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v("You can just trackpad to scroll still!"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("section", [
-                  _c("h3", { staticClass: "text-white" }, [
-                    _vm._v("Touch screen"),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white" }, [
-                    _vm._v("Touch screen works too!"),
-                  ]),
-                ]),
-              ],
-              2
-            ),
-          ],
-          1
-        ),
-      ]),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row d-flex justify-content-center" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "ms_citiesContainer container-fluid d-flex flex-column col-10",
-          },
-          [
-            _c("h1", { staticClass: "mb-2" }, [
-              _vm._v("Destinazioni Più Gettonate"),
+                  ],
+                  1
+                ),
+              ]),
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row ms_citiesContainer col-12" },
-              _vm._l(_vm.cities, function (element, index) {
-                return _c(
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row d-flex justify-content-center" }, [
+                _c(
                   "div",
                   {
-                    key: index,
-                    staticClass: "ms_cityCard",
-                    style: { "background-color": _vm.colors[index] },
+                    staticClass:
+                      "ms_citiesContainer container-fluid d-flex flex-column col-10",
                   },
                   [
-                    _c("div", { staticClass: "ms_imageContainer" }, [
-                      _c("img", {
-                        attrs: {
-                          src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
-                            element.image +
-                            ".jpg"),
-                          alt: "",
-                        },
-                      }),
+                    _c("h1", { staticClass: "mb-2" }, [
+                      _vm._v("Destinazioni Più Gettonate"),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "ms_textcity" }, [
-                      _c("h1", { staticClass: "text-white" }, [
-                        _vm._v(_vm._s(element.title)),
-                      ]),
-                      _vm._v(" "),
-                      _c("h4", { staticClass: "text-white" }, [
-                        _vm._v(_vm._s(element.text)),
-                      ]),
-                    ]),
+                    _c(
+                      "div",
+                      { staticClass: "row ms_citiesContainer col-12" },
+                      _vm._l(_vm.cities, function (element, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "ms_cityCard",
+                            style: { "background-color": _vm.colors[index] },
+                          },
+                          [
+                            _c("div", { staticClass: "ms_imageContainer" }, [
+                              _c("img", {
+                                attrs: {
+                                  src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
+                                    element.image +
+                                    ".jpg"),
+                                  alt: "",
+                                },
+                              }),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "ms_textcity" }, [
+                              _c("h1", { staticClass: "text-white" }, [
+                                _vm._v(_vm._s(element.title)),
+                              ]),
+                              _vm._v(" "),
+                              _c("h4", { staticClass: "text-white" }, [
+                                _vm._v(_vm._s(element.text)),
+                              ]),
+                            ]),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
                   ]
-                )
-              }),
-              0
-            ),
-          ]
-        ),
-      ]),
-    ]),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2),
-  ])
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function () {
@@ -11752,6 +11931,39 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=template&id=a3277d48&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Loader.vue?vue&type=template&id=a3277d48&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "loader" }, [
+      _c("div", { staticClass: "loading" }, [_vm._v("Loading...")]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/PageNotFound.vue?vue&type=template&id=a99009b2&scoped=true&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/PageNotFound.vue?vue&type=template&id=a99009b2&scoped=true& ***!
@@ -11838,168 +12050,240 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.loading == true,
-            expression: "loading==true",
-          },
-        ],
-        staticClass: "container",
-      },
-      [_c("img", { attrs: { src: "/storage/loadingPage.gif" } })]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.loading == false,
-            expression: "loading==false",
-          },
-        ],
-        staticClass: "container p-3 singleApartment",
-      },
-      [
-        _c("h1", [_vm._v(_vm._s(_vm.apartment.name))]),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.apartment.address))]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "container containerImages" },
-          _vm._l(_vm.apartment.images, function (image) {
-            return _c("span", { key: image.id }, [
-              image.main_image
-                ? _c("img", {
-                    staticClass: "main-immagine",
-                    attrs: { src: "/storage/" + image.url },
-                  })
-                : _c("img", {
-                    staticClass: "other-immagini",
-                    attrs: { src: "/storage/" + image.url },
-                  }),
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c("h5", [_vm._v(_vm._s(_vm.apartment.description))]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Stanze: " +
-              _vm._s(_vm.apartment.rooms) +
-              " • letti: " +
-              _vm._s(_vm.apartment.beds) +
-              " • bagni: " +
-              _vm._s(_vm.apartment.bathrooms) +
-              " • metri quadrati: " +
-              _vm._s(_vm.apartment.square_meters)
-          ),
-        ]),
-        _vm._v(" "),
-        _c("h2", [_vm._v("Servizi")]),
-        _vm._v(" "),
-        _vm._l(_vm.apartment.services, function (service) {
-          return _c("div", { key: service.id, staticClass: "container" }, [
-            _c("p", [_vm._v(_vm._s(service.name))]),
-          ])
-        }),
-        _vm._v(" "),
-        _c("h4", [
-          _vm._v("Scrivi un messaggio al proprietario dell'appartamento"),
-        ]),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function ($event) {
-                $event.preventDefault()
-                return _vm.sendMail.apply(null, arguments)
+  return _c(
+    "div",
+    [
+      !_vm.loading
+        ? _c("div", [
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.loading == true,
+                    expression: "loading==true",
+                  },
+                ],
+                staticClass: "container",
               },
-            },
-          },
-          [
-            _vm.authUser == 1
-              ? _c("div", [
-                  _c("label", { attrs: { for: "email" } }, [_vm._v("Ciaone!")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "email", id: "email", name: "email" },
-                  }),
-                ])
-              : _c("div", [
-                  _c("label", { attrs: { for: "email" } }, [
-                    _vm._v("Inserisci la tua email:"),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "email", id: "email", name: "email" },
-                  }),
-                ]),
+              [_c("img", { attrs: { src: "/storage/loadingPage.gif" } })]
+            ),
             _vm._v(" "),
-            _c("textarea", {
-              staticClass: "col-8 form-control",
-              attrs: {
-                id: "message",
-                name: "message",
-                placeholder: "Inserisci qui il messaggio",
-              },
-            }),
+            _vm._m(0),
             _vm._v(" "),
-            _c("input", { attrs: { type: "submit", value: "Submit" } }),
-          ]
-        ),
-        _vm._v(" "),
-        _c("button", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function ($event) {
-                  return _vm.$router.back()
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function ($event) {
+                    $event.preventDefault()
+                    return _vm.sendMail()
+                  },
                 },
               },
-            },
-            [_vm._v("\n                Torna indietro  \n        ")]
-          ),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.name,
+                      expression: "formData.name",
+                    },
+                  ],
+                  attrs: { type: "text", id: "name", placeholder: "Nome" },
+                  domProps: { value: _vm.formData.name },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "name", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.lastname,
+                      expression: "formData.lastname",
+                    },
+                  ],
+                  attrs: {
+                    type: "text",
+                    id: "lastname",
+                    placeholder: "Cognome",
+                  },
+                  domProps: { value: _vm.formData.lastname },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "lastname", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.email,
+                      expression: "formData.email",
+                    },
+                  ],
+                  attrs: { type: "email", id: "email", placeholder: "email" },
+                  domProps: { value: _vm.formData.email },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "email", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.object,
+                      expression: "formData.object",
+                    },
+                  ],
+                  attrs: { type: "text", id: "object", placeholder: "Oggetto" },
+                  domProps: { value: _vm.formData.object },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "object", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.content,
+                      expression: "formData.content",
+                    },
+                  ],
+                  staticClass: "col-8 form-control",
+                  attrs: {
+                    name: "content",
+                    id: "content",
+                    placeholder: "Inserisci il testo del tuo messaggio",
+                  },
+                  domProps: { value: _vm.formData.content },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "content", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _vm.formErrors.content
+                  ? _c("div", [
+                      _c(
+                        "ul",
+                        _vm._l(_vm.formErrors.content, function (error, index) {
+                          return _c("li", { key: index }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(error) +
+                                "\n                    "
+                            ),
+                          ])
+                        }),
+                        0
+                      ),
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("button", { attrs: { type: "submit" } }, [
+                  _vm._v("Aggiungi"),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
               {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.messageSent,
-                expression: "messageSent",
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.messageSent,
+                    expression: "messageSent",
+                  },
+                ],
               },
-            ],
-          },
-          [_vm._v("\n            Messaggio inviato!\n        ")]
-        ),
-        _vm._v(" "),
-        _c("div", {
-          staticStyle: { width: "100%", height: "500px", "margin-top": "50px" },
-          attrs: { id: "map" },
-        }),
-      ],
-      2
-    ),
-  ])
+              [
+                _vm._v(
+                  "\n            Il tuo messaggio è stato inviato!\n        "
+                ),
+              ]
+            ),
+            _vm._v(" "),
+            _c("button", [
+              _c(
+                "a",
+                {
+                  on: {
+                    click: function ($event) {
+                      return _vm.$router.back()
+                    },
+                  },
+                },
+                [_vm._v("\n                Torna indietro  \n        ")]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", {
+              staticStyle: {
+                width: "100%",
+                height: "500px",
+                "margin-top": "50px",
+              },
+              attrs: { id: "map" },
+            }),
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { staticClass: "mt-4" }, [
+      _c("span", { staticClass: "icon" }, [
+        _c("i", { staticClass: "fa-solid fa-message" }),
+      ]),
+      _vm._v(
+        "\n            Scrivi un messaggio al proprietario dell'appartamento\n        "
+      ),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -28024,6 +28308,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/Loader.vue":
+/*!***************************************!*\
+  !*** ./resources/js/pages/Loader.vue ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Loader_vue_vue_type_template_id_a3277d48_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue?vue&type=template&id=a3277d48&scoped=true& */ "./resources/js/pages/Loader.vue?vue&type=template&id=a3277d48&scoped=true&");
+/* harmony import */ var _Loader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Loader.vue?vue&type=script&lang=js& */ "./resources/js/pages/Loader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Loader_vue_vue_type_style_index_0_id_a3277d48_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true& */ "./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Loader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Loader_vue_vue_type_template_id_a3277d48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Loader_vue_vue_type_template_id_a3277d48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "a3277d48",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/Loader.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/Loader.vue?vue&type=script&lang=js&":
+/*!****************************************************************!*\
+  !*** ./resources/js/pages/Loader.vue?vue&type=script&lang=js& ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Loader.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true& ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_style_index_0_id_a3277d48_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--8-2!../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=style&index=0&id=a3277d48&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_style_index_0_id_a3277d48_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_style_index_0_id_a3277d48_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_style_index_0_id_a3277d48_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_style_index_0_id_a3277d48_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/Loader.vue?vue&type=template&id=a3277d48&scoped=true&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/pages/Loader.vue?vue&type=template&id=a3277d48&scoped=true& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_template_id_a3277d48_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Loader.vue?vue&type=template&id=a3277d48&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Loader.vue?vue&type=template&id=a3277d48&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_template_id_a3277d48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Loader_vue_vue_type_template_id_a3277d48_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/PageNotFound.vue":
 /*!*********************************************!*\
   !*** ./resources/js/pages/PageNotFound.vue ***!
@@ -29275,7 +29646,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
