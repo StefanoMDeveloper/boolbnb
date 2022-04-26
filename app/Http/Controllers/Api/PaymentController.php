@@ -13,8 +13,15 @@ class PaymentController extends Controller
 {
     public function makePayment(Request $request, Gateway $gateway){
         $data=$request->all();
-        $sponsorship = Sponsorship::find($data['sponsorships'][0]);
-        $price = $sponsorship->price;
+        if(isset($data['sponsorships'])){
+            $sponsorship = Sponsorship::find($data['sponsorships'][0]);
+            $price = $sponsorship->price;
+        } else {
+            $data = [
+                "message" => "Transazione fallita"
+            ];
+            return response()->json($data,401);
+       }
         $apartment = Apartment::find($data['apartment']);
 
        $result = $gateway->transaction()->sale([
