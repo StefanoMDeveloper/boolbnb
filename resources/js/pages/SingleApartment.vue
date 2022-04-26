@@ -1,48 +1,68 @@
 <template>
-    <div >
-        <div v-if="!loading">
-            <div class="container" v-show="loading==true">
-                <img src="/storage/loadingPage.gif">
+    <div>
+        <div class="container" v-show="loading==true">
+            <img src="/storage/loadingPage.gif">
+        </div>
+        <div class="container p-3 singleApartment" v-show="loading==false">
+            <div class="borderline">
+                <h1 class="text-center"><strong>{{apartment.name}}</strong></h1>
+                <p class="text-center">{{apartment.address}}</p>
             </div>
-            <h4 class="mt-4">
-                <span class="icon"><i class="fa-solid fa-message"></i></span>
-                Scrivi un messaggio al proprietario dell&#39;appartamento
-            </h4>            
-            <form @submit.prevent="sendMail()">
-                <input type="text" id="name" v-model="formData.name" placeholder="Nome">
-                <input type="text" id="lastname" v-model="formData.lastname" placeholder="Cognome">
-                <input type="email" id="email" v-model="formData.email" placeholder="email">
-                <input type="text" id="object" v-model="formData.object" placeholder="Oggetto">
-                <textarea name="content" id="content" class="col-8 form-control" v-model="formData.content" placeholder="Inserisci il testo del tuo messaggio"></textarea>
-                <div v-if="formErrors.content">
+            <div class="container containerImages">
+                <span v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo span -->
+                    <img v-if="image.main_image" class="main-immagine" :src="`/storage/${image.url}`">
+                    <img v-else class="other-immagini" :src="`/storage/${image.url}`">
+                </span>
+            </div>
+            <div class="borderdouble">
+                <p>{{apartment.description}}</p>
+                <p class="text-center">Stanze: {{apartment.rooms}} • letti: {{apartment.beds}} • bagni: {{apartment.bathrooms}} • metri quadrati: {{apartment.square_meters}}</p>
+            </div>
+            <div class="borderline">
+                <h2>Servizi</h2>
+                <div v-for="service in apartment.services" :key="service.id" class="container">
                     <ul>
-                        <li v-for="(error,index) in formErrors.content" :key="index">
-                            {{error}}
-                        </li>
+                        <li>{{service.name}}</li>
                     </ul>
                 </div>
-                <button type="submit">Aggiungi</button>
+            </div>
+            <h4>Scrivi un messaggio al proprietario dell&#39;appartamento</h4>
+            <form @submit.prevent='sendMail'>
+                <div v-if="authUser==1">
+                    <label for="email">Ciaone!</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="my-2" v-else>
+                    <label for="email">Inserisci la tua email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <textarea class="col-8 my-2 form-control" id="message" name="message" placeholder="Inserisci qui il messaggio"></textarea>
+                <button type="submit" class="btn backBtn m-1 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">
+                    <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                    Invia Messaggio
+                </button>
             </form>
+            <a @click="$router.back()">
+                <button type="button" class="btn backBtn m-1 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">
+                    <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                    Torna indietro  
+                </button>
+            </a>
+
             <div v-show="messageSent">
-                Il tuo messaggio è stato inviato!
+                Messaggio inviato!
             </div>
 
-            <button>
-            <a @click="$router.back()">
-                    Torna indietro  
-            </a>
-            </button>
-
-            <div id="map" style="width: 100%; height: 500px; margin-top:50px;">
+            <div id="map" style="width: 100%; height: 500px; margin-top:20px;">
 
             </div>
         </div>
-        <Loader v-else/>
     </div>
 </template>
 
 <script>
-import Loader from "./Loader.vue";
 export default {
     name: "SingleApartment",
     data() {
@@ -51,21 +71,8 @@ export default {
             messageSent: false,
             lat: "",
             lon: "",
-            loading: true,
-            mapped:false,
-            formData: {
-                name:"",
-                lastname:"",
-                email:"",
-                object:"",
-                content: "",
-                apartment_id: null
-            },
-            formErrors:{}
+            loading: true
         }
-    },
-    components: {
-        Loader
     },
     created() {
         console.log(this.authUser);
@@ -73,50 +80,63 @@ export default {
         .get(`/api/apartments/${this.$route.params.slug}`)
         .then((response) => {
             this.apartment = response.data;
-            this.formData.apartment_id = this.apartment.id;
             this.lat = parseFloat(this.apartment.lat);
             this.lon = parseFloat(this.apartment.lon);
-            this.loading = false;
         });     
     },
+    mounted(){
+        console.log(this.loading);
+        this.loading = false;
+        console.log(this.loading);
+    },
     updated(){
-        if(!this.mapped && this.lat!=""){
-            let center = [this.lon,this.lat];
-            const map= tt.map({
-                key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
-                container: "map",
-                center: center,
-                zoom: 9
-            })         
-                new tt.Marker().setLngLat(center).addTo(map);  
-            this.mapped = true;    
-        }
+        let center = [this.lon,this.lat];
+        const map= tt.map({
+            key: "5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte",
+            container: "map",
+            center: center,
+            zoom: 9
+        })         
+            new tt.Marker().setLngLat(center).addTo(map);      
     },
     methods: {
+        userLogged(){
+        },
         sendMail(){
-            console.log(this.formData);
             axios
-            .post(`/api/messages/`, this.formData)
-            .then((response)=>{
-                this.formData.name = "";
-                this.formData.lastname = "";
-                this.formData.email = "";
-                this.formData.object = "";
-                this.formData.content = "";
+            .post('/api/messages',this.formData)
+            .then((response) => {
+                this.formData.content = '';
+                this.formData.email = '';
                 this.messageSent = true;
-            })
-            .catch((error)=>{
-                console.log('errori:');
-                console.log(error.response.data);
-                this.formErrors = error.response.data.errors;
-            })
-        }      
-        
+            });
+        }
     }
 };
 </script>
 
 <style lang="scss" scoped>
+
+#email{
+    overflow: visible;
+    border-radius: 10px;
+    list-style-type: none;
+    border: solid 1px #ced4da;
+}
+
+#map{
+    border-radius: 20px;
+}
+.borderline,.borderdouble{
+    border-bottom: 1px solid rgb(193, 192, 192);
+    margin-bottom: 20px;
+
+}
+.borderdouble{
+    margin-top: 20px;
+    padding: 10px;
+}
+
 .singleApartment {
     margin-top: 200px;
 
@@ -147,27 +167,11 @@ img{
 }
 
 h5{
-    padding-top:20px
+    padding-top:20px;
 }
 
-.icon{
-    color: #39858a;
+p{
+    font-size:16px;
+    margin-bottom: 12px;
 }
-.ms_submit,
-.ms_back{
-    margin: 5px 0;
-    transition:linear 1s;
-    border: none;
-    color:white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #39858a;
-     &:hover{
-        background-color: #7bdee5;
-    }
-    
-}
-
-
-
 </style>
