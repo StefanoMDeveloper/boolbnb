@@ -14,7 +14,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
-                                <div v-for="apartment in apartments" :key="apartment.id" class="card col-12">       
+                                <div v-for="apartment in apartmentList" :key="apartment.id" class="card col-12">       
                                     <div v-if="apartment.visible && apartment.active_sponsorships.length != 0" class="sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center">
                                         
                                         <div class="col-lg-4">
@@ -57,7 +57,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="non-sponsored col-12">
-                                <div v-for="apartment in apartments" :key="apartment.id" class="card col-12">   
+                                <div v-for="apartment in apartmentList" :key="apartment.id" class="card col-12">   
                                     <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5">   
                                         <div class="col-lg-3">
                                             <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
@@ -102,25 +102,21 @@
 <script>
 import Loader from "./Loader.vue";
 export default {
-    name: "ApartmentList",
+    name: "Searchresults",
     data() {
         return{
-            apartments: [],
             loading: true,
-
         }
+    },
+    mounted(){
+        this.loading = false
     },
     components: {
     Loader
     },
-    created() {
-        axios
-        .get("/api/apartments")
-        .then((response) => {
-            this.apartments = response.data;
-            this.loading = false;
-        });
-    },
+    props:{
+        apartmentList: Array
+    }
 };
 </script>
 

@@ -31,13 +31,14 @@
                     </div>
                     <div class="col-2">
                       <a class="ms_search" href="#" @click='ricercaAvanzata'>
-                        <button class="btnSearch">Ricerca  <br>Avanzata</button>
+                        <button class="ms_btnSearch">Ricerca  <br>Avanzata</button>
                       </a>
                     </div>
                 </div>
             
             <!-- campi aggiuntivi -->
-              <div v-if="selectOption===true" class="row col filter d-flex flex-column">
+            <div v-show="selectOption" >
+              <div class="row col filter d-flex flex-column">
                 <div>
                   <label for="rooms">Numero di Stanze</label>
                     <input type="number" min="1" max="10" id="rooms" name="rooms" v-model="rooms">
@@ -55,9 +56,9 @@
                   <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
                   </div>
                 </div>
+              </div>              
+            </div>
 
-
-              </div>
               </div>
             
             <!-- header right -->
@@ -154,6 +155,7 @@ export default {
     },
     filter(){
       this.autocompleters = [];
+      this.selectOption = false;
       this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});              
     },
  
@@ -238,18 +240,18 @@ header{
         width: 100%;
         .ms_search{
           text-decoration: none;
-          .btnSearch{
+          .ms_btnSearch{
           min-height: 60px;
-          background-color: hwb(349 17% 45%);
+          background-color: #ff385c;
           border: none;
           border-radius: 25px;
           margin:0 10px;
           padding: 5px 20px;
           text-align: center;
           transition:linear .5s;
-          color: #ff385c;
+          color:white;
           &:hover{
-            background-color: #ff385c;
+            background-color: #df4e69;
             color: white;
           }
         }

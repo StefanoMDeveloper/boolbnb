@@ -8108,7 +8108,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
-/* harmony import */ var vue_horizontal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-horizontal */ "./node_modules/vue-horizontal/dist/vue-horizontal.esm.js");
 var _name$components$data;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -8234,11 +8233,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-
 /* harmony default export */ __webpack_exports__["default"] = (_name$components$data = {
   name: "Homepage",
   components: {
-    VueHorizontal: vue_horizontal__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -8348,6 +8346,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
 //
 //
 //
@@ -8412,6 +8411,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
@@ -8423,6 +8427,9 @@ __webpack_require__.r(__webpack_exports__);
       loading: true
     };
   },
+  components: {
+    Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   created: function created() {
     var _this = this;
 
@@ -8431,12 +8438,8 @@ __webpack_require__.r(__webpack_exports__);
       _this.apartment = response.data;
       _this.lat = parseFloat(_this.apartment.lat);
       _this.lon = parseFloat(_this.apartment.lon);
+      _this.loading = false;
     });
-  },
-  mounted: function mounted() {
-    console.log(this.loading);
-    this.loading = false;
-    console.log(this.loading);
   },
   updated: function updated() {
     var center = [this.lon, this.lat];
@@ -8457,6 +8460,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.formData.content = '';
         _this2.formData.email = '';
         _this2.messageSent = true;
+        _this2.loading = false;
       });
     }
   }
@@ -8514,7 +8518,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: hwb(349 17% 45%);\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: #ff385c;\n}\nheader .header-container .headercenter .headercenterB .ms_search .btnSearch[data-v-1f42fb90]:hover {\n  background-color: #ff385c;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}", ""]);
+exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: #ff385c;\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90]:hover {\n  background-color: #df4e69;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}", ""]);
 
 // exports
 
@@ -11120,7 +11124,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btnSearch" }, [
+    return _c("button", { staticClass: "ms_btnSearch" }, [
       _vm._v("Ricerca  "),
       _c("br"),
       _vm._v("Avanzata"),
@@ -12049,238 +12053,263 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.loading == true,
-            expression: "loading==true",
-          },
-        ],
-        staticClass: "container",
-      },
-      [_c("img", { attrs: { src: "/storage/loadingPage.gif" } })]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.loading == false,
-            expression: "loading==false",
-          },
-        ],
-        staticClass: "container p-3 singleApartment",
-      },
-      [
-        _c("div", { staticClass: "borderline" }, [
-          _c("h1", { staticClass: "text-center" }, [
-            _c("strong", [_vm._v(_vm._s(_vm.apartment.name))]),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-center" }, [
-            _vm._v(_vm._s(_vm.apartment.address)),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "container containerImages" },
-          _vm._l(_vm.apartment.images, function (image) {
-            return _c("span", { key: image.id }, [
-              image.main_image
-                ? _c("img", {
-                    staticClass: "main-immagine",
-                    attrs: { src: "/storage/" + image.url },
-                  })
-                : _c("img", {
-                    staticClass: "other-immagini",
-                    attrs: { src: "/storage/" + image.url },
-                  }),
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "borderdouble" }, [
-          _c("p", [_vm._v(_vm._s(_vm.apartment.description))]),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-center" }, [
-            _vm._v(
-              "Stanze: " +
-                _vm._s(_vm.apartment.rooms) +
-                " • letti: " +
-                _vm._s(_vm.apartment.beds) +
-                " • bagni: " +
-                _vm._s(_vm.apartment.bathrooms) +
-                " • metri quadrati: " +
-                _vm._s(_vm.apartment.square_meters)
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "borderline" },
-          [
-            _c("h2", [_vm._v("Servizi")]),
+  return _c(
+    "div",
+    [
+      !_vm.loading
+        ? _c("div", [
+            _vm._m(0),
             _vm._v(" "),
-            _vm._l(_vm.apartment.services, function (service) {
-              return _c("div", { key: service.id, staticClass: "container" }, [
-                _c("ul", [_c("li", [_vm._v(_vm._s(service.name))])]),
-              ])
-            }),
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c("h4", [
-          _vm._v("Scrivi un messaggio al proprietario dell'appartamento"),
-        ]),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function ($event) {
-                $event.preventDefault()
-                return _vm.sendMail.apply(null, arguments)
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.loading == false,
+                    expression: "loading==false",
+                  },
+                ],
+                staticClass: "container p-3 singleApartment",
               },
-            },
-          },
-          [
-            _vm.authUser == 1
-              ? _c("div", [
-                  _c("label", { attrs: { for: "email" } }, [_vm._v("Ciaone!")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "email", id: "email", name: "email" },
-                  }),
-                ])
-              : _c("div", { staticClass: "my-2" }, [
-                  _c("label", { attrs: { for: "email" } }, [
-                    _vm._v("Inserisci la tua email:"),
+              [
+                _c("div", { staticClass: "borderline" }, [
+                  _c("h1", { staticClass: "text-center" }, [
+                    _c("strong", [_vm._v(_vm._s(_vm.apartment.name))]),
                   ]),
                   _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "email", id: "email", name: "email" },
-                  }),
+                  _c("p", { staticClass: "text-center" }, [
+                    _vm._v(_vm._s(_vm.apartment.address)),
+                  ]),
                 ]),
-            _vm._v(" "),
-            _c("textarea", {
-              staticClass: "col-8 my-2 form-control",
-              attrs: {
-                id: "message",
-                name: "message",
-                placeholder: "Inserisci qui il messaggio",
-              },
-            }),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn backBtn m-1 text-white",
-                attrs: { type: "submit" },
-              },
-              [
+                _vm._v(" "),
                 _c(
-                  "svg",
+                  "div",
+                  { staticClass: "container containerImages" },
+                  _vm._l(_vm.apartment.images, function (image) {
+                    return _c("span", { key: image.id }, [
+                      image.main_image
+                        ? _c("img", {
+                            staticClass: "main-immagine",
+                            attrs: { src: "/storage/" + image.url },
+                          })
+                        : _c("img", {
+                            staticClass: "other-immagini",
+                            attrs: { src: "/storage/" + image.url },
+                          }),
+                    ])
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "borderdouble" }, [
+                  _c("p", [_vm._v(_vm._s(_vm.apartment.description))]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-center" }, [
+                    _vm._v(
+                      "Stanze: " +
+                        _vm._s(_vm.apartment.rooms) +
+                        " • letti: " +
+                        _vm._s(_vm.apartment.beds) +
+                        " • bagni: " +
+                        _vm._s(_vm.apartment.bathrooms) +
+                        " • metri quadrati: " +
+                        _vm._s(_vm.apartment.square_meters)
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "borderline" },
+                  [
+                    _c("h2", [_vm._v("Servizi")]),
+                    _vm._v(" "),
+                    _vm._l(_vm.apartment.services, function (service) {
+                      return _c(
+                        "div",
+                        { key: service.id, staticClass: "container" },
+                        [_c("ul", [_c("li", [_vm._v(_vm._s(service.name))])])]
+                      )
+                    }),
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c("h4", [
+                  _vm._v(
+                    "Scrivi un messaggio al proprietario dell'appartamento"
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "form",
                   {
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      width: "16",
-                      height: "16",
-                      fill: "currentColor",
-                      viewBox: "0 0 256 512",
+                    on: {
+                      submit: function ($event) {
+                        $event.preventDefault()
+                        return _vm.sendMail.apply(null, arguments)
+                      },
                     },
                   },
                   [
-                    _c("path", {
+                    _vm.authUser == 1
+                      ? _c("div", [
+                          _c("label", { attrs: { for: "email" } }, [
+                            _vm._v("Ciaone!"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: {
+                              type: "email",
+                              id: "email",
+                              name: "email",
+                            },
+                          }),
+                        ])
+                      : _c("div", { staticClass: "my-2" }, [
+                          _c("label", { attrs: { for: "email" } }, [
+                            _vm._v("Inserisci la tua email:"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: {
+                              type: "email",
+                              id: "email",
+                              name: "email",
+                            },
+                          }),
+                        ]),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      staticClass: "col-8 my-2 form-control",
                       attrs: {
-                        d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                        id: "message",
+                        name: "message",
+                        placeholder: "Inserisci qui il messaggio",
                       },
                     }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn backBtn m-1 text-white",
+                        attrs: { type: "submit" },
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              width: "16",
+                              height: "16",
+                              fill: "currentColor",
+                              viewBox: "0 0 256 512",
+                            },
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(
+                          "\n                    Invia Messaggio\n                "
+                        ),
+                      ]
+                    ),
                   ]
                 ),
-                _vm._v("\n                Invia Messaggio\n            "),
-              ]
-            ),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            on: {
-              click: function ($event) {
-                return _vm.$router.back()
-              },
-            },
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "btn backBtn m-1 text-white",
-                attrs: { type: "button" },
-              },
-              [
+                _vm._v(" "),
                 _c(
-                  "svg",
+                  "a",
                   {
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      width: "16",
-                      height: "16",
-                      fill: "currentColor",
-                      viewBox: "0 0 256 512",
+                    on: {
+                      click: function ($event) {
+                        return _vm.$router.back()
+                      },
                     },
                   },
                   [
-                    _c("path", {
-                      attrs: {
-                        d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn backBtn m-1 text-white",
+                        attrs: { type: "button" },
                       },
-                    }),
+                      [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              width: "16",
+                              height: "16",
+                              fill: "currentColor",
+                              viewBox: "0 0 256 512",
+                            },
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(
+                          "\n                    Torna indietro  \n                "
+                        ),
+                      ]
+                    ),
                   ]
                 ),
-                _vm._v("\n                Torna indietro  \n            "),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.messageSent,
+                        expression: "messageSent",
+                      },
+                    ],
+                  },
+                  [_vm._v("\n                Messaggio inviato!\n            ")]
+                ),
+                _vm._v(" "),
+                _c("div", {
+                  staticStyle: {
+                    width: "100%",
+                    height: "500px",
+                    "margin-top": "20px",
+                  },
+                  attrs: { id: "map" },
+                }),
               ]
             ),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.messageSent,
-                expression: "messageSent",
-              },
-            ],
-          },
-          [_vm._v("\n            Messaggio inviato!\n        ")]
-        ),
-        _vm._v(" "),
-        _c("div", {
-          staticStyle: { width: "100%", height: "500px", "margin-top": "20px" },
-          attrs: { id: "map" },
-        }),
-      ]
-    ),
-  ])
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("img", { attrs: { src: "/storage/loadingPage.gif" } }),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -28103,6 +28132,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vue_horizontal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-horizontal */ "./node_modules/vue-horizontal/dist/vue-horizontal.esm.js");
 //require('./bootstrap');
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -28112,6 +28142,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
+
+vue__WEBPACK_IMPORTED_MODULE_4___default.a.use(vue_horizontal__WEBPACK_IMPORTED_MODULE_5__["default"]);
 /* const globalVariables = {
     data(){
         return {
@@ -29655,7 +29687,11 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+>>>>>>> e13a70186ffcd003909715167799f2dcbd13aa4f
 
 
 /***/ })

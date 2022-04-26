@@ -30,7 +30,7 @@
                             </div>
                             <section v-for="apartment in apartments" :key="apartment.id">
                                 <div v-if="apartment.visible && apartment.active_sponsorships.length!=0">
-                                    <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">                                
+                                    <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                         <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
                                             <p v-if="image.main_image"  class="ms_cardImage">
                                                 <img  :src="`/storage/${image.url}`"  class="border">
@@ -39,8 +39,8 @@
                                     </router-link>  
                                     <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                         <h5>{{apartment.name}}</h5>
-                                    </router-link>                                                                       
-                                </div>                             
+                                    </router-link>
+                                </div>
                             </section>
                             <section>
                                 <h3 class="text-white">Navigation Button</h3>
@@ -120,10 +120,11 @@
 
 <script>
 import Loader from "./Loader.vue";
-import VueHorizontal from 'vue-horizontal';
 export default {
     name: "Homepage",
-    components: {VueHorizontal},
+    components: {
+        Loader
+    },
     data(){
       return{
           apartments:[],
