@@ -7,7 +7,7 @@
         <h2>{!! \Session::get('message') !!}</h2>
     </div>
 @endif
-<div class="container ">
+<div class="container">
     <div class="d-flex flex-column flex-lg-row">
         <a class="d-lg-none mt-3 mt-lg-0" href="{{ route('admin.apartments.create') }}">
             <button type="button" class="btn plusBtnMobile m-1 text-white">
