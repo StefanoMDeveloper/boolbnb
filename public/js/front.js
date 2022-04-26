@@ -12680,6 +12680,413 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SearchResults.vue?vue&type=template&id=7e5ab916&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SearchResults.vue?vue&type=template&id=7e5ab916&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "m-auto" },
+    [
+      !_vm.loading
+        ? _c("div", { staticClass: "container-fluid container-lista" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-12" },
+                      _vm._l(_vm.apartmentList, function (apartment) {
+                        return _c(
+                          "div",
+                          { key: apartment.id, staticClass: "card col-12" },
+                          [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length != 0
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-lg-4" },
+                                      _vm._l(
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "card-immagine",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _vm._m(1, true),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          " descrizione col-10 col-lg-7 ml-lg-5",
+                                      },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("h4", [
+                                              _vm._v(_vm._s(apartment.name)),
+                                            ]),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          { staticClass: "d-flex" },
+                                          [
+                                            _c("li", [
+                                              _vm._v(
+                                                "stanze " +
+                                                  _vm._s(apartment.rooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "letti " +
+                                                  _vm._s(apartment.beds) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "bagni " +
+                                                  _vm._s(apartment.bathrooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              apartment.services,
+                                              function (service) {
+                                                return _c(
+                                                  "span",
+                                                  { key: service.id },
+                                                  [
+                                                    _c("li", [
+                                                      _vm._v(
+                                                        _vm._s(service.name) +
+                                                          " •"
+                                                      ),
+                                                    ]),
+                                                  ]
+                                                )
+                                              }
+                                            ),
+                                          ],
+                                          2
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("button", [
+                                              _c("a", [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa-solid fa-eye",
+                                                }),
+                                                _vm._v(
+                                                  "\n                                                    Visualizza ulteriori dettagli...\n                                                "
+                                                ),
+                                              ]),
+                                            ]),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "non-sponsored col-12" },
+                      _vm._l(_vm.apartmentList, function (apartment) {
+                        return _c(
+                          "div",
+                          { key: apartment.id, staticClass: "card col-12" },
+                          [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length < 1
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-lg-3" },
+                                      _vm._l(
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "card-immaginenonSpon col-lg-12",
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "descrizione col-10 col-lg-8 ml-lg-5",
+                                      },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("h4", [
+                                              _vm._v(_vm._s(apartment.name)),
+                                            ]),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          { staticClass: "d-flex" },
+                                          [
+                                            _c("li", [
+                                              _vm._v(
+                                                "stanze " +
+                                                  _vm._s(apartment.rooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "letti " +
+                                                  _vm._s(apartment.beds) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "bagni " +
+                                                  _vm._s(apartment.bathrooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              apartment.services,
+                                              function (service) {
+                                                return _c(
+                                                  "span",
+                                                  { key: service.id },
+                                                  [
+                                                    _c("li", [
+                                                      _vm._v(
+                                                        _vm._s(service.name) +
+                                                          " •"
+                                                      ),
+                                                    ]),
+                                                  ]
+                                                )
+                                              }
+                                            ),
+                                          ],
+                                          2
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("button", [
+                                              _c("a", [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa-solid fa-eye",
+                                                }),
+                                                _vm._v(
+                                                  "\n                                                    Visualizza ulteriori dettagli...\n                                                "
+                                                ),
+                                              ]),
+                                            ]),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row trophyText" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 d-flex justify-content-center align-items-center",
+          },
+          [
+            _c("span", { staticClass: "ms_trophy" }, [
+              _c("i", { staticClass: "fa-solid fa-trophy" }),
+            ]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "ml-3" }, [
+              _c("strong", [_vm._v("Appartamenti consigliati")]),
+            ]),
+          ]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "star" }, [
+      _c("i", { staticClass: "fa-solid fa-star" }),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/SingleApartment.vue?vue&type=template&id=4fd40851&scoped=true&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/SingleApartment.vue?vue&type=template&id=4fd40851&scoped=true& ***!
@@ -30598,7 +31005,11 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+=======
 module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+>>>>>>> 7b698940a25a0ddb94b44e21c20c5773160cdd15
 
 
 /***/ })
