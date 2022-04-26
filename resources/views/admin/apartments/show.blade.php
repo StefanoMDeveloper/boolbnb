@@ -63,12 +63,14 @@
             {{ $apartment->address }}
         </li>
         
-        <div class="imagesContainer borderline d-flex justify-content-center">
-            @foreach ($apartment->images as $image)
-                <div class="imageContainer">
+        <div class="imagesContainer borderline pb-2">
+            @forelse ($apartment->images as $image)
+                <div class="imageContainer d-flex justify-content-center">
                     <img src="{{asset( 'storage/'.$image->url )}}" alt="">
                 </div>
-            @endforeach
+                @empty
+                Non si sono immagini!
+            @endforelse 
         </div>
         
         <div class="m-0">
@@ -80,9 +82,11 @@
                 Servizi
             </h3>
             <ul class="borderline">
-                @foreach ($apartment->services as $service)
+                @forelse ($apartment->services as $service)
                     <li>{{ $service->name }}</li>
-                @endforeach
+                    @empty
+                    Non si sono servizi!
+                @endforelse 
             </ul>
         </div>
 

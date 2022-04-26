@@ -12010,9 +12010,11 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("li", [
-              _c("a", { staticClass: "link-404", attrs: { href: "/s/all" } }, [
-                _vm._v("Appartamenti"),
-              ]),
+              _c(
+                "a",
+                { staticClass: "link-404", attrs: { href: "/appartamenti" } },
+                [_vm._v("Appartamenti")]
+              ),
             ]),
           ]),
         ]),
@@ -29675,7 +29677,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
