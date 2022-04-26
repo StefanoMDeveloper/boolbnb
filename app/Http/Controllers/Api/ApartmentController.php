@@ -51,10 +51,7 @@ class ApartmentController extends Controller
         }
 
         //First gross filter
-        $apartments = Apartment::all()->whereBetween('lat', [$lat-0.5, $lat+0.5])->whereBetween('lon', [$lon-0.5, $lon+0.5]);
-        if(empty($apartments)){
-            return response()->json(["message"=>"Nessun appartamento."]);
-        }
+        $apartments = Apartment::with(["images", "active_sponsorships", "services"])->get();
 
         //filter by beds
         $filteredApartments=[];

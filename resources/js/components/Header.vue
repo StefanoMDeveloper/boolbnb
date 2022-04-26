@@ -22,7 +22,7 @@
                 <div class="d-flex headercenterB justify-content-sm-center justify-content-start   align-items-center m-auto">
                     <div class="inputContainer col-7 col-sm-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
-                      <div class="col-2 p-0 ms_icon"><i @click.stop="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
+                      <div class="col-2 p-0 ms_icon"><i @click="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
                             {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
@@ -140,10 +140,10 @@ export default {
     },
     serviceList(counter){
       if(document.querySelectorAll("#service")[counter].checked){
-          this.servicesList += counter + "-";
+          this.servicesList += (counter+1) + "-";
         }
          else{
-        this.servicesList=this.servicesList.replace(counter+"-","");
+        this.servicesList=this.servicesList.replace((counter+1)+"-","");
       }
     },
     filter(){

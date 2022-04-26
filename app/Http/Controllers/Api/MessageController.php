@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use App\Message;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class MessageController extends Controller
 {
     public function store(Request $request){
         $data = $request->all();
-
+        
         // validazione
         $validator = Validator::make($data, [
             'name' => 'required|string|max:20',
