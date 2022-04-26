@@ -31,7 +31,11 @@ export default{
                 .get("api/apartments/filter/search="+data.search+"&radius="+data.radius*1000+"&beds="+data.beds+"&rooms="+ data.rooms+"&lat="+data.lat+"&lon="+data.lon+"&services="+ data.servicesList)  
                 .then((response) => {
                     this.filteredApartments = response.data;
-                });             
+                });    
+                if(this.$route.path != '/risultati-ricerca'){
+                    this.$router.push('/risultati-ricerca');      
+                }
+   
         }
     },
     computed:{
