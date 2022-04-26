@@ -13,6 +13,7 @@ class PaymentController extends Controller
 {
     public function makePayment(Request $request, Gateway $gateway){
         $data=$request->all();
+        
         if(isset($data['sponsorships'])){
             $sponsorship = Sponsorship::find($data['sponsorships'][0]);
             $price = $sponsorship->price;
