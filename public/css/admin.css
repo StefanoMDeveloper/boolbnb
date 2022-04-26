@@ -14222,6 +14222,8 @@ a .plusBtnMobile:hover {
   background-color: #FF385C;
   transition: linear 1s;
   border: none;
+  min-height: 50px;
+  border-radius: 10px;
 }
 
 .editContainer .saveBtn:hover {
@@ -14231,6 +14233,8 @@ a .plusBtnMobile:hover {
 .editContainer .cancelBtn {
   transition: linear 1s;
   border: none;
+  border-radius: 10px;
+  height: 50px !important;
 }
 
 .editContainer .cancelBtn:hover {
@@ -14438,6 +14442,23 @@ a span {
 
 .linkContainer:hover .iconHome {
   padding: 17px;
+}
+
+button {
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+h2 {
+  color: #39858a;
 }
 
 main {

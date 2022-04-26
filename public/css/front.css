@@ -14222,6 +14222,8 @@ a .plusBtnMobile:hover {
   background-color: #FF385C;
   transition: linear 1s;
   border: none;
+  min-height: 50px;
+  border-radius: 10px;
 }
 
 .editContainer .saveBtn:hover {
@@ -14231,6 +14233,8 @@ a .plusBtnMobile:hover {
 .editContainer .cancelBtn {
   transition: linear 1s;
   border: none;
+  border-radius: 10px;
+  height: 50px !important;
 }
 
 .editContainer .cancelBtn:hover {
