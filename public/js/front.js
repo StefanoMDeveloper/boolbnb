@@ -8346,6 +8346,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
 //
 //
 //
@@ -8410,6 +8411,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
   data: function data() {
@@ -8421,6 +8427,9 @@ __webpack_require__.r(__webpack_exports__);
       loading: true
     };
   },
+  components: {
+    Loader: _Loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   created: function created() {
     var _this = this;
 
@@ -8429,12 +8438,8 @@ __webpack_require__.r(__webpack_exports__);
       _this.apartment = response.data;
       _this.lat = parseFloat(_this.apartment.lat);
       _this.lon = parseFloat(_this.apartment.lon);
+      _this.loading = false;
     });
-  },
-  mounted: function mounted() {
-    console.log(this.loading);
-    this.loading = false;
-    console.log(this.loading);
   },
   updated: function updated() {
     var center = [this.lon, this.lat];
@@ -8455,6 +8460,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.formData.content = '';
         _this2.formData.email = '';
         _this2.messageSent = true;
+        _this2.loading = false;
       });
     }
   }
@@ -12047,238 +12053,263 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.loading == true,
-            expression: "loading==true",
-          },
-        ],
-        staticClass: "container",
-      },
-      [_c("img", { attrs: { src: "/storage/loadingPage.gif" } })]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.loading == false,
-            expression: "loading==false",
-          },
-        ],
-        staticClass: "container p-3 singleApartment",
-      },
-      [
-        _c("div", { staticClass: "borderline" }, [
-          _c("h1", { staticClass: "text-center" }, [
-            _c("strong", [_vm._v(_vm._s(_vm.apartment.name))]),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-center" }, [
-            _vm._v(_vm._s(_vm.apartment.address)),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "container containerImages" },
-          _vm._l(_vm.apartment.images, function (image) {
-            return _c("span", { key: image.id }, [
-              image.main_image
-                ? _c("img", {
-                    staticClass: "main-immagine",
-                    attrs: { src: "/storage/" + image.url },
-                  })
-                : _c("img", {
-                    staticClass: "other-immagini",
-                    attrs: { src: "/storage/" + image.url },
-                  }),
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "borderdouble" }, [
-          _c("p", [_vm._v(_vm._s(_vm.apartment.description))]),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-center" }, [
-            _vm._v(
-              "Stanze: " +
-                _vm._s(_vm.apartment.rooms) +
-                " • letti: " +
-                _vm._s(_vm.apartment.beds) +
-                " • bagni: " +
-                _vm._s(_vm.apartment.bathrooms) +
-                " • metri quadrati: " +
-                _vm._s(_vm.apartment.square_meters)
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "borderline" },
-          [
-            _c("h2", [_vm._v("Servizi")]),
+  return _c(
+    "div",
+    [
+      !_vm.loading
+        ? _c("div", [
+            _vm._m(0),
             _vm._v(" "),
-            _vm._l(_vm.apartment.services, function (service) {
-              return _c("div", { key: service.id, staticClass: "container" }, [
-                _c("ul", [_c("li", [_vm._v(_vm._s(service.name))])]),
-              ])
-            }),
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c("h4", [
-          _vm._v("Scrivi un messaggio al proprietario dell'appartamento"),
-        ]),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function ($event) {
-                $event.preventDefault()
-                return _vm.sendMail.apply(null, arguments)
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.loading == false,
+                    expression: "loading==false",
+                  },
+                ],
+                staticClass: "container p-3 singleApartment",
               },
-            },
-          },
-          [
-            _vm.authUser == 1
-              ? _c("div", [
-                  _c("label", { attrs: { for: "email" } }, [_vm._v("Ciaone!")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "email", id: "email", name: "email" },
-                  }),
-                ])
-              : _c("div", { staticClass: "my-2" }, [
-                  _c("label", { attrs: { for: "email" } }, [
-                    _vm._v("Inserisci la tua email:"),
+              [
+                _c("div", { staticClass: "borderline" }, [
+                  _c("h1", { staticClass: "text-center" }, [
+                    _c("strong", [_vm._v(_vm._s(_vm.apartment.name))]),
                   ]),
                   _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "email", id: "email", name: "email" },
-                  }),
+                  _c("p", { staticClass: "text-center" }, [
+                    _vm._v(_vm._s(_vm.apartment.address)),
+                  ]),
                 ]),
-            _vm._v(" "),
-            _c("textarea", {
-              staticClass: "col-8 my-2 form-control",
-              attrs: {
-                id: "message",
-                name: "message",
-                placeholder: "Inserisci qui il messaggio",
-              },
-            }),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn backBtn m-1 text-white",
-                attrs: { type: "submit" },
-              },
-              [
+                _vm._v(" "),
                 _c(
-                  "svg",
+                  "div",
+                  { staticClass: "container containerImages" },
+                  _vm._l(_vm.apartment.images, function (image) {
+                    return _c("span", { key: image.id }, [
+                      image.main_image
+                        ? _c("img", {
+                            staticClass: "main-immagine",
+                            attrs: { src: "/storage/" + image.url },
+                          })
+                        : _c("img", {
+                            staticClass: "other-immagini",
+                            attrs: { src: "/storage/" + image.url },
+                          }),
+                    ])
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "borderdouble" }, [
+                  _c("p", [_vm._v(_vm._s(_vm.apartment.description))]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-center" }, [
+                    _vm._v(
+                      "Stanze: " +
+                        _vm._s(_vm.apartment.rooms) +
+                        " • letti: " +
+                        _vm._s(_vm.apartment.beds) +
+                        " • bagni: " +
+                        _vm._s(_vm.apartment.bathrooms) +
+                        " • metri quadrati: " +
+                        _vm._s(_vm.apartment.square_meters)
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "borderline" },
+                  [
+                    _c("h2", [_vm._v("Servizi")]),
+                    _vm._v(" "),
+                    _vm._l(_vm.apartment.services, function (service) {
+                      return _c(
+                        "div",
+                        { key: service.id, staticClass: "container" },
+                        [_c("ul", [_c("li", [_vm._v(_vm._s(service.name))])])]
+                      )
+                    }),
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c("h4", [
+                  _vm._v(
+                    "Scrivi un messaggio al proprietario dell'appartamento"
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "form",
                   {
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      width: "16",
-                      height: "16",
-                      fill: "currentColor",
-                      viewBox: "0 0 256 512",
+                    on: {
+                      submit: function ($event) {
+                        $event.preventDefault()
+                        return _vm.sendMail.apply(null, arguments)
+                      },
                     },
                   },
                   [
-                    _c("path", {
+                    _vm.authUser == 1
+                      ? _c("div", [
+                          _c("label", { attrs: { for: "email" } }, [
+                            _vm._v("Ciaone!"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: {
+                              type: "email",
+                              id: "email",
+                              name: "email",
+                            },
+                          }),
+                        ])
+                      : _c("div", { staticClass: "my-2" }, [
+                          _c("label", { attrs: { for: "email" } }, [
+                            _vm._v("Inserisci la tua email:"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: {
+                              type: "email",
+                              id: "email",
+                              name: "email",
+                            },
+                          }),
+                        ]),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      staticClass: "col-8 my-2 form-control",
                       attrs: {
-                        d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                        id: "message",
+                        name: "message",
+                        placeholder: "Inserisci qui il messaggio",
                       },
                     }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn backBtn m-1 text-white",
+                        attrs: { type: "submit" },
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              width: "16",
+                              height: "16",
+                              fill: "currentColor",
+                              viewBox: "0 0 256 512",
+                            },
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(
+                          "\n                    Invia Messaggio\n                "
+                        ),
+                      ]
+                    ),
                   ]
                 ),
-                _vm._v("\n                Invia Messaggio\n            "),
-              ]
-            ),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            on: {
-              click: function ($event) {
-                return _vm.$router.back()
-              },
-            },
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "btn backBtn m-1 text-white",
-                attrs: { type: "button" },
-              },
-              [
+                _vm._v(" "),
                 _c(
-                  "svg",
+                  "a",
                   {
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      width: "16",
-                      height: "16",
-                      fill: "currentColor",
-                      viewBox: "0 0 256 512",
+                    on: {
+                      click: function ($event) {
+                        return _vm.$router.back()
+                      },
                     },
                   },
                   [
-                    _c("path", {
-                      attrs: {
-                        d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn backBtn m-1 text-white",
+                        attrs: { type: "button" },
                       },
-                    }),
+                      [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              width: "16",
+                              height: "16",
+                              fill: "currentColor",
+                              viewBox: "0 0 256 512",
+                            },
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d: "M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(
+                          "\n                    Torna indietro  \n                "
+                        ),
+                      ]
+                    ),
                   ]
                 ),
-                _vm._v("\n                Torna indietro  \n            "),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.messageSent,
+                        expression: "messageSent",
+                      },
+                    ],
+                  },
+                  [_vm._v("\n                Messaggio inviato!\n            ")]
+                ),
+                _vm._v(" "),
+                _c("div", {
+                  staticStyle: {
+                    width: "100%",
+                    height: "500px",
+                    "margin-top": "20px",
+                  },
+                  attrs: { id: "map" },
+                }),
               ]
             ),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.messageSent,
-                expression: "messageSent",
-              },
-            ],
-          },
-          [_vm._v("\n            Messaggio inviato!\n        ")]
-        ),
-        _vm._v(" "),
-        _c("div", {
-          staticStyle: { width: "100%", height: "500px", "margin-top": "20px" },
-          attrs: { id: "map" },
-        }),
-      ]
-    ),
-  ])
+          ])
+        : _c("Loader"),
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("img", { attrs: { src: "/storage/loadingPage.gif" } }),
+    ])
+  },
+]
 render._withStripped = true
 
 
