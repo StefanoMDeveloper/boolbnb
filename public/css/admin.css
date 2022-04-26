@@ -14445,7 +14445,7 @@ a span {
 }
 
 button {
-  background-color: #FF385C;
+  background-color: #ffcc00;
   transition: linear 1s;
   border: none;
   color: white;
@@ -14455,6 +14455,19 @@ button {
 
 button:hover {
   background-color: hwb(349 17% 45%);
+}
+
+.sponsorAttivo {
+  color: #885500;
+}
+
+.sponsorDettagli {
+  color: black;
+}
+
+.tirchioMegalomane {
+  width: 80vw;
+  height: 80vh;
 }
 
 h2 {

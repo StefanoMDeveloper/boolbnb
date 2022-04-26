@@ -27643,6 +27643,7 @@ var map = {
 	"./ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg": "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg",
 	"./RRTZZJnWAS9v8jzuukOUup293SN2nEL7qOxwlmvR.jpg": "./storage/app/public/uploads/RRTZZJnWAS9v8jzuukOUup293SN2nEL7qOxwlmvR.jpg",
 	"./W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg": "./storage/app/public/uploads/W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg",
+	"./Zio-Paperone-e-i-soldi.jpg": "./storage/app/public/uploads/Zio-Paperone-e-i-soldi.jpg",
 	"./ap10p1.jpg": "./storage/app/public/uploads/ap10p1.jpg",
 	"./ap10p2.jpg": "./storage/app/public/uploads/ap10p2.jpg",
 	"./ap10p3.jpg": "./storage/app/public/uploads/ap10p3.jpg",
@@ -28668,6 +28669,17 @@ module.exports = "/images/W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg?a2e809708
 
 /***/ }),
 
+/***/ "./storage/app/public/uploads/Zio-Paperone-e-i-soldi.jpg":
+/*!***************************************************************!*\
+  !*** ./storage/app/public/uploads/Zio-Paperone-e-i-soldi.jpg ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/Zio-Paperone-e-i-soldi.jpg?a5135a00475de28a9859bb04b2b9d54e";
+
+/***/ }),
+
 /***/ "./storage/app/public/uploads/ap10p1.jpg":
 /*!***********************************************!*\
   !*** ./storage/app/public/uploads/ap10p1.jpg ***!
@@ -29643,7 +29655,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
