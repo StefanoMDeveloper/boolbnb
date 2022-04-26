@@ -40,6 +40,10 @@ class Apartment extends Model
 
     public function active_sponsorships(){
         $currentDate = date('Y-m-d');
+<<<<<<< HEAD
+        return $this->sponsorships()->withPivot('start_date','end_date')->where('start_date','<=' , $currentDate)->where('end_date', '>=', $currentDate);
+=======
         return $this->sponsorships()->using('App\ApartmentSponsorship')->withPivot('start_date','end_date')->where('start_date','<=' , $currentDate)->where('end_date', '>=', $currentDate);
+>>>>>>> e13a70186ffcd003909715167799f2dcbd13aa4f
     }
 }
