@@ -27,11 +27,11 @@
                         <div class="ms_icon mr-2"><i class="fa-solid fa-circle-info"></i></div>
                         <p class="ms_description">{{apartment.description}}</p>
                     </div>
-                    <div class="text-center col-lg-9 d-flex justify-content-around m-auto">
-                        <div class="ms_card"><span class="ms_icon mr-2"><i class="fa-solid fa-person-shelter"></i></span><p>Stanze: {{apartment.rooms}}</p></div>  
-                        <div class="ms_card"><span class="ms_icon mr-2"><i class="fa-solid fa-bed"></i></span><p>letti: {{apartment.beds}}</p></div>   
-                        <div class="ms_card"><span class="ms_icon mr-2"><i class="fa-solid fa-toilet"></i></span><p>bagni: {{apartment.bathrooms}}</p></div>  
-                        <div class="ms_card">
+                    <div class="text-center col-12 col-lg-12 d-flex justify-content-center flex-wrap m-auto">
+                        <div class="ms_card col-5 col-lg-2 m-2"><span class="ms_icon mr-2"><i class="fa-solid fa-person-shelter"></i></span><p>Stanze: {{apartment.rooms}}</p></div>  
+                        <div class="ms_card col-5 col-lg-2 m-2"><span class="ms_icon mr-2"><i class="fa-solid fa-bed"></i></span><p>letti: {{apartment.beds}}</p></div>   
+                        <div class="ms_card col-5 col-lg-2 m-2"><span class="ms_icon mr-2"><i class="fa-solid fa-toilet"></i></span><p>bagni: {{apartment.bathrooms}}</p></div>  
+                        <div class="ms_card col-5 col-lg-2 m-2">
                             <span class="ms_icon mr-2"><i class="fa-solid fa-maximize"></i></span><p> metri quadrati: {{apartment.square_meters}}</p>
                         </div>
                     </div>
@@ -50,9 +50,9 @@
                 <form @submit.prevent="sendMail()">
                     <input type="text" id="name" v-model="formData.name" placeholder="Nome">
                     <input type="text" id="lastname" v-model="formData.lastname" placeholder="Cognome">
-                    <input type="email" id="email" v-model="formData.email" placeholder="email">
+                    <input type="email" id="email" class="ms_email" v-model="formData.email" placeholder="email">
                     <input type="text" id="object" v-model="formData.object" placeholder="Oggetto">
-                    <textarea name="content" id="content" class="col-8 form-control" v-model="formData.content" placeholder="Inserisci il testo del tuo messaggio"></textarea>
+                    <textarea name="content" id="content" class="col-8 form-control mt-3" v-model="formData.content" placeholder="Inserisci il testo del tuo messaggio"></textarea>
                     <div v-if="formErrors.content">
                         <ul>
                             <li v-for="(error,index) in formErrors.content" :key="index">
@@ -60,13 +60,13 @@
                             </li>
                         </ul>
                     </div>
-                    <button type="submit">Aggiungi</button>
+                    <button class="ms_Btn mt-2" type="submit">Aggiungi</button>
                 </form>
                 <div v-show="messageSent">
                     Il tuo messaggio è stato inviato!
                 </div>
 
-                <button>
+                <button class="ms_Btn mt-2">
                 <a @click="$router.back()">
                         Torna indietro  
                 </a>
@@ -160,10 +160,8 @@ export default {
 <style lang="scss" scoped>
 
 #email{
-    overflow: visible;
-    border-radius: 10px;
+    overflow: visible; 
     list-style-type: none;
-    border: solid 1px #ced4da;
 }
 
 #map{
@@ -269,6 +267,8 @@ p{
 .ms_description{
     line-height: 45px;
     font-size: 23px;
+    text-align: justify;
+  text-justify: inter-word;
 }
 
 .fa-circle-info{
@@ -298,4 +298,19 @@ p{
 .ms_card .ms_icon{
     font-size: 30px;
 }
+
+.ms_Btn{
+    background-color:#39858a ;
+    transition:linear 1s;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 5px;
+    width: 200px;
+    &:hover{
+        background-color: #1c4144;
+    }
+}
+
+
 </style>
