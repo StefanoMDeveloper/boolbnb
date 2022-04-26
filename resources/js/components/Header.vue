@@ -37,7 +37,7 @@
                 </div>
             
             <!-- campi aggiuntivi -->
-              <div v-if="selectOption===true" class="row col filter">
+              <div v-if="selectOption===true" class="row col filter d-flex flex-column">
                 <div>
                   <label for="rooms">Numero di Stanze</label>
                     <input type="number" min="1" max="10" id="rooms" name="rooms" v-model="rooms">
@@ -49,7 +49,7 @@
 
                 <div>
                   <!--services  -->
-                  <div class="text-black" :class="{ 'services': !scrollEffect }"> Servizi:</div>
+                  <div class="text-black mb-2" :class="{ 'services': !scrollEffect }"><strong>Servizi:</strong></div>
                   <div class="services" v-for="(service,index) in services" :key="index">
                     <input type="checkbox" id="service" name="services[]" @change="serviceList(index)">
                   <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
@@ -398,6 +398,12 @@ select{
     color: white;
     width: 100%;
   }
+}
+
+input[type=number]{
+  width: 50px;
+  margin-right: 5px;
+
 }
 
 
