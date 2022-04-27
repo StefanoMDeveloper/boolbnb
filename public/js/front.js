@@ -7660,6 +7660,7 @@ __webpack_require__.r(__webpack_exports__);
     filterApartments: function filterApartments(data) {
       var _this = this;
 
+      console.log("arrivato");
       data.servicesList = data.servicesList.slice(0, -1);
       console.log("/api/apartments/filter/search=" + data.search + "&radius=" + data.radius * 1000 + "&beds=" + data.beds + "&rooms=" + data.rooms + "&lat=" + data.lat + "&lon=" + data.lon + "&services=" + data.servicesList);
       axios.get("api/apartments/filter/search=" + data.search + "&radius=" + data.radius * 1000 + "&beds=" + data.beds + "&rooms=" + data.rooms + "&lat=" + data.lat + "&lon=" + data.lon + "&services=" + data.servicesList).then(function (response) {
@@ -7914,13 +7915,11 @@ __webpack_require__.r(__webpack_exports__);
     filter: function filter() {
       this.autocompleters = [];
       this.selectOption = false;
-      console.log(this.servicesList == "");
 
       if (this.servicesList == "") {
         this.servicesList = "0-";
       }
 
-      console.log(this.servicesList);
       this.$emit('filter', {
         "search": this.search,
         "lat": this.searchLat,
@@ -8259,20 +8258,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       colors: ['#DE3151', '#BC1A6E', '#CC2D4A', '#D93B30'],
       cities: [{
         image: "city1",
-        title: "Napoli",
-        text: "189 chilometri di distanza"
+        title: "Milano",
+        text: "189 chilometri di distanza",
+        lat: 45.46362,
+        lon: 9.18812
       }, {
         image: "city2",
-        title: "Bologna",
-        text: "303 chilometri di distanza"
+        title: "Roma",
+        text: "303 chilometri di distanza",
+        lat: 41.89056,
+        lon: 12.49427
       }, {
         image: "city3",
-        title: "Roccaraso",
-        text: "132 chilometri di distanza"
+        title: "Napoli",
+        text: "132 chilometri di distanza",
+        lat: 40.83998,
+        lon: 14.25254
       }, {
         image: "city4",
-        title: "Verona",
-        text: "411 chilometri di distanza"
+        title: "Firenze",
+        text: "411 chilometri di distanza",
+        lat: 43.7687,
+        lon: 11.25693
       }],
       loading: true
     };
@@ -8288,6 +8295,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   });
 }), _defineProperty(_name$components$data, "props", {
   apartmentList: Array
+}), _defineProperty(_name$components$data, "methods", {
+  specialFilter: function specialFilter(index) {
+    console.log("partito?");
+    this.$parent.$emit('specialfilter', {
+      "search": this.cities[index].title,
+      "lat": this.cities[index].lat,
+      "lon": this.cities[index].lon,
+      "beds": 1,
+      "rooms": 1,
+      "radius": 20,
+      "servicesList": "0-"
+    });
+  }
 }), _name$components$data);
 
 /***/ }),
@@ -8616,6 +8636,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
@@ -8777,7 +8824,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n  filter: grayscale(50%);\n}\n.ms_apartmentSlider .ms_cardImage:hover img[data-v-00e83377] {\n  filter: grayscale(0%);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 30px 0;\n  padding: 0;\n}\n.ms_citiesContainer[data-v-00e83377]:hover {\n  padding-bottom: 5px;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 300px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 167px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 10px 20px;\n}\n@media only screen and (min-width: 712px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 30px 0;\n    padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(50% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 300px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 167px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 10px 20px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 40px 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(25% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 400px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 200px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 20px;\n}\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 78px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 0;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 30px;\n  font-size: 40px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_experienceContainer[data-v-00e83377] {\n    margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n    padding: 20px 10px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n    font-size: 60px;\n    position: absolute;\n    top: 80px;\n    left: 60px;\n}\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 50px auto;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n  font-size: 40px;\n  padding-bottom: 50px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}\n@media only screen and (min-width: 1200px) {\n.ms_giftContainer[data-v-00e83377] {\n    margin: 100px auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n    font-size: 45px;\n    padding-bottom: 0;\n}\n}", ""]);
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n  filter: grayscale(50%);\n}\n.ms_apartmentSlider .ms_cardImage:hover img[data-v-00e83377] {\n  filter: grayscale(0%);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 30px 0;\n  padding: 0;\n}\n.ms_citiesContainer[data-v-00e83377]:hover {\n  padding-bottom: 5px;\n  cursor: pointer;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 300px;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 167px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 10px 20px;\n}\n@media only screen and (min-width: 712px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 30px 0;\n    padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(50% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 300px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 167px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 10px 20px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 40px 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(25% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 400px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 200px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 20px;\n}\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 78px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 0;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 30px;\n  font-size: 40px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_experienceContainer[data-v-00e83377] {\n    margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n    padding: 20px 10px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n    font-size: 60px;\n    position: absolute;\n    top: 80px;\n    left: 60px;\n}\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 50px auto;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n  font-size: 40px;\n  padding-bottom: 50px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}\n@media only screen and (min-width: 1200px) {\n.ms_giftContainer[data-v-00e83377] {\n    margin: 100px auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n    font-size: 45px;\n    padding-bottom: 0;\n}\n}", ""]);
 
 // exports
 
@@ -8853,7 +8900,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#email[data-v-4fd40851] {\n  overflow: visible;\n  list-style-type: none;\n}\n#map[data-v-4fd40851] {\n  border-radius: 20px;\n}\n.borderline[data-v-4fd40851], .borderdouble[data-v-4fd40851] {\n  border-bottom: 1px solid rgb(193, 192, 192);\n  margin-bottom: 20px;\n}\n.borderdouble[data-v-4fd40851] {\n  margin-top: 20px;\n  padding: 10px;\n}\n.singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  min-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n}\n.main-immagine img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media only screen and (min-width: 1200px) {\n.main-immagine[data-v-4fd40851] {\n    width: 50%;\n    height: 560px;\n    float: left;\n    overflow: hidden;\n}\n.main-immagine img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.main-immagine:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n.other-immagini[data-v-4fd40851] {\n    width: 25%;\n    height: 280px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    float: left;\n    overflow: hidden;\n}\n.other-immagini img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.other-immagini:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}\np[data-v-4fd40851] {\n  font-size: 16px;\n  margin-bottom: 12px;\n}\n.ms_icon[data-v-4fd40851] {\n  color: #39858a;\n}\n.ms_description[data-v-4fd40851] {\n  line-height: 45px;\n  font-size: 23px;\n  text-align: justify;\n  text-justify: inter-word;\n}\n.fa-circle-info[data-v-4fd40851] {\n  font-size: 32px;\n}\n.fa-bell-concierge[data-v-4fd40851] {\n  font-size: 25px;\n}\n.backBtn[data-v-4fd40851] {\n  width: 150px;\n}\n.ms_card[data-v-4fd40851] {\n  height: 150px;\n  width: 150px;\n  border-radius: 20px;\n  background-color: lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid rgb(207, 204, 204);\n}\n.ms_card .ms_icon[data-v-4fd40851] {\n  font-size: 30px;\n}\n.ms_Btn[data-v-4fd40851] {\n  background-color: #39858a;\n  transition: linear 1s;\n  border: none;\n  border-radius: 10px;\n  color: white;\n  padding: 10px 5px;\n  width: 200px;\n}\n.ms_Btn[data-v-4fd40851]:hover {\n  background-color: #1c4144;\n}", ""]);
+exports.push([module.i, "#email[data-v-4fd40851] {\n  overflow: visible;\n  list-style-type: none;\n}\n#map[data-v-4fd40851] {\n  border-radius: 20px;\n}\n.borderline[data-v-4fd40851], .borderdouble[data-v-4fd40851] {\n  border-bottom: 1px solid rgb(193, 192, 192);\n  margin-bottom: 20px;\n}\n.borderdouble[data-v-4fd40851] {\n  margin-top: 20px;\n  padding: 10px;\n}\n.singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  min-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n}\n.main-immagine img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media only screen and (min-width: 1200px) {\n.main-immagine[data-v-4fd40851] {\n    width: 50%;\n    height: 560px;\n    float: left;\n    overflow: hidden;\n}\n.main-immagine img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.main-immagine:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n.other-immagini[data-v-4fd40851] {\n    width: 25%;\n    height: 280px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    float: left;\n    overflow: hidden;\n}\n.other-immagini img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.other-immagini:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}\np[data-v-4fd40851] {\n  font-size: 16px;\n  margin-bottom: 12px;\n}\n.ms_icon[data-v-4fd40851] {\n  color: #39858a;\n}\n.ms_description[data-v-4fd40851] {\n  line-height: 45px;\n  font-size: 23px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_description[data-v-4fd40851] {\n    text-align: justify;\n    text-justify: inter-word;\n}\n}\n.fa-circle-info[data-v-4fd40851] {\n  font-size: 32px;\n}\n.fa-bell-concierge[data-v-4fd40851] {\n  font-size: 25px;\n}\n.backBtn[data-v-4fd40851] {\n  width: 150px;\n}\n.ms_card[data-v-4fd40851] {\n  height: 150px;\n  width: 150px;\n  border-radius: 20px;\n  background-color: lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid rgb(207, 204, 204);\n}\n.ms_card .ms_icon[data-v-4fd40851] {\n  font-size: 30px;\n}\n.ms_Btn[data-v-4fd40851] {\n  background-color: #39858a;\n  transition: linear 1s;\n  border: none;\n  border-radius: 10px;\n  color: white;\n  padding: 10px 5px;\n  width: 200px;\n}\n.ms_Btn[data-v-4fd40851]:hover {\n  background-color: #1c4144;\n}", ""]);
 
 // exports
 
@@ -10795,7 +10842,10 @@ var render = function () {
     [
       _c("Header", { on: { filter: _vm.filterApartments } }),
       _vm._v(" "),
-      _c("Main", { attrs: { apartmentList: _vm.apartments } }),
+      _c("Main", {
+        attrs: { apartmentList: _vm.apartments },
+        on: { specialfilter: _vm.filterApartments },
+      }),
       _vm._v(" "),
       _c("Footer"),
     ],
@@ -12058,6 +12108,11 @@ var render = function () {
                             key: index,
                             staticClass: "ms_cityCard",
                             style: { "background-color": _vm.colors[index] },
+                            on: {
+                              click: function ($event) {
+                                return _vm.specialFilter(index)
+                              },
+                            },
                           },
                           [
                             _c("div", { staticClass: "ms_imageContainer" }, [
@@ -12961,8 +13016,9 @@ var render = function () {
                         "div",
                         { key: service.id, staticClass: "container" },
                         [
-                          _c("ul", [
+                          _c("ul", { staticClass: "list-unstyled" }, [
                             _c("li", [
+                              _c("i", { staticClass: "fa-solid fa-check" }),
                               _vm._v(
                                 "\n                            " +
                                   _vm._s(service.name) +
@@ -12990,132 +13046,280 @@ var render = function () {
                     },
                   },
                   [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.name,
-                          expression: "formData.name",
-                        },
-                      ],
-                      attrs: { type: "text", id: "name", placeholder: "Nome" },
-                      domProps: { value: _vm.formData.name },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "name", $event.target.value)
-                        },
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-lg-none col-12 my-3 d-flex flex-column justify-content-start",
                       },
-                    }),
+                      [
+                        _c("div", { staticClass: "d-flex col-12 px-0 my-2" }, [
+                          _c("h6", { staticClass: "col-3 mr-1" }, [
+                            _vm._v("Nome"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.formData.name,
+                                expression: "formData.name",
+                              },
+                            ],
+                            staticClass: " col-9",
+                            attrs: {
+                              type: "text",
+                              id: "name",
+                              placeholder: "Nome",
+                            },
+                            domProps: { value: _vm.formData.name },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.formData,
+                                  "name",
+                                  $event.target.value
+                                )
+                              },
+                            },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "d-flex px-0 col-12 my-2" }, [
+                          _c("h6", { staticClass: " col-3 px-0 mr-1" }, [
+                            _vm._v("Cognome"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.formData.lastname,
+                                expression: "formData.lastname",
+                              },
+                            ],
+                            staticClass: " col-9",
+                            attrs: {
+                              type: "text",
+                              id: "lastname",
+                              placeholder: "Cognome",
+                            },
+                            domProps: { value: _vm.formData.lastname },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.formData,
+                                  "lastname",
+                                  $event.target.value
+                                )
+                              },
+                            },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "d-flex px-0 col-12 my-2" }, [
+                          _c("h6", { staticClass: "col-3" }, [_vm._v("email")]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.formData.email,
+                                expression: "formData.email",
+                              },
+                            ],
+                            staticClass: "ms_email col-9",
+                            attrs: {
+                              type: "email",
+                              id: "email",
+                              placeholder: "email",
+                            },
+                            domProps: { value: _vm.formData.email },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.formData,
+                                  "email",
+                                  $event.target.value
+                                )
+                              },
+                            },
+                          }),
+                        ]),
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.lastname,
-                          expression: "formData.lastname",
+                    _c("div", { staticClass: "d-none d-lg-flex col-12 my-3" }, [
+                      _c("h6", { staticClass: " col-3 col-lg-2" }, [
+                        _vm._v("Nome e Cognome"),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.name,
+                            expression: "formData.name",
+                          },
+                        ],
+                        staticClass: "col-4 col-lg-3 mr-2",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Nome",
                         },
-                      ],
-                      attrs: {
-                        type: "text",
-                        id: "lastname",
-                        placeholder: "Cognome",
-                      },
-                      domProps: { value: _vm.formData.lastname },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.formData,
-                            "lastname",
-                            $event.target.value
-                          )
+                        domProps: { value: _vm.formData.name },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.formData, "name", $event.target.value)
+                          },
                         },
-                      },
-                    }),
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.lastname,
+                            expression: "formData.lastname",
+                          },
+                        ],
+                        staticClass: " col-4 col-lg-3",
+                        attrs: {
+                          type: "text",
+                          id: "lastname",
+                          placeholder: "Cognome",
+                        },
+                        domProps: { value: _vm.formData.lastname },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "lastname",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                    ]),
                     _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.email,
-                          expression: "formData.email",
+                    _c("div", { staticClass: "d-none d-lg-flex col-12 my-3" }, [
+                      _c("h6", { staticClass: "col-2" }, [_vm._v("email")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.email,
+                            expression: "formData.email",
+                          },
+                        ],
+                        staticClass: "ms_email col-6",
+                        attrs: {
+                          type: "email",
+                          id: "email",
+                          placeholder: "email",
                         },
-                      ],
-                      staticClass: "ms_email",
-                      attrs: {
-                        type: "email",
-                        id: "email",
-                        placeholder: "email",
-                      },
-                      domProps: { value: _vm.formData.email },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "email", $event.target.value)
+                        domProps: { value: _vm.formData.email },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.formData, "email", $event.target.value)
+                          },
                         },
-                      },
-                    }),
+                      }),
+                    ]),
                     _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.object,
-                          expression: "formData.object",
+                    _c("div", { staticClass: "d-none d-lg-flex col-12 my-3" }, [
+                      _c("h6", { staticClass: "col-2" }, [_vm._v("Oggetto")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.object,
+                            expression: "formData.object",
+                          },
+                        ],
+                        staticClass: "col-6",
+                        attrs: {
+                          type: "text",
+                          id: "object",
+                          placeholder: "Oggetto",
                         },
-                      ],
-                      attrs: {
-                        type: "text",
-                        id: "object",
-                        placeholder: "Oggetto",
-                      },
-                      domProps: { value: _vm.formData.object },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "object", $event.target.value)
+                        domProps: { value: _vm.formData.object },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "object",
+                              $event.target.value
+                            )
+                          },
                         },
-                      },
-                    }),
+                      }),
+                    ]),
                     _vm._v(" "),
-                    _c("textarea", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.content,
-                          expression: "formData.content",
+                    _c("div", { staticClass: " col-12 my-3" }, [
+                      _c("h6", [_vm._v("Messaggio")]),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.content,
+                            expression: "formData.content",
+                          },
+                        ],
+                        staticClass: "col-12 form-control mt-3",
+                        attrs: {
+                          name: "content",
+                          id: "content",
+                          placeholder: "Inserisci il testo del tuo messaggio",
                         },
-                      ],
-                      staticClass: "col-8 form-control mt-3",
-                      attrs: {
-                        name: "content",
-                        id: "content",
-                        placeholder: "Inserisci il testo del tuo messaggio",
-                      },
-                      domProps: { value: _vm.formData.content },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "content", $event.target.value)
+                        domProps: { value: _vm.formData.content },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "content",
+                              $event.target.value
+                            )
+                          },
                         },
-                      },
-                    }),
+                      }),
+                    ]),
                     _vm._v(" "),
                     _vm.formErrors.content
                       ? _c("div", [
@@ -13140,7 +13344,10 @@ var render = function () {
                     _vm._v(" "),
                     _c(
                       "button",
-                      { staticClass: "ms_Btn mt-2", attrs: { type: "submit" } },
+                      {
+                        staticClass: "ms_Btn mt-2 ml-2",
+                        attrs: { type: "submit" },
+                      },
                       [_vm._v("Aggiungi")]
                     ),
                   ]
@@ -13165,7 +13372,7 @@ var render = function () {
                   ]
                 ),
                 _vm._v(" "),
-                _c("button", { staticClass: "ms_Btn mt-2" }, [
+                _c("button", { staticClass: "ms_Btn mt-2 ml-2" }, [
                   _c(
                     "a",
                     {
@@ -13271,7 +13478,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h4", [
+    return _c("h4", { staticClass: "mb-5 mt-2" }, [
       _c("span", { staticClass: "ms_icon mr-2" }, [
         _c("i", { staticClass: "fa-solid fa-comment-dots" }),
       ]),
@@ -30929,7 +31136,7 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

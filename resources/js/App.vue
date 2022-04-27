@@ -1,7 +1,7 @@
 <template>
     <body>
         <Header @filter="filterApartments" />
-        <Main :apartmentList=apartments />
+        <Main :apartmentList=apartments  @specialfilter="filterApartments"/>
         <Footer />
     </body>
 </template>
@@ -24,6 +24,7 @@ export default{
     },
     methods:{
         filterApartments: function(data){
+            console.log("arrivato");
             data.servicesList = data.servicesList.slice(0,-1);
             console.log("/api/apartments/filter/search="+data.search+"&radius="+data.radius*1000+"&beds="+data.beds+"&rooms="+ data.rooms+"&lat="+data.lat+"&lon="+data.lon+"&services="+ data.servicesList)
             axios
