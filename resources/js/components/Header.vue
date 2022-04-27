@@ -20,7 +20,7 @@
                 </ul>
                 </nav>
                 <div class="d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto">
-                    <div class="inputContainer col-7 col-sm-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                    <div class="inputContainer col-12 col-lg-8 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-2">
                       <a class="ms_search" href="#" @click='ricercaAvanzata'>
-                        <button class="ms_btnSearch">Ricerca  <br>Avanzata</button>
+                        <button class="ms_btnSearch d-none d-lg-block">Ricerca  <br>Avanzata</button>
                       </a>
                     </div>
                 </div>
@@ -157,9 +157,11 @@ export default {
     filter(){
       this.autocompleters = [];
       this.selectOption = false;
+      console.log(this.servicesList == "");
       if(this.servicesList == ""){
         this.servicesList = "0-";
       }
+      console.log(this.servicesList);
       this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});              
     },
  
