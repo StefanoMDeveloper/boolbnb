@@ -20,21 +20,23 @@
                     <li class="fontLink"><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
                 </ul>
                 </nav>
-                <div class="d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto">
-                    <div class="inputContainer col-12 col-lg-8 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
-                      <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
-                      <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
-                      <div class="autocompleters" v-show="autocompleters">
-                        <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
-                            {{option.address.freeformAddress}}
-                        </div>
-                      </div> 
-                    </div>
-                    <div class="col-2">
-                      <a class="ms_search" href="#" @click='ricercaAvanzata'>
-                        <button class="ms_btnSearch d-none d-lg-block">Ricerca  <br>Avanzata</button>
-                      </a>
-                    </div>
+                <div class="d-flex headercenterB justify-content-center  align-items-center m-auto container-fluid">
+                  <div class="row col-12">
+                      <div class="inputContainer col-12 col-lg-10 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                        <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
+                        <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
+                        <div class="autocompleters col-12" v-show="autocompleters">
+                          <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
+                              {{option.address.freeformAddress}}
+                          </div>
+                        </div> 
+                      </div>
+                      <div class="col-2">
+                        <a class="ms_search" href="#" @click='ricercaAvanzata'>
+                          <button class="ms_btnSearch d-none d-lg-block">Ricerca  <br>Avanzata</button>
+                        </a>
+                      </div>
+                  </div>
                 </div>
             
             <!-- campi aggiuntivi -->
@@ -268,7 +270,6 @@ header{
         }
 
           .inputContainer{
-            border:1px solid gray;
             position: relative;
             z-index: 999;
             .ms_icon{
@@ -355,6 +356,7 @@ header{
 
 .autocompleters{
   background-color: white;
+  border: 1px solid gray;
   color:black;
   width:100%;
   position:absolute;

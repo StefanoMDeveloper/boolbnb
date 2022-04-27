@@ -7844,6 +7844,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -8869,7 +8871,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: #ff385c;\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90]:hover {\n  background-color: #df4e69;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  position: relative;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  width: 300px;\n  border: none;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 30px;\n  padding: 60px 0px 10px 39px;\n  z-index: -1;\n}\n.autocompleters .option[data-v-1f42fb90] {\n  color: grey;\n  padding: 8px 0;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}\n.notsearchIcon[data-v-1f42fb90] {\n  opacity: 0.3;\n}\n.fontLink[data-v-1f42fb90] {\n  text-align: center;\n}", ""]);
+exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: #ff385c;\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90]:hover {\n  background-color: #df4e69;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  position: relative;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  width: 300px;\n  border: none;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  border: 1px solid gray;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 30px;\n  padding: 60px 0px 10px 39px;\n  z-index: -1;\n}\n.autocompleters .option[data-v-1f42fb90] {\n  color: grey;\n  padding: 8px 0;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}\n.notsearchIcon[data-v-1f42fb90] {\n  opacity: 0.3;\n}\n.fontLink[data-v-1f42fb90] {\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -11298,124 +11300,126 @@ var render = function () {
                 "div",
                 {
                   staticClass:
-                    "d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto",
+                    "d-flex headercenterB justify-content-center  align-items-center m-auto container-fluid",
                 },
                 [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "inputContainer col-12 col-lg-8 d-flex justify-content-between",
-                      class: { search: _vm.scrollEffect },
-                      on: {
-                        keyup: function ($event) {
-                          if (
-                            !$event.type.indexOf("key") &&
-                            _vm._k(
-                              $event.keyCode,
-                              "enter",
-                              13,
-                              $event.key,
-                              "Enter"
-                            )
-                          ) {
-                            return null
-                          }
-                          $event.stopPropagation()
-                          return _vm.filter.apply(null, arguments)
+                  _c("div", { staticClass: "row col-12" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "inputContainer col-12 col-lg-10 d-flex justify-content-between",
+                        class: { search: _vm.scrollEffect },
+                        on: {
+                          keyup: function ($event) {
+                            if (
+                              !$event.type.indexOf("key") &&
+                              _vm._k(
+                                $event.keyCode,
+                                "enter",
+                                13,
+                                $event.key,
+                                "Enter"
+                              )
+                            ) {
+                              return null
+                            }
+                            $event.stopPropagation()
+                            return _vm.filter.apply(null, arguments)
+                          },
                         },
                       },
-                    },
-                    [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.search,
-                            expression: "search",
-                          },
-                        ],
-                        staticClass: "col-8 ml-4",
-                        attrs: { type: "text", value: "choosedSearch" },
-                        domProps: { value: _vm.search },
-                        on: {
-                          input: [
-                            function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.search = $event.target.value
-                            },
-                            _vm.autocomplete,
-                          ],
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "col-2 p-0 ms_icon",
-                          class: _vm.searchIsSet ? "" : "notSearchIcon",
-                          on: { click: _vm.filter },
-                        },
-                        [
-                          _c("i", {
-                            staticClass:
-                              "fa-solid fa-magnifying-glass searchIcon",
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
+                      [
+                        _c("input", {
                           directives: [
                             {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.autocompleters,
-                              expression: "autocompleters",
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.search,
+                              expression: "search",
                             },
                           ],
-                          staticClass: "autocompleters",
-                        },
-                        _vm._l(_vm.autocompleters, function (option, index) {
-                          return _c(
-                            "div",
-                            {
-                              key: index,
-                              staticClass: "option",
-                              on: {
-                                click: function ($event) {
-                                  return _vm.setSearch(index)
+                          staticClass: "col-8 ml-4",
+                          attrs: { type: "text", value: "choosedSearch" },
+                          domProps: { value: _vm.search },
+                          on: {
+                            input: [
+                              function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.search = $event.target.value
+                              },
+                              _vm.autocomplete,
+                            ],
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-2 p-0 ms_icon",
+                            class: _vm.searchIsSet ? "" : "notSearchIcon",
+                            on: { click: _vm.filter },
+                          },
+                          [
+                            _c("i", {
+                              staticClass:
+                                "fa-solid fa-magnifying-glass searchIcon",
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.autocompleters,
+                                expression: "autocompleters",
+                              },
+                            ],
+                            staticClass: "autocompleters col-12",
+                          },
+                          _vm._l(_vm.autocompleters, function (option, index) {
+                            return _c(
+                              "div",
+                              {
+                                key: index,
+                                staticClass: "option",
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.setSearch(index)
+                                  },
                                 },
                               },
-                            },
-                            [
-                              _vm._v(
-                                "\n                        " +
-                                  _vm._s(option.address.freeformAddress) +
-                                  "\n                    "
-                              ),
-                            ]
-                          )
-                        }),
-                        0
-                      ),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-2" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "ms_search",
-                        attrs: { href: "#" },
-                        on: { click: _vm.ricercaAvanzata },
-                      },
-                      [_vm._m(1)]
+                              [
+                                _vm._v(
+                                  "\n                          " +
+                                    _vm._s(option.address.freeformAddress) +
+                                    "\n                      "
+                                ),
+                              ]
+                            )
+                          }),
+                          0
+                        ),
+                      ]
                     ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-2" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "ms_search",
+                          attrs: { href: "#" },
+                          on: { click: _vm.ricercaAvanzata },
+                        },
+                        [_vm._m(1)]
+                      ),
+                    ]),
                   ]),
                 ]
               ),
@@ -31485,7 +31489,7 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
