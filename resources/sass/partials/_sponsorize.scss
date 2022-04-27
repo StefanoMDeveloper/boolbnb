@@ -1,12 +1,80 @@
-button{
+.sponsorBtn{
     background-color: #FF385C;
     transition:linear 1s;
     border: none;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
+    margin-right: 2vw;
     &:hover{
-        background-color: hwb(349 17% 45%);
+        background-color: #885500;
+        /*background-color: hwb(349 17% 45%);*/
     }
+}
 
+.backBtn{
+    background-color:#39858a ;
+    transition:linear 1s;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    &:hover{
+        background-color: #1c4144;
+    }
+}
+
+.backBtn2{
+    background-color:#39858a ;
+    transition:linear 1s;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 3vh 0 0 10vw;
+    &:hover{
+        background-color: #1c4144;
+    }
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.pacchettiSponsor {
+    display: inline-block;
+    background-color: #FF385C;
+    color: white;
+    text-align: center;
+    width: 18vw;
+    margin: 2vh 5vw;
+
+    .labl {
+        display: inline-block;
+        width: 18vw;
+    }
+    .labl > input{ /* HIDE RADIO */
+        visibility: hidden; /* Makes input not-clickable */
+        position: absolute; /* Remove input from document flow */
+    }
+    .labl > input + div{ /* DIV STYLES */
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+    .labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+        background-color: #885500;
+    }
+}
+
+.sponsorAttivo {
+    color: #885500;
+}
+
+.sponsorDettagli {
+    color: black;
+}
+
+.tirchioMegalomane {
+    width: 80vw;
+    height: 110vh;
 }

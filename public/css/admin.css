@@ -14016,6 +14016,10 @@ a.logo {
   width: 30px;
 }
 
+button {
+  margin: auto;
+}
+
 .addBtn {
   background-color: #1c4144;
   transition: linear 1s;
@@ -14046,15 +14050,16 @@ a .plusBtnMobile {
 
 a .plusBtnMobile:hover {
   background-color: #f25b76;
+  text-decoration: none;
 }
 
-.backBtn {
+.ms_backBtn {
   background-color: #39858a;
   transition: linear 1s;
   border: none;
 }
 
-.backBtn:hover {
+.ms_backBtn:hover {
   background-color: #1c4144;
 }
 
@@ -14107,6 +14112,7 @@ a .plusBtnMobile:hover {
   background-color: #39858a;
   transition: linear 1s;
   border: none;
+  text-decoration: none;
 }
 
 .apartmentscontainer .card .showbtn:hover,
@@ -14114,6 +14120,7 @@ a .plusBtnMobile:hover {
 .apartmentscontainer .card .messagebtn:hover,
 .apartmentscontainer .card .sponsorbtn:hover {
   background-color: #1c4144;
+  text-decoration: none;
 }
 
 .apartmentscontainer .card .sponsorizzatobtn {
@@ -14126,6 +14133,7 @@ a .plusBtnMobile:hover {
 
 .apartmentscontainer .card .sponsorizzatobtn:hover {
   background-color: #885500;
+  text-decoration: none;
 }
 
 .apartmentscontainer .card .cancelbtn {
@@ -14138,6 +14146,7 @@ a .plusBtnMobile:hover {
 
 .apartmentscontainer .card .cancelbtn:hover {
   background-color: #882211;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 780px) {
@@ -14310,13 +14319,13 @@ a .plusBtnMobile:hover {
   transform: scale(1.1);
 }
 
-.showContainer .backBtn {
+.showContainer .ms_backBtnshow {
   background-color: #FF385C;
   transition: linear 1s;
   border: none;
 }
 
-.showContainer .backBtn:hover {
+.showContainer .ms_backBtnshow:hover {
   background-color: hwb(349 17% 45%);
 }
 
@@ -14328,6 +14337,16 @@ a .plusBtnMobile:hover {
 
 .showContainer .cancelBtn:hover {
   background-color: rgb(79, 77, 77);
+}
+
+.showContainer .ms_messageText {
+  background-color: #39858a;
+  border: 1px solid #39858a;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .container-profile {
@@ -14349,6 +14368,8 @@ a .plusBtnMobile:hover {
 
 .container-profile .profile {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin: 50px 0;
 }
@@ -14360,17 +14381,34 @@ a .plusBtnMobile:hover {
   align-items: center;
   display: flex;
   border-radius: 10px;
-  border: solid 1px black;
+  border: solid 1px rgb(162, 160, 160);
+  background-color: rgb(212, 207, 207);
   margin: 10px 10px;
 }
 
 .container-profile .profile .profileBox a {
   color: black;
+  text-decoration: none;
+  transition: linear 1s;
 }
 
 .container-profile .profile .profileBox a .iconColor {
   color: #FF385C;
   margin-right: 10px;
+}
+
+.container-profile .profile .profileBox:hover a {
+  font-size: 17px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container-profile .profile {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px 0;
+  }
 }
 
 .container-profile button {
@@ -14444,8 +14482,23 @@ a span {
   padding: 17px;
 }
 
-button {
+.sponsorBtn {
   background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-right: 2vw;
+}
+
+.sponsorBtn:hover {
+  background-color: #885500;
+  /*background-color: hwb(349 17% 45%);*/
+}
+
+.backBtn {
+  background-color: #39858a;
   transition: linear 1s;
   border: none;
   color: white;
@@ -14453,12 +14506,93 @@ button {
   border-radius: 20px;
 }
 
-button:hover {
-  background-color: hwb(349 17% 45%);
+.backBtn:hover {
+  background-color: #1c4144;
 }
 
-h2 {
-  color: #39858a;
+.backBtn2 {
+  background-color: #39858a;
+  transition: linear 1s;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 3vh 0 0 10vw;
+}
+
+.backBtn2:hover {
+  background-color: #1c4144;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+.pacchettiSponsor {
+  display: inline-block;
+  background-color: #FF385C;
+  color: white;
+  text-align: center;
+  width: 18vw;
+  margin: 2vh 5vw;
+}
+
+.pacchettiSponsor .labl {
+  display: inline-block;
+  width: 18vw;
+}
+
+.pacchettiSponsor .labl > input {
+  /* HIDE RADIO */
+  visibility: hidden;
+  /* Makes input not-clickable */
+  position: absolute;
+  /* Remove input from document flow */
+}
+
+.pacchettiSponsor .labl > input + div {
+  /* DIV STYLES */
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.pacchettiSponsor .labl > input:checked + div {
+  /* (RADIO CHECKED) DIV STYLES */
+  background-color: #885500;
+}
+
+.sponsorAttivo {
+  color: #885500;
+}
+
+.sponsorDettagli {
+  color: black;
+}
+
+.tirchioMegalomane {
+  width: 80vw;
+  height: 110vh;
+}
+
+.ms_messageText {
+  background-color: #39858a;
+  border: 1px solid #39858a;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.ms_messageText {
+  background-color: #39858a;
+  border: 1px solid #39858a;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
 }
 
 main {

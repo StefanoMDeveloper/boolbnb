@@ -1,5 +1,10 @@
 
     
+button{
+    margin: auto;
+}
+
+
 .addBtn{
     background-color: #1c4144;
     transition:linear 1s;
@@ -25,11 +30,12 @@ a{
         border-radius: 50%;
         &:hover{
             background-color: #f25b76;
+            text-decoration: none;
         }
     }
 }
 
-.backBtn{
+.ms_backBtn{
     background-color:#39858a ;
     transition:linear 1s;
     border: none;
@@ -79,9 +85,10 @@ a{
             background-color: #39858a;
             transition:linear 1s;
             border: none;
+            text-decoration: none;
             &:hover{
             background-color: #1c4144;
-    
+            text-decoration: none;
             }
         }
 
@@ -93,11 +100,13 @@ a{
             text-decoration: none;
             &:hover{
             background-color: #885500;
+            text-decoration: none;
     
             }
         }
 
         .cancelbtn{
+            
             width: 200px;
             background-color: #dd2211;
             transition:linear 1s;
@@ -105,6 +114,7 @@ a{
             text-decoration: none;
             &:hover{
             background-color: #882211;
+            text-decoration: none;
     
             }
         }
