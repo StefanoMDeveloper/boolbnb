@@ -17,12 +17,13 @@
                 <ul>
                     <li class="fontLink"><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
                     <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
+                    <li class="fontLink"><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
                 </ul>
                 </nav>
                 <div class="d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto">
                     <div class="inputContainer col-12 col-lg-8 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
-                      <div class="col-2 p-0 ms_icon"><i @click="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
+                      <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
                       <div class="autocompleters" v-show="autocompleters">
                         <div class="paddingFormer"></div>
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
@@ -111,7 +112,8 @@ export default {
         beds: 1,
         rooms: 1,
         servicesList: "",
-        radius: 20
+        radius: 20,
+        searchIsSet:false
     }
   },
   created(){
@@ -144,6 +146,8 @@ export default {
       this.search = this.autocompleters[index].address.freeformAddress;
       this.searchLat = this.autocompleters[index].position.lat;
       this.searchLon = this.autocompleters[index].position.lon;
+      this.searchIsSet = true;
+      document.getElementsByClassName(".searchIcon").classList
       this.autocompleters = [];
     },
     serviceList(counter){
@@ -155,14 +159,14 @@ export default {
       }
     },
     filter(){
-      this.autocompleters = [];
-      this.selectOption = false;
-      console.log(this.servicesList == "");
-      if(this.servicesList == ""){
-        this.servicesList = "0-";
-      }
-      console.log(this.servicesList);
-      this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});              
+      if(this.searchIsSet){
+        this.autocompleters = [];
+        this.selectOption = false;
+        if(this.servicesList == ""){
+          this.servicesList = "0-";
+        }
+        this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});             
+      } 
     },
  
     // Toggle if navigation is shown or hidden
@@ -285,7 +289,7 @@ header{
               }
                 .searchIcon:hover{
                   cursor: pointer;
-                }          
+                }        
             }
           }
       }
@@ -427,6 +431,8 @@ input[type=number]{
   }
 }
 
-
+.notsearchIcon{
+    opacity: 0.3;
+}  
 </style>
 
