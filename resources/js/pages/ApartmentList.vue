@@ -5,8 +5,7 @@
                 <div class="col-12">
                     <div class="container-fluid">
                         <div class="row trophyText">
-                            <div class="col-12 d-flex justify-content-center align-items-center">
-                                <span class="ms_trophy"><i class="fa-solid fa-trophy"></i></span>
+                            <div class="col-12 d-flex align-items-center">
                                 <h2 class="ml-3"><strong>Appartamenti consigliati</strong></h2>
                             </div>
                         </div>
