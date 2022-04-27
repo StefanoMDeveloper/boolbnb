@@ -1,3 +1,7 @@
+.colorBrandGreen {
+    color: #39858a;
+}
+
 .sponsorBtn{
     background-color: #FF385C;
     transition:linear 1s;
@@ -13,7 +17,7 @@
 }
 
 .backBtn{
-    background-color:#39858a ;
+    background-color:#39858a;
     transition:linear 1s;
     border: none;
     color: white;
@@ -25,7 +29,7 @@
 }
 
 .backBtn2{
-    background-color:#39858a ;
+    background-color:#39858a;
     transition:linear 1s;
     border: none;
     color: white;
@@ -46,12 +50,12 @@ h2, h3 {
     background-color: #FF385C;
     color: white;
     text-align: center;
-    width: 18vw;
+    width: 17vw;
     margin: 2vh 5vw;
 
     .labl {
         display: inline-block;
-        width: 18vw;
+        width: 17vw;
     }
     .labl > input{ /* HIDE RADIO */
         visibility: hidden; /* Makes input not-clickable */

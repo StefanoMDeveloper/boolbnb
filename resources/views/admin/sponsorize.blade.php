@@ -10,8 +10,8 @@
             <form action="{{route('api.make.payment')}}" method="post" id="payment-form">
             @csrf
             @method('POST')
-            <h2><strong>{{$apartment->name}}</strong></h2>
-            <h2><strong>{{$apartment->address}}</strong></h2>
+            <h2 class="colorBrandGreen"><strong>{{$apartment->name}}</strong></h2>
+            <h2 class="colorBrandGreen"><strong>{{$apartment->address}}</strong></h2>
             <h3 class="m-3"><strong>Scegliere uno dei seguenti pacchetti promozionali:</strong></h3>
                 @foreach ($sponsorships as $sponsorship)
                 <div class="pacchettiSponsor">
