@@ -25,7 +25,7 @@
                       <div class="col-2 p-0 ms_icon"><i @click="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
-                            {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
+                            {{option.address.freeformAddress}}
                         </div>
                       </div> 
                     </div>
@@ -140,7 +140,7 @@ export default {
         });             
     },
     setSearch(index){
-      this.search = this.autocompleters[index].address.freeformAddress +", " + this.autocompleters[index].address.municipality;
+      this.search = this.autocompleters[index].address.freeformAddress;
       this.searchLat = this.autocompleters[index].position.lat;
       this.searchLon = this.autocompleters[index].position.lon;
       this.autocompleters = [];
