@@ -8,6 +8,7 @@ import SingleApartment from "./pages/SingleApartment.vue";
 import ApartmentList from "./pages/ApartmentList.vue";
 import SearchResults from "./pages/SearchResults.vue";
 import PageNotFound from "./pages/PageNotFound.vue";
+import ChiSiamo from "./pages/ChiSiamo.vue";
 
 const router = new VueRouter({
     mode: "history",
@@ -33,10 +34,16 @@ const router = new VueRouter({
             component: SearchResults
         },
         {
+            path: "/chi-siamo",
+            name: "ChiSiamo",
+            component: ChiSiamo
+        },
+        {
             path: '/*',
 	        name: "page-404",
 	        component: PageNotFound
-        }
+        },
+
     ]
 });
 

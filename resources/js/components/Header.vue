@@ -416,9 +416,9 @@ input[type=number]{
 }
 
 .autocompleters{
-  border-radius: 20px;
+  border-radius: 30px;
   top: -5px;
-  padding-top: 64px;
+  padding-top: 60px;
   z-index: -1;
 
   .option{
