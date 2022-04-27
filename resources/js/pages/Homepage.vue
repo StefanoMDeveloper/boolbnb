@@ -313,7 +313,6 @@ export default {
 .ms_citiesContainer { 
     margin:30px 0;
     padding: 0;
-    cursor: pointer;
     
     .ms_cityCard{
         width: 100%;
@@ -322,6 +321,7 @@ export default {
         margin: 0 5px;
         height: 300px;
         overflow: hidden;
+         cursor: pointer;
         .ms_imageContainer{
             height: 167px;
             width: 100%;
