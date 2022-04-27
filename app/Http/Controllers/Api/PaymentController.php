@@ -13,6 +13,7 @@ class PaymentController extends Controller
 {
     public function makePayment(Request $request, Gateway $gateway){
         $data=$request->all();
+        
         if(isset($data['sponsorships'])){
             $sponsorship = Sponsorship::find($data['sponsorships'][0]);
             $price = $sponsorship->price;
@@ -37,11 +38,8 @@ class PaymentController extends Controller
                 "message" => "Transazione effettuata con successo!"
             ];
             return redirect()->route('admin.sponsorships.store', compact('apartment','sponsorship'));
-       } else {
-            $data = [
-                "message" => "Transazione fallita"
-            ];
-            return response()->json($data,401);
-       }
+       } 
+
+       return redirect()->route('admin.apartments.index')->with(["message"=>"La transazione è fallita!"]);
     }
 }

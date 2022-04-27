@@ -18,9 +18,13 @@ class SponsorController extends Controller
      */
     public function sponsorize(Apartment $apartment, Gateway $gateway)
     {
-        $sponsorships = Sponsorship::all();
-        $token = $gateway->clientToken()->generate();
-        return view('admin.sponsorize',compact('apartment','sponsorships','token'));
+        $user_id= Auth::user()->id;
+        if($user_id == $apartment->user_id){
+            $sponsorships = Sponsorship::all();
+            $token = $gateway->clientToken()->generate();
+            return view('admin.sponsorize',compact('apartment','sponsorships','token'));
+        }
+        return view('admin.404');
     }
 
     public function store(Request $request){
