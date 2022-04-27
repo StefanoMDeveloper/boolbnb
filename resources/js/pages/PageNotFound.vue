@@ -8,7 +8,7 @@
       <ul class="list-unstyled">
         <li>Ecco qualche link utile:</li>
         <li><a href="/" class="link-404">Home</a></li>
-        <li><a href="/s/all" class="link-404">Appartamenti</a></li>
+        <li><a href="/appartamenti" class="link-404">Appartamenti</a></li>
       </ul>
     </div>
     <div class="col-md-5 align-self-center text-center">

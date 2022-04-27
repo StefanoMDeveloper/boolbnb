@@ -9,7 +9,9 @@
                         <div class="ms_textcontainer">
                             <h3 class="text-white ms_textJombo d-lg-none">Lasciati guidare dalla curiosità</h3>
                             <h1 class="text-white ms_textJombo d-none d-lg-block">Lasciati guidare dalla curiosità</h1>
-                            <button>Sono flessibile</button>
+                            <a href="/appartamenti">
+                                <button>Sono flessibile</button>
+                            </a>
                         </div>
                     </div>
                 </div>            
