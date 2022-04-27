@@ -14,7 +14,7 @@
             <!-- header center -->
             <div class="col-12 col-xl-5 headercenter d-flex flex-column align-items-center m-auto">
                 <nav :class="{ 'hide': scrollEffect }">
-                <ul>
+                <ul class="row">
                     <li class="fontLink"><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
                     <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
                     <li class="fontLink"><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
@@ -25,7 +25,6 @@
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
                       <div class="autocompleters" v-show="autocompleters">
-                        <div class="paddingFormer"></div>
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
                             {{option.address.freeformAddress}}
                         </div>
@@ -270,6 +269,7 @@ header{
 
           .inputContainer{
             border:1px solid gray;
+            position: relative;
             z-index: 999;
             .ms_icon{
               display: flex;
@@ -349,8 +349,8 @@ header{
   display: none;
 }
 .search{
-  border:1px solid black;
-  width: 300px; 
+  width: 300px;
+  border: none;
 }
 
 .autocompleters{
@@ -358,12 +358,16 @@ header{
   color:black;
   width:100%;
   position:absolute;
-  top:52px;
+  top: -5px;
   left:50%;
   transform: translateX(-50%);
+  border-radius: 30px;
+  padding: 60px 0px 10px 39px;
+  z-index: -1;
 
   .option{
-    border-bottom:1px solid black;  
+    color: grey;
+    padding: 8px 0;
   }
 }
 
@@ -418,21 +422,12 @@ input[type=number]{
   margin-right: 5px;
 
 }
-
-.autocompleters{
-  border-radius: 30px;
-  top: -5px;
-  padding-top: 60px;
-  z-index: -1;
-
-  .option{
-    color: grey;
-    padding: 5px;
-  }
-}
-
 .notsearchIcon{
     opacity: 0.3;
-}  
+}
+
+.fontLink{
+  text-align: center;
+}
 </style>
 
