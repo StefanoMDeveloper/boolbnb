@@ -313,10 +313,7 @@ export default {
 .ms_citiesContainer { 
     margin:30px 0;
     padding: 0;
-    &:hover {
-        padding-bottom: 5px;
-        cursor: pointer;
-    }
+    
     .ms_cityCard{
         width: 100%;
         border-radius: 20px;
