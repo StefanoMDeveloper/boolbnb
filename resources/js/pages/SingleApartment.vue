@@ -13,11 +13,11 @@
                     </p>
                 </div>
                 <div class="container containerImages">
-                    <span v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo span -->
-                        <div v-if="image.main_image" class="main-immagine">
-                            <img  :src="`/storage/${image.url}`">
-                        </div>
-                        <div  v-else class="other-immagini">
+                        <div class="main-immagine">
+                            <img  :src="`/storage/${main_image.url}`">
+                        </div>                    
+                    <span v-for="image in images" :key="image.id"><!-- non usare ccs su questo span -->
+                        <div class="other-immagini">
                             <img :src="`/storage/${image.url}`">
                         </div>
                     </span>
@@ -39,20 +39,47 @@
                 <div class="borderline">
                     <h2><span class="ms_icon mr-2"><i class="fa-solid fa-bell-concierge"></i></span>Servizi</h2>
                     <div v-for="service in apartment.services" :key="service.id" class="container">
-                        <ul>
+                        <ul class="list-unstyled">
                             <li>
+                                <i class="fa-solid fa-check"></i>
                                 {{service.name}}
                             </li>
                         </ul>
                     </div>
                 </div>
-                <h4><span class="ms_icon mr-2"><i class="fa-solid fa-comment-dots"></i></span>Scrivi un messaggio al proprietario dell&#39;appartamento</h4>
+                <h4 class="mb-5 mt-2"><span class="ms_icon mr-2"><i class="fa-solid fa-comment-dots"></i></span>Scrivi un messaggio al proprietario dell&#39;appartamento</h4>
                 <form @submit.prevent="sendMail()">
-                    <input type="text" id="name" v-model="formData.name" placeholder="Nome">
-                    <input type="text" id="lastname" v-model="formData.lastname" placeholder="Cognome">
-                    <input type="email" id="email" class="ms_email" v-model="formData.email" placeholder="email">
-                    <input type="text" id="object" v-model="formData.object" placeholder="Oggetto">
-                    <textarea name="content" id="content" class="col-8 form-control mt-3" v-model="formData.content" placeholder="Inserisci il testo del tuo messaggio"></textarea>
+                    <div class="d-lg-none col-12 my-3 d-flex flex-column justify-content-start">
+                        <div class="d-flex col-12 px-0 my-2">
+                            <h6 class="col-3 mr-1">Nome</h6>
+                            <input class=" col-9" type="text" id="name" v-model="formData.name" placeholder="Nome">
+                        </div>
+                        <div class="d-flex px-0 col-12 my-2">
+                            <h6 class=" col-3 px-0 mr-1">Cognome</h6>
+                            <input class=" col-9" type="text" id="lastname" v-model="formData.lastname" placeholder="Cognome">
+                        </div>
+                        <div class="d-flex px-0 col-12 my-2">
+                            <h6 class="col-3">email</h6>
+                            <input type="email" id="email" class="ms_email col-9" v-model="formData.email" placeholder="email"> 
+                        </div>
+                    </div>
+                    <div class="d-none d-lg-flex col-12 my-3">
+                        <h6 class=" col-3 col-lg-2">Nome e Cognome</h6>
+                        <input class="col-4 col-lg-3 mr-2" type="text" id="name" v-model="formData.name" placeholder="Nome">
+                        <input class=" col-4 col-lg-3" type="text" id="lastname" v-model="formData.lastname" placeholder="Cognome">
+                    </div>
+                    <div class="d-none d-lg-flex col-12 my-3">
+                        <h6 class="col-2">email</h6>
+                        <input type="email" id="email" class="ms_email col-6" v-model="formData.email" placeholder="email">
+                    </div>
+                    <div class="d-none d-lg-flex col-12 my-3">
+                        <h6 class="col-2">Oggetto</h6>
+                        <input class="col-6" type="text" id="object" v-model="formData.object" placeholder="Oggetto">
+                    </div>
+                    <div class=" col-12 my-3">
+                        <h6>Messaggio</h6>
+                        <textarea name="content" id="content" class="col-12 form-control mt-3" v-model="formData.content" placeholder="Inserisci il testo del tuo messaggio"></textarea>
+                    </div>
                     <div v-if="formErrors.content">
                         <ul>
                             <li v-for="(error,index) in formErrors.content" :key="index">
@@ -60,13 +87,13 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="ms_Btn mt-2" type="submit">Aggiungi</button>
+                    <button class="ms_Btn mt-2 ml-2" type="submit">Aggiungi</button>
                 </form>
                 <div v-show="messageSent">
                     Il tuo messaggio è stato inviato!
                 </div>
 
-                <button class="ms_Btn mt-2">
+                <button class="ms_Btn mt-2 ml-2">
                 <a @click="$router.back()">
                         Torna indietro  
                 </a>
@@ -101,7 +128,9 @@ export default {
                 content: "",
                 apartment_id: null
             },
-            formErrors:{}
+            formErrors:{},
+            main_image: {},
+            images: []
         }
     },
     components: {
@@ -116,6 +145,13 @@ export default {
             this.formData.apartment_id = this.apartment.id;
             this.lat = parseFloat(this.apartment.lat);
             this.lon = parseFloat(this.apartment.lon);
+            for (let i=0; i<this.apartment.images.length;i++){
+                if(this.apartment.images[i].main_image){
+                    this.main_image = this.apartment.images[i];
+                } else {
+                    this.images.push(this.apartment.images[i]);
+                }
+            }
             this.loading = false;
         });     
     },
@@ -210,7 +246,6 @@ export default {
         }
     }
 
-
 @media only screen and (min-width:1200px){
 
     .main-immagine{
@@ -267,8 +302,13 @@ p{
 .ms_description{
     line-height: 45px;
     font-size: 23px;
-    text-align: justify;
-  text-justify: inter-word;
+}
+
+@media only screen and (min-width:1200px){
+    .ms_description{
+        text-align: justify;
+        text-justify: inter-word;
+    }
 }
 
 .fa-circle-info{
@@ -312,5 +352,9 @@ p{
     }
 }
 
-
 </style>
+
+
+
+
+

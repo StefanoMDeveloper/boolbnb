@@ -141,8 +141,13 @@
   
   
     {{-- image --}}
+    <div class="mb-3">
+      <label for="mainImage" class="form-label">Inserisci l'immagine principale del tuo appartamento</label>
+      <input class="form-control" type="file" id="mainImage" name="mainImage">
+    </div>
+
     <div class="form-group col-10 pl-4 ml-4 my-5">
-      <label for="files">Inserisci delle immagini relative all'appartamento (la prima sarà considerata la sua immagine principale):</label>
+      <label for="images">Inserisci delle altre immagini relative all'appartamento</label>
       <input class="form-control col-4" type="file" id="images" name="images[]" multiple><br><br>
     </div>
   

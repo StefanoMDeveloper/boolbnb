@@ -101,19 +101,21 @@ class ApartmentController extends Controller
         $apartment->save();
 
         //images
-        $imgcount = 1;
+        if(isset($form_data['mainImage'])){
+            $newMainImage = new Image();
+            $newImgPath = Storage::put('uploads', $form_data['mainImage']);
+            $newMainImage->url = $newImgPath;
+            $newMainImage->main_image = true;
+            $newMainImage->apartment()->associate($apartment);
+            $newMainImage->save();            
+        }
+
         if(isset($form_data['images'])) { 
             foreach($form_data['images'] as $image){
                 $new_image = new Image();
                 $img_path = Storage::put('uploads', $image);
                 $new_image->url = $img_path;
-                if($imgcount==1){
-                    $new_image->main_image = true;
-                }
-                else{
-                    $new_image->main_image = false;
-                }
-                $imgcount++;
+                $new_image->main_image = false;
                 $new_image->apartment()->associate($apartment);
                 $new_image->save();
             }
@@ -188,18 +190,6 @@ class ApartmentController extends Controller
         }
 
         $apartment->update($form_data);
-
-        //images
-        if(isset($form_data['images'])) { 
-            foreach($form_data['images'] as $image){
-                $new_image = new Image();
-                $img_path = Storage::put('uploads', $image);
-                $new_image->url = $img_path;
-                $new_image->main_image = false;
-                $new_image->apartment()->associate($apartment);
-                $new_image->save();
-            }
-        }
 
         $apartment->services()->sync(isset($form_data['services']) ? $form_data['services'] : [] );
 

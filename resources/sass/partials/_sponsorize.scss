@@ -1,3 +1,7 @@
+.colorBrandGreen {
+    color: #39858a;
+}
+
 .sponsorBtn{
     background-color: #FF385C;
     transition:linear 1s;
@@ -7,13 +11,13 @@
     border-radius: 20px;
     margin-right: 2vw;
     &:hover{
-        background-color: #885500;
+        background-color: #996600;
         /*background-color: hwb(349 17% 45%);*/
     }
 }
 
 .backBtn{
-    background-color:#39858a ;
+    background-color:#39858a;
     transition:linear 1s;
     border: none;
     color: white;
@@ -25,13 +29,13 @@
 }
 
 .backBtn2{
-    background-color:#39858a ;
+    background-color:#39858a;
     transition:linear 1s;
     border: none;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
-    margin: 3vh 0 0 10vw;
+    margin: 3vh 0 0 5vw;
     &:hover{
         background-color: #1c4144;
     }
@@ -101,7 +105,7 @@ h2, h3 {
 }
 
 .sponsorAttivo {
-    color: #885500;
+    color: #996600;
 }
 
 .sponsorDettagli {

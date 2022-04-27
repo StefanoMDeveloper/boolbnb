@@ -1,9 +1,6 @@
-
-    
 button{
     margin: auto;
 }
-
 
 .addBtn{
     background-color: #1c4144;
@@ -80,42 +77,33 @@ a{
         .showbtn,
         .editbtn,
         .messagebtn,
-        .sponsorbtn{
-            width: 200px;
+        .imagebtn,
+        .sponsorbtn,
+        .sponsorizzatobtn,
+        .cancelbtn{
+            width: 100%;
             background-color: #39858a;
             transition:linear 1s;
             border: none;
+            border-radius: 50px;
             text-decoration: none;
             &:hover{
-            background-color: #1c4144;
-            text-decoration: none;
+                background-color: #1c4144;
+                text-decoration: none;
             }
         }
 
         .sponsorizzatobtn{
-            width: 200px;
-            background-color: #ffcc00;
-            transition:linear 1s;
-            border: none;
-            text-decoration: none;
+            background-color: #eebb00;
             &:hover{
-            background-color: #885500;
-            text-decoration: none;
-    
+                background-color: #996600;
             }
         }
 
-        .cancelbtn{
-            
-            width: 200px;
-            background-color: #dd2211;
-            transition:linear 1s;
-            border: none;
-            text-decoration: none;
+        .cancelbtn{        
+            background-color: #dd3311;
             &:hover{
-            background-color: #882211;
-            text-decoration: none;
-    
+                background-color: #882211;
             }
         }
     }

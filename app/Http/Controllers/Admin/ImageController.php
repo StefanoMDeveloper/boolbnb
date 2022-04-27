@@ -8,6 +8,7 @@ use App\Apartment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -17,6 +18,21 @@ class ImageController extends Controller
             return view('admin.images.edit',compact('apartment'));
         }
         return view('admin.404');        
+    }
+
+    public function store(Request $request, Apartment $apartment){
+        $form_data=$request->all();
+        if(isset($form_data['images'])) { 
+            foreach($form_data['images'] as $image){
+                $new_image = new Image();
+                $img_path = Storage::put('uploads', $image);
+                $new_image->url = $img_path;
+                $new_image->main_image = false;
+                $new_image->apartment()->associate($apartment);
+                $new_image->save();
+            }
+        } 
+        return view('admin.images.edit',compact('apartment'));
     }
 
     public function update(Request $request, Image $image)

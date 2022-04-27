@@ -2,9 +2,7 @@
 
 @section('content')
 
-
 <div class="container" id="dropin-container">
-
 @foreach ($sponsorships as $sponsorshippo)
     @if($loop->first)
         @if(count($apartment->active_sponsorships)<=0)
@@ -63,14 +61,13 @@
         @endphp
             <div class="container d-flex flex-column justify-content-center align-items-center">
                 <div class="container d-flex flex-column justify-content-center align-items-center">
-                <h1 class="sponsorAttivo">Hai già una sponsorizzazione attiva!</h1>
-                <h2 class="sponsorDettagli">Tipologia: {{$sponsorshippo->name}}, iniziata il: {{$start_date}}, termina il: {{$end_date}}</h2>
+                    <h1 class="sponsorAttivo">Hai già una sponsorizzazione attiva!</h1>
+                    <h2 class="sponsorDettagli">Tipologia: {{$sponsorshippo->name}}, iniziata il: {{$start_date}}, termina il: {{$end_date}}</h2>
                 </div>
                 <div class="container d-flex justify-content-center align-items-center">
                     <img class="tirchioMegalomane" src="{{asset('/storage/uploads/Zio-Paperone-e-i-soldi.jpg')}}">
                 </div>
             </div>
-
             <a href="{{route('admin.apartments.index')}}">
                 <button type="button" class="btn btn-primary backBtn2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">

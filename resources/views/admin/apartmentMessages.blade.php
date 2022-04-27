@@ -29,7 +29,7 @@
                         </div>
                     @endif
                     
-                    @foreach ($messages as $message)
+                    @forelse ($messages as $message)
                     {{-- @dd($message->) --}}
                         <div class="pb-4">
                             <svg class="align-top" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#39858a" viewBox="0 0 576 512">
@@ -44,7 +44,9 @@
                                 <p class="ms_messageText">{{ $message->content }}</p>
                             <hr>
                         </div>
-                    @endforeach
+                        @empty
+                        Non si sono messaggi per questo appartamento!
+                    @endforelse
                 </div>
             </div>
         </div>

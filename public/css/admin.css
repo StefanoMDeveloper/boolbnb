@@ -14107,46 +14107,43 @@ a .plusBtnMobile:hover {
 .apartmentscontainer .card .showbtn,
 .apartmentscontainer .card .editbtn,
 .apartmentscontainer .card .messagebtn,
-.apartmentscontainer .card .sponsorbtn {
-  width: 200px;
+.apartmentscontainer .card .imagebtn,
+.apartmentscontainer .card .sponsorbtn,
+.apartmentscontainer .card .sponsorizzatobtn,
+.apartmentscontainer .card .cancelbtn {
+  width: 100%;
   background-color: #39858a;
   transition: linear 1s;
   border: none;
+  border-radius: 50px;
   text-decoration: none;
 }
 
 .apartmentscontainer .card .showbtn:hover,
 .apartmentscontainer .card .editbtn:hover,
 .apartmentscontainer .card .messagebtn:hover,
-.apartmentscontainer .card .sponsorbtn:hover {
+.apartmentscontainer .card .imagebtn:hover,
+.apartmentscontainer .card .sponsorbtn:hover,
+.apartmentscontainer .card .sponsorizzatobtn:hover,
+.apartmentscontainer .card .cancelbtn:hover {
   background-color: #1c4144;
   text-decoration: none;
 }
 
 .apartmentscontainer .card .sponsorizzatobtn {
-  width: 200px;
-  background-color: #ffcc00;
-  transition: linear 1s;
-  border: none;
-  text-decoration: none;
+  background-color: #eebb00;
 }
 
 .apartmentscontainer .card .sponsorizzatobtn:hover {
-  background-color: #885500;
-  text-decoration: none;
+  background-color: #996600;
 }
 
 .apartmentscontainer .card .cancelbtn {
-  width: 200px;
-  background-color: #dd2211;
-  transition: linear 1s;
-  border: none;
-  text-decoration: none;
+  background-color: #dd3311;
 }
 
 .apartmentscontainer .card .cancelbtn:hover {
   background-color: #882211;
-  text-decoration: none;
 }
 
 @media only screen and (min-width: 780px) {
@@ -14482,6 +14479,10 @@ a span {
   padding: 17px;
 }
 
+.colorBrandGreen {
+  color: #39858a;
+}
+
 .sponsorBtn {
   background-color: #FF385C;
   transition: linear 1s;
@@ -14493,7 +14494,7 @@ a span {
 }
 
 .sponsorBtn:hover {
-  background-color: #885500;
+  background-color: #996600;
   /*background-color: hwb(349 17% 45%);*/
 }
 
@@ -14517,7 +14518,7 @@ a span {
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
-  margin: 3vh 0 0 10vw;
+  margin: 3vh 0 0 5vw;
 }
 
 .backBtn2:hover {
@@ -14586,11 +14587,12 @@ h3 {
 
 .pacchettiSponsor .labl > input:checked + div {
   /* (RADIO CHECKED) DIV STYLES */
+
   background-color: #93142b;
 }
 
 .sponsorAttivo {
-  color: #885500;
+  color: #996600;
 }
 
 .sponsorDettagli {
@@ -14663,5 +14665,66 @@ h3 {
 main {
   background-color: #dbd4d4;
   min-height: calc(100vh - 60px);
+}
+
+.ms_imgContainer {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgb(193, 190, 190);
+  padding: 10px;
+}
+
+.ms_imgContainer img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+
+.ms_cancelBtn {
+  margin-left: 0;
+  margin-right: 0;
+  width: 200px;
+  transition: linear 1s;
+  border: none;
+  border-radius: 10px;
+  height: 50px !important;
+}
+
+.ms_cancelBtn:hover {
+  background-color: rgb(79, 77, 77);
+}
+
+.ms_saveBtn {
+  background-color: #FF385C;
+  color: white;
+  transition: linear 1s;
+  border: none;
+  min-height: 50px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.ms_saveBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+.ms_imgCardContainer {
+  background-color: #f6f2f2;
+  border-radius: 20px;
+}
+
+.ms_saveBtnD {
+  background-color: #FF385C;
+  color: white;
+  transition: linear 1s;
+  border: none;
+}
+
+.ms_saveBtnD:hover {
+  background-color: hwb(349 17% 45%);
 }
 
