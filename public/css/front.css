@@ -14428,3 +14428,29 @@ a .plusBtnMobile:hover {
   color: white;
 }
 
+.container-404 {
+  border-radius: 10px;
+  background-color: #EFEBEB;
+  padding: 100px 30px;
+  margin-top: 100px;
+}
+
+.title-404 {
+  color: #ff385c;
+  font-size: 70px;
+  text-align: center;
+}
+
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.error-404 a {
+  margin-top: 50px;
+  color: #1D68A7;
+}
+
