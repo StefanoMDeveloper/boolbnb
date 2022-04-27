@@ -157,11 +157,9 @@ export default {
     filter(){
       this.autocompleters = [];
       this.selectOption = false;
-      console.log(this.servicesList == "");
       if(this.servicesList == ""){
         this.servicesList = "0-";
       }
-      console.log(this.servicesList);
       this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});              
     },
  

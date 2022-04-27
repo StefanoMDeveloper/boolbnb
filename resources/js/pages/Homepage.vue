@@ -69,7 +69,7 @@
                     <div class="ms_citiesContainer container-fluid d-flex flex-column col-10">
                         <h1 class="mb-2">Destinazioni Più Gettonate</h1>
                         <div class="row ms_citiesContainer col-12">
-                            <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}">
+                            <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}" @click="specialFilter(index)">
                                 <div class="ms_imageContainer">
                                     <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
                                 </div>
@@ -134,23 +134,31 @@ export default {
           cities:[
               {
                 image:"city1",
-                title:"Napoli",   
+                title:"Milano",   
                 text:"189 chilometri di distanza",
+                lat:45.46362,
+                lon:9.18812
               },
               {
                 image:"city2",
-                title:"Bologna",
+                title:"Roma",
                 text:"303 chilometri di distanza",
+                lat:41.89056,
+                lon:12.49427
               }, 
               {
                 image:"city3",
-                title:"Roccaraso",
+                title:"Napoli",
                 text:"132 chilometri di distanza",
+                lat:40.83998,
+                lon:14.25254
               }, 
               {
                 image:"city4",
-                title:"Verona",
+                title:"Firenze",
                 text:"411 chilometri di distanza",
+                lat:43.7687,
+                lon:11.25693
               },     
           ],
           loading: true,
@@ -170,6 +178,13 @@ export default {
     },
     props:{
         apartmentList: Array
+    },
+    methods:{
+        specialFilter: function(index){
+            console.log("partito?")
+            this.$parent.$emit('specialfilter',{"search": this.cities[index].title,"lat":this.cities[index].lat,"lon":this.cities[index].lon, "beds":1, "rooms":1, "radius":20, "servicesList":"0-"});              
+                        
+        }
     }
 }
 </script>
@@ -300,6 +315,7 @@ export default {
     padding: 0;
     &:hover {
         padding-bottom: 5px;
+        cursor: pointer;
     }
     .ms_cityCard{
         width: 100%;
@@ -320,7 +336,6 @@ export default {
         .ms_textcity{
             padding: 10px 20px;
         }
-    
     
     }
 }
