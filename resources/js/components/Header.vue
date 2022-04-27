@@ -24,6 +24,7 @@
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                       <div class="col-2 p-0 ms_icon"><i @click="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
                       <div class="autocompleters" v-show="autocompleters">
+                        <div class="paddingFormer"></div>
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
                             {{option.address.freeformAddress}}, {{option.address.municipality}}, {{option.address.countrySecondarySubdivision}}
                         </div>
@@ -238,6 +239,7 @@ header{
       .headercenterB{
         min-width: 375px;
         width: 100%;
+        z-index: 999;
         .ms_search{
           text-decoration: none;
           .ms_btnSearch{
@@ -406,6 +408,18 @@ input[type=number]{
   width: 50px;
   margin-right: 5px;
 
+}
+
+.autocompleters{
+  border-radius: 20px;
+  top: -5px;
+  padding-top: 64px;
+  z-index: -1;
+
+  .option{
+    color: grey;
+    padding: 5px;
+  }
 }
 
 
