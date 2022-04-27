@@ -63,5 +63,36 @@ return[
         "sponsorship_id"=>3,
         "start_date"=> "2022-04-18",
         "end_date" => "2022-04-24"
+    ],
+    [
+        "apartment_id"=>10,
+        "sponsorship_id"=>3,
+        "start_date"=> "2022-04-25",
+        "end_date" => "2022-05-01"
+    ],
+    [
+        "apartment_id"=>14,
+        "sponsorship_id"=>2,
+        "start_date"=> "2022-04-27",
+        "end_date" => "2022-04-30"
+    ],
+    [
+        "apartment_id"=>18,
+        "sponsorship_id"=>2,
+        "start_date"=> "2022-04-26",
+        "end_date" => "2022-04-29"
+    ],
+    [
+        "apartment_id"=>2,
+        "sponsorship_id"=>3,
+        "start_date"=> "2022-04-27",
+        "end_date" => "2022-05-03"
+    ],
+    [
+        "apartment_id"=>5,
+        "sponsorship_id"=>3,
+        "start_date"=> "2022-04-23",
+        "end_date" => "2022-04-29"
     ]
+
 ];
