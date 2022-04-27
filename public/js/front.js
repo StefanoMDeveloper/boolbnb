@@ -7842,6 +7842,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -8738,7 +8739,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: #ff385c;\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90]:hover {\n  background-color: #df4e69;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}", ""]);
+exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: #ff385c;\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90]:hover {\n  background-color: #df4e69;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  border: 1px solid gray;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  border: 1px solid black;\n  width: 300px;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: 52px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.autocompleters .option[data-v-1f42fb90] {\n  border-bottom: 1px solid black;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}\n.autocompleters[data-v-1f42fb90] {\n  border-radius: 20px;\n  top: -5px;\n  padding-top: 64px;\n  z-index: -1;\n}\n.autocompleters .option[data-v-1f42fb90] {\n  color: grey;\n  padding: 5px;\n}", ""]);
 
 // exports
 
@@ -11177,28 +11178,32 @@ var render = function () {
                           ],
                           staticClass: "autocompleters",
                         },
-                        _vm._l(_vm.autocompleters, function (option, index) {
-                          return _c(
-                            "div",
-                            {
-                              key: index,
-                              staticClass: "option",
-                              on: {
-                                click: function ($event) {
-                                  return _vm.setSearch(index)
+                        [
+                          _c("div", { staticClass: "paddingFormer" }),
+                          _vm._v(" "),
+                          _vm._l(_vm.autocompleters, function (option, index) {
+                            return _c(
+                              "div",
+                              {
+                                key: index,
+                                staticClass: "option",
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.setSearch(index)
+                                  },
                                 },
                               },
-                            },
-                            [
-                              _vm._v(
-                                "\n                        " +
-                                  _vm._s(option.address.freeformAddress) +
-                                  "\n                    "
-                              ),
-                            ]
-                          )
-                        }),
-                        0
+                              [
+                                _vm._v(
+                                  "\n                        " +
+                                    _vm._s(option.address.freeformAddress) +
+                                    "\n                    "
+                                ),
+                              ]
+                            )
+                          }),
+                        ],
+                        2
                       ),
                     ]
                   ),
@@ -28631,11 +28636,6 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./0lVHhsBtuQvQUHBBaCj23MI2UvR2WGffHP6Z0kDT.jpg": "./storage/app/public/uploads/0lVHhsBtuQvQUHBBaCj23MI2UvR2WGffHP6Z0kDT.jpg",
-	"./1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg": "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg",
-	"./ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg": "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg",
-	"./RRTZZJnWAS9v8jzuukOUup293SN2nEL7qOxwlmvR.jpg": "./storage/app/public/uploads/RRTZZJnWAS9v8jzuukOUup293SN2nEL7qOxwlmvR.jpg",
-	"./W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg": "./storage/app/public/uploads/W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg",
 	"./Zio-Paperone-e-i-soldi.jpg": "./storage/app/public/uploads/Zio-Paperone-e-i-soldi.jpg",
 	"./ap10p1.jpg": "./storage/app/public/uploads/ap10p1.jpg",
 	"./ap10p2.jpg": "./storage/app/public/uploads/ap10p2.jpg",
@@ -28744,12 +28744,7 @@ var map = {
 	"./experience1.jpg": "./storage/app/public/uploads/experience1.jpg",
 	"./experience2.jpg": "./storage/app/public/uploads/experience2.jpg",
 	"./gift.jpg": "./storage/app/public/uploads/gift.jpg",
-	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg",
-	"./k1OJAOy6JQQqYzNoZSIexh5soNcEzjs61VBfPaaS.jpg": "./storage/app/public/uploads/k1OJAOy6JQQqYzNoZSIexh5soNcEzjs61VBfPaaS.jpg",
-	"./krhBnHhqWBQQCZxJj5OP0lrzySkCFhvdLqZTlBVw.jpg": "./storage/app/public/uploads/krhBnHhqWBQQCZxJj5OP0lrzySkCFhvdLqZTlBVw.jpg",
-	"./o9t2dyGd2NFluyfzQYTypaCc0zVDBPzbcfCTfRES.jpg": "./storage/app/public/uploads/o9t2dyGd2NFluyfzQYTypaCc0zVDBPzbcfCTfRES.jpg",
-	"./sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg": "./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg",
-	"./vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg": "./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg"
+	"./jubotron.jpg": "./storage/app/public/uploads/jubotron.jpg"
 };
 
 
@@ -29725,61 +29720,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/0lVHhsBtuQvQUHBBaCj23MI2UvR2WGffHP6Z0kDT.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/0lVHhsBtuQvQUHBBaCj23MI2UvR2WGffHP6Z0kDT.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/0lVHhsBtuQvQUHBBaCj23MI2UvR2WGffHP6Z0kDT.jpg?a0cf71bc4014efe82e731d5cdb126df3";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/1uX0ulElNj9eDxUc39DlCFpvH1tLXsi24lnDHkDD.jpg?b76706f2ec3ff9ccf566f536f7eb7a3a";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/ETP33IVeL8PvSHvtDPAs354mCOBqNi2VlipsvTij.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/RRTZZJnWAS9v8jzuukOUup293SN2nEL7qOxwlmvR.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/RRTZZJnWAS9v8jzuukOUup293SN2nEL7qOxwlmvR.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/RRTZZJnWAS9v8jzuukOUup293SN2nEL7qOxwlmvR.jpg?a0cf71bc4014efe82e731d5cdb126df3";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/W12KRqIxMjPgeo11S85gHDeTmLnF7ldG1xWrGA23.jpg?a2e809708fb67c50ba7f82aaaac2ef88";
 
 /***/ }),
 
@@ -30982,61 +30922,6 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 
 /***/ }),
 
-/***/ "./storage/app/public/uploads/k1OJAOy6JQQqYzNoZSIexh5soNcEzjs61VBfPaaS.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/k1OJAOy6JQQqYzNoZSIexh5soNcEzjs61VBfPaaS.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/k1OJAOy6JQQqYzNoZSIexh5soNcEzjs61VBfPaaS.jpg?4ad5ca2cec08f5c5ff1e00f391148b11";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/krhBnHhqWBQQCZxJj5OP0lrzySkCFhvdLqZTlBVw.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/krhBnHhqWBQQCZxJj5OP0lrzySkCFhvdLqZTlBVw.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/krhBnHhqWBQQCZxJj5OP0lrzySkCFhvdLqZTlBVw.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/o9t2dyGd2NFluyfzQYTypaCc0zVDBPzbcfCTfRES.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/o9t2dyGd2NFluyfzQYTypaCc0zVDBPzbcfCTfRES.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/o9t2dyGd2NFluyfzQYTypaCc0zVDBPzbcfCTfRES.jpg?b76706f2ec3ff9ccf566f536f7eb7a3a";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/sUV5TBdHXfDK11Gq9NVwjVhNNznqm1Wul3rFlWOZ.jpg?4476f49eb76ce4fe9d548f06a233a5fc";
-
-/***/ }),
-
-/***/ "./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg":
-/*!*********************************************************************************!*\
-  !*** ./storage/app/public/uploads/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4014efe82e731d5cdb126df3";
-
-/***/ }),
-
 /***/ 1:
 /*!*************************************!*\
   !*** multi ./resources/js/front.js ***!
@@ -31044,7 +30929,7 @@ module.exports = "/images/vtTbXByU75nJ1xVALkpD71rgmimtxm43CG13I5TS.jpg?a0cf71bc4
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
