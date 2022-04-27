@@ -4,11 +4,21 @@ namespace App\Http\Controllers\Admin;
 use App\Image;
 use App\Service;
 
+use App\Apartment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
+    public function edit(Apartment $apartment){
+        $user_id= Auth::user()->id;
+        if($user_id == $apartment->user_id){
+            return view('admin.images.edit',compact('apartment'));
+        }
+        return view('admin.404');        
+    }
+
     public function update(Request $request, Image $image)
     {
         $data=$image;
@@ -25,15 +35,14 @@ class ImageController extends Controller
         $data['main_image']=true;
         $image->update($data);
         $services = Service::all();
-        return view('admin.apartments.edit',compact('apartment','services'));
+        return view('admin.images.edit',compact('apartment'));
     }
 
     public function destroy(Image $image)
     {
-        dd($image);
         $apartment = $image->apartment()->first();
         $image->delete();
         $services = Service::all();
-        return view('admin.apartments.edit',compact('apartment','services'));
+        return view('admin.images.edit',compact('apartment'));
     }
 }

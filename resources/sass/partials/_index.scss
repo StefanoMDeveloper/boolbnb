@@ -1,5 +1,10 @@
 
     
+button{
+    margin: auto;
+}
+
+
 .addBtn{
     background-color: #1c4144;
     transition:linear 1s;
@@ -30,7 +35,7 @@ a{
     }
 }
 
-.backBtn{
+.ms_backBtn{
     background-color:#39858a ;
     transition:linear 1s;
     border: none;
@@ -101,6 +106,7 @@ a{
         }
 
         .cancelbtn{
+            
             width: 200px;
             background-color: #dd2211;
             transition:linear 1s;
