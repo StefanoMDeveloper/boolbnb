@@ -1,22 +1,21 @@
 <template>
-    <div class="m-auto">
-        <div v-if="!loading" class="container-fluid container-lista">
+    <div >
+        <div v-if="!loading" class="container container-lista">
             <div class="row">
                 <div class="col-12">
-                    <div class="container-fluid">
+                    <div class="container mt-5">
                         <div class="row trophyText">
-                            <div class="col-12 d-flex align-items-center">
+                            <div class="col-12 d-flex">
                                 <h2 class="ml-3"><strong>Appartamenti consigliati</strong></h2>
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid">
+                    <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div v-for="apartment in apartments" :key="apartment.id" class="card col-12">       
-                                    <div v-if="apartment.visible && apartment.active_sponsorships.length != 0" class="sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center">
-                                        
-                                        <div class="col-lg-4">
+                                <div v-for="apartment in apartments" :key="apartment.id" class="p-0 col-12 col-lg-12 d-flex ">       
+                                    <div v-if="apartment.visible && apartment.active_sponsorships.length != 0" class="sponsored col-12 col-lg-12 my-3 p-0 d-flex  flex-wrap align-items-center justify-content-center">    
+                                        <div class="col-lg-4 m-auto">
                                             <div v-for="image in apartment.images" :key="image.id" ><!-- non usare ccs su questo div -->
                                                 <div v-if="image.main_image"  class="card-immagine">
                                                     <img  :src="`/storage/${image.url}`" class="border">
@@ -24,7 +23,7 @@
                                                 </div>
                                             </div>
                                         </div> 
-                                        <div class=" descrizione col-10 col-lg-7 ml-lg-5">
+                                        <div class=" descrizione col-10 col-lg-5 ml-lg-5">
                                             <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                                 <h4>{{apartment.name}}</h4>
                                             </router-link>
@@ -54,38 +53,36 @@
 
                     <!-- non sponsorizzate -->
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="non-sponsored col-12">
-                                <div v-for="apartment in apartments" :key="apartment.id" class="card col-12">   
-                                    <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5">   
-                                        <div class="col-lg-3">
-                                            <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
-                                                <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-12">
-                                                    <img  :src="`/storage/${image.url}`"  class="border">
-                                                </div>
+                        <div class="row px-3">
+                            <div v-for="apartment in apartments" :key="apartment.id" class=" p-0 col-12">   
+                                <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="nonsponsored d-flex flex-wrap flex-lg-6 my-3 align-items-center justify-content-around px-lg-5">   
+                                    <div class="col-lg-4 m-auto">
+                                        <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
+                                            <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-12 p-0">
+                                                <img  :src="`/storage/${image.url}`"  class="border">
                                             </div>
                                         </div>
-                                        <div class="descrizione col-10 col-lg-8 ml-lg-5">
-                                            <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                                                <h4>{{apartment.name}}</h4>
-                                            </router-link>
-                                            <ul class="d-flex">
-                                                <li>stanze {{apartment.rooms}} •</li>
-                                                <li>letti {{apartment.beds}} •</li>
-                                                <li>bagni {{apartment.bathrooms}} •</li>
-                                                <span v-for="service in apartment.services" :key="service.id">
-                                                    <li>{{service.name}} •</li>
-                                                </span>
-                                            </ul>
-                                            <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                                            <button>
-                                                    <a>
-                                                        <i class="fa-solid fa-eye"></i>
-                                                        Visualizza ulteriori dettagli...
-                                                    </a>
-                                                </button>
-                                            </router-link>
-                                        </div>
+                                    </div>
+                                    <div class="descrizione col-10 col-lg-5 ">
+                                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                                            <h4>{{apartment.name}}</h4>
+                                        </router-link>
+                                        <ul class="d-flex">
+                                            <li>stanze {{apartment.rooms}} •</li>
+                                            <li>letti {{apartment.beds}} •</li>
+                                            <li>bagni {{apartment.bathrooms}} •</li>
+                                            <span v-for="service in apartment.services" :key="service.id">
+                                                <li>{{service.name}} •</li>
+                                            </span>
+                                        </ul>
+                                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                                        <button>
+                                                <a>
+                                                    <i class="fa-solid fa-eye"></i>
+                                                    Visualizza ulteriori dettagli...
+                                                </a>
+                                            </button>
+                                        </router-link>
                                     </div>
                                 </div>
                             </div>
@@ -139,6 +136,10 @@ export default {
   }
 }
 
+.background{
+    background-color: rgb(228, 223, 223);
+}
+
 
 a{
     color:black;
@@ -146,26 +147,9 @@ a{
     margin-top: 0;
 }
 
-.trophyText{
-    .ms_trophy{
-        color: gold;
-        font-size: 20px;
-        height: 70px;
-        h2{
-            line-height: 70px;
-        }
-    }
-}
-
-@media only screen and (min-width:1200px){
-    .trophyText{
-        .ms_trophy{
-            font-size: 40px;
-        }
-    }
 
 
-}
+
 
 .descrizione{
     padding: 30px 0;
@@ -196,9 +180,12 @@ a{
     
 .card-immagine{
     margin: 30px 0;
-    height: 300px;
+    height: 250px;
     width: 100%;
     border-radius: 20px;
+    border: 2px solid gray;
+    background-color: rgb(240, 238, 238);
+    padding: 10px;
     overflow: hidden;
     position: relative;
     img{
@@ -206,6 +193,7 @@ a{
         width: 100%;
         object-fit: cover;
         transition:linear 1s; 
+        border-radius: 20px;
     }
      &:hover img{
         transform: scale(1.1);
@@ -227,8 +215,9 @@ a{
 } 
 
 .card-immaginenonSpon{
-    margin: 30px 0;
-    height: 300px;
+     margin: 30px 0;
+    height: 250px;
+    width: 100%;
     border-radius: 20px;
     overflow: hidden;
     img{
@@ -269,7 +258,13 @@ ul{
 }
 
 .sponsored{
-    background-color: rgb(235,235,235);
+    background-color: rgb(252, 232, 232);
+    border-radius: 20px;
+}
+
+.nonsponsored{
+    background-color: rgb(231, 229, 229);
+    border-radius: 20px;
 }
 
 
