@@ -8616,6 +8616,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleApartment",
@@ -8853,7 +8880,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#email[data-v-4fd40851] {\n  overflow: visible;\n  list-style-type: none;\n}\n#map[data-v-4fd40851] {\n  border-radius: 20px;\n}\n.borderline[data-v-4fd40851], .borderdouble[data-v-4fd40851] {\n  border-bottom: 1px solid rgb(193, 192, 192);\n  margin-bottom: 20px;\n}\n.borderdouble[data-v-4fd40851] {\n  margin-top: 20px;\n  padding: 10px;\n}\n.singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  min-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n}\n.main-immagine img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media only screen and (min-width: 1200px) {\n.main-immagine[data-v-4fd40851] {\n    width: 50%;\n    height: 560px;\n    float: left;\n    overflow: hidden;\n}\n.main-immagine img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.main-immagine:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n.other-immagini[data-v-4fd40851] {\n    width: 25%;\n    height: 280px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    float: left;\n    overflow: hidden;\n}\n.other-immagini img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.other-immagini:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}\np[data-v-4fd40851] {\n  font-size: 16px;\n  margin-bottom: 12px;\n}\n.ms_icon[data-v-4fd40851] {\n  color: #39858a;\n}\n.ms_description[data-v-4fd40851] {\n  line-height: 45px;\n  font-size: 23px;\n  text-align: justify;\n  text-justify: inter-word;\n}\n.fa-circle-info[data-v-4fd40851] {\n  font-size: 32px;\n}\n.fa-bell-concierge[data-v-4fd40851] {\n  font-size: 25px;\n}\n.backBtn[data-v-4fd40851] {\n  width: 150px;\n}\n.ms_card[data-v-4fd40851] {\n  height: 150px;\n  width: 150px;\n  border-radius: 20px;\n  background-color: lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid rgb(207, 204, 204);\n}\n.ms_card .ms_icon[data-v-4fd40851] {\n  font-size: 30px;\n}\n.ms_Btn[data-v-4fd40851] {\n  background-color: #39858a;\n  transition: linear 1s;\n  border: none;\n  border-radius: 10px;\n  color: white;\n  padding: 10px 5px;\n  width: 200px;\n}\n.ms_Btn[data-v-4fd40851]:hover {\n  background-color: #1c4144;\n}", ""]);
+exports.push([module.i, "#email[data-v-4fd40851] {\n  overflow: visible;\n  list-style-type: none;\n}\n#map[data-v-4fd40851] {\n  border-radius: 20px;\n}\n.borderline[data-v-4fd40851], .borderdouble[data-v-4fd40851] {\n  border-bottom: 1px solid rgb(193, 192, 192);\n  margin-bottom: 20px;\n}\n.borderdouble[data-v-4fd40851] {\n  margin-top: 20px;\n  padding: 10px;\n}\n.singleApartment[data-v-4fd40851] {\n  margin-top: 200px;\n}\n.singleApartment .containerImages[data-v-4fd40851] {\n  border-radius: 30px;\n  overflow: hidden;\n  padding: 0;\n  min-height: 560px;\n}\n.main-immagine[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n}\n.main-immagine img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini[data-v-4fd40851] {\n  width: 100%;\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.other-immagini img[data-v-4fd40851] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media only screen and (min-width: 1200px) {\n.main-immagine[data-v-4fd40851] {\n    width: 50%;\n    height: 560px;\n    float: left;\n    overflow: hidden;\n}\n.main-immagine img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.main-immagine:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n.other-immagini[data-v-4fd40851] {\n    width: 25%;\n    height: 280px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    float: left;\n    overflow: hidden;\n}\n.other-immagini img[data-v-4fd40851] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    transition: linear 1s;\n}\n.other-immagini:hover img[data-v-4fd40851] {\n    transform: scale(1.1);\n}\n}\nimg[data-v-4fd40851] {\n  border: 2px solid white;\n}\nh5[data-v-4fd40851] {\n  padding-top: 20px;\n}\np[data-v-4fd40851] {\n  font-size: 16px;\n  margin-bottom: 12px;\n}\n.ms_icon[data-v-4fd40851] {\n  color: #39858a;\n}\n.ms_description[data-v-4fd40851] {\n  line-height: 45px;\n  font-size: 23px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_description[data-v-4fd40851] {\n    text-align: justify;\n    text-justify: inter-word;\n}\n}\n.fa-circle-info[data-v-4fd40851] {\n  font-size: 32px;\n}\n.fa-bell-concierge[data-v-4fd40851] {\n  font-size: 25px;\n}\n.backBtn[data-v-4fd40851] {\n  width: 150px;\n}\n.ms_card[data-v-4fd40851] {\n  height: 150px;\n  width: 150px;\n  border-radius: 20px;\n  background-color: lightgray;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid rgb(207, 204, 204);\n}\n.ms_card .ms_icon[data-v-4fd40851] {\n  font-size: 30px;\n}\n.ms_Btn[data-v-4fd40851] {\n  background-color: #39858a;\n  transition: linear 1s;\n  border: none;\n  border-radius: 10px;\n  color: white;\n  padding: 10px 5px;\n  width: 200px;\n}\n.ms_Btn[data-v-4fd40851]:hover {\n  background-color: #1c4144;\n}", ""]);
 
 // exports
 
@@ -12961,8 +12988,9 @@ var render = function () {
                         "div",
                         { key: service.id, staticClass: "container" },
                         [
-                          _c("ul", [
+                          _c("ul", { staticClass: "list-unstyled" }, [
                             _c("li", [
+                              _c("i", { staticClass: "fa-solid fa-check" }),
                               _vm._v(
                                 "\n                            " +
                                   _vm._s(service.name) +
@@ -12990,132 +13018,280 @@ var render = function () {
                     },
                   },
                   [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.name,
-                          expression: "formData.name",
-                        },
-                      ],
-                      attrs: { type: "text", id: "name", placeholder: "Nome" },
-                      domProps: { value: _vm.formData.name },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "name", $event.target.value)
-                        },
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-lg-none col-12 my-3 d-flex flex-column justify-content-start",
                       },
-                    }),
+                      [
+                        _c("div", { staticClass: "d-flex col-12 px-0 my-2" }, [
+                          _c("h6", { staticClass: "col-3 mr-1" }, [
+                            _vm._v("Nome"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.formData.name,
+                                expression: "formData.name",
+                              },
+                            ],
+                            staticClass: " col-9",
+                            attrs: {
+                              type: "text",
+                              id: "name",
+                              placeholder: "Nome",
+                            },
+                            domProps: { value: _vm.formData.name },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.formData,
+                                  "name",
+                                  $event.target.value
+                                )
+                              },
+                            },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "d-flex px-0 col-12 my-2" }, [
+                          _c("h6", { staticClass: " col-3 px-0 mr-1" }, [
+                            _vm._v("Cognome"),
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.formData.lastname,
+                                expression: "formData.lastname",
+                              },
+                            ],
+                            staticClass: " col-9",
+                            attrs: {
+                              type: "text",
+                              id: "lastname",
+                              placeholder: "Cognome",
+                            },
+                            domProps: { value: _vm.formData.lastname },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.formData,
+                                  "lastname",
+                                  $event.target.value
+                                )
+                              },
+                            },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "d-flex px-0 col-12 my-2" }, [
+                          _c("h6", { staticClass: "col-3" }, [_vm._v("email")]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.formData.email,
+                                expression: "formData.email",
+                              },
+                            ],
+                            staticClass: "ms_email col-9",
+                            attrs: {
+                              type: "email",
+                              id: "email",
+                              placeholder: "email",
+                            },
+                            domProps: { value: _vm.formData.email },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.formData,
+                                  "email",
+                                  $event.target.value
+                                )
+                              },
+                            },
+                          }),
+                        ]),
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.lastname,
-                          expression: "formData.lastname",
+                    _c("div", { staticClass: "d-none d-lg-flex col-12 my-3" }, [
+                      _c("h6", { staticClass: " col-3 col-lg-2" }, [
+                        _vm._v("Nome e Cognome"),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.name,
+                            expression: "formData.name",
+                          },
+                        ],
+                        staticClass: "col-4 col-lg-3 mr-2",
+                        attrs: {
+                          type: "text",
+                          id: "name",
+                          placeholder: "Nome",
                         },
-                      ],
-                      attrs: {
-                        type: "text",
-                        id: "lastname",
-                        placeholder: "Cognome",
-                      },
-                      domProps: { value: _vm.formData.lastname },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.formData,
-                            "lastname",
-                            $event.target.value
-                          )
+                        domProps: { value: _vm.formData.name },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.formData, "name", $event.target.value)
+                          },
                         },
-                      },
-                    }),
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.lastname,
+                            expression: "formData.lastname",
+                          },
+                        ],
+                        staticClass: " col-4 col-lg-3",
+                        attrs: {
+                          type: "text",
+                          id: "lastname",
+                          placeholder: "Cognome",
+                        },
+                        domProps: { value: _vm.formData.lastname },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "lastname",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                    ]),
                     _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.email,
-                          expression: "formData.email",
+                    _c("div", { staticClass: "d-none d-lg-flex col-12 my-3" }, [
+                      _c("h6", { staticClass: "col-2" }, [_vm._v("email")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.email,
+                            expression: "formData.email",
+                          },
+                        ],
+                        staticClass: "ms_email col-6",
+                        attrs: {
+                          type: "email",
+                          id: "email",
+                          placeholder: "email",
                         },
-                      ],
-                      staticClass: "ms_email",
-                      attrs: {
-                        type: "email",
-                        id: "email",
-                        placeholder: "email",
-                      },
-                      domProps: { value: _vm.formData.email },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "email", $event.target.value)
+                        domProps: { value: _vm.formData.email },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.formData, "email", $event.target.value)
+                          },
                         },
-                      },
-                    }),
+                      }),
+                    ]),
                     _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.object,
-                          expression: "formData.object",
+                    _c("div", { staticClass: "d-none d-lg-flex col-12 my-3" }, [
+                      _c("h6", { staticClass: "col-2" }, [_vm._v("Oggetto")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.object,
+                            expression: "formData.object",
+                          },
+                        ],
+                        staticClass: "col-6",
+                        attrs: {
+                          type: "text",
+                          id: "object",
+                          placeholder: "Oggetto",
                         },
-                      ],
-                      attrs: {
-                        type: "text",
-                        id: "object",
-                        placeholder: "Oggetto",
-                      },
-                      domProps: { value: _vm.formData.object },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "object", $event.target.value)
+                        domProps: { value: _vm.formData.object },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "object",
+                              $event.target.value
+                            )
+                          },
                         },
-                      },
-                    }),
+                      }),
+                    ]),
                     _vm._v(" "),
-                    _c("textarea", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.formData.content,
-                          expression: "formData.content",
+                    _c("div", { staticClass: " col-12 my-3" }, [
+                      _c("h6", [_vm._v("Messaggio")]),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.content,
+                            expression: "formData.content",
+                          },
+                        ],
+                        staticClass: "col-12 form-control mt-3",
+                        attrs: {
+                          name: "content",
+                          id: "content",
+                          placeholder: "Inserisci il testo del tuo messaggio",
                         },
-                      ],
-                      staticClass: "col-8 form-control mt-3",
-                      attrs: {
-                        name: "content",
-                        id: "content",
-                        placeholder: "Inserisci il testo del tuo messaggio",
-                      },
-                      domProps: { value: _vm.formData.content },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.formData, "content", $event.target.value)
+                        domProps: { value: _vm.formData.content },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "content",
+                              $event.target.value
+                            )
+                          },
                         },
-                      },
-                    }),
+                      }),
+                    ]),
                     _vm._v(" "),
                     _vm.formErrors.content
                       ? _c("div", [
@@ -13140,7 +13316,10 @@ var render = function () {
                     _vm._v(" "),
                     _c(
                       "button",
-                      { staticClass: "ms_Btn mt-2", attrs: { type: "submit" } },
+                      {
+                        staticClass: "ms_Btn mt-2 ml-2",
+                        attrs: { type: "submit" },
+                      },
                       [_vm._v("Aggiungi")]
                     ),
                   ]
@@ -13165,7 +13344,7 @@ var render = function () {
                   ]
                 ),
                 _vm._v(" "),
-                _c("button", { staticClass: "ms_Btn mt-2" }, [
+                _c("button", { staticClass: "ms_Btn mt-2 ml-2" }, [
                   _c(
                     "a",
                     {
@@ -13271,7 +13450,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h4", [
+    return _c("h4", { staticClass: "mb-5 mt-2" }, [
       _c("span", { staticClass: "ms_icon mr-2" }, [
         _c("i", { staticClass: "fa-solid fa-comment-dots" }),
       ]),
@@ -30929,7 +31108,7 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
