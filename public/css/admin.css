@@ -14529,37 +14529,64 @@ h3 {
   text-align: center;
 }
 
+.container-title-sponsor h3 {
+  margin-top: 30px;
+}
+
+.container-sponsor {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.typeSponsor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.typeSponsor span {
+  font-size: 20px;
+}
+
 .pacchettiSponsor {
-  display: inline-block;
   background-color: #FF385C;
   color: white;
   text-align: center;
-  width: 18vw;
-  margin: 2vh 5vw;
+  width: 31%;
+  height: 150px;
+  margin: 0 10px;
+  border-radius: 10px;
+  position: relative;
 }
 
 .pacchettiSponsor .labl {
-  display: inline-block;
-  width: 18vw;
+  width: 100%;
+  height: 100%;
 }
 
 .pacchettiSponsor .labl > input {
   /* HIDE RADIO */
   visibility: hidden;
   /* Makes input not-clickable */
-  position: absolute;
-  /* Remove input from document flow */
 }
 
 .pacchettiSponsor .labl > input + div {
   /* DIV STYLES */
   cursor: pointer;
   border: 2px solid transparent;
+  border-radius: 10px;
+  position: absolute;
+  /* Remove input from document flow */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .pacchettiSponsor .labl > input:checked + div {
   /* (RADIO CHECKED) DIV STYLES */
-  background-color: #885500;
+  background-color: #93142b;
 }
 
 .sponsorAttivo {
@@ -14573,6 +14600,18 @@ h3 {
 .tirchioMegalomane {
   width: 80vw;
   height: 110vh;
+}
+
+.title-image {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.title-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .ms_messageText {
