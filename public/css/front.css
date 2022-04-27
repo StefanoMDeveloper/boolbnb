@@ -14107,46 +14107,43 @@ a .plusBtnMobile:hover {
 .apartmentscontainer .card .showbtn,
 .apartmentscontainer .card .editbtn,
 .apartmentscontainer .card .messagebtn,
-.apartmentscontainer .card .sponsorbtn {
-  width: 200px;
+.apartmentscontainer .card .imagebtn,
+.apartmentscontainer .card .sponsorbtn,
+.apartmentscontainer .card .sponsorizzatobtn,
+.apartmentscontainer .card .cancelbtn {
+  width: 100%;
   background-color: #39858a;
   transition: linear 1s;
   border: none;
+  border-radius: 50px;
   text-decoration: none;
 }
 
 .apartmentscontainer .card .showbtn:hover,
 .apartmentscontainer .card .editbtn:hover,
 .apartmentscontainer .card .messagebtn:hover,
-.apartmentscontainer .card .sponsorbtn:hover {
+.apartmentscontainer .card .imagebtn:hover,
+.apartmentscontainer .card .sponsorbtn:hover,
+.apartmentscontainer .card .sponsorizzatobtn:hover,
+.apartmentscontainer .card .cancelbtn:hover {
   background-color: #1c4144;
   text-decoration: none;
 }
 
 .apartmentscontainer .card .sponsorizzatobtn {
-  width: 200px;
   background-color: #ffcc00;
-  transition: linear 1s;
-  border: none;
-  text-decoration: none;
 }
 
 .apartmentscontainer .card .sponsorizzatobtn:hover {
   background-color: #885500;
-  text-decoration: none;
 }
 
 .apartmentscontainer .card .cancelbtn {
-  width: 200px;
   background-color: #dd2211;
-  transition: linear 1s;
-  border: none;
-  text-decoration: none;
 }
 
 .apartmentscontainer .card .cancelbtn:hover {
   background-color: #882211;
-  text-decoration: none;
 }
 
 @media only screen and (min-width: 780px) {
