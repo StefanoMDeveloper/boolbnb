@@ -11,7 +11,7 @@
     border-radius: 20px;
     margin-right: 2vw;
     &:hover{
-        background-color: #885500;
+        background-color: #996600;
         /*background-color: hwb(349 17% 45%);*/
     }
 }
@@ -66,12 +66,12 @@ h2, h3 {
         border: 2px solid transparent;
     }
     .labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
-        background-color: #885500;
+        background-color: #996600;
     }
 }
 
 .sponsorAttivo {
-    color: #885500;
+    color: #996600;
 }
 
 .sponsorDettagli {
