@@ -65,7 +65,7 @@
             <!-- header right -->
             <div class="headerright d-none d-lg-block col-3">
                 <ul>
-                <li>Diventa un Host</li>
+                <li><a class="text-white" href="/register">Diventa un Host</a></li>
                 <li><i class="fa-solid fa-globe"></i></li>
                 <li>
                   <a href="/admin">
