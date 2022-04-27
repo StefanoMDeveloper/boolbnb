@@ -14,17 +14,17 @@
             <!-- header center -->
             <div class="col-12 col-xl-5 headercenter d-flex flex-column align-items-center m-auto">
                 <nav :class="{ 'hide': scrollEffect }">
-                <ul>
+                <ul class="row">
                     <li class="fontLink"><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
                     <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
+                    <li class="fontLink"><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
                 </ul>
                 </nav>
                 <div class="d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto">
-                    <div class="inputContainer col-7 col-sm-9 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                    <div class="inputContainer col-12 col-lg-8 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
                       <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
-                      <div class="col-2 p-0 ms_icon"><i @click="filter" class="fa-solid fa-magnifying-glass searchIcon"></i></div>
+                      <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
                       <div class="autocompleters" v-show="autocompleters">
-                        <div class="paddingFormer"></div>
                         <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
                             {{option.address.freeformAddress}}
                         </div>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-2">
                       <a class="ms_search" href="#" @click='ricercaAvanzata'>
-                        <button class="ms_btnSearch">Ricerca  <br>Avanzata</button>
+                        <button class="ms_btnSearch d-none d-lg-block">Ricerca  <br>Avanzata</button>
                       </a>
                     </div>
                 </div>
@@ -111,7 +111,8 @@ export default {
         beds: 1,
         rooms: 1,
         servicesList: "",
-        radius: 20
+        radius: 20,
+        searchIsSet:false
     }
   },
   created(){
@@ -144,6 +145,8 @@ export default {
       this.search = this.autocompleters[index].address.freeformAddress;
       this.searchLat = this.autocompleters[index].position.lat;
       this.searchLon = this.autocompleters[index].position.lon;
+      this.searchIsSet = true;
+      document.getElementsByClassName(".searchIcon").classList
       this.autocompleters = [];
     },
     serviceList(counter){
@@ -155,12 +158,14 @@ export default {
       }
     },
     filter(){
-      this.autocompleters = [];
-      this.selectOption = false;
-      if(this.servicesList == ""){
-        this.servicesList = "0-";
-      }
-      this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});              
+      if(this.searchIsSet){
+        this.autocompleters = [];
+        this.selectOption = false;
+        if(this.servicesList == ""){
+          this.servicesList = "0-";
+        }
+        this.$emit('filter',{"search": this.search,"lat":this.searchLat,"lon":this.searchLon, "beds":this.beds, "rooms":this.rooms, "radius":this.radius, "servicesList":this.servicesList});             
+      } 
     },
  
     // Toggle if navigation is shown or hidden
@@ -264,6 +269,7 @@ header{
 
           .inputContainer{
             border:1px solid gray;
+            position: relative;
             z-index: 999;
             .ms_icon{
               display: flex;
@@ -283,7 +289,7 @@ header{
               }
                 .searchIcon:hover{
                   cursor: pointer;
-                }          
+                }        
             }
           }
       }
@@ -343,8 +349,8 @@ header{
   display: none;
 }
 .search{
-  border:1px solid black;
-  width: 300px; 
+  width: 300px;
+  border: none;
 }
 
 .autocompleters{
@@ -352,12 +358,16 @@ header{
   color:black;
   width:100%;
   position:absolute;
-  top:52px;
+  top: -5px;
   left:50%;
   transform: translateX(-50%);
+  border-radius: 30px;
+  padding: 60px 0px 10px 39px;
+  z-index: -1;
 
   .option{
-    border-bottom:1px solid black;  
+    color: grey;
+    padding: 8px 0;
   }
 }
 
@@ -412,19 +422,12 @@ input[type=number]{
   margin-right: 5px;
 
 }
-
-.autocompleters{
-  border-radius: 20px;
-  top: -5px;
-  padding-top: 64px;
-  z-index: -1;
-
-  .option{
-    color: grey;
-    padding: 5px;
-  }
+.notsearchIcon{
+    opacity: 0.3;
 }
 
-
+.fontLink{
+  text-align: center;
+}
 </style>
 
