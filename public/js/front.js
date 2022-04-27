@@ -8307,6 +8307,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Loader'
 });
@@ -8823,7 +8837,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".loader[data-v-a3277d48] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  transition: 0.5s ease all;\n  z-index: 999;\n}\n.loading[data-v-a3277d48] {\n  color: white;\n  font-size: 30px;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n}", ""]);
+exports.push([module.i, ".loader[data-v-a3277d48] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  background-color: white;\n  transition: 0.5s ease all;\n  z-index: 9999;\n}\n.loader .container-fluid[data-v-a3277d48] {\n  width: 100%;\n  height: 40px;\n  background-color: white;\n  color: black;\n}\n.loader .container-fluid .header-container[data-v-a3277d48] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\n.loader .container-fluid .header-container .headerleft[data-v-a3277d48] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\n.loader .container-fluid .header-container .headerleft i[data-v-a3277d48] {\n  color: black;\n}\n.loader .container-fluid .header-container .headerleft span[data-v-a3277d48] {\n  color: #ff385c;\n}\n.loader .loading[data-v-a3277d48] {\n  height: calc(100vh - 40px);\n  color: black;\n  font-size: 60px;\n  letter-spacing: 2px;\n}\n.loader .loading i[data-v-a3277d48] {\n  color: black;\n}\n.loader .loading span[data-v-a3277d48] {\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -12267,7 +12281,30 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "loader" }, [
-      _c("div", { staticClass: "loading" }, [_vm._v("Loading...")]),
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "header-container col-12" }, [
+            _c("div", { staticClass: "col-3 d-none d-xl-block headerleft" }, [
+              _c("i", { staticClass: "fa-brands fa-airbnb" }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Boolbnb")]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "loading d-flex flex-column justify-content-center align-items-center",
+        },
+        [
+          _c("i", { staticClass: "fa-brands fa-airbnb" }),
+          _vm._v(" "),
+          _c("span", [_vm._v("Boolbnb")]),
+        ]
+      ),
     ])
   },
 ]
