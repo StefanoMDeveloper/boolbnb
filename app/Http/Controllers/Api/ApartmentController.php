@@ -45,11 +45,6 @@ class ApartmentController extends Controller
     }  
     
     public function filter($search,$radius,$beds,$rooms,$lat,$lon,$services){
-        //get Services requested
-        if(isset($services)){
-            $serviceList = explode("-",$services);
-        }
-
         //First gross filter
         $apartments = Apartment::with(["images", "active_sponsorships", "services"])->get();
 
@@ -69,27 +64,34 @@ class ApartmentController extends Controller
             }
         }
 
-        //filter by service
-        $filteredApartments=[];
-        $checkVar = false;
-        foreach($apartments as $apartment){
-            $servicing = $apartment->services->toArray();
-            for($i=0;$i<count($servicing);$i++){
-                $servicing[$i] = $servicing[$i]['id'];
-            }
-            foreach($serviceList as $service){
-                if(in_array($service, $servicing)){
-                    $checkVar = true;
+        //get Services requested
+        if($services !=0){
+            $serviceList = explode("-",$services);
+            //filter by service
+            $filteredApartments=[];
+            $checkVar = false;
+            foreach($apartments as $apartment){
+                $servicing = $apartment->services->toArray();
+                for($i=0;$i<count($servicing);$i++){
+                    $servicing[$i] = $servicing[$i]['id'];
                 }
-                else{
-                    $checkVar = false;
-                    break 1;
+                foreach($serviceList as $service){
+                    if(in_array($service, $servicing)){
+                        $checkVar = true;
+                    }
+                    else{
+                        $checkVar = false;
+                        break 1;
+                    }
                 }
-            }
-            if($checkVar){
-                array_push($filteredApartments, $apartment);
-            }
+                if($checkVar){
+                    array_push($filteredApartments, $apartment);
+                }
+            }            
+        } else{
+            $filteredApartments = $apartments;
         }
+
 
         //filter by distance
         $apartments = [];

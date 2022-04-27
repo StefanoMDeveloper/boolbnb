@@ -40,7 +40,6 @@ class ApartmentController extends Controller
 
         $messages= Message::orderBy('date','desc')->get();
         return view('admin.apartments.index',compact('apartments','messages'));
-        return view('admin.apartments.index',compact('apartments','user_id'));
     }
 
     /**

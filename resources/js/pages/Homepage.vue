@@ -282,7 +282,12 @@ export default {
         img{
             height: 200px;
             width: 300px;
-            border-radius: 13px
+            border-radius: 13px;
+            filter: grayscale(50%);
+        }
+        
+        &:hover img{
+            filter: grayscale(0%);
         }
 
     }
@@ -293,6 +298,9 @@ export default {
 .ms_citiesContainer { 
     margin:30px 0;
     padding: 0;
+    &:hover {
+        padding-bottom: 5px;
+    }
     .ms_cityCard{
         width: 100%;
         border-radius: 20px;
@@ -312,6 +320,7 @@ export default {
         .ms_textcity{
             padding: 10px 20px;
         }
+    
     
     }
 }
