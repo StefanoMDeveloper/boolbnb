@@ -13,11 +13,11 @@
                     </p>
                 </div>
                 <div class="container containerImages">
-                    <span v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo span -->
-                        <div v-if="image.main_image" class="main-immagine">
-                            <img  :src="`/storage/${image.url}`">
-                        </div>
-                        <div  v-else class="other-immagini">
+                        <div class="main-immagine">
+                            <img  :src="`/storage/${main_image.url}`">
+                        </div>                    
+                    <span v-for="image in images" :key="image.id"><!-- non usare ccs su questo span -->
+                        <div class="other-immagini">
                             <img :src="`/storage/${image.url}`">
                         </div>
                     </span>
@@ -128,7 +128,9 @@ export default {
                 content: "",
                 apartment_id: null
             },
-            formErrors:{}
+            formErrors:{},
+            main_image: {},
+            images: []
         }
     },
     components: {
@@ -143,6 +145,13 @@ export default {
             this.formData.apartment_id = this.apartment.id;
             this.lat = parseFloat(this.apartment.lat);
             this.lon = parseFloat(this.apartment.lon);
+            for (let i=0; i<this.apartment.images.length;i++){
+                if(this.apartment.images[i].main_image){
+                    this.main_image = this.apartment.images[i];
+                } else {
+                    this.images.push(this.apartment.images[i]);
+                }
+            }
             this.loading = false;
         });     
     },
