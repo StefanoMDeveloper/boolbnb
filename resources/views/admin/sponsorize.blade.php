@@ -88,6 +88,7 @@
     braintree.dropin.create({
         authorization: client_token,
         selector: '#bt-dropin',
+        locale: "it_IT",
     }, function (createErr, instance) {
         if (createErr) {
         console.log('Create Error', createErr);

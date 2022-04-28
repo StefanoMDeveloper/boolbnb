@@ -3,7 +3,10 @@
         <div v-if="!loading" class="container-fluid container-lista">
             <div class="row">
                 <div class="col-12">
-                    <div v-show="apartmentList.length==0">
+                    <div v-show="apartmentList.length==0 && count<=1">
+                        <Loader />
+                    </div>
+                    <div v-show="apartmentList.length==0 && count>1">
                         Nessun appartamento
                     </div>
                     <div v-show="apartmentList.length!=0">
@@ -118,20 +121,21 @@ export default {
             loading: true,
             sponsoreds: [],
             nonSponsoreds: [],
-            list: []
+            list: [],
+            count: 0
         }
     },
     mounted(){
         this.updateLists();
         this.loading = false;
+        this.count++;
     },
     updated(){
         if(this.apartmentList != this.list){
             this.sponsoreds = [];
             this.nonSponsoreds = [];
-            this.loading = true;
             this.updateLists();
-            this.loading = false;
+            this.count++;
         }
     },
     methods:{
