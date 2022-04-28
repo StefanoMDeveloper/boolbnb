@@ -75,7 +75,7 @@
                 </ul>
                 <nav class="header-dropdown" v-show="headerDropdown">
                   <li><a href="/register">Registrati</a></li>
-                  <li><a href="/login">Accedi</a></li>
+                  <li><a href="/admin">Accedi</a></li>
                   <li>Diventa un host</li>
                   <li>Proponi un'esperienza</li>
                   <li>Assistenza</li>
