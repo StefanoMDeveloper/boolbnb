@@ -114,6 +114,7 @@ export default {
         .get("/api/apartments")
         .then((response) => {
             this.apartments = response.data;
+            this.apartments = this.apartments.reverse();
             this.loading = false;
         });
     },

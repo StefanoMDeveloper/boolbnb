@@ -3,7 +3,10 @@
         <div v-if="!loading" class="container-fluid container-lista">
             <div class="row">
                 <div class="col-12">
-                    <div v-show="apartmentList.length==0">
+                    <div v-show="apartmentList.length==0 && count<=1">
+                        <Loader />
+                    </div>
+                    <div v-show="apartmentList.length==0 && count>1">
                         Nessun appartamento
                     </div>
                     <div v-show="apartmentList.length!=0">
@@ -11,9 +14,8 @@
                             <div class="container-fluid">
                                 <div class="row trophyText">
                                     <div class="col-12 d-flex justify-content-center align-items-center">
-                                        <span class="ms_trophy"><i class="fa-solid fa-trophy"></i></span>
                                         <div>
-                                            <h2 class="ml-3"><strong>Appartamenti consigliati</strong></h2>
+                                            <h2 class="ml-3"><strong>Risultati della tua ricerca</strong></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -116,24 +118,26 @@ export default {
             loading: true,
             sponsoreds: [],
             nonSponsoreds: [],
-            list: []
+            list: [],
+            count:0
         }
     },
     mounted(){
         this.updateLists();
         this.loading = false;
+        this.count++;
     },
     updated(){
         if(this.apartmentList != this.list){
             this.sponsoreds = [];
             this.nonSponsoreds = [];
-            this.loading = true;
             this.updateLists();
-            this.loading = false;
+            this.count++;
         }
     },
     methods:{
         updateLists: function(){
+            this.apartmentList = this.apartmentList.reverse();
             var l = this.apartmentList.length;
             this.list = this.apartmentList;
             if(l != 0){
