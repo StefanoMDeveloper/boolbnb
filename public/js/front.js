@@ -8942,7 +8942,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".us[data-v-04b55fa0] {\n  margin: 200px 0;\n}\nbutton[data-v-04b55fa0] {\n  padding: 5px 10px;\n  margin: 10px;\n  border-radius: 10px;\n  border: 0;\n  width: 260px;\n}\nbutton p[data-v-04b55fa0] {\n  margin-left: 5px;\n  float: left;\n  width: 82px;\n}\nbutton .linkedin[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: text-bottom;\n  float: left;\n  padding-right: 20px;\n}\n.icona[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: middle;\n  float: left;\n  padding-left: 20px;\n}\n.inside-button[data-v-04b55fa0] {\n  padding: 10px 15px 0 15px;\n}\n.container-body[data-v-04b55fa0] {\n  min-height: calc(100vh - 710px);\n}", ""]);
+exports.push([module.i, ".us[data-v-04b55fa0] {\n  margin: 300px 0;\n}\nbutton[data-v-04b55fa0] {\n  padding: 5px 10px;\n  margin: 10px;\n  border-radius: 10px;\n  border: 0;\n  width: 260px;\n}\nbutton p[data-v-04b55fa0] {\n  margin-left: 5px;\n  float: left;\n  width: 82px;\n}\nbutton .linkedin[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: text-bottom;\n  float: left;\n  padding-right: 20px;\n}\n.icona[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: middle;\n  float: left;\n  padding-left: 20px;\n}\n.inside-button[data-v-04b55fa0] {\n  padding: 10px 15px 0 15px;\n}\n.container-body[data-v-04b55fa0] {\n  min-height: calc(100vh - 1110px);\n}", ""]);
 
 // exports
 
@@ -12175,17 +12175,25 @@ var staticRenderFns = [
         },
         [
           _c("div", { staticClass: "col " }, [
-            _c("a", { attrs: { href: "#/" } }, [
-              _c("button", [
-                _c("div", { staticClass: "inside-button row" }, [
-                  _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Antony "), _c("br"), _vm._v(" Morgante")]),
-                  _vm._v(" "),
-                  _c("i", { staticClass: "fa-solid fa-user-ninja icona" }),
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.linkedin.com/in/antony-morgante-b754b8236/",
+                },
+              },
+              [
+                _c("button", [
+                  _c("div", { staticClass: "inside-button row" }, [
+                    _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Antony "), _c("br"), _vm._v(" Morgante")]),
+                    _vm._v(" "),
+                    _c("i", { staticClass: "fa-solid fa-user-ninja icona" }),
+                  ]),
                 ]),
-              ]),
-            ]),
+              ]
+            ),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col" }, [
