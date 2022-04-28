@@ -17,7 +17,7 @@
                 <ul class="row">
                     <li class="fontLink"><router-link :to="{ name: 'Homepage' }">Homepage</router-link></li>
                     <li class="fontLink"><router-link :to="{ name: 'ApartmentList' }">Appartamenti</router-link></li>
-                    <li class="fontLink"><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
+                    <li class="fontLink"><router-link :to="{ name: 'ChiSiamo2' }">Chi Siamo</router-link></li>
                 </ul>
                 </nav>
                 <div class="d-flex headercenterB justify-content-center  align-items-center m-auto container-fluid">
