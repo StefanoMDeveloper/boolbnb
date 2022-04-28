@@ -4,7 +4,7 @@
             <div class="container">
                 <img src="/storage/loadingPage.gif">
             </div>
-            <div class="container p-3 singleApartment" v-show="loading==false">
+            <div class="container p-3 singleApartment">
                 <div class="borderline">
                     <h1 class="text-center"><strong>{{apartment.name}}</strong></h1>
                     <p class="text-center">
