@@ -127,7 +127,6 @@
             @forelse ($apartment->stats as $stat)
                 <p>{{$stat->ip}} il {{$stat->date->format('d/m/Y')}}</p>
             @empty
-                <p>Non ci sono visualizzazioni!</p>
             @endforelse
     
         </div>
