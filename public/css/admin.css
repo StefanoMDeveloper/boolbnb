@@ -14131,15 +14131,15 @@ a .plusBtnMobile:hover {
 }
 
 .apartmentscontainer .card .sponsorizzatobtn {
-  background-color: #ffcc00;
+  background-color: #eebb00;
 }
 
 .apartmentscontainer .card .sponsorizzatobtn:hover {
-  background-color: #885500;
+  background-color: #996600;
 }
 
 .apartmentscontainer .card .cancelbtn {
-  background-color: #dd2211;
+  background-color: #dd3311;
 }
 
 .apartmentscontainer .card .cancelbtn:hover {
@@ -14494,7 +14494,7 @@ a span {
 }
 
 .sponsorBtn:hover {
-  background-color: #885500;
+  background-color: #996600;
   /*background-color: hwb(349 17% 45%);*/
 }
 
@@ -14530,41 +14530,68 @@ h3 {
   text-align: center;
 }
 
+.container-title-sponsor h3 {
+  margin-top: 30px;
+}
+
+.container-sponsor {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.typeSponsor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.typeSponsor span {
+  font-size: 20px;
+}
+
 .pacchettiSponsor {
-  display: inline-block;
   background-color: #FF385C;
   color: white;
   text-align: center;
-  width: 17vw;
-  margin: 2vh 5vw;
+  width: 30.5%;
+  height: 150px;
+  margin: 0 10px;
+  border-radius: 10px;
+  position: relative;
 }
 
 .pacchettiSponsor .labl {
-  display: inline-block;
-  width: 17vw;
+  width: 100%;
+  height: 100%;
 }
 
 .pacchettiSponsor .labl > input {
   /* HIDE RADIO */
   visibility: hidden;
   /* Makes input not-clickable */
-  position: absolute;
-  /* Remove input from document flow */
 }
 
 .pacchettiSponsor .labl > input + div {
   /* DIV STYLES */
   cursor: pointer;
   border: 2px solid transparent;
+  border-radius: 10px;
+  position: absolute;
+  /* Remove input from document flow */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .pacchettiSponsor .labl > input:checked + div {
   /* (RADIO CHECKED) DIV STYLES */
-  background-color: #885500;
+  background-color: #93142b;
 }
 
 .sponsorAttivo {
-  color: #885500;
+  color: #996600;
 }
 
 .sponsorDettagli {
@@ -14576,6 +14603,18 @@ h3 {
   height: 110vh;
 }
 
+.title-image {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.title-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
 .ms_messageText {
   background-color: #39858a;
   border: 1px solid #39858a;
@@ -14594,11 +14633,97 @@ h3 {
   color: white;
   font-weight: bold;
   font-style: italic;
+}
+
+.container-404 {
+  border-radius: 10px;
+  background-color: #EFEBEB;
+  padding: 100px 30px;
+  margin-top: 100px;
+}
+
+.title-404 {
+  color: #ff385c;
+  font-size: 70px;
+  text-align: center;
+}
+
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.error-404 a {
+  margin-top: 50px;
+  color: #1D68A7;
 }
 
 main {
   background-color: #dbd4d4;
+  min-height: calc(100vh - 60px);
+}
+
+.ms_imgContainer {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgb(193, 190, 190);
+  padding: 10px;
+}
+
+.ms_imgContainer img {
   height: 100%;
-  min-height: 1000px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+
+.ms_cancelBtn {
+  margin-left: 0;
+  margin-right: 0;
+  width: 200px;
+  transition: linear 1s;
+  border: none;
+  border-radius: 10px;
+  height: 50px !important;
+}
+
+.ms_cancelBtn:hover {
+  background-color: rgb(79, 77, 77);
+}
+
+.ms_saveBtn {
+  background-color: #FF385C;
+  color: white;
+  transition: linear 1s;
+  border: none;
+  min-height: 50px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.ms_saveBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+.ms_imgCardContainer {
+  background-color: #f6f2f2;
+  border-radius: 20px;
+}
+
+.ms_saveBtnD {
+  background-color: #FF385C;
+  color: white;
+  transition: linear 1s;
+  border: none;
+}
+
+.ms_saveBtnD:hover {
+  background-color: hwb(349 17% 45%);
 }
 

@@ -20,26 +20,28 @@
                     <li class="fontLink"><router-link :to="{ name: 'ChiSiamo' }">Chi Siamo</router-link></li>
                 </ul>
                 </nav>
-                <div class="d-flex headercenterB justify-content-sm-center justify-content-start align-items-center m-auto">
-                    <div class="inputContainer col-12 col-lg-8 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
-                      <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
-                      <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
-                      <div class="autocompleters" v-show="autocompleters">
-                        <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
-                            {{option.address.freeformAddress}}
-                        </div>
-                      </div> 
-                    </div>
-                    <div class="col-2">
-                      <a class="ms_search" href="#" @click='ricercaAvanzata'>
-                        <button class="ms_btnSearch d-none d-lg-block">Ricerca  <br>Avanzata</button>
-                      </a>
-                    </div>
+                <div class="d-flex headercenterB justify-content-center  align-items-center m-auto container-fluid">
+                  <div class="row col-12">
+                      <div class="inputContainer col-12 col-lg-10 d-flex justify-content-between" @keyup.enter.stop="filter" :class="{ 'search': scrollEffect }">
+                        <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
+                        <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
+                        <div class="autocompleters col-12" v-show="autocompleters">
+                          <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
+                              {{option.address.freeformAddress}}
+                          </div>
+                        </div> 
+                      </div>
+                      <div class="col-2">
+                        <a class="ms_search" href="#" @click='ricercaAvanzata'>
+                          <button class="ms_btnSearch d-none d-lg-block">Ricerca  <br>Avanzata</button>
+                        </a>
+                      </div>
+                  </div>
                 </div>
             
             <!-- campi aggiuntivi -->
-            <div v-show="selectOption" >
-              <div class="row col filter d-flex flex-column">
+            <div class="container-fluid" v-show="selectOption" >
+              <div class="row col filter d-flex flex-column mt-3">
                 <div>
                   <label for="rooms">Numero di Stanze</label>
                     <input type="number" min="1" max="10" id="rooms" name="rooms" v-model="rooms">
@@ -51,7 +53,7 @@
 
                 <div>
                   <!--services  -->
-                  <div class="text-black mb-2" :class="{ 'services': !scrollEffect }"><strong>Servizi:</strong></div>
+                  <div class="text-black  mt-4 mb-2" :class="{ 'services': !scrollEffect }"><strong>Servizi:</strong></div>
                   <div class="services" v-for="(service,index) in services" :key="index">
                     <input type="checkbox" id="service" name="services[]" @change="serviceList(index)">
                   <label :class="{ 'services': !scrollEffect }" class="text-black" for="service">{{service.name}}</label><br>    
@@ -68,11 +70,16 @@
                 <li><a class="text-white" href="/register">Diventa un Host</a></li>
                 <li><i class="fa-solid fa-globe"></i></li>
                 <li>
-                  <a href="/admin">
-                  <button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
-                  </a>
+                  <button @click="setHeaderDropdownValue()"><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
                 </li>
                 </ul>
+                <nav class="header-dropdown" v-show="headerDropdown">
+                  <li><a href="/register">Registrati</a></li>
+                  <li><a href="/login">Accedi</a></li>
+                  <li>Diventa un host</li>
+                  <li>Proponi un'esperienza</li>
+                  <li>Assistenza</li>
+                </nav>
             </div>
           </div>
         </div>
@@ -112,7 +119,8 @@ export default {
         rooms: 1,
         servicesList: "",
         radius: 20,
-        searchIsSet:false
+        searchIsSet:false,
+        headerDropdown:false
     }
   },
   created(){
@@ -133,6 +141,13 @@ export default {
     }
   },
   methods: {
+    setHeaderDropdownValue(){
+      if(!this.headerDropdown){
+        this.headerDropdown = true;
+      } else {
+        this.headerDropdown = false;
+      }
+    },
     //autocomplete
     autocomplete(){
       axios
@@ -268,7 +283,6 @@ header{
         }
 
           .inputContainer{
-            border:1px solid gray;
             position: relative;
             z-index: 999;
             .ms_icon{
@@ -355,6 +369,7 @@ header{
 
 .autocompleters{
   background-color: white;
+  border: 1px solid gray;
   color:black;
   width:100%;
   position:absolute;
@@ -428,6 +443,18 @@ input[type=number]{
 
 .fontLink{
   text-align: center;
+}
+
+.header-dropdown{
+  list-style-type: none;
+  background-color:white;
+  color:black;
+
+  a{
+    text-decoration: none;
+    color:black;
+  }
+
 }
 </style>
 

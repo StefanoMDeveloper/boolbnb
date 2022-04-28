@@ -10,35 +10,48 @@
             <form action="{{route('api.make.payment')}}" method="post" id="payment-form">
             @csrf
             @method('POST')
-            <h2 class="colorBrandGreen"><strong>{{$apartment->name}}</strong></h2>
-            <h2 class="colorBrandGreen"><strong>{{$apartment->address}}</strong></h2>
-            <h3 class="m-3"><strong>Scegliere uno dei seguenti pacchetti promozionali:</strong></h3>
-                @foreach ($sponsorships as $sponsorship)
-                <div class="pacchettiSponsor">
-                    <!--input class="form-check-input" type="radio" name="sponsorships[]" id="{{$sponsorship->id}}"
-                    value="{{$sponsorship->id}}"-->
-                    <label class="form-check-label labl" for="{{$sponsorship->id}}">
-                        <input type="radio" name="sponsorships[]" value="{{$sponsorship->id}}" id="{{$sponsorship->id}}"/>
-                        <div>Tipologia: {{$sponsorship->name}},<br>
-                            prezzo: {{$sponsorship->price}},<br>
-                            durata: {{$sponsorship->duration}} ore            
-                        </div>
-                    </label>
+                <div class="container-title-sponsor">
+                    <h1 class="text-center my-3">{{$apartment->name}}</h1>
+                    @forelse ($apartment->images as $image)
+                        @if($image->main_image)
+                            <div class="title-image">
+                                <img src="{{asset( 'storage/'.$image->url )}}" alt="">
+                            </div>
+                        @endif
+                        @empty
+                        Non c'è immagine
+                    @endforelse            
+                    <h3 class="">Scegliere uno dei seguenti pacchetti promozionali:</h3>
                 </div>
-                @endforeach
+                <div class="container-sponsor">
+                    @foreach ($sponsorships as $sponsorship)
+                    <div class="pacchettiSponsor">
+                        <!--input class="form-check-input" type="radio" name="sponsorships[]" id="{{$sponsorship->id}}"
+                        value="{{$sponsorship->id}}"-->
+                        <label class="form-check-label labl" for="{{$sponsorship->id}}">
+                        <input type="radio" name="sponsorships[]" value="{{$sponsorship->id}}" id="{{$sponsorship->id}}"/>
+                        <div class="typeSponsor">
+                            <span>Tipologia: {{$sponsorship->name}}</span>
+                            <span>Prezzo: {{$sponsorship->price}}</span>
+                            <span>Durata: {{$sponsorship->duration}} ore</span>           
+                        </div>
+                        </label>
+                    </div>
+                    @endforeach
+                </div>
                 <div class="bt-drop-in-wrapper">
                     <div id="bt-dropin"></div>
                 </div>
                 <input id="apartment" name="apartment" value="{{$apartment->id}}" type="hidden" />
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="sponsorBtn" type="submit">Sponsorizza</button>
-                <a class="d-inline-block" href="{{route('admin.apartments.index')}}">
+                <a class="d-inline-block mx-2" href="{{route('admin.apartments.index')}}">
                     <button type="button" class="btn btn-primary backBtn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">
                         <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
                         Torna indietro
                     </button>
                 </a>
+                <button class="sponsorBtn" type="submit">Sponsorizza</button>
             </form>
         </div>
         @else
@@ -62,9 +75,9 @@
                     Torna indietro
                 </button>
             </a>
+            @endif
         @endif
-    @endif
-@endforeach
+    @endforeach
 </div>
 
 <script src="https://js.braintreegateway.com/web/dropin/1.31.2/js/dropin.min.js"></script>
@@ -75,6 +88,7 @@
     braintree.dropin.create({
         authorization: client_token,
         selector: '#bt-dropin',
+        locale: "it_IT",
     }, function (createErr, instance) {
         if (createErr) {
         console.log('Create Error', createErr);

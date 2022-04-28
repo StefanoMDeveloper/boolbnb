@@ -321,6 +321,7 @@ export default {
         margin: 0 5px;
         height: 300px;
         overflow: hidden;
+         cursor: pointer;
         .ms_imageContainer{
             height: 167px;
             width: 100%;
