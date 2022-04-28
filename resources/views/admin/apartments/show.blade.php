@@ -69,7 +69,7 @@
                     <img src="{{asset( 'storage/'.$image->url )}}" alt="">
                 </div>
                 @empty
-                Non si sono immagini!
+                Non ci sono immagini!
             @endforelse 
         </div>
         
@@ -81,11 +81,13 @@
                 </span>
                 Servizi
             </h3>
-            <ul class="borderline">
+            <ul class="borderline ulServices">
                 @forelse ($apartment->services as $service)
-                    <li>{{ $service->name }}</li>
+                    <li>
+                        {{ $service->name }}
+                    </li>
                     @empty
-                    Non si sono servizi!
+                    Non ci sono servizi!
                 @endforelse 
             </ul>
         </div>
@@ -110,7 +112,7 @@
                 
             </div>
             @empty
-                Non si sono messaggi!
+                Non ci sono messaggi!
             @endforelse    
         </div>
 

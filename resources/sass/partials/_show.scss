@@ -3,11 +3,12 @@
     padding: 30px;
     border-radius: 5px;
     ul{
-        list-style: none;
+        list-style-type: none;
         padding-left: 0;
         li{
             margin: 5px 0;
             padding: 15px 0;
+            
         }
     }
     .iconColor{
@@ -86,5 +87,8 @@
     }
 }
 
+.ulServices{
+    list-style-type: "\2713" !important;
+}
 
 
