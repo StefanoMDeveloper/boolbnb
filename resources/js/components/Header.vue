@@ -26,13 +26,13 @@
                         <input class="col-8 ml-4"  type="text" v-model="search" @input="autocomplete" value="choosedSearch">
                         <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
                         <div class="autocompleters col-12" v-show="autocompleters">
-                          <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
+                          <div class="option" v-for="(option, index) in autocompleters" :key="index" @click.stop="setSearch(index)">
                               <a href="#">{{option.address.freeformAddress}}</a>
                           </div>
                         </div> 
                       </div>
                       <div class="col-2">
-                        <a class="ms_search" href="#" @click='ricercaAvanzata'>
+                        <a class="ms_search" href="#" @click.stop='ricercaAvanzata'>
                           <button class="ms_btnSearch d-none d-lg-block">Ricerca  <br>Avanzata</button>
                         </a>
                       </div>
@@ -40,7 +40,7 @@
                 </div>
             
             <!-- campi aggiuntivi -->
-            <div class="container-fluid" v-show="selectOption" >
+            <div class="container-fluid" v-show="selectOption" @click.stop="">
               <div class="row col filter d-flex flex-column mt-3">
                 <div>
                   <label for="rooms">Numero di Stanze</label>
@@ -70,7 +70,7 @@
                 <li>Diventa un Host</li>
                 <li><i class="fa-solid fa-globe"></i></li>
                 <li>
-                  <button @click="setHeaderDropdownValue()"><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
+                  <button @click.stop="setHeaderDropdownValue()"><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
                 </li>
                 </ul>
                 <nav class="header-dropdown" v-show="headerDropdown">
@@ -190,6 +190,8 @@ export default {
      deselect(){
       this.autocompleters = [];
       this.search = "";
+      this.headerDropdown = false;
+
     },
     // Toggle if navigation is shown or hidden
     onScroll() {
