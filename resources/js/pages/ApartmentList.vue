@@ -52,37 +52,39 @@
         
 
                     <!-- non sponsorizzate -->
-                    <div class="container-fluid">
-                        <div class="row px-3">
-                            <div v-for="apartment in apartments" :key="apartment.id" class=" p-0 col-12">   
-                                <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="nonsponsored d-flex flex-wrap flex-lg-6 my-3 align-items-center justify-content-around px-lg-5">   
-                                    <div class="col-lg-4 m-auto">
-                                        <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
-                                            <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-12 p-0">
-                                                <img  :src="`/storage/${image.url}`"  class="border">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div v-for="apartment in apartments" :key="apartment.id" class=" p-0 col-12">   
+                                    <div v-if="apartment.visible && apartment.active_sponsorships.length < 1" class="nonsponsored d-flex flex-wrap flex-lg-6 my-3 align-items-center justify-content-around px-lg-5">   
+                                        <div class="col-lg-4 m-auto">
+                                            <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
+                                                <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-12 p-0">
+                                                    <img  :src="`/storage/${image.url}`"  class="border">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="descrizione col-10 col-lg-5 ">
-                                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                                            <h4>{{apartment.name}}</h4>
-                                        </router-link>
-                                        <ul class="d-flex">
-                                            <li>stanze {{apartment.rooms}} •</li>
-                                            <li>letti {{apartment.beds}} •</li>
-                                            <li>bagni {{apartment.bathrooms}} •</li>
-                                            <span v-for="service in apartment.services" :key="service.id">
-                                                <li>{{service.name}} •</li>
-                                            </span>
-                                        </ul>
-                                        <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
-                                        <button>
-                                                <a>
-                                                    <i class="fa-solid fa-eye"></i>
-                                                    Visualizza ulteriori dettagli...
-                                                </a>
-                                            </button>
-                                        </router-link>
+                                        <div class="descrizione col-10 col-lg-5 ">
+                                            <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                                                <h4>{{apartment.name}}</h4>
+                                            </router-link>
+                                            <ul class="d-flex">
+                                                <li>stanze {{apartment.rooms}} •</li>
+                                                <li>letti {{apartment.beds}} •</li>
+                                                <li>bagni {{apartment.bathrooms}} •</li>
+                                                <span v-for="service in apartment.services" :key="service.id">
+                                                    <li>{{service.name}} •</li>
+                                                </span>
+                                            </ul>
+                                            <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
+                                            <button>
+                                                    <a>
+                                                        <i class="fa-solid fa-eye"></i>
+                                                        Visualizza ulteriori dettagli...
+                                                    </a>
+                                                </button>
+                                            </router-link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

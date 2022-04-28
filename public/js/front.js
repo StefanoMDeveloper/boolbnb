@@ -7954,6 +7954,10 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     },
+    deselect: function deselect() {
+      this.autocompleters = [];
+      this.search = "";
+    },
     // Toggle if navigation is shown or hidden
     onScroll: function onScroll() {
       if (window.pageYOffset < 0) {
@@ -8009,6 +8013,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loader.vue */ "./resources/js/pages/Loader.vue");
+//
+//
 //
 //
 //
@@ -9002,7 +9008,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n  filter: grayscale(50%);\n}\n.ms_apartmentSlider .ms_cardImage:hover img[data-v-00e83377] {\n  filter: grayscale(0%);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 30px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 300px;\n  overflow: hidden;\n  cursor: pointer;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 167px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 10px 20px;\n}\n@media only screen and (min-width: 712px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 30px 0;\n    padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(50% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 300px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 167px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 10px 20px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 40px 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(25% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 400px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 200px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 20px;\n}\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 78px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 0;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 30px;\n  font-size: 40px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_experienceContainer[data-v-00e83377] {\n    margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n    padding: 20px 10px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n    font-size: 60px;\n    position: absolute;\n    top: 80px;\n    left: 60px;\n}\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 50px auto;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n  font-size: 40px;\n  padding-bottom: 50px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}\n@media only screen and (min-width: 1200px) {\n.ms_giftContainer[data-v-00e83377] {\n    margin: 100px auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n    font-size: 45px;\n    padding-bottom: 0;\n}\n}", ""]);
+exports.push([module.i, ".ms_jumbotron[data-v-00e83377] {\n  background-color: black;\n  height: 800px;\n  display: flex;\n  justify-content: center;\n  position: relative;\n}\n.ms_jumbotron .ms_imagecontainerJumbo[data-v-00e83377] {\n  margin-top: 200px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 712px;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.ms_jumbotron .ms_imagecontainerJumbo img[data-v-00e83377] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer[data-v-00e83377] {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  transform: translate(-50%);\n  width: 700px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer h1.ms_textJombo[data-v-00e83377] {\n  font-size: 50px;\n  text-align: center;\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button[data-v-00e83377] {\n  margin: 15px auto;\n  padding: 12px 22px;\n  border: none;\n  border-radius: 20px;\n  font-size: 15px;\n  color: rgb(64, 14, 64);\n}\n.ms_jumbotron .ms_imagecontainerJumbo .ms_textcontainer button .ms_btnLeft[data-v-00e83377] {\n  position: absolute;\n  left: 20px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.item[data-v-00e83377] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-00e83377],\n.item i[data-v-00e83377] {\n  color: #DE3151;\n}\n.ms_apartmentSlider[data-v-00e83377] {\n  margin: 250px 0 40px 0;\n  position: relative;\n}\n.ms_apartmentSlider button[data-v-00e83377] {\n  color: white;\n  background: #DE3151;\n  padding: 10px 15px;\n  font-weight: 900;\n  border: 0px;\n  border-radius: 50%;\n}\n.ms_apartmentSlider section[data-v-00e83377] {\n  max-width: 320px;\n  margin: 20px 0;\n  text-align: center;\n}\n.ms_apartmentSlider h5[data-v-00e83377] {\n  max-width: 320px;\n  margin: 0 10px;\n}\n.ms_apartmentSlider a[data-v-00e83377] {\n  color: black;\n  text-decoration: none;\n}\n.ms_apartmentSlider .ms_cardImage[data-v-00e83377] {\n  margin-bottom: 0;\n  padding: 20px 0;\n}\n.ms_apartmentSlider .ms_cardImage img[data-v-00e83377] {\n  height: 200px;\n  width: 300px;\n  border-radius: 13px;\n  filter: grayscale(50%);\n}\n.ms_apartmentSlider .ms_cardImage:hover img[data-v-00e83377] {\n  filter: grayscale(0%);\n}\n.ms_citiesContainer[data-v-00e83377] {\n  margin: 30px 0;\n  padding: 0;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n  padding: 0;\n  margin: 0 5px;\n  height: 300px;\n  overflow: hidden;\n  cursor: pointer;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n  height: 167px;\n  width: 100%;\n  overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n  padding: 10px 20px;\n  height: 200px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n@media only screen and (min-width: 712px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 30px 0;\n    padding: 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(50% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 300px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 167px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 10px 20px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.ms_citiesContainer[data-v-00e83377] {\n    margin: 40px 0;\n}\n.ms_citiesContainer .ms_flexContainer[data-v-00e83377] {\n    display: flex;\n    justify-content: space-between;\n}\n.ms_citiesContainer .ms_cityCard[data-v-00e83377] {\n    width: calc(25% - 10px);\n    border-radius: 20px;\n    padding: 0;\n    margin: 0 5px;\n    height: 400px;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer[data-v-00e83377] {\n    height: 200px;\n    width: 100%;\n    overflow: hidden;\n}\n.ms_citiesContainer .ms_cityCard .ms_imageContainer img[data-v-00e83377] {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.ms_citiesContainer .ms_cityCard .ms_textcity[data-v-00e83377] {\n    padding: 20px;\n}\n}\n.ms_experienceContainer[data-v-00e83377] {\n  margin: 78px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n  width: 100%;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n  padding: 20px 0;\n  overflow: hidden;\n  position: relative;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp img[data-v-00e83377] {\n  width: 100%;\n  border-radius: 20px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n  position: absolute;\n  top: 80px;\n  left: 30px;\n  font-size: 40px;\n}\n@media only screen and (min-width: 1200px) {\n.ms_experienceContainer[data-v-00e83377] {\n    margin: 40px auto;\n}\n.ms_experienceContainer .ms_imgsEsp[data-v-00e83377] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp[data-v-00e83377] {\n    padding: 20px 10px;\n}\n.ms_experienceContainer .ms_imgsEsp .ms_imgEsp .ms_esptext[data-v-00e83377] {\n    font-size: 60px;\n    position: absolute;\n    top: 80px;\n    left: 60px;\n}\n}\n.ms_giftContainer[data-v-00e83377] {\n  margin: 50px auto;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n  font-size: 40px;\n  padding-bottom: 50px;\n}\n.ms_giftContainer .ms_giftImg img[data-v-00e83377] {\n  width: 100%;\n}\n@media only screen and (min-width: 1200px) {\n.ms_giftContainer[data-v-00e83377] {\n    margin: 100px auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.ms_giftContainer .ms_giftFont h1[data-v-00e83377] {\n    font-size: 45px;\n    padding-bottom: 0;\n}\n}", ""]);
 
 // exports
 
@@ -11303,6 +11309,7 @@ var render = function () {
     {
       staticClass: "container-fluid",
       class: { "is-hidden": !_vm.scrollEffect },
+      on: { click: _vm.deselect },
     },
     [
       _c("div", { staticClass: "row" }, [
@@ -12016,159 +12023,170 @@ var render = function () {
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "container-fluid" }, [
-                  _c(
-                    "div",
-                    { staticClass: "row px-3" },
-                    _vm._l(_vm.apartments, function (apartment) {
-                      return _c(
-                        "div",
-                        { key: apartment.id, staticClass: " p-0 col-12" },
-                        [
-                          apartment.visible &&
-                          apartment.active_sponsorships.length < 1
-                            ? _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "nonsponsored d-flex flex-wrap flex-lg-6 my-3 align-items-center justify-content-around px-lg-5",
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "col-lg-4 m-auto" },
-                                    _vm._l(apartment.images, function (image) {
-                                      return _c("div", { key: image.id }, [
-                                        image.main_image
-                                          ? _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "card-immaginenonSpon col-lg-12 p-0",
-                                              },
-                                              [
-                                                _c("img", {
-                                                  staticClass: "border",
-                                                  attrs: {
-                                                    src:
-                                                      "/storage/" + image.url,
+                _c("div", { staticClass: "container" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-12" },
+                      _vm._l(_vm.apartments, function (apartment) {
+                        return _c(
+                          "div",
+                          { key: apartment.id, staticClass: " p-0 col-12" },
+                          [
+                            apartment.visible &&
+                            apartment.active_sponsorships.length < 1
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "nonsponsored d-flex flex-wrap flex-lg-6 my-3 align-items-center justify-content-around px-lg-5",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-lg-4 m-auto" },
+                                      _vm._l(
+                                        apartment.images,
+                                        function (image) {
+                                          return _c("div", { key: image.id }, [
+                                            image.main_image
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "card-immaginenonSpon col-lg-12 p-0",
                                                   },
-                                                }),
-                                              ]
-                                            )
-                                          : _vm._e(),
-                                      ])
-                                    }),
-                                    0
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "descrizione col-10 col-lg-5 ",
-                                    },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          attrs: {
-                                            to: {
-                                              name: "SingleApartment",
-                                              params: { slug: apartment.slug },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass: "border",
+                                                      attrs: {
+                                                        src:
+                                                          "/storage/" +
+                                                          image.url,
+                                                      },
+                                                    }),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ])
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "descrizione col-10 col-lg-5 ",
+                                      },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
                                             },
                                           },
-                                        },
-                                        [
-                                          _c("h4", [
-                                            _vm._v(_vm._s(apartment.name)),
-                                          ]),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "d-flex" },
-                                        [
-                                          _c("li", [
-                                            _vm._v(
-                                              "stanze " +
-                                                _vm._s(apartment.rooms) +
-                                                " •"
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("li", [
-                                            _vm._v(
-                                              "letti " +
-                                                _vm._s(apartment.beds) +
-                                                " •"
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("li", [
-                                            _vm._v(
-                                              "bagni " +
-                                                _vm._s(apartment.bathrooms) +
-                                                " •"
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _vm._l(
-                                            apartment.services,
-                                            function (service) {
-                                              return _c(
-                                                "span",
-                                                { key: service.id },
-                                                [
-                                                  _c("li", [
-                                                    _vm._v(
-                                                      _vm._s(service.name) +
-                                                        " •"
-                                                    ),
-                                                  ]),
-                                                ]
-                                              )
-                                            }
-                                          ),
-                                        ],
-                                        2
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "router-link",
-                                        {
-                                          attrs: {
-                                            to: {
-                                              name: "SingleApartment",
-                                              params: { slug: apartment.slug },
-                                            },
-                                          },
-                                        },
-                                        [
-                                          _c("button", [
-                                            _c("a", [
-                                              _c("i", {
-                                                staticClass: "fa-solid fa-eye",
-                                              }),
+                                          [
+                                            _c("h4", [
+                                              _vm._v(_vm._s(apartment.name)),
+                                            ]),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          { staticClass: "d-flex" },
+                                          [
+                                            _c("li", [
                                               _vm._v(
-                                                "\n                                                Visualizza ulteriori dettagli...\n                                            "
+                                                "stanze " +
+                                                  _vm._s(apartment.rooms) +
+                                                  " •"
                                               ),
                                             ]),
-                                          ]),
-                                        ]
-                                      ),
-                                    ],
-                                    1
-                                  ),
-                                ]
-                              )
-                            : _vm._e(),
-                        ]
-                      )
-                    }),
-                    0
-                  ),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "letti " +
+                                                  _vm._s(apartment.beds) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("li", [
+                                              _vm._v(
+                                                "bagni " +
+                                                  _vm._s(apartment.bathrooms) +
+                                                  " •"
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _vm._l(
+                                              apartment.services,
+                                              function (service) {
+                                                return _c(
+                                                  "span",
+                                                  { key: service.id },
+                                                  [
+                                                    _c("li", [
+                                                      _vm._v(
+                                                        _vm._s(service.name) +
+                                                          " •"
+                                                      ),
+                                                    ]),
+                                                  ]
+                                                )
+                                              }
+                                            ),
+                                          ],
+                                          2
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: {
+                                                name: "SingleApartment",
+                                                params: {
+                                                  slug: apartment.slug,
+                                                },
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _c("button", [
+                                              _c("a", [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa-solid fa-eye",
+                                                }),
+                                                _vm._v(
+                                                  "\n                                                    Visualizza ulteriori dettagli...\n                                                "
+                                                ),
+                                              ]),
+                                            ]),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
                 ]),
               ]),
             ]),
@@ -12516,59 +12534,66 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "row d-flex justify-content-center" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "ms_citiesContainer container-fluid d-flex flex-column col-10",
-                  },
-                  [
-                    _c("h1", { staticClass: "mb-2" }, [
-                      _vm._v("Destinazioni Più Gettonate"),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "row ms_citiesContainer col-12" },
-                      _vm._l(_vm.cities, function (element, index) {
-                        return _c(
-                          "div",
-                          {
-                            key: index,
-                            staticClass: "ms_cityCard",
-                            style: { "background-color": _vm.colors[index] },
-                            on: {
-                              click: function ($event) {
-                                return _vm.specialFilter(index)
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "row d-flex justify-content-center align-items-center ms_allCardsContainer",
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "ms_citiesContainer container-fluid d-flex flex-column col-10",
+                    },
+                    [
+                      _c("h1", { staticClass: "mb-2" }, [
+                        _vm._v("Destinazioni Più Gettonate"),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "row ms_citiesContainer col-12" },
+                        _vm._l(_vm.cities, function (element, index) {
+                          return _c(
+                            "div",
+                            {
+                              key: index,
+                              staticClass: "ms_cityCard my-3 my-lg-0",
+                              style: { "background-color": _vm.colors[index] },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.specialFilter(index)
+                                },
                               },
                             },
-                          },
-                          [
-                            _c("div", { staticClass: "ms_imageContainer" }, [
-                              _c("img", {
-                                attrs: {
-                                  src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
-                                    element.image +
-                                    ".jpg"),
-                                  alt: "",
-                                },
-                              }),
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "ms_textcity" }, [
-                              _c("h1", { staticClass: "text-white" }, [
-                                _vm._v(_vm._s(element.title)),
+                            [
+                              _c("div", { staticClass: "ms_imageContainer" }, [
+                                _c("img", {
+                                  attrs: {
+                                    src: __webpack_require__("./public/storage/uploads sync recursive ^\\.\\/.*\\.jpg$")("./" +
+                                      element.image +
+                                      ".jpg"),
+                                    alt: "",
+                                  },
+                                }),
                               ]),
-                            ]),
-                          ]
-                        )
-                      }),
-                      0
-                    ),
-                  ]
-                ),
-              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ms_textcity" }, [
+                                _c("h1", { staticClass: "text-white" }, [
+                                  _vm._v(_vm._s(element.title)),
+                                ]),
+                              ]),
+                            ]
+                          )
+                        }),
+                        0
+                      ),
+                    ]
+                  ),
+                ]
+              ),
             ]),
             _vm._v(" "),
             _vm._m(1),

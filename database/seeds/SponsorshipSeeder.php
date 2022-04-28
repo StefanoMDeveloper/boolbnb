@@ -27,9 +27,11 @@ class SponsorshipSeeder extends Seeder
             foreach(App\Sponsorship::all() as $sponsorship) {
 
                 foreach(App\Apartment::all() as $apartment) {
-    
+
                     if ($apartment['id']==$apartments_sponsorship['apartment_id'] && $sponsorship['id']==$apartments_sponsorship['sponsorship_id']) {
-                            $sponsorship->apartments()->attach($apartment->id, array("start_date"=>$apartments_sponsorship["start_date"], "end_date"=>$apartments_sponsorship["end_date"]));
+                        $duration =$sponsorship['duration'];
+                        $apartments_sponsorship['end_date'] = date('Y-m-d H:i:s', strtotime($apartments_sponsorship['start_date']. ' + '.$duration.' hours'));
+                        $sponsorship->apartments()->attach($apartment->id, array("start_date"=>$apartments_sponsorship["start_date"], "end_date"=>$apartments_sponsorship["end_date"]));
                     }
                 }
                 $sponsorship->save();
