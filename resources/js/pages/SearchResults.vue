@@ -6,8 +6,10 @@
                     <div v-show="apartmentList.length==0 && count<=1">
                         <Loader />
                     </div>
-                    <div v-show="apartmentList.length==0 && count>1">
-                        Nessun appartamento
+                    <div  class="no-apartments" v-show="apartmentList.length==0 && count>1">
+                        <div class="response-text">
+                            Nessun appartamento risponde alla tua ricerca! Prova con una ricerca meno restrittiva.
+                        </div>
                     </div>
                     <div v-show="apartmentList.length!=0">
                         <div v-show="sponsoreds.length!=0">
@@ -316,5 +318,18 @@ ul{
 
 .non-sponsored{
     margin-top:50px;
+}
+
+.no-apartments{
+    position:relative;
+    height:calc(100vh - 60px)
+
+    .response-text{
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        display: inline-block;
+    }
 }
 </style>
