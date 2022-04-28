@@ -70,11 +70,16 @@
                 <li>Diventa un Host</li>
                 <li><i class="fa-solid fa-globe"></i></li>
                 <li>
-                  <a href="/admin">
-                  <button><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
-                  </a>
+                  <button @click="setHeaderDropdownValue()"><i class="fa-solid fa-bars m-2"></i><i class="fa-solid fa-user m-2"></i></button>
                 </li>
                 </ul>
+                <nav class="header-dropdown" v-show="headerDropdown">
+                  <li><a href="/register">Registrati</a></li>
+                  <li><a href="/login">Accedi</a></li>
+                  <li>Diventa un host</li>
+                  <li>Proponi un'esperienza</li>
+                  <li>Assistenza</li>
+                </nav>
             </div>
           </div>
         </div>
@@ -114,7 +119,8 @@ export default {
         rooms: 1,
         servicesList: "",
         radius: 20,
-        searchIsSet:false
+        searchIsSet:false,
+        headerDropdown:false
     }
   },
   created(){
@@ -135,6 +141,13 @@ export default {
     }
   },
   methods: {
+    setHeaderDropdownValue(){
+      if(!this.headerDropdown){
+        this.headerDropdown = true;
+      } else {
+        this.headerDropdown = false;
+      }
+    },
     //autocomplete
     autocomplete(){
       axios
@@ -430,6 +443,18 @@ input[type=number]{
 
 .fontLink{
   text-align: center;
+}
+
+.header-dropdown{
+  list-style-type: none;
+  background-color:white;
+  color:black;
+
+  a{
+    text-decoration: none;
+    color:black;
+  }
+
 }
 </style>
 
