@@ -11,7 +11,7 @@
             @csrf
             @method('POST')
                 <div class="container-title-sponsor">
-                    <h1 class="text-center my-3">{{$apartment->name}}</h1>
+                    <h1 class="text-center my-3 colorBrandGreen">{{$apartment->name}}</h1>
                     @forelse ($apartment->images as $image)
                         @if($image->main_image)
                             <div class="title-image">
