@@ -14,7 +14,7 @@
         <div class="loading d-flex flex-column justify-content-center align-items-center">
             <i class="fa-brands fa-airbnb"></i>
             <span>Boolbnb</span>
-             <div class="col-3">   
+             <div class="col-3 d-flex justify-content-center">   
                 <i class="ex-10-icon fas fa-circle-notch"></i> 
             </div>
         </div>
