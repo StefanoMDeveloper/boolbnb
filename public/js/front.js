@@ -12512,7 +12512,7 @@ var render = function () {
                             "div",
                             {
                               key: index,
-                              staticClass: "ms_cityCard",
+                              staticClass: "ms_cityCard my-3 my-lg-0",
                               style: { "background-color": _vm.colors[index] },
                               on: {
                                 click: function ($event) {

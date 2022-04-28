@@ -69,7 +69,7 @@
                     <div class="ms_citiesContainer container-fluid d-flex flex-column col-10">
                         <h1 class="mb-2">Destinazioni Più Gettonate</h1>
                         <div class="row ms_citiesContainer col-12">
-                            <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}" @click="specialFilter(index)">
+                            <div v-for="(element, index) in cities" :key="index" class="ms_cityCard my-3 my-lg-0"  :style="{'background-color':colors[index]}" @click="specialFilter(index)">
                                 <div class="ms_imageContainer">
                                     <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
                                 </div>
