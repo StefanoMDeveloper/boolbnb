@@ -65,11 +65,11 @@
         
             <!-- cities cards -->
             <div class="container-fluid">
-                <div class="row d-flex justify-content-center">
+                <div class="row d-flex justify-content-center align-items-center ms_allCardsContainer">
                     <div class="ms_citiesContainer container-fluid d-flex flex-column col-10">
                         <h1 class="mb-2">Destinazioni Più Gettonate</h1>
                         <div class="row ms_citiesContainer col-12">
-                            <div v-for="(element, index) in cities" :key="index" class="ms_cityCard"  :style="{'background-color':colors[index]}" @click="specialFilter(index)">
+                            <div v-for="(element, index) in cities" :key="index" class="ms_cityCard my-3 my-lg-0"  :style="{'background-color':colors[index]}" @click="specialFilter(index)">
                                 <div class="ms_imageContainer">
                                     <img :src="require('../../../public/storage/uploads/'+element.image+'.jpg') " alt="">
                                 </div>
@@ -305,6 +305,7 @@ export default {
 }
 
 //cities cards
+
 .ms_citiesContainer { 
     margin:30px 0;
     padding: 0;
@@ -316,7 +317,8 @@ export default {
         margin: 0 5px;
         height: 300px;
         overflow: hidden;
-         cursor: pointer;
+        cursor: pointer;
+
         .ms_imageContainer{
             height: 167px;
             width: 100%;
@@ -328,6 +330,10 @@ export default {
         }
         .ms_textcity{
             padding: 10px 20px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     
     }
