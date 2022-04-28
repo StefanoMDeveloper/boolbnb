@@ -6,7 +6,7 @@
                     <!-- header left -->
                     <div class="col-3 d-none d-xl-block headerleft">
                         <i class="fa-brands fa-airbnb"></i>
-                        <span>Boolbnb</span>
+                        <span>Boolbnb</span>    
                     </div>
                 </div>
             </div>
@@ -14,6 +14,9 @@
         <div class="loading d-flex flex-column justify-content-center align-items-center">
             <i class="fa-brands fa-airbnb"></i>
             <span>Boolbnb</span>
+             <div class="col-3">   
+                <i class="ex-10-icon fas fa-circle-notch"></i> 
+            </div>
         </div>
     </div>
 </template>
@@ -76,6 +79,16 @@ export default {
         }
         
     }
+}
+.ex-10-icon{
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100%{
+        transform: rotate(1turn);
+    }
+  
 }
 
 </style>

@@ -8432,6 +8432,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Loader'
 });
@@ -8980,7 +8983,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".loader[data-v-a3277d48] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  background-color: white;\n  transition: 0.5s ease all;\n  z-index: 9999;\n}\n.loader .container-fluid[data-v-a3277d48] {\n  width: 100%;\n  height: 40px;\n  background-color: white;\n  color: black;\n}\n.loader .container-fluid .header-container[data-v-a3277d48] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\n.loader .container-fluid .header-container .headerleft[data-v-a3277d48] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\n.loader .container-fluid .header-container .headerleft i[data-v-a3277d48] {\n  color: black;\n}\n.loader .container-fluid .header-container .headerleft span[data-v-a3277d48] {\n  color: #ff385c;\n}\n.loader .loading[data-v-a3277d48] {\n  height: calc(100vh - 40px);\n  color: black;\n  font-size: 60px;\n  letter-spacing: 2px;\n}\n.loader .loading i[data-v-a3277d48] {\n  color: black;\n}\n.loader .loading span[data-v-a3277d48] {\n  color: #ff385c;\n}", ""]);
+exports.push([module.i, ".loader[data-v-a3277d48] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  background-color: white;\n  transition: 0.5s ease all;\n  z-index: 9999;\n}\n.loader .container-fluid[data-v-a3277d48] {\n  width: 100%;\n  height: 40px;\n  background-color: white;\n  color: black;\n}\n.loader .container-fluid .header-container[data-v-a3277d48] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\n.loader .container-fluid .header-container .headerleft[data-v-a3277d48] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\n.loader .container-fluid .header-container .headerleft i[data-v-a3277d48] {\n  color: black;\n}\n.loader .container-fluid .header-container .headerleft span[data-v-a3277d48] {\n  color: #ff385c;\n}\n.loader .loading[data-v-a3277d48] {\n  height: calc(100vh - 40px);\n  color: black;\n  font-size: 60px;\n  letter-spacing: 2px;\n}\n.loader .loading i[data-v-a3277d48] {\n  color: black;\n}\n.loader .loading span[data-v-a3277d48] {\n  color: #ff385c;\n}\n.ex-10-icon[data-v-a3277d48] {\n  -webkit-animation: spin-data-v-a3277d48 1s linear infinite;\n          animation: spin-data-v-a3277d48 1s linear infinite;\n}\n@-webkit-keyframes spin-data-v-a3277d48 {\n100% {\n    transform: rotate(1turn);\n}\n}\n@keyframes spin-data-v-a3277d48 {\n100% {\n    transform: rotate(1turn);\n}\n}", ""]);
 
 // exports
 
@@ -12672,6 +12675,10 @@ var staticRenderFns = [
           _c("i", { staticClass: "fa-brands fa-airbnb" }),
           _vm._v(" "),
           _c("span", [_vm._v("Boolbnb")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-3" }, [
+            _c("i", { staticClass: "ex-10-icon fas fa-circle-notch" }),
+          ]),
         ]
       ),
     ])
@@ -31623,7 +31630,7 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
