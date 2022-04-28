@@ -6,7 +6,7 @@
                     <div class="container mt-5">
                         <div class="row trophyText">
                             <div class="col-12 d-flex">
-                                <h2 class="ml-3"><strong>Appartamenti consigliati</strong></h2>
+                                <h2 class="ml-3"><strong>Ultimi appartamenti inseriti</strong></h2>
                             </div>
                         </div>
                     </div>

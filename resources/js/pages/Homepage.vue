@@ -75,7 +75,6 @@
                                 </div>
                                 <div class="ms_textcity">
                                     <h1 class="text-white">{{element.title}}</h1>
-                                    <h4 class="text-white">{{element.text}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -135,28 +134,24 @@ export default {
               {
                 image:"city1",
                 title:"Milano",   
-                text:"189 chilometri di distanza",
                 lat:45.46362,
                 lon:9.18812
               },
               {
                 image:"city2",
                 title:"Roma",
-                text:"303 chilometri di distanza",
                 lat:41.89056,
                 lon:12.49427
               }, 
               {
                 image:"city3",
                 title:"Napoli",
-                text:"132 chilometri di distanza",
                 lat:40.83998,
                 lon:14.25254
               }, 
               {
                 image:"city4",
                 title:"Firenze",
-                text:"411 chilometri di distanza",
                 lat:43.7687,
                 lon:11.25693
               },     
