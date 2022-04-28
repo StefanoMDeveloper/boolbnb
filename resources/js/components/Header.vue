@@ -437,7 +437,7 @@ input[type=number]{
   margin-right: 5px;
 
 }
-.notsearchIcon{
+.notSearchIcon{
     opacity: 0.3;
 }
 
