@@ -32,9 +32,9 @@ class SponsorController extends Controller
         $data['start_date'] = date('Y-m-d');
         $sponsorship = Sponsorship::find($data['sponsorship']);
         $apartment = Apartment::find($data['apartment']);
-        $duration = ($sponsorship->duration)/24;
-        $data['end_date'] = date('Y-m-d', strtotime($data['start_date']. ' + '.$duration.' days'));
+        $duration =$sponsorship->duration;
+        $data['end_date'] = date('Y-m-d H:i:s', strtotime($data['start_date']. ' + '.$duration.' hours'));
         $sponsorship->apartments()->attach($apartment->id, array("start_date"=>$data["start_date"], "end_date"=>$data["end_date"]));
-        return redirect()->route('admin.apartments.index')->with(["message"=>"sponsorizzazione avvenuta con successo!"]);
+        return redirect()->route('admin.apartments.index')->with(["message"=>"Sponsorizzazione avvenuta con successo!"]);
     }
 }
