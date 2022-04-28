@@ -8646,6 +8646,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Searchresults",
@@ -9066,7 +9068,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".item[data-v-7e5ab916] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-7e5ab916],\n.item i[data-v-7e5ab916] {\n  color: #DE3151;\n}\na[data-v-7e5ab916] {\n  color: black;\n  text-decoration: none;\n  margin-top: 0;\n}\n.trophyText .ms_trophy[data-v-7e5ab916] {\n  color: gold;\n  font-size: 20px;\n  height: 70px;\n}\n.trophyText .ms_trophy h2[data-v-7e5ab916] {\n  line-height: 70px;\n}\n@media only screen and (min-width: 1200px) {\n.trophyText .ms_trophy[data-v-7e5ab916] {\n    font-size: 40px;\n}\n}\n.descrizione[data-v-7e5ab916] {\n  padding: 30px 0;\n}\n.descrizione button[data-v-7e5ab916] {\n  background-color: #39858a;\n  padding: 10px 20px;\n  border-radius: 20px;\n  transition: linear 1s;\n  border: none;\n}\n.descrizione button[data-v-7e5ab916]:hover {\n  background-color: #54b4ba;\n  color: white;\n}\n.descrizione button a[data-v-7e5ab916] {\n  color: white;\n  text-decoration: none;\n  line-height: 100%;\n}\n.descrizione button a[data-v-7e5ab916]:hover {\n  color: white;\n}\n.container-lista[data-v-7e5ab916] {\n  margin-top: 200px;\n}\n.card-immagine[data-v-7e5ab916] {\n  margin: 30px 0;\n  height: 250px;\n  width: 100%;\n  border-radius: 20px;\n  border: 2px solid gray;\n  background-color: rgb(240, 238, 238);\n  padding: 10px;\n  overflow: hidden;\n  position: relative;\n}\n.card-immagine img[data-v-7e5ab916] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n  border-radius: 20px;\n}\n.card-immagine:hover img[data-v-7e5ab916] {\n  transform: scale(1.1);\n}\n.card-immagine .star[data-v-7e5ab916] {\n  color: gold;\n  font-size: 40px;\n  position: absolute;\n  top: 20px;\n  left: 20px;\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-7e5ab916] {\n    margin: 30px;\n    height: 300px;\n}\n}\n.card-immaginenonSpon[data-v-7e5ab916] {\n  margin: 30px 0;\n  height: 250px;\n  width: 100%;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.card-immaginenonSpon img[data-v-7e5ab916] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n  border-radius: 20px;\n}\n.card-immaginenonSpon:hover img[data-v-7e5ab916] {\n  transform: scale(1.1);\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-7e5ab916] {\n    margin: 30px;\n    height: 300px;\n}\n}\nul[data-v-7e5ab916] {\n  width: 70%;\n  flex-wrap: wrap;\n}\nul li[data-v-7e5ab916] {\n  float: left;\n  color: grey;\n  font-weight: bold;\n  font-size: 13px;\n  padding-right: 5px;\n  padding-left: 0;\n  list-style-type: none;\n}\n.sponsored[data-v-7e5ab916] {\n  background-color: rgb(252, 232, 232);\n  border-radius: 20px;\n}\n.nonsponsored[data-v-7e5ab916] {\n  background-color: rgb(231, 229, 229);\n  border-radius: 20px;\n}\n.non-sponsored[data-v-7e5ab916] {\n  margin-top: 50px;\n}", ""]);
+exports.push([module.i, ".item[data-v-7e5ab916] {\n  padding: 16px 24px;\n  margin-right: 24px;\n  border-radius: 4px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.item .ms_logo[data-v-7e5ab916],\n.item i[data-v-7e5ab916] {\n  color: #DE3151;\n}\na[data-v-7e5ab916] {\n  color: black;\n  text-decoration: none;\n  margin-top: 0;\n}\n.trophyText .ms_trophy[data-v-7e5ab916] {\n  color: gold;\n  font-size: 20px;\n  height: 70px;\n}\n.trophyText .ms_trophy h2[data-v-7e5ab916] {\n  line-height: 70px;\n}\n@media only screen and (min-width: 1200px) {\n.trophyText .ms_trophy[data-v-7e5ab916] {\n    font-size: 40px;\n}\n}\n.descrizione[data-v-7e5ab916] {\n  padding: 30px 0;\n}\n.descrizione button[data-v-7e5ab916] {\n  background-color: #39858a;\n  padding: 10px 20px;\n  border-radius: 20px;\n  transition: linear 1s;\n  border: none;\n}\n.descrizione button[data-v-7e5ab916]:hover {\n  background-color: #54b4ba;\n  color: white;\n}\n.descrizione button a[data-v-7e5ab916] {\n  color: white;\n  text-decoration: none;\n  line-height: 100%;\n}\n.descrizione button a[data-v-7e5ab916]:hover {\n  color: white;\n}\n.container-lista[data-v-7e5ab916] {\n  margin-top: 200px;\n}\n.card-immagine[data-v-7e5ab916] {\n  margin: 30px 0;\n  height: 250px;\n  width: 100%;\n  border-radius: 20px;\n  border: 2px solid gray;\n  background-color: rgb(240, 238, 238);\n  padding: 10px;\n  overflow: hidden;\n  position: relative;\n}\n.card-immagine img[data-v-7e5ab916] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n  border-radius: 20px;\n}\n.card-immagine:hover img[data-v-7e5ab916] {\n  transform: scale(1.1);\n}\n.card-immagine .star[data-v-7e5ab916] {\n  color: gold;\n  font-size: 40px;\n  position: absolute;\n  top: 20px;\n  left: 20px;\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-7e5ab916] {\n    margin: 30px;\n    height: 300px;\n}\n}\n.card-immaginenonSpon[data-v-7e5ab916] {\n  margin: 30px 0;\n  height: 250px;\n  width: 100%;\n  border-radius: 20px;\n  overflow: hidden;\n}\n.card-immaginenonSpon img[data-v-7e5ab916] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: linear 1s;\n  border-radius: 20px;\n}\n.card-immaginenonSpon:hover img[data-v-7e5ab916] {\n  transform: scale(1.1);\n}\n@media only screen and (min-width: 1200px) {\n.card-immagine[data-v-7e5ab916] {\n    margin: 30px;\n    height: 300px;\n}\n}\nul[data-v-7e5ab916] {\n  width: 70%;\n  flex-wrap: wrap;\n}\nul li[data-v-7e5ab916] {\n  float: left;\n  color: grey;\n  font-weight: bold;\n  font-size: 13px;\n  padding-right: 5px;\n  padding-left: 0;\n  list-style-type: none;\n}\n.sponsored[data-v-7e5ab916] {\n  background-color: rgb(252, 232, 232);\n  border-radius: 20px;\n}\n.nonsponsored[data-v-7e5ab916] {\n  background-color: rgb(231, 229, 229);\n  border-radius: 20px;\n}\n.non-sponsored[data-v-7e5ab916] {\n  margin-top: 50px;\n}\n.no-apartments[data-v-7e5ab916] {\n  position: relative;\n}\n.no-apartments height:calc(100vh - 60px) .response-text[data-v-7e5ab916] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  display: inline-block;\n}", ""]);
 
 // exports
 
@@ -12923,11 +12925,14 @@ var render = function () {
                         expression: "apartmentList.length==0 && count>1",
                       },
                     ],
+                    staticClass: "no-apartments",
                   },
                   [
-                    _vm._v(
-                      "\n                    Nessun appartamento\n                "
-                    ),
+                    _c("div", { staticClass: "response-text" }, [
+                      _vm._v(
+                        "\n                        Nessun appartamento risponde alla tua ricerca! Prova con una ricerca meno restrittiva.\n                    "
+                      ),
+                    ]),
                   ]
                 ),
                 _vm._v(" "),
@@ -31706,7 +31711,7 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\Desktop\Lavoro e progetti\Progetti\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\antony\Desktop\Boolean\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
