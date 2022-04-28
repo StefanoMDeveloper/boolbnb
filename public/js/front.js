@@ -8119,6 +8119,7 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/apartments").then(function (response) {
       _this.apartments = response.data;
+      _this.apartments = _this.apartments.reverse();
       _this.loading = false;
     });
   }
@@ -8595,6 +8596,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Searchresults",
@@ -8603,24 +8606,26 @@ __webpack_require__.r(__webpack_exports__);
       loading: true,
       sponsoreds: [],
       nonSponsoreds: [],
-      list: []
+      list: [],
+      count: 0
     };
   },
   mounted: function mounted() {
     this.updateLists();
     this.loading = false;
+    this.count++;
   },
   updated: function updated() {
     if (this.apartmentList != this.list) {
       this.sponsoreds = [];
       this.nonSponsoreds = [];
-      this.loading = true;
       this.updateLists();
-      this.loading = false;
+      this.count++;
     }
   },
   methods: {
     updateLists: function updateLists() {
+      this.apartmentList = this.apartmentList.reverse();
       var l = this.apartmentList.length;
       this.list = this.apartmentList;
 
@@ -8899,7 +8904,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: #ff385c;\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90]:hover {\n  background-color: #df4e69;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  position: relative;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  width: 300px;\n  border: none;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  border: 1px solid gray;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 30px;\n  padding: 60px 0px 10px 39px;\n  z-index: -1;\n}\n.autocompleters .option[data-v-1f42fb90] {\n  color: grey;\n  padding: 8px 0;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}\n.notSearchIcon[data-v-1f42fb90] {\n  opacity: 0.3;\n}\n.fontLink[data-v-1f42fb90] {\n  text-align: center;\n}\n.header-dropdown[data-v-1f42fb90] {\n  list-style-type: none;\n  background-color: white;\n  color: black;\n}\n.header-dropdown a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: black;\n}", ""]);
+exports.push([module.i, "a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #ff385c;\n}\nheader[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  min-height: 125px;\n  background-color: white;\n  color: black;\n  transition: 0.5s ease all;\n  z-index: 1000;\n}\nheader .header-container[data-v-1f42fb90] {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  padding-top: 20px;\n}\nheader .header-container .headerleft[data-v-1f42fb90] {\n  font-size: 26px;\n  font-weight: 500;\n  padding-left: 7%;\n  transition: 1s ease all;\n}\nheader .header-container .headerleft[data-v-1f42fb90]:hover {\n  font-size: 29px;\n}\nheader .header-container .headercenter[data-v-1f42fb90] {\n  min-width: 375px;\n}\nheader .header-container .headercenter nav ul[data-v-1f42fb90] {\n  display: flex;\n  list-style: none;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90] {\n  margin: 10px;\n  border-bottom: 1px black;\n  width: 92px;\n  transition: 1s ease all;\n}\nheader .header-container .headercenter nav ul li[data-v-1f42fb90]:hover {\n  font-size: 15px;\n  font-weight: 700;\n}\nheader .header-container .headercenter nav ul li a[data-v-1f42fb90] {\n  cursor: pointer;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB[data-v-1f42fb90] {\n  min-width: 375px;\n  width: 100%;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .ms_search[data-v-1f42fb90] {\n  text-decoration: none;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90] {\n  min-height: 60px;\n  background-color: #ff385c;\n  border: none;\n  border-radius: 25px;\n  margin: 0 10px;\n  padding: 5px 20px;\n  text-align: center;\n  transition: linear 0.5s;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .ms_search .ms_btnSearch[data-v-1f42fb90]:hover {\n  background-color: #df4e69;\n  color: white;\n}\nheader .header-container .headercenter .headercenterB .inputContainer[data-v-1f42fb90] {\n  position: relative;\n  z-index: 999;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon[data-v-1f42fb90] {\n  display: flex;\n  justify-content: end;\n  width: 30px;\n  align-items: center;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90] {\n  background-color: #ff385c;\n  transition: linear 0.5s;\n  border-radius: 50%;\n  color: white;\n  padding: 15px;\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  padding: 17px;\n  background-color: hwb(349 17% 45%);\n}\nheader .header-container .headercenter .headercenterB .inputContainer .ms_icon .searchIcon[data-v-1f42fb90]:hover {\n  cursor: pointer;\n}\nheader .header-container .headerright ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n  align-items: center;\n}\nheader .header-container .headerright ul li[data-v-1f42fb90] {\n  padding: 10px;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90] {\n  border: none;\n  border-radius: 35px;\n  padding: 2px;\n  width: 90px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.5s ease all;\n}\nheader .header-container .headerright ul li button[data-v-1f42fb90]:hover {\n  width: 95px;\n}\nheader .header-container .headerright ul li button .fa-user[data-v-1f42fb90] {\n  border-radius: 50%;\n  background-color: #717171;\n  padding: 5px;\n  color: white;\n}\nheader .inputContainer[data-v-1f42fb90] {\n  background-color: white;\n  border-radius: 30px;\n  height: 60px;\n  padding: 3px;\n  display: flex;\n  align-items: center;\n}\nheader .inputContainer input[data-v-1f42fb90] {\n  border: none;\n}\n.is-hidden[data-v-1f42fb90] {\n  background: black;\n  color: white;\n  transition: 0.5s ease all;\n  min-height: 153px;\n}\n.pink[data-v-1f42fb90] {\n  color: #ff385c;\n}\n.hide[data-v-1f42fb90] {\n  display: none;\n}\n.search[data-v-1f42fb90] {\n  width: 300px;\n  border: none;\n}\n.autocompleters[data-v-1f42fb90] {\n  background-color: white;\n  border: 1px solid gray;\n  color: black;\n  width: 100%;\n  position: absolute;\n  top: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 30px;\n  padding: 60px 0px 10px 39px;\n  z-index: -1;\n}\n.autocompleters .option[data-v-1f42fb90] {\n  color: grey;\n  padding: 8px 0;\n}\ninput[data-v-1f42fb90]:focus, textarea[data-v-1f42fb90]:focus, select[data-v-1f42fb90]:focus {\n  outline: none;\n}\n.filter[data-v-1f42fb90] {\n  padding: 10px 0;\n  max-width: 374px;\n}\n@media only screen and (min-width: 1200px) {\n.filter[data-v-1f42fb90] {\n    max-width: 760px;\n    min-width: 480px;\n}\n}\nlabel[data-v-1f42fb90] {\n  font-size: 10px;\n}\nselect[data-v-1f42fb90] {\n  height: 20px;\n  width: 33px;\n}\nselect.ms_km[data-v-1f42fb90] {\n  width: 70px;\n}\n@media only screen and (min-width: 1200px) {\nlabel[data-v-1f42fb90] {\n    font-size: 15px;\n}\nlabel select[data-v-1f42fb90] {\n    height: 25px;\n}\nlabel select .ms_km[data-v-1f42fb90] {\n    width: 40px;\n}\n}\n.servicesContainer .services[data-v-1f42fb90] {\n  color: white;\n  width: 100%;\n}\ninput[type=number][data-v-1f42fb90] {\n  width: 50px;\n  margin-right: 5px;\n}\n.notSearchIcon[data-v-1f42fb90] {\n  opacity: 0.3;\n}\n.fontLink[data-v-1f42fb90] {\n  text-align: center;\n}\n.header-dropdown[data-v-1f42fb90] {\n  list-style-type: none;\n  background-color: white;\n  color: black;\n  width: 30%;\n  padding: 12px;\n  position: absolute;\n  top: 60px;\n  left: 140px;\n  border-radius: 10px;\n  background-color: #E4E4E9;\n}\n.header-dropdown a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: black;\n}", ""]);
 
 // exports
 
@@ -12785,8 +12790,24 @@ var render = function () {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.apartmentList.length == 0,
-                        expression: "apartmentList.length==0",
+                        value: _vm.apartmentList.length == 0 && _vm.count <= 1,
+                        expression: "apartmentList.length==0 && count<=1",
+                      },
+                    ],
+                  },
+                  [_c("Loader")],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.apartmentList.length == 0 && _vm.count > 1,
+                        expression: "apartmentList.length==0 && count>1",
                       },
                     ],
                   },
@@ -13229,13 +13250,9 @@ var staticRenderFns = [
               "col-12 d-flex justify-content-center align-items-center",
           },
           [
-            _c("span", { staticClass: "ms_trophy" }, [
-              _c("i", { staticClass: "fa-solid fa-trophy" }),
-            ]),
-            _vm._v(" "),
             _c("div", [
               _c("h2", { staticClass: "ml-3" }, [
-                _c("strong", [_vm._v("Appartamenti consigliati")]),
+                _c("strong", [_vm._v("Risultati della tua ricerca")]),
               ]),
             ]),
           ]

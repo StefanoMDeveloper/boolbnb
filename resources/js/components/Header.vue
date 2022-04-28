@@ -447,9 +447,15 @@ input[type=number]{
 
 .header-dropdown{
   list-style-type: none;
-  background-color:white;
-  color:black;
-
+  background-color: white;
+  color: black;
+  width: 30%;
+  padding: 12px;
+  position: absolute;
+  top: 60px;
+  left: 140px;
+  border-radius: 10px;
+  background-color: #E4E4E9;
   a{
     text-decoration: none;
     color:black;
