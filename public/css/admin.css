@@ -14679,6 +14679,32 @@ h3 {
   color: #1D68A7;
 }
 
+.loginBtn {
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.loginBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
+.registerBtn {
+  background-color: #FF385C;
+  transition: linear 1s;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.registerBtn:hover {
+  background-color: hwb(349 17% 45%);
+}
+
 main {
   background-color: #dbd4d4;
   min-height: calc(100vh - 60px);
