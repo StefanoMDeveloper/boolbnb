@@ -93,11 +93,11 @@
                     Il tuo messaggio è stato inviato!
                 </div>
 
-                <button class="ms_Btn mt-2 ml-2">
                 <a @click="$router.back()">
-                        Torna indietro  
+                    <button class="ms_Btn mt-2 ml-2">
+                        Torna indietro
+                    </button>
                 </a>
-                </button>
 
                 <div id="map" style="width: 100%; height: 500px; margin-top:50px;">
 

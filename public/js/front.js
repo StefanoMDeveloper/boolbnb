@@ -7957,6 +7957,7 @@ __webpack_require__.r(__webpack_exports__);
     deselect: function deselect() {
       this.autocompleters = [];
       this.search = "";
+      this.headerDropdown = false;
     },
     // Toggle if navigation is shown or hidden
     onScroll: function onScroll() {
@@ -11472,6 +11473,7 @@ var render = function () {
                                 staticClass: "option",
                                 on: {
                                   click: function ($event) {
+                                    $event.stopPropagation()
                                     return _vm.setSearch(index)
                                   },
                                 },
@@ -11496,7 +11498,12 @@ var render = function () {
                         {
                           staticClass: "ms_search",
                           attrs: { href: "#" },
-                          on: { click: _vm.ricercaAvanzata },
+                          on: {
+                            click: function ($event) {
+                              $event.stopPropagation()
+                              return _vm.ricercaAvanzata.apply(null, arguments)
+                            },
+                          },
                         },
                         [_vm._m(1)]
                       ),
@@ -11517,6 +11524,11 @@ var render = function () {
                     },
                   ],
                   staticClass: "container-fluid",
+                  on: {
+                    click: function ($event) {
+                      $event.stopPropagation()
+                    },
+                  },
                 },
                 [
                   _c(
@@ -11684,6 +11696,7 @@ var render = function () {
                   {
                     on: {
                       click: function ($event) {
+                        $event.stopPropagation()
                         return _vm.setHeaderDropdownValue()
                       },
                     },
@@ -13837,23 +13850,23 @@ var render = function () {
                 ]
               ),
               _vm._v(" "),
-              _c("button", { staticClass: "ms_Btn mt-2 ml-2" }, [
-                _c(
-                  "a",
-                  {
-                    on: {
-                      click: function ($event) {
-                        return _vm.$router.back()
-                      },
+              _c(
+                "a",
+                {
+                  on: {
+                    click: function ($event) {
+                      return _vm.$router.back()
                     },
                   },
-                  [
+                },
+                [
+                  _c("button", { staticClass: "ms_Btn mt-2 ml-2" }, [
                     _vm._v(
-                      "\n                    Torna indietro  \n            "
+                      "\n                    Torna indietro\n                "
                     ),
-                  ]
-                ),
-              ]),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
               _c("div", {
                 staticStyle: {
