@@ -103,7 +103,8 @@ export default {
         return{
             apartments: [],
             loading: true,
-
+            sponsoreds:[],
+            nonSponsoreds:[]
         }
     },
     components: {
@@ -115,6 +116,14 @@ export default {
         .then((response) => {
             this.apartments = response.data;
             this.apartments = this.apartments.reverse();
+            for(let i=0;i<this.apartments.length;i++){
+                if(this.apartments[i].active_sponsorships.length!=0){
+                    this.sponsoreds.push(this.apartments[i]);
+                } else {
+                    this.nonSponsoreds.push(this.apartments[i]);
+                }
+            }
+            this.nonSponsoreds.length = 20 - this.sponsoreds.length;
             this.loading = false;
         });
     },
