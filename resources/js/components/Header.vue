@@ -27,7 +27,7 @@
                         <div class="col-2 p-0 ms_icon" :class="searchIsSet ? '' : 'notSearchIcon'" @click="filter"><i  class="fa-solid fa-magnifying-glass searchIcon" ></i></div>
                         <div class="autocompleters col-12" v-show="autocompleters">
                           <div class="option" v-for="(option, index) in autocompleters" :key="index" @click="setSearch(index)">
-                              {{option.address.freeformAddress}}
+                              <a href="#">{{option.address.freeformAddress}}</a>
                           </div>
                         </div> 
                       </div>
@@ -76,9 +76,9 @@
                 <nav class="header-dropdown" v-show="headerDropdown">
                   <li><a href="/register">Registrati</a></li>
                   <li><a href="/admin">Accedi</a></li>
-                  <li>Diventa un host</li>
-                  <li>Proponi un'esperienza</li>
-                  <li>Assistenza</li>
+                  <li><a href="#">Diventa un host</a></li>
+                  <li><a href="#">Proponi un'esperienza</a></li>
+                  <li><a href="#">Assistenza</a></li>
                 </nav>
             </div>
           </div>
@@ -381,12 +381,28 @@ header{
   left:50%;
   transform: translateX(-50%);
   border-radius: 30px;
-  padding: 60px 0px 10px 39px;
+  padding: 60px 0px 10px 0;
   z-index: -1;
-
+  transition: .5s ease all;
   .option{
+    width: 100%;
     color: grey;
     padding: 8px 0;
+    transition: .5s ease all;
+    cursor: pointer;
+      &:hover{
+      background-color: rgb(237, 231, 231);
+      }
+      a{
+        padding-left: 39px;
+        text-decoration: none;
+        color:rgb(193, 187, 187);
+        transition: .5s ease all;
+        width: 100%;    
+      }
+      &:hover a{
+        color:black;
+    }
   }
 }
 
@@ -462,13 +478,23 @@ input[type=number]{
 
   li{
     padding: 5px 10px;
-  }
+    cursor: pointer; 
+    width: 100%; 
+    &:hover{
+    background-color: rgb(237, 231, 231);
 
-  a{
-    text-decoration: none;
-    color:black;
-  }
-
+    }
+    a{
+      text-decoration: none;
+      color:rgb(193, 187, 187);
+       transition: .5s ease all;
+       width: 100%;
+      
+    }
+    &:hover a{
+      color:black;
+    } 
+  } 
 }
 </style>
 
