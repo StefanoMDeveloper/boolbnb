@@ -323,6 +323,7 @@ header{
         list-style: none;
         display: flex;
         align-items: center;
+        justify-content: center;
         li{
           padding: 10px;
           button{

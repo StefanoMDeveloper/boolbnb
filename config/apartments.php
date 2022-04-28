@@ -261,8 +261,8 @@ return [
     "square_meters"=>180,
     "address"=>"Via Aiemita 20, Napoli",
     "visible"=>true,
-    "lat"=>40.76323645,
-    "lon"=>14.26000577,
+    "lat"=>40.84461466,
+    "lon"=>14.04918650,
     "user_id"=>5
     ],
 ];
