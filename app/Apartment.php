@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
@@ -39,7 +40,7 @@ class Apartment extends Model
     }
 
     public function active_sponsorships(){
-        $currentDate = date('Y-m-d');
+        $currentDate = Carbon::now()->toDateTimeString();
         return $this->sponsorships()->using('App\ApartmentSponsorship')->withPivot('start_date','end_date')->where('start_date','<=' , $currentDate)->where('end_date', '>=', $currentDate);
     }
 }

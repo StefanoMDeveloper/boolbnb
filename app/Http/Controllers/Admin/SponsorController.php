@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
+use Carbon\Carbon;
 use App\Sponsorship;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
@@ -29,12 +30,12 @@ class SponsorController extends Controller
 
     public function store(Request $request){
         $data=$request->all();
-        $data['start_date'] = date('Y-m-d');
+        $data['start_date'] = Carbon::now()->toDateTimeString();
         $sponsorship = Sponsorship::find($data['sponsorship']);
         $apartment = Apartment::find($data['apartment']);
         $duration =$sponsorship->duration;
         $data['end_date'] = date('Y-m-d H:i:s', strtotime($data['start_date']. ' + '.$duration.' hours'));
-        $sponsorship->apartments()->attach($apartment->id, array("start_date"=>$data["start_date"], "end_date"=>$data["end_date"]));
+        $sponsorship->apartments()->attach($apartment->id, array("start_date"=>$data['start_date'], "end_date"=>$data['end_date']));
         return redirect()->route('admin.apartments.index')->with(["message"=>"Sponsorizzazione avvenuta con successo!"]);
     }
 }
