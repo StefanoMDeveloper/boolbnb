@@ -63,18 +63,19 @@
                 <div class="container d-flex flex-column justify-content-center align-items-center">
                     <h1 class="sponsorAttivo">Hai già una sponsorizzazione attiva!</h1>
                     <h2 class="sponsorDettagli">Tipologia: {{$sponsorshippo->name}}, iniziata il: {{$start_date}}, termina il: {{$end_date}}</h2>
+                    <a href="{{route('admin.apartments.index')}}">
+                        <button type="button" class="btn btn-primary backBtn3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">
+                            <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                            Torna indietro
+                        </button>
+                    </a>
                 </div>
                 <div class="container d-flex justify-content-center align-items-center">
                     <img class="tirchioMegalomane" src="{{asset('/storage/uploads/Zio-Paperone-e-i-soldi.jpg')}}">
                 </div>
             </div>
-            <a href="{{route('admin.apartments.index')}}">
-                <button type="button" class="btn btn-primary backBtn2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 512">
-                    <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
-                    Torna indietro
-                </button>
-            </a>
+
             @endif
         @endif
     @endforeach

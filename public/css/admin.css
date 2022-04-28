@@ -14254,7 +14254,7 @@ a .plusBtnMobile:hover {
 }
 
 .showContainer ul {
-  list-style: none;
+  list-style-type: none;
   padding-left: 0;
 }
 
@@ -14344,6 +14344,10 @@ a .plusBtnMobile:hover {
   color: white;
   font-weight: bold;
   font-style: italic;
+}
+
+.ulServices {
+  list-style-type: "\2713" !important;
 }
 
 .container-profile {
@@ -14522,6 +14526,20 @@ a span {
 }
 
 .backBtn2:hover {
+  background-color: #1c4144;
+}
+
+.backBtn3 {
+  background-color: #39858a;
+  transition: linear 1s;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 10px 0 20px 0;
+}
+
+.backBtn3:hover {
   background-color: #1c4144;
 }
 

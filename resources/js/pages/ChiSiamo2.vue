@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-      <div class="us row row-cols-3 justify-content-start">
-          <div class="col">
-            <a href="#/">
+      <div class="us row row-cols-3 justify-content-start container-body">
+          <div class="col ">
+            <a href="https://www.linkedin.com/in/antony-morgante-b754b8236/">
                 <button>
                     <div class="inside-button row">
                         <i class="fa-brands fa-linkedin linkedin"></i>
@@ -14,7 +14,7 @@
             </a>
           </div>
           <div class="col">
-            <a href="#/">
+            <a href="https://www.linkedin.com/in/fabio-losa-825372236/">
                 <button>
                     <div class="inside-button row">
                         <i class="fa-brands fa-linkedin linkedin"></i>
@@ -106,5 +106,9 @@ export default {
 
     .inside-button{
         padding: 10px 15px 0 15px;
+    }
+
+    .container-body{
+        min-height: calc(100vh - 710px);
     }
 </style>

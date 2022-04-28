@@ -17,7 +17,7 @@
     </label>
       <input type="text" class="form-control col-8 @error('name') is-invalid @enderror" id="name" name="name" placeholder="aggiungi nome dell'appartamento" value="{{old("name")}}">
       @error('name')
-        <div class="alert alert-danger">Il nome è obbligatorio.</div>
+        <div class="ml-3 alert alert-danger">Il nome è obbligatorio.</div>
       @enderror
     </div>
   
@@ -32,7 +32,7 @@
       </label>
       <textarea class="col-8 form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="aggiungi descrizione dell'appartamento" value="{{old("description")}}"></textarea>
       @error('description')
-        <div class="alert alert-danger">La descrizione è obbligatorio</div>
+        <div class=" ml-3 alert alert-danger">La descrizione è obbligatorio</div>
       @enderror
     </div>
   
@@ -51,7 +51,7 @@
               class="col-1 form-control @error('rooms') is-invalid @enderror">
   
       @error('rooms')
-      <div class="invalid-feedback">Il numero di stanze è obbligatorio</div>
+      <div class="invalid-feedback ml-3">Il numero di stanze è obbligatorio</div>
       @enderror
     </div>
   
@@ -70,7 +70,7 @@
                 class="col-1 form-control @error('beds') is-invalid @enderror">
   
         @error('beds')
-        <div class="invalid-feedback">Il numero di letti è obbligatorio</div>
+        <div class="invalid-feedback ml-3">Il numero di letti è obbligatorio</div>
         @enderror
     </div>
   
@@ -89,7 +89,7 @@
                 class="col-1 form-control @error('bathrooms') is-invalid @enderror">
   
         @error('bathrooms')
-        <div class="invalid-feedback">Il numero di bagni è obbligatorio</div>
+        <div class="invalid-feedback ml-3">Il numero di bagni è obbligatorio</div>
         @enderror
     </div>
   
@@ -108,7 +108,7 @@
                 class="col-1 form-control @error('square_meters') is-invalid @enderror">
   
         @error('square_meters')
-        <div class="invalid-feedback">Il numero di metri quadrati è obbligatorio</div>
+        <div class="invalid-feedback ml-3">Il numero di metri quadrati è obbligatorio</div>
         @enderror
     </div>
   
@@ -123,7 +123,7 @@
       </label>
       <input type="text" class="form-control col-8 @error('address') is-invalid @enderror" id="address" name="address" placeholder="aggiungi l'indirizzo completo" value="{{old("address")}}">
       @error('address')
-        <div class="alert alert-danger">L'indirizzo è obbligatorio</div>
+        <div class="alert alert-danger ml-3">L'indirizzo è obbligatorio</div>
       @enderror
     </div>
   
@@ -141,9 +141,9 @@
   
   
     {{-- image --}}
-    <div class="mb-3">
+    <div class="my-5 ml-5">
       <label for="mainImage" class="form-label">Inserisci l'immagine principale del tuo appartamento</label>
-      <input class="form-control" type="file" id="mainImage" name="mainImage">
+      <input class="form-control col-3" type="file" id="mainImage" name="mainImage">
     </div>
 
     <div class="form-group col-10 pl-4 ml-4 my-5">
@@ -174,7 +174,7 @@
         @endforeach
     </div>
     <div class="d-flex">
-      <button type="submit" class="btn btn-primary addApatmentBtn ml-4">Aggiungi appartamento</button>
+      <button type="submit" class="btn btn-primary addApatmentBtn ml-4 mr-0">Aggiungi appartamento</button>
       <a href="{{route('admin.apartments.index')}}">
         <button type="button" class="btn btn-secondary cancelBtn ml-2">Annulla</button>
       </a>

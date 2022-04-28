@@ -18,12 +18,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div v-for="apartment in sponsoreds" :key="apartment.id" class="card col-12">       
-                                            <div v-if="apartment.visible" class="sponsored col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center">
-                                                <div class="col-lg-4">
+                            <div class="container">
+                                <div class="row px-3">
+                                        <div v-for="apartment in sponsoreds" :key="apartment.id" class="p-0 col-12 col-lg-12 d-flex ">       
+                                            <div v-if="apartment.visible" class="sponsored col-12 col-lg-12 my-3 p-0 d-flex  flex-wrap align-items-center justify-content-center">
+                                                <div class="col-lg-4 m-auto">
                                                     <div v-for="image in apartment.images" :key="image.id" ><!-- non usare ccs su questo div -->
                                                         <div v-if="image.main_image"  class="card-immagine">
                                                             <img  :src="`/storage/${image.url}`" class="border">
@@ -31,7 +30,7 @@
                                                         </div>
                                                     </div>
                                                 </div> 
-                                                <div class=" descrizione col-10 col-lg-7 ml-lg-5">
+                                                <div class=" descrizione col-10 col-lg-5 ml-lg-5">
                                                     <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                                         <h4>{{apartment.name}}</h4>
                                                     </router-link>
@@ -54,7 +53,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                             </div> 
                         </div>
@@ -62,19 +60,19 @@
 
                         <!-- non sponsorizzate -->
                         <div v-show="nonSponsoreds.length!=0">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="non-sponsored col-12">
-                                        <div v-for="apartment in nonSponsoreds" :key="apartment.id" class="card col-12">   
-                                            <div v-if="apartment.visible" class="sponsored d-flex flex-column flex-lg-row align-items-center justify-content-center px-lg-5">   
-                                                <div class="col-lg-3">
+                            <div class="container">
+                                <div class="row px-3">
+                                    <div class="">
+                                        <div v-for="apartment in nonSponsoreds" :key="apartment.id" class="p-0 col-12">   
+                                            <div v-if="apartment.visible" class="nonsponsored d-flex flex-wrap flex-lg-6 my-3 align-items-center justify-content-around px-lg-5">   
+                                                <div class="col-lg-4 m-auto">
                                                     <div v-for="image in apartment.images" :key="image.id"><!-- non usare ccs su questo div -->
-                                                        <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-12">
+                                                        <div v-if="image.main_image"  class="card-immaginenonSpon col-lg-12 p-0">
                                                             <img  :src="`/storage/${image.url}`"  class="border">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="descrizione col-10 col-lg-8 ml-lg-5">
+                                                <div class="descrizione col-10 col-lg-5">
                                                     <router-link :to="{name: 'SingleApartment', params: {slug: apartment.slug}}">
                                                         <h4>{{apartment.name}}</h4>
                                                     </router-link>
@@ -174,7 +172,6 @@ export default {
   }
 }
 
-
 a{
     color:black;
     text-decoration:none;
@@ -198,8 +195,6 @@ a{
             font-size: 40px;
         }
     }
-
-
 }
 
 .descrizione{
@@ -231,9 +226,12 @@ a{
     
 .card-immagine{
     margin: 30px 0;
-    height: 300px;
+    height: 250px;
     width: 100%;
     border-radius: 20px;
+    border: 2px solid gray;
+    background-color: rgb(240, 238, 238);
+    padding: 10px;
     overflow: hidden;
     position: relative;
     img{
@@ -241,6 +239,7 @@ a{
         width: 100%;
         object-fit: cover;
         transition:linear 1s; 
+        border-radius: 20px;
     }
      &:hover img{
         transform: scale(1.1);
@@ -263,7 +262,8 @@ a{
 
 .card-immaginenonSpon{
     margin: 30px 0;
-    height: 300px;
+    height: 250px;
+    width: 100%;
     border-radius: 20px;
     overflow: hidden;
     img{
@@ -285,9 +285,6 @@ a{
     }
 }
 
-
-
-
 ul{
 
     width: 70%;
@@ -304,9 +301,14 @@ ul{
 }
 
 .sponsored{
-    background-color: rgb(235,235,235);
+    background-color: rgb(252, 232, 232);
+    border-radius: 20px;
 }
 
+.nonsponsored{
+    background-color: rgb(231, 229, 229);
+    border-radius: 20px;
+}
 
 .non-sponsored{
     margin-top:50px;

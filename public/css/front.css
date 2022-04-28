@@ -14254,7 +14254,7 @@ a .plusBtnMobile:hover {
 }
 
 .showContainer ul {
-  list-style: none;
+  list-style-type: none;
   padding-left: 0;
 }
 
@@ -14344,6 +14344,10 @@ a .plusBtnMobile:hover {
   color: white;
   font-weight: bold;
   font-style: italic;
+}
+
+.ulServices {
+  list-style-type: "\2713" !important;
 }
 
 .container-profile {
