@@ -8942,7 +8942,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".us[data-v-04b55fa0] {\n  margin: 200px 0;\n}\nbutton[data-v-04b55fa0] {\n  padding: 5px 10px;\n  margin: 10px;\n  border-radius: 10px;\n  border: 0;\n  width: 260px;\n}\nbutton p[data-v-04b55fa0] {\n  margin-left: 5px;\n  float: left;\n  width: 82px;\n}\nbutton .linkedin[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: text-bottom;\n  float: left;\n  padding-right: 20px;\n}\n.icona[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: middle;\n  float: left;\n  padding-left: 20px;\n}\n.inside-button[data-v-04b55fa0] {\n  padding: 10px 15px 0 15px;\n}", ""]);
+exports.push([module.i, ".us[data-v-04b55fa0] {\n  margin: 200px 0;\n}\nbutton[data-v-04b55fa0] {\n  padding: 5px 10px;\n  margin: 10px;\n  border-radius: 10px;\n  border: 0;\n  width: 260px;\n}\nbutton p[data-v-04b55fa0] {\n  margin-left: 5px;\n  float: left;\n  width: 82px;\n}\nbutton .linkedin[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: text-bottom;\n  float: left;\n  padding-right: 20px;\n}\n.icona[data-v-04b55fa0] {\n  color: #ff385c;\n  width: 50px;\n  height: 50px;\n  vertical-align: middle;\n  float: left;\n  padding-left: 20px;\n}\n.inside-button[data-v-04b55fa0] {\n  padding: 10px 15px 0 15px;\n}\n.container-body[data-v-04b55fa0] {\n  min-height: calc(100vh - 710px);\n}", ""]);
 
 // exports
 
@@ -11320,7 +11320,7 @@ var render = function () {
                     [
                       _c(
                         "router-link",
-                        { attrs: { to: { name: "ChiSiamo" } } },
+                        { attrs: { to: { name: "ChiSiamo2" } } },
                         [_vm._v("Chi Siamo")]
                       ),
                     ],
@@ -12168,89 +12168,109 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "us row row-cols-3 justify-content-start" }, [
-        _c("div", { staticClass: "col" }, [
-          _c("a", { attrs: { href: "#/" } }, [
-            _c("button", [
-              _c("div", { staticClass: "inside-button row" }, [
-                _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Antony "), _c("br"), _vm._v(" Morgante")]),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa-solid fa-user-ninja icona" }),
+      _c(
+        "div",
+        {
+          staticClass: "us row row-cols-3 justify-content-start container-body",
+        },
+        [
+          _c("div", { staticClass: "col " }, [
+            _c("a", { attrs: { href: "#/" } }, [
+              _c("button", [
+                _c("div", { staticClass: "inside-button row" }, [
+                  _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Antony "), _c("br"), _vm._v(" Morgante")]),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa-solid fa-user-ninja icona" }),
+                ]),
               ]),
             ]),
           ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col" }, [
-          _c("a", { attrs: { href: "#/" } }, [
-            _c("button", [
-              _c("div", { staticClass: "inside-button row" }, [
-                _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Fabio "), _c("br"), _vm._v(" Losa")]),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa-solid fa-user-secret icona" }),
-              ]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col" }, [
-          _c("a", { attrs: { href: "#/" } }, [
-            _c("button", [
-              _c("div", { staticClass: "inside-button row" }, [
-                _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Ghadeer "), _c("br"), _vm._v(" Shamshoum")]),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa-solid fa-user-nurse icona" }),
-              ]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col" }, [
-          _c("a", { attrs: { href: "#/" } }, [
-            _c("button", [
-              _c("div", { staticClass: "inside-button row" }, [
-                _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Gianluca "), _c("br"), _vm._v(" Benedetti")]),
-                _vm._v(" "),
-                _c("i", { staticClass: "fa-solid fa-user-doctor icona" }),
-              ]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://www.linkedin.com/in/stefano-martignoni-922207238/",
+          _vm._v(" "),
+          _c("div", { staticClass: "col" }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.linkedin.com/in/fabio-losa-825372236/",
+                },
               },
-            },
-            [
+              [
+                _c("button", [
+                  _c("div", { staticClass: "inside-button row" }, [
+                    _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Fabio "), _c("br"), _vm._v(" Losa")]),
+                    _vm._v(" "),
+                    _c("i", { staticClass: "fa-solid fa-user-secret icona" }),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col" }, [
+            _c("a", { attrs: { href: "#/" } }, [
+              _c("button", [
+                _c("div", { staticClass: "inside-button row" }, [
+                  _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Ghadeer "), _c("br"), _vm._v(" Shamshoum")]),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fa-solid fa-user-nurse icona" }),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col" }, [
+            _c("a", { attrs: { href: "#/" } }, [
               _c("button", [
                 _c("div", { staticClass: "inside-button row" }, [
                   _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Stefano "),
+                    _vm._v("Gianluca "),
                     _c("br"),
-                    _vm._v(" Martignoni"),
+                    _vm._v(" Benedetti"),
                   ]),
                   _vm._v(" "),
-                  _c("i", { staticClass: "fa-solid fa-user-astronaut icona" }),
+                  _c("i", { staticClass: "fa-solid fa-user-doctor icona" }),
                 ]),
               ]),
-            ]
-          ),
-        ]),
-      ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col" }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.linkedin.com/in/stefano-martignoni-922207238/",
+                },
+              },
+              [
+                _c("button", [
+                  _c("div", { staticClass: "inside-button row" }, [
+                    _c("i", { staticClass: "fa-brands fa-linkedin linkedin" }),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v("Stefano "),
+                      _c("br"),
+                      _vm._v(" Martignoni"),
+                    ]),
+                    _vm._v(" "),
+                    _c("i", {
+                      staticClass: "fa-solid fa-user-astronaut icona",
+                    }),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+        ]
+      ),
     ])
   },
 ]
