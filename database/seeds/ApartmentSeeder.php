@@ -27,7 +27,7 @@ class ApartmentSeeder extends Seeder
             $new_apartment->visible = $apartment['visible'];
             $new_apartment->lat = $apartment['lat'];   
             $new_apartment->lon = $apartment['lon'];
-            $new_apartment->user_id = rand(1,5);
+            $new_apartment->user_id = $apartment['user_id'];
             $new_apartment->save();
         }
     }

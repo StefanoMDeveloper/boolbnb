@@ -150,11 +150,15 @@ export default {
     },
     //autocomplete
     autocomplete(){
-      axios
-        .get("https://cors-anywhere.herokuapp.com/https://api.tomtom.com/search/2/search/"+this.search+".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&typeahead=true&limit=5&countrySet=IT&language=it-IT")
-        .then((response) => {
-          this.autocompleters = response.data.results;
-        });             
+      if(this.search == ""){
+        this.autocompleters = [];
+      } else {
+        axios
+          .get("https://cors-anywhere.herokuapp.com/https://api.tomtom.com/search/2/search/"+this.search+".json?key=5EIy0DQg5tZyBLLvAxNfCI6ei8DPGcte&typeahead=true&limit=5&countrySet=IT&language=it-IT")
+          .then((response) => {
+            this.autocompleters = response.data.results;
+          });     
+      }  
     },
     setSearch(index){
       this.search = this.autocompleters[index].address.freeformAddress;
@@ -449,13 +453,17 @@ input[type=number]{
   list-style-type: none;
   background-color: white;
   color: black;
-  width: 30%;
+  width: 40%;
   padding: 12px;
   position: absolute;
   top: 60px;
-  left: 140px;
+  left: 95px;
   border-radius: 10px;
-  background-color: #E4E4E9;
+
+  li{
+    padding: 5px 10px;
+  }
+
   a{
     text-decoration: none;
     color:black;

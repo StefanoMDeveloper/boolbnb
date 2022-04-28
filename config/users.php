@@ -6,7 +6,7 @@ return [
         "password"=>"provapro",
         "name"=>"Antony",
         "lastname"=>"Morgante",
-        "birth_date"=>null,
+        "birth_date"=>"08/02/1994",
         "phone"=>"1"
     ],
     [

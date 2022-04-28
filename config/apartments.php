@@ -8,12 +8,11 @@ return [
     "beds"=>2,
     "bathrooms"=>1,
     "square_meters"=>80,
-    "address"=>"Via Giuseppe Massarenti 32, Bologna BO",
+    "address"=>"Via Giuseppe Massarenti 32, Milano",
     "visible"=> true,
-    // "lat"=> 44.49347548,
-    // "lon"=> 11.37368134,
     "lat"=>45.46002415,
     "lon"=> 9.14951778,
+    "user_id"=>1
     ],
     [ //https://www.airbnb.it/rooms/13789381?federated_search_id=3a60ee4a-ccab-408b-b0bc-29fb93c0c920&source_impression_id=p3_1649681669_wyA0iAJQluIHZNQu
     "name"=>"Casa di Via Cappello numero 5",
@@ -22,12 +21,11 @@ return [
     "beds"=> 4,
     "bathrooms"=> 1,
     "square_meters"=> 50,
-    "address"=>"via Cappello 5, Verona VR",
+    "address"=>"via Cappello 5, Firenze",
     "visible"=> true,
-    // "lat"=> 45.44250777,
-    // "lon"=> 10.99807370,
-    "lat"=>45.47002415,
-    "lon"=> 9.15951778,
+    "lat"=> 43.75945793,
+    "lon"=> 11.27493953,
+    "user_id"=>1
     ],
     [ //https://www.airbnb.it/rooms/597476197966578255?federated_search_id=65e3efbf-64d0-4acf-b706-5cdec9ea2e5f&source_impression_id=p3_1649681727_YPOpNeCXdfmlW6tW
     "name"=>"Green Room - Comfort in downtown with private bath",
@@ -40,12 +38,11 @@ return [
     "beds"=>2,
     "bathrooms"=>2,
     "square_meters"=>100,
-    "address"=>"via San Gregorio Armeno 15, Napoli NA",
+    "address"=>"via San Gregorio Armeno 15, Milano",
     "visible"=> true,
-    // "lat"=>45.79662464,
-    // "lon"=>8.89459826,
     "lat"=>45.48012415,
     "lon"=> 9.16961778,
+    "user_id"=>1
     ],
     [ //https://www.airbnb.it/rooms/51448589?federated_search_id=491d9402-6c3a-4994-8f92-ca68e8ba171a&source_impression_id=p3_1649681969_ETnRVakaPc0%2Bj%2BEV
     "name"=>"Cozy apartment with terrace in Milan",
@@ -54,34 +51,37 @@ return [
     "beds"=>1,
     "bathrooms"=>1,
     "square_meters"=>64,
-    "address"=>"Via Francesco Londonio 8, Milano MI",
+    "address"=>"Via Francesco Londonio 8, Milano",
     "visible"=>true,
     "lat"=>45.48002415,
     "lon"=> 9.16951778,
+    "user_id"=>1
     ],
     [ //https://www.airbnb.it/rooms/40364407?federated_search_id=27a0c1a3-b11d-461f-8cb1-165ff65fa38f&source_impression_id=p3_1649682074_pn9jNBl0qylBzTvs
-    "name"=>"LINIZIO APPARTAMENT",
+    "name"=>"Appartamento L'inizio",
     "description"=>"L’ alloggio è ubicato a 5 minuti dalla stazione di Porta Nuova , a 10 minuti da Piazza Vittorio, ad 1 minuto dal parco del Valentino. Dotato di Tv, Wi-Fi,cucina attrezzata, ampio bagno con doccia e lavatrice , di un comodo divano letto. Molto ben servito dai mezzi di trasporto, ed ottima vicinanza ai locali, negozi, punti di ristoro, del centro città.",
     "rooms"=>3,
     "beds"=>1,
     "bathrooms"=>1,
     "square_meters"=>35,
-    "address"=>"Via Fratelli Calandra 4, Torino TO",
+    "address"=>"Via Fratelli Calandra 4, Milano",
     "visible"=>true,
-    "lat"=>45.06083452, 
-    "lon"=>7.68900250,
+    "lat"=>45.46083452, 
+    "lon"=>9.68900250,
+    "user_id"=>2
     ],
     [ //https://www.airbnb.it/rooms/24446953?federated_search_id=cd0513f5-8d9b-4e3e-bde0-93dceebafdf3&source_impression_id=p3_1649682153_k0tffYRgaGGwSIqu
-    "name"=>"Suite Casa Nova for 6 persons.",
+    "name"=>"Suite Casa Nova per sei persone",
     "description"=>"Apt. di 3 locali 85 m2 al 2. piano. Completamente restaurato nel 2018, arredamento lussuoso e elegante: ingresso. Soggiorno/sala da pranzo grande con 1 divano letto doppio e camino (solo con funzione decorativa), tavolo da pranzo e TV (schermo piatto). 1 camera matrimoniale. Angolo notte con 1 x 2 letti a castello. Grande cucina aperta (forno, lavastoviglie, 4 piastre cottura in vetroceramica, tostapane, forno a microonde, macchina da caffè elettrica, capsule per la macchina da caffè (Nestlè Dolce Gusto)) con bancone. Bagno/bidè/WC, doccia/WC, doccia idromassaggio, vasca idromassaggio. Riscaldamento, climatizzazione. Vista sulla località e Campo Santi Filippo e Giacomo. A disposizione: ferro da stiro, asciugacapelli. Prego notare: appartamento per non fumatori. No ascensore. Non ci sono costi aggiuntivi obbligatori da pagare in loco ad eccezione della tassa di soggiorno.",
     "rooms"=>3,
     "beds"=>3,
     "bathrooms"=>2,
     "square_meters"=>85,
-    "address"=>"Calle Rimpeto la Sacrestia 15, Venezia VE",
+    "address"=>"Calle rimpeto la sacrestia 15, Roma",
     "visible"=>true,
-    "lat"=>45.43569289,
-    "lon"=>12.34216204,
+    "lat"=>41.80255703, 
+    "lon"=>12.56460927,
+    "user_id"=>2
     ],
     [ //https://www.airbnb.it/rooms/32285772?check_in=2022-04-30&check_out=2022-05-19&federated_search_id=2aab2c5e-eb39-4805-8310-1dfaadb42261&source_impression_id=p3_1649681810_iDENinY2TKI%2FJzOl
     "name"=>"Loft con giardino in zona Appia Antica",
@@ -90,22 +90,24 @@ return [
     "beds"=>2,
     "bathrooms"=>1,
     "square_meters"=>40,
-    "address"=>"Via Appia Antica 15, Roma RO",
+    "address"=>"Via Appia antica 15, Roma",
     "visible"=>true,
     "lat"=>41.81255703, 
-    "lon"=>12.56465406
+    "lon"=>12.56465406,
+    "user_id"=>2
     ],
     [ //https://www.airbnb.it/rooms/597476197966578255?federated_search_id=65e3efbf-64d0-4acf-b706-5cdec9ea2e5f&source_impression_id=p3_1649681727_YPOpNeCXdfmlW6tW
-    "name"=>"NUOVO E STUPENDO LOFT",
-    "description"=>"Meraviglioso e nuovo appartamento in mansarda arredato in maniera funzionale e dotato di tutto il necessario. Situato in una posizione perfetta a Riccione per chi vuole stare vicinissimo al mare. Potrete scendere e raggiungere a piedi per raggiungere la spiaggia in un minuto. L’appartamento, dotato anche di aria condizionata gratuita, può ospitare fino a 4 persone. In 4 minuti di macchina sarete nel famoso e rinomato Viale Ceccarini, proprio nel centro di Riccione. Non fartelo sfuggire!",
+    "name"=>"Nuovo e stupendo loft",
+    "description"=>"Meraviglioso e nuovo appartamento in mansarda arredato in maniera funzionale e dotato di tutto il necessario. Situato in una posizione perfetta a Roma per chi vuole stare vicinissimo al mare. Potrete scendere e raggiungere a piedi per raggiungere la spiaggia in un minuto. L’appartamento, dotato anche di aria condizionata gratuita, può ospitare fino a 4 persone. In 4 minuti di macchina sarete nel famoso e rinomato Viale Ceccarini, proprio nel centro di Roma. Non fartelo sfuggire!",
     "rooms"=> 6,
     "beds"=> 4,
     "bathrooms"=> 1,
     "square_meters"=> 60,
-    "address"=>"Viale G. Leopardi 22, Riccione RN",
+    "address"=>"Viale G. Leopardi 22, Roma",
     "visible"=> true,
-    "lat"=> 44.01138391,
-    "lon"=> 12.64513415
+    "lat"=>41.71255703, 
+    "lon"=>12.55465406,
+    "user_id"=>2
     ],
     [ //https://www.airbnb.it/rooms/53194081?federated_search_id=ca29ac0e-bea2-4224-9110-79ef0707085e&source_impression_id=p3_1649682586_xM%2FMzWXw4LeYLEJN
     "name"=>"Relais Piazza Signoria",
@@ -114,10 +116,11 @@ return [
     "beds"=> 2,
     "bathrooms"=> 1,
     "square_meters"=> 130,
-    "address"=>"Via Vacchereccia 3, Firenze FI",
+    "address"=>"Via Vacchereccia 3, Firenze",
     "visible"=> true,
     "lat"=> 43.76945793,
     "lon"=> 11.25493953,
+    "user_id"=>3
     ],
     [ //https://www.airbnb.com/rooms/30506460?federated_search_id=04caa04d-3959-4519-bc09-7369d84d068f&source_impression_id=p3_1649757437_fU3uCSTSU1SXoQ9G
     "name"=>"Plantes guest Napoli centro",
@@ -126,34 +129,37 @@ return [
     "beds"=>2,
     "bathrooms"=>1,
     "square_meters"=>110,
-    "address"=>"Via renovella 5, Napoli NA",
+    "address"=>"Via Renovella 5, Napoli",
     "visible"=>true,
     "lat"=>40.84790432,
-    "lon"=>14.26278577
+    "lon"=>14.26278577,
+    "user_id"=>3
     ],
     [ //https://www.airbnb.it/rooms/18485112?federated_search_id=0a47a531-ba22-4e2e-8ab0-a83648baddf9&source_impression_id=p3_1649682698_K1uWevE3mdYH3qi%2B
-    "name"=>"Lollotà Castello WiFi con soppalco (IUN P1849)",
+    "name"=>"Lollotà Castello WiFi con soppalco",
     "description"=>"Appartamento con soppalco restaurato nel 2017, al secondo piano di un palazzo storico di proprietà della famiglia, di fronte alla Cattedrale di S.Maria e all'antico Palazzo di Città. Il palazzo si trova nel cuore del centro storico di Cagliari, il quartiere medievale di Castello. Affaccia sua una piccola piazza dove si trova un ottimo bar per le colazioni e per gli aperitivi. Nello stesso palazzo una bottega di prodotti locali biologici. Riceve il sole durante tutta la mattina.",
     "rooms"=>3,
     "beds"=>1,
     "bathrooms"=>1,
     "square_meters"=>40,
-    "address"=>"Via Alberto Lamarmora 25, Cagliari CA",
+    "address"=>"Via Alberto Lamarmora 25, Firenze",
     "visible"=>true,
-    "lat"=>39.21916599,
-    "lon"=> 9.11608876,
+    "lat"=>40.81300207,
+    "lon"=> 17.14629567,
+    "user_id"=>3
     ],
     [ //https://www.airbnb.it/rooms/18224948?federated_search_id=76d7b654-68a1-422b-a25c-48695333bd9f&source_impression_id=p3_1649682824_dFH3nHlCm5xyKkLw
-    "name"=>"Dépendance Cascata delle Marmore",
+    "name"=>"Dépendance Cascata",
     "description"=>"La struttura situata in un bellissimo paesino medievale e costruita sul fianco della collina, si affaccia sulla vallata e offre una vista unica sulla Valnerina e sulla Cascata delle Marmore in lontananza. L'abitazione, ricavata in un angolo intimo e riservato del giardino, è separata dalla struttura principale ed è dotata di divano letto matrimoniale, terrazzo e bagno privato. La piscina con vista, il giardino e il cucinino sono ad uso esclusivo degli ospiti",
     "rooms"=>2,
     "beds"=>1,
     "bathrooms"=>1,
     "square_meters"=>40,
-    "address"=>"Via Madonna della Strada 55, Torreorsina TN",
+    "address"=>"Via Madonna della Strada 55, Roma",
     "visible"=>true,
-    "lat"=>42.57369317, 
-    "lon"=>12.73309658,
+    "lat"=>41.82255703, 
+    "lon"=>12.56565406,
+    "user_id"=>3
     ],
     [ //https://www.airbnb.it/rooms/19588901?federated_search_id=e984fae1-5329-4a03-8146-4b6699762bce&source_impression_id=p3_1649682935_YFKHcCv8GICpbtWX
     "name"=>"Suite Felisia",
@@ -166,6 +172,7 @@ return [
     "visible"=>true,
     "lat"=> 40.80300207,
     "lon"=> 17.24629567,
+    "user_id"=>4
     ],
     [ //https://www.airbnb.it/rooms/22063061?federated_search_id=29ffdf84-fda6-41b6-a3b8-86e2abbf94d8&source_impression_id=p3_1649683041_cZZzlja8De%2BsZTmH
     "name"=>"Artedimarco 1",
@@ -174,13 +181,14 @@ return [
     "beds"=>2,
     "bathrooms"=>1,
     "square_meters"=>30,
-    "address"=>"Via Cesarini Sforza 5, Vallene TN",
+    "address"=>"Via Cesarini Sforza 5, Firenze",
     "visible"=>true,
-    "lat"=>46.10828127, 
-    "lon"=>11.04562574,
+    "lat"=>43.77945793, 
+    "lon"=>11.25496953,
+    "user_id"=>4
     ],
     [ //https://www.airbnb.it/rooms/22545970?federated_search_id=62d8819c-6577-4ef6-9292-42c22b22d69f&source_impression_id=p3_1649683084_NIiJT05kD6JGZFuG
-    "name"=>"La Montanina for 6 persons.",
+    "name"=>"La Montanina per 6 persone",
     "description"=>"Nota: se le date desiderate sono disponibili, potete procedere direttamente con la prenotazione al miglior prezzo. Il prezzo finale è già scontato. Ulteriori informazioni riguardo l'annuncio sono disponibili nella descrizione della casa. Apt. di 4 locali 90 m2, al pianterreno. Luminoso, in parte restaurato nel 2022, arredamento funzionale e confortevole: soggiorno/sala da pranzo con stufa svedese, angolo pranzo e TV (schermo piatto), DVD. Uscita sul giardino. 1 camera con 1 letto e 1 letto ribaltabile",
     "rooms"=>7,
     "beds"=>5,
@@ -190,18 +198,20 @@ return [
     "visible"=>true,
     "lat"=>46.53790245,
     "lon"=>12.14089386,
+    "user_id"=>4
     ],
     [ //https://www.airbnb.it/rooms/22547950?federated_search_id=6b8b827c-2e7a-4ef9-ad34-70f4dfd4926a&source_impression_id=p3_1650980312_rtSYd6DEAScNnwVQ
-    "name"=>"Isola delle Abbadesse for 4 persons.",
+    "name"=>"Isola delle Abbadesse per 4 persone",
     "description"=>"Luminoso, restaurato nel 2017, arredamento confortevole e di buon gusto: soggiorno/sala da pranzo con finestra panoramica con 1 divano letto doppio e TV (schermo piatto). Uscita sul balcone. 1 camera matrimoniale con TV (schermo piatto). Angolo cottura (4 punti cottura, forno, lavastoviglie, tostapane, forno a microonde, congelatore, macchina da caffè elettrica). Uscita sul balcone. Doccia/bidè/WC. Climatizzazione. Pavimenti in parquet. Balcone. Mobili da balcone. Vista sulla città e Bosco Verticale. A disposizione: lavatrice, ferro da stiro, asciugacapelli. Internet (wifi, gratis). Prego notare: appartamento per non fumatori.",
     "rooms"=>3,
     "beds"=>2,
     "bathrooms"=>1,
     "square_meters"=>50,
-    "address"=>"Via Abbadesse 46, Milano MI",
+    "address"=>"Via Abbadesse 46, Milano",
     "visible"=>true,
     "lat"=>45.49275430,
     "lon"=>9.19431325,
+    "user_id"=>4
     ],
     [ //https://www.airbnb.it/rooms/24515432?federated_search_id=6b8b827c-2e7a-4ef9-ad34-70f4dfd4926a&source_impression_id=p3_1650979646_xxQ%2B%2Fwln4nrIjH47
     "name"=>"Piccola Mansarda in Corso Como",
@@ -210,10 +220,11 @@ return [
     "beds"=>1,
     "bathrooms"=>1,
     "square_meters"=>20,
-    "address"=>"Corso Como 11, Milano Mi",
+    "address"=>"Corso Como 11, Milano",
     "visible"=>true,
     "lat"=>45.48230960,
     "lon"=>9.18739804,
+    "user_id"=>5
     ],
     [ //https://www.airbnb.it/rooms/29587020?federated_search_id=76d760af-c46e-4ccb-8c46-8d9152e5bf49&source_impression_id=p3_1650979994_ZPvuDtCU2JsWDlup
     "name"=>"Jaja Home",
@@ -222,10 +233,11 @@ return [
     "beds"=>1,
     "bathrooms"=>1,
     "square_meters"=>30,
-    "address"=>"Via Francesco Saverio Siniscalchi 50, Napoli NA",
+    "address"=>"Via Francesco Saverio Siniscalchi 50, Napoli",
     "visible"=>true,
     "lat"=>40.85329053,
     "lon"=>14.26536016,
+    "user_id"=>5
     ],
     [ //https://www.airbnb.it/rooms/570911207954132877?federated_search_id=c1168855-8be3-46bf-aca2-786bf4b4c3ff&source_impression_id=p3_1650980344_XVYHJrZ3qmbzvK8F
     "name"=>"Appartamento incantevole: Napoli Centro Storico",
@@ -234,10 +246,11 @@ return [
     "beds"=>4,
     "bathrooms"=>2,
     "square_meters"=>80,
-    "address"=>"Via Broggia 10, Napoli NA",
+    "address"=>"Via Broggia 10, Napoli",
     "visible"=>true,
     "lat"=>40.85209884,
     "lon"=>14.25075997,
+    "user_id"=>5
     ],
     [ //https://www.airbnb.it/rooms/36449549?federated_search_id=f805c10e-8298-425e-b7ef-5fa45205097f&source_impression_id=p3_1650980678_Xs8iHz2pt4aKWelM
     "name"=>"Villa Formica,villa esclusiva con piscina privata",
@@ -246,9 +259,10 @@ return [
     "beds"=>3,
     "bathrooms"=>3,
     "square_meters"=>180,
-    "address"=>"Via Aiemita 20, Napoli NA",
+    "address"=>"Via Aiemita 20, Napoli",
     "visible"=>true,
     "lat"=>40.76323645,
-    "lon"=>13.86620469,
+    "lon"=>14.26000577,
+    "user_id"=>5
     ],
 ];
