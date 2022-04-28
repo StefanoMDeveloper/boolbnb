@@ -41,6 +41,20 @@
     }
 }
 
+.backBtn3{
+    background-color:#39858a;
+    transition:linear 1s;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin:10px 0 20px 0;
+    &:hover{
+        background-color: #1c4144;
+    }
+
+}
+
 h2, h3 {
     text-align: center;
 }
