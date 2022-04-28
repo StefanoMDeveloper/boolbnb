@@ -322,7 +322,7 @@ ul{
 
 .no-apartments{
     position:relative;
-    height:calc(100vh - 60px)
+    height:calc(100vh - 710px);
 
     .response-text{
         position:absolute;
@@ -330,6 +330,7 @@ ul{
         top:50%;
         transform: translate(-50%,-50%);
         display: inline-block;
+        font-size: 32px;
     }
 }
 </style>
