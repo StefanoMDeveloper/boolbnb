@@ -70,7 +70,7 @@ export default {
 
 <style scoped lang="scss">
     .us{
-        margin: 200px 0;
+        margin: 300px 0;
     }
 
     button{
@@ -109,6 +109,6 @@ export default {
     }
 
     .container-body{
-        min-height: calc(100vh - 710px);
+        min-height: calc(100vh - 1110px);
     }
 </style>
