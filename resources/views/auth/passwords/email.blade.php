@@ -36,7 +36,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Ricevi il link per il reset') }}
                                 </button>
-                                <a href="{{route('admin.home')}}">
+                                <a href="{{route('admin.home')}}" style="display: inline">
                                     <button type="button" class="btn btn-secondary cancelBtn">
                                       Annulla
                                     </button>
