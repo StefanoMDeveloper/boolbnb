@@ -110,7 +110,7 @@ export default {
         }
     },
     components: {
-    Loader
+        Loader
     },
     created() {
         axios
