@@ -1,5 +1,5 @@
 <template>
-    <header class="container-fluid" :class="{ 'is-hidden': !scrollEffect }">
+    <header class="container-fluid" :class="{ 'is-hidden': !scrollEffect }" @click="deselect">
         <div class="row">
           <div class="header-container col-12">
 
@@ -187,6 +187,10 @@ export default {
       } 
     },
  
+     deselect(){
+      this.autocompleters = [];
+      this.search = "";
+    },
     // Toggle if navigation is shown or hidden
     onScroll() {
       if (window.pageYOffset < 0) {

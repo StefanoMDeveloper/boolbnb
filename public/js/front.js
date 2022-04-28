@@ -7954,6 +7954,10 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     },
+    deselect: function deselect() {
+      this.autocompleters = [];
+      this.search = "";
+    },
     // Toggle if navigation is shown or hidden
     onScroll: function onScroll() {
       if (window.pageYOffset < 0) {
@@ -11281,6 +11285,7 @@ var render = function () {
     {
       staticClass: "container-fluid",
       class: { "is-hidden": !_vm.scrollEffect },
+      on: { click: _vm.deselect },
     },
     [
       _c("div", { staticClass: "row" }, [
@@ -31638,7 +31643,7 @@ module.exports = "/images/jubotron.jpg?9c1049b9750979074a9fb20d1529ac35";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\haitam\Documents\Boolean-Ghadeer\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/Fabio/Desktop/Boolean/Esercizio-finale/boolbnb/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
