@@ -8988,7 +8988,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".page404[data-v-a99009b2] {\n  margin-top: 200px;\n}\nimg[data-v-a99009b2] {\n  width: 313px;\n  height: 428px;\n}\n@media (max-width: 768px) {\nimg[data-v-a99009b2] {\n    display: none;\n}\n}\nh1[data-v-a99009b2] {\n  font-size: 60px;\n}", ""]);
+exports.push([module.i, ".page404[data-v-a99009b2] {\n  margin-top: 200px;\n}\nimg[data-v-a99009b2] {\n  width: 313px;\n  height: 428px;\n}\n@media (max-width: 768px) {\nimg[data-v-a99009b2] {\n    display: none;\n}\n}\nh1[data-v-a99009b2] {\n  font-size: 60px;\n}\n.container-body[data-v-a99009b2] {\n  min-height: calc(100vh - 710px);\n}", ""]);
 
 // exports
 
@@ -12621,47 +12621,51 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container page404" }, [
-      _c("div", { staticClass: "row mt-8 m-8 justify-content-center" }, [
-        _c("div", { staticClass: "col-md-5 align-self-center" }, [
-          _c("h1", { staticClass: "text-jumbo text-ginormous hide-sm" }, [
-            _vm._v("Ops!"),
-          ]),
-          _vm._v(" "),
-          _c("h2", [_vm._v("Non troviamo la pagina che stai cercando.")]),
-          _vm._v(" "),
-          _c("h6", [_vm._v("Codice errore: 404")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "list-unstyled" }, [
-            _c("li", [_vm._v("Ecco qualche link utile:")]),
+      _c(
+        "div",
+        { staticClass: "row mt-8 m-8 justify-content-center container-body" },
+        [
+          _c("div", { staticClass: "col-md-5 align-self-center" }, [
+            _c("h1", { staticClass: "text-jumbo text-ginormous hide-sm" }, [
+              _vm._v("Ops!"),
+            ]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "link-404", attrs: { href: "/" } }, [
-                _vm._v("Home"),
+            _c("h2", [_vm._v("Non troviamo la pagina che stai cercando.")]),
+            _vm._v(" "),
+            _c("h6", [_vm._v("Codice errore: 404")]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "list-unstyled" }, [
+              _c("li", [_vm._v("Ecco qualche link utile:")]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "link-404", attrs: { href: "/" } }, [
+                  _vm._v("Home"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  { staticClass: "link-404", attrs: { href: "/appartamenti" } },
+                  [_vm._v("Appartamenti")]
+                ),
               ]),
             ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                { staticClass: "link-404", attrs: { href: "/appartamenti" } },
-                [_vm._v("Appartamenti")]
-              ),
-            ]),
           ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-5 align-self-center text-center" }, [
-          _c("img", {
-            staticClass: "hide-sm",
-            attrs: {
-              src: "https://a0.muscache.com/airbnb/static/error_pages/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif",
-              width: "313",
-              height: "428",
-              alt: "La bambina ha fatto cadere il gelato.",
-            },
-          }),
-        ]),
-      ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-5 align-self-center text-center" }, [
+            _c("img", {
+              staticClass: "hide-sm",
+              attrs: {
+                src: "https://a0.muscache.com/airbnb/static/error_pages/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif",
+                width: "313",
+                height: "428",
+                alt: "La bambina ha fatto cadere il gelato.",
+              },
+            }),
+          ]),
+        ]
+      ),
     ])
   },
 ]
