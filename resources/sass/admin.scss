@@ -46,6 +46,9 @@
 //_login
 @import 'partials/_login';
 
+//_register
+@import 'partials/_register';
+
 main{
     background-color: #dbd4d4;
     min-height: calc(100vh - 60px);
